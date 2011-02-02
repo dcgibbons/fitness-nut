@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* Fitness_NutAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		C2A4D96912F8DB8F002950C0 /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */; };
+		C2A4D96A12F8DB8F002950C0 /* AgePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */; };
+		C2A4D96B12F8DB8F002950C0 /* BMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */; };
+		C2A4D96C12F8DB8F002950C0 /* BodyFatEstimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95812F8DB8F002950C0 /* BodyFatEstimatorViewController.m */; };
+		C2A4D96D12F8DB8F002950C0 /* BodyFatPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */; };
+		C2A4D96E12F8DB8F002950C0 /* GenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95C12F8DB8F002950C0 /* GenderViewController.m */; };
+		C2A4D96F12F8DB8F002950C0 /* GirthPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95E12F8DB8F002950C0 /* GirthPickerViewController.m */; };
+		C2A4D97012F8DB8F002950C0 /* HeightPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D96012F8DB8F002950C0 /* HeightPickerViewController.m */; };
+		C2A4D97112F8DB8F002950C0 /* HoursPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D96212F8DB8F002950C0 /* HoursPickerViewController.m */; };
+		C2A4D97212F8DB8F002950C0 /* MacronutrientNeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D96412F8DB8F002950C0 /* MacronutrientNeedsViewController.m */; };
+		C2A4D97312F8DB8F002950C0 /* WeightPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */; };
+		C2A4D97412F8DB8F002950C0 /* WeightPredictorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */; };
+		C2A4D98112F8DBAB002950C0 /* ActivityLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */; };
+		C2A4D98212F8DBAB002950C0 /* AgePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */; };
+		C2A4D98312F8DBAB002950C0 /* BMRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97712F8DBAB002950C0 /* BMRViewController.xib */; };
+		C2A4D98412F8DBAB002950C0 /* BodyFatEstimatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */; };
+		C2A4D98512F8DBAB002950C0 /* BodyFatPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */; };
+		C2A4D98612F8DBAB002950C0 /* GenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */; };
+		C2A4D98712F8DBAB002950C0 /* GirthPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */; };
+		C2A4D98812F8DBAB002950C0 /* HeightPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */; };
+		C2A4D98912F8DBAB002950C0 /* HoursPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */; };
+		C2A4D98A12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */; };
+		C2A4D98B12F8DBAB002950C0 /* WeightPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97F12F8DBAB002950C0 /* WeightPickerViewController.xib */; };
+		C2A4D98C12F8DBAB002950C0 /* WeightPredictorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D98012F8DBAB002950C0 /* WeightPredictorViewController.xib */; };
+		C2A4D99F12F8DBDF002950C0 /* AthleteActivityLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99012F8DBDF002950C0 /* AthleteActivityLevel.m */; };
+		C2A4D9A012F8DBDF002950C0 /* AthleteAge.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99212F8DBDF002950C0 /* AthleteAge.m */; };
+		C2A4D9A112F8DBDF002950C0 /* AthleteGender.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99512F8DBDF002950C0 /* AthleteGender.m */; };
+		C2A4D9A212F8DBDF002950C0 /* AthleteHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */; };
+		C2A4D9A312F8DBDF002950C0 /* AthleteMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99912F8DBDF002950C0 /* AthleteMeasurement.m */; };
+		C2A4D9A412F8DBDF002950C0 /* AthleteWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */; };
+		C2A4D9A512F8DBDF002950C0 /* FitnessCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fitness_NutAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fitness_NutAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Fitness Nut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Nut.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* Fitness_Nut_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fitness_Nut_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fitness_Nut-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
+		C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
+		C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgePickerViewController.h; sourceTree = "<group>"; };
+		C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgePickerViewController.m; sourceTree = "<group>"; };
+		C2A4D95512F8DB8F002950C0 /* BMRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRViewController.h; sourceTree = "<group>"; };
+		C2A4D95612F8DB8F002950C0 /* BMRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRViewController.m; sourceTree = "<group>"; };
+		C2A4D95712F8DB8F002950C0 /* BodyFatEstimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyFatEstimatorViewController.h; sourceTree = "<group>"; };
+		C2A4D95812F8DB8F002950C0 /* BodyFatEstimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyFatEstimatorViewController.m; sourceTree = "<group>"; };
+		C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyFatPickerViewController.h; sourceTree = "<group>"; };
+		C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyFatPickerViewController.m; sourceTree = "<group>"; };
+		C2A4D95B12F8DB8F002950C0 /* GenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderViewController.h; sourceTree = "<group>"; };
+		C2A4D95C12F8DB8F002950C0 /* GenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderViewController.m; sourceTree = "<group>"; };
+		C2A4D95D12F8DB8F002950C0 /* GirthPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirthPickerViewController.h; sourceTree = "<group>"; };
+		C2A4D95E12F8DB8F002950C0 /* GirthPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GirthPickerViewController.m; sourceTree = "<group>"; };
+		C2A4D95F12F8DB8F002950C0 /* HeightPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightPickerViewController.h; sourceTree = "<group>"; };
+		C2A4D96012F8DB8F002950C0 /* HeightPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightPickerViewController.m; sourceTree = "<group>"; };
+		C2A4D96112F8DB8F002950C0 /* HoursPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursPickerViewController.h; sourceTree = "<group>"; };
+		C2A4D96212F8DB8F002950C0 /* HoursPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoursPickerViewController.m; sourceTree = "<group>"; };
+		C2A4D96312F8DB8F002950C0 /* MacronutrientNeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacronutrientNeedsViewController.h; sourceTree = "<group>"; };
+		C2A4D96412F8DB8F002950C0 /* MacronutrientNeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacronutrientNeedsViewController.m; sourceTree = "<group>"; };
+		C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPickerViewController.h; sourceTree = "<group>"; };
+		C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPickerViewController.m; sourceTree = "<group>"; };
+		C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPredictorViewController.h; sourceTree = "<group>"; };
+		C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPredictorViewController.m; sourceTree = "<group>"; };
+		C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityLevelViewController.xib; sourceTree = "<group>"; };
+		C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgePickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D97712F8DBAB002950C0 /* BMRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BMRViewController.xib; sourceTree = "<group>"; };
+		C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyFatEstimatorViewController.xib; sourceTree = "<group>"; };
+		C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyFatPickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderViewController.xib; sourceTree = "<group>"; };
+		C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GirthPickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeightPickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursPickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacronutrientNeedsViewController.xib; sourceTree = "<group>"; };
+		C2A4D97F12F8DBAB002950C0 /* WeightPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightPickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D98012F8DBAB002950C0 /* WeightPredictorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightPredictorViewController.xib; sourceTree = "<group>"; };
+		C2A4D98F12F8DBDF002950C0 /* AthleteActivityLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteActivityLevel.h; sourceTree = "<group>"; };
+		C2A4D99012F8DBDF002950C0 /* AthleteActivityLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteActivityLevel.m; sourceTree = "<group>"; };
+		C2A4D99112F8DBDF002950C0 /* AthleteAge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteAge.h; sourceTree = "<group>"; };
+		C2A4D99212F8DBDF002950C0 /* AthleteAge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteAge.m; sourceTree = "<group>"; };
+		C2A4D99312F8DBDF002950C0 /* AthleteDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteDataDelegate.h; sourceTree = "<group>"; };
+		C2A4D99412F8DBDF002950C0 /* AthleteGender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteGender.h; sourceTree = "<group>"; };
+		C2A4D99512F8DBDF002950C0 /* AthleteGender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteGender.m; sourceTree = "<group>"; };
+		C2A4D99612F8DBDF002950C0 /* AthleteHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteHeight.h; sourceTree = "<group>"; };
+		C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteHeight.m; sourceTree = "<group>"; };
+		C2A4D99812F8DBDF002950C0 /* AthleteMeasurement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteMeasurement.h; sourceTree = "<group>"; };
+		C2A4D99912F8DBDF002950C0 /* AthleteMeasurement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteMeasurement.m; sourceTree = "<group>"; };
+		C2A4D99A12F8DBDF002950C0 /* AthleteWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteWeight.h; sourceTree = "<group>"; };
+		C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteWeight.m; sourceTree = "<group>"; };
+		C2A4D99C12F8DBDF002950C0 /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
+		C2A4D99D12F8DBDF002950C0 /* FitnessCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FitnessCalculations.h; sourceTree = "<group>"; };
+		C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitnessCalculations.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4D98F12F8DBDF002950C0 /* AthleteActivityLevel.h */,
+				C2A4D99012F8DBDF002950C0 /* AthleteActivityLevel.m */,
+				C2A4D99112F8DBDF002950C0 /* AthleteAge.h */,
+				C2A4D99212F8DBDF002950C0 /* AthleteAge.m */,
+				C2A4D99312F8DBDF002950C0 /* AthleteDataDelegate.h */,
+				C2A4D99412F8DBDF002950C0 /* AthleteGender.h */,
+				C2A4D99512F8DBDF002950C0 /* AthleteGender.m */,
+				C2A4D99612F8DBDF002950C0 /* AthleteHeight.h */,
+				C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */,
+				C2A4D99812F8DBDF002950C0 /* AthleteMeasurement.h */,
+				C2A4D99912F8DBDF002950C0 /* AthleteMeasurement.m */,
+				C2A4D99A12F8DBDF002950C0 /* AthleteWeight.h */,
+				C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */,
+				C2A4D99C12F8DBDF002950C0 /* Conversions.h */,
+				C2A4D99D12F8DBDF002950C0 /* FitnessCalculations.h */,
+				C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */,
+				C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */,
+				C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */,
+				C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */,
+				C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */,
+				C2A4D95512F8DB8F002950C0 /* BMRViewController.h */,
+				C2A4D95612F8DB8F002950C0 /* BMRViewController.m */,
+				C2A4D95712F8DB8F002950C0 /* BodyFatEstimatorViewController.h */,
+				C2A4D95812F8DB8F002950C0 /* BodyFatEstimatorViewController.m */,
+				C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */,
+				C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */,
+				C2A4D95B12F8DB8F002950C0 /* GenderViewController.h */,
+				C2A4D95C12F8DB8F002950C0 /* GenderViewController.m */,
+				C2A4D95D12F8DB8F002950C0 /* GirthPickerViewController.h */,
+				C2A4D95E12F8DB8F002950C0 /* GirthPickerViewController.m */,
+				C2A4D95F12F8DB8F002950C0 /* HeightPickerViewController.h */,
+				C2A4D96012F8DB8F002950C0 /* HeightPickerViewController.m */,
+				C2A4D96112F8DB8F002950C0 /* HoursPickerViewController.h */,
+				C2A4D96212F8DB8F002950C0 /* HoursPickerViewController.m */,
+				C2A4D96312F8DB8F002950C0 /* MacronutrientNeedsViewController.h */,
+				C2A4D96412F8DB8F002950C0 /* MacronutrientNeedsViewController.m */,
+				C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */,
+				C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */,
+				C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */,
+				C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */,
+				1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Fitness Nut.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* Fitness_Nut_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */,
+				C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */,
+				C2A4D97712F8DBAB002950C0 /* BMRViewController.xib */,
+				C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */,
+				C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */,
+				C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */,
+				C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */,
+				C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */,
+				C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */,
+				C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */,
+				C2A4D97F12F8DBAB002950C0 /* WeightPickerViewController.xib */,
+				C2A4D98012F8DBAB002950C0 /* WeightPredictorViewController.xib */,
+				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Fitness Nut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Fitness Nut" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fitness Nut";
+			productName = "Fitness Nut";
+			productReference = 1D6058910D05DD3D006BFB54 /* Fitness Nut.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Fitness Nut" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Fitness Nut */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				C2A4D98112F8DBAB002950C0 /* ActivityLevelViewController.xib in Resources */,
+				C2A4D98212F8DBAB002950C0 /* AgePickerViewController.xib in Resources */,
+				C2A4D98312F8DBAB002950C0 /* BMRViewController.xib in Resources */,
+				C2A4D98412F8DBAB002950C0 /* BodyFatEstimatorViewController.xib in Resources */,
+				C2A4D98512F8DBAB002950C0 /* BodyFatPickerViewController.xib in Resources */,
+				C2A4D98612F8DBAB002950C0 /* GenderViewController.xib in Resources */,
+				C2A4D98712F8DBAB002950C0 /* GirthPickerViewController.xib in Resources */,
+				C2A4D98812F8DBAB002950C0 /* HeightPickerViewController.xib in Resources */,
+				C2A4D98912F8DBAB002950C0 /* HoursPickerViewController.xib in Resources */,
+				C2A4D98A12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib in Resources */,
+				C2A4D98B12F8DBAB002950C0 /* WeightPickerViewController.xib in Resources */,
+				C2A4D98C12F8DBAB002950C0 /* WeightPredictorViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* Fitness_NutAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				C2A4D96912F8DB8F002950C0 /* ActivityLevelViewController.m in Sources */,
+				C2A4D96A12F8DB8F002950C0 /* AgePickerViewController.m in Sources */,
+				C2A4D96B12F8DB8F002950C0 /* BMRViewController.m in Sources */,
+				C2A4D96C12F8DB8F002950C0 /* BodyFatEstimatorViewController.m in Sources */,
+				C2A4D96D12F8DB8F002950C0 /* BodyFatPickerViewController.m in Sources */,
+				C2A4D96E12F8DB8F002950C0 /* GenderViewController.m in Sources */,
+				C2A4D96F12F8DB8F002950C0 /* GirthPickerViewController.m in Sources */,
+				C2A4D97012F8DB8F002950C0 /* HeightPickerViewController.m in Sources */,
+				C2A4D97112F8DB8F002950C0 /* HoursPickerViewController.m in Sources */,
+				C2A4D97212F8DB8F002950C0 /* MacronutrientNeedsViewController.m in Sources */,
+				C2A4D97312F8DB8F002950C0 /* WeightPickerViewController.m in Sources */,
+				C2A4D97412F8DB8F002950C0 /* WeightPredictorViewController.m in Sources */,
+				C2A4D99F12F8DBDF002950C0 /* AthleteActivityLevel.m in Sources */,
+				C2A4D9A012F8DBDF002950C0 /* AthleteAge.m in Sources */,
+				C2A4D9A112F8DBDF002950C0 /* AthleteGender.m in Sources */,
+				C2A4D9A212F8DBDF002950C0 /* AthleteHeight.m in Sources */,
+				C2A4D9A312F8DBDF002950C0 /* AthleteMeasurement.m in Sources */,
+				C2A4D9A412F8DBDF002950C0 /* AthleteWeight.m in Sources */,
+				C2A4D9A512F8DBDF002950C0 /* FitnessCalculations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
+				PRODUCT_NAME = "Fitness Nut";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
+				PRODUCT_NAME = "Fitness Nut";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Fitness Nut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Fitness Nut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
