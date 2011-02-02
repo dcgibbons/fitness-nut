@@ -9,6 +9,7 @@
 #import "Fitness_NutAppDelegate.h"
 #import "RootViewController.h"
 #import "AthleteAge.h"
+#import "AthleteBodyFat.h"
 #import "AthleteHeight.h"
 #import "AthleteWeight.h"
 #import "AthleteGender.h"
@@ -43,7 +44,9 @@
     NSNumber *height = [defaults objectForKey:@"athleteHeight"];
     NSNumber *heightUnits = [defaults objectForKey:@"athleteHeightUnits"];
     if (height && heightUnits) {
-        AthleteHeight *athleteHeight = [[[AthleteHeight alloc] initWithHeight:height usingUnits:[heightUnits intValue]] autorelease];
+        AthleteHeight *athleteHeight = [[[AthleteHeight alloc] initWithHeight:height 
+                                                                   usingUnits:[heightUnits intValue]] 
+                                        autorelease];
         NSLog(@"Loaded athleteHeight form userDefaults: %@", athleteHeight);
         [userData setObject:athleteHeight forKey:@"athleteHeight"];
     }
@@ -51,7 +54,9 @@
     NSNumber *weight = [defaults objectForKey:@"athleteWeight"];
     NSNumber *weightUnits = [defaults objectForKey:@"athleteWeightUnits"];
     if (weight && weightUnits) {
-        AthleteWeight *athleteWeight = [[[AthleteWeight alloc] initWithWeight:weight usingUnits:[weightUnits intValue]] autorelease];
+        AthleteWeight *athleteWeight = [[[AthleteWeight alloc] initWithWeight:weight 
+                                                                   usingUnits:[weightUnits intValue]] 
+                                        autorelease];
         NSLog(@"Loaded athleteWeight from userDefaults: %@", athleteWeight);
         [userData setObject:athleteWeight forKey:@"athleteWeight"];
     }
@@ -113,14 +118,16 @@
     
     NSNumber *athleteBodyFat = [defaults objectForKey:@"athleteBodyFat"];
     if (athleteBodyFat) {
-        NSLog(@"Loaded athleteBodyFat from userDefaults: %@", athleteBodyFat);
-        [userData setObject:athleteBodyFat forKey:@"athleteBodyFat"];
+        AthleteBodyFat *bodyFat = [[[AthleteBodyFat alloc] initWithBodyFat:athleteBodyFat] autorelease];
+        NSLog(@"Loaded athleteBodyFat from userDefaults: %@", bodyFat);
+        [userData setObject:bodyFat forKey:@"athleteBodyFat"];
     }
     
     NSNumber *desiredBodyFat = [defaults objectForKey:@"desiredBodyFat"];
     if (desiredBodyFat) {
-        NSLog(@"Loaded desiredBodyFat from userDefaults: %@", desiredBodyFat);
-        [userData setObject:desiredBodyFat forKey:@"desiredBodyFat"];
+        AthleteBodyFat *bodyFat = [[[AthleteBodyFat alloc] initWithBodyFat:desiredBodyFat] autorelease];
+        NSLog(@"Loaded desiredBodyFat from userDefaults: %@", bodyFat);
+        [userData setObject:bodyFat forKey:@"desiredBodyFat"];
     }
 }
 
@@ -186,14 +193,14 @@
                      forKey:@"athleteHipsGirthUnits"];
     }
     
-    NSNumber *athleteBodyFat = [userData objectForKey:@"athleteBodyFat"];
+    AthleteBodyFat *athleteBodyFat = [userData objectForKey:@"athleteBodyFat"];
     if (athleteBodyFat) {
-        [defaults setObject:athleteBodyFat forKey:@"athleteBodyFat"];
+        [defaults setObject:athleteBodyFat.bodyFat forKey:@"athleteBodyFat"];
     }
     
-    NSNumber *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
+    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (desiredBodyFat) {
-        [defaults setObject:desiredBodyFat forKey:@"desiredBodyFat"];
+        [defaults setObject:desiredBodyFat.bodyFat forKey:@"desiredBodyFat"];
         NSLog(@"desiredBodyFat saved");
     }
 }
@@ -218,7 +225,6 @@
     return YES;
 }
 
-
 - (void)applicationWillResignActive:(UIApplication *)application 
 {
     /*
@@ -226,7 +232,6 @@
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application 
 {
@@ -240,14 +245,12 @@
     [self saveUserDefaults];
 }
 
-
 - (void)applicationWillEnterForeground:(UIApplication *)application 
 {
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
 }
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application 
 {
@@ -265,17 +268,18 @@
     [self saveUserDefaults];
 }
 
-
 #pragma mark -
 #pragma mark Memory management
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application 
+{
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
 
-- (void)dealloc {
+- (void)dealloc 
+{
     [topLevelController release];
 	[navController release];
     [window release];

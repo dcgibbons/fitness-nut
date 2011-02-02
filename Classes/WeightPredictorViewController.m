@@ -7,6 +7,7 @@
 //
 
 #import "WeightPredictorViewController.h"
+#import "AthleteBodyFat.h"
 #import "AthleteWeight.h"
 #import "Conversions.h"
 
@@ -17,14 +18,14 @@
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
     if (!weight) return nil;
     
-    NSNumber *bodyFat = [userData objectForKey:@"athleteBodyFat"];
+    AthleteBodyFat *bodyFat = [userData objectForKey:@"athleteBodyFat"];
     if (!bodyFat) return nil;
 
-    NSNumber *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
+    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (!desiredBodyFat) return nil;
     
-    double leanMass = [[weight weightAsKilograms] doubleValue] * (1.0 - [bodyFat doubleValue] / 100.0);
-    double predictedMass = leanMass / (1.0 - [desiredBodyFat doubleValue] / 100.0);
+    double leanMass = [[weight weightAsKilograms] doubleValue] * (1.0 - [bodyFat.bodyFat doubleValue] / 100.0);
+    double predictedMass = leanMass / (1.0 - [desiredBodyFat.bodyFat doubleValue] / 100.0);
 
     NSString *format = @"%.2f %@";
     NSString *suffix = @"kg";

@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {942, 3575}}";
-			sepNavSelRange = "{8946, 81}";
-			sepNavVisRange = "{0, 657}";
+			sepNavIntBoundsRect = "{{0, 0}, {865, 3874}}";
+			sepNavSelRange = "{8741, 0}";
+			sepNavVisRange = "{10595, 1334}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Fitness Nut */ = {
@@ -51,9 +51,9 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					764,
+					687,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -68,48 +68,236 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 318298925;
-			PBXWorkspaceStateSaveDate = 318298925;
+			PBXPerProjectTemplateStateSaveDate = 318354331;
+			PBXWorkspaceStateSaveDate = 318354331;
 		};
 		perUserProjectItems = {
-			C2A4D9C612F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9C612F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9C812F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9C812F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9C912F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9C912F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9CB12F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9CB12F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9CC12F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9CC12F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9CD12F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9CD12F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9CF12F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9CF12F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9D012F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9D012F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9D212F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9D212F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9D312F8EC66002950C0 /* PBXTextBookmark */ = C2A4D9D312F8EC66002950C0 /* PBXTextBookmark */;
-			C2A4D9D512F8EC72002950C0 /* PBXTextBookmark */ = C2A4D9D512F8EC72002950C0 /* PBXTextBookmark */;
-			C2A4D9D612F8EC87002950C0 /* PBXTextBookmark */ = C2A4D9D612F8EC87002950C0 /* PBXTextBookmark */;
-			C2A4D9D712F8EC87002950C0 /* PBXTextBookmark */ = C2A4D9D712F8EC87002950C0 /* PBXTextBookmark */;
-			C2A4D9D812F8EC87002950C0 /* PBXTextBookmark */ = C2A4D9D812F8EC87002950C0 /* PBXTextBookmark */;
-			C2A4D9E812F8ED9B002950C0 /* PBXTextBookmark */ = C2A4D9E812F8ED9B002950C0 /* PBXTextBookmark */;
-			C2A4D9E912F8ED9B002950C0 /* PBXTextBookmark */ = C2A4D9E912F8ED9B002950C0 /* PBXTextBookmark */;
-			C2A4D9EA12F8ED9B002950C0 /* PBXTextBookmark */ = C2A4D9EA12F8ED9B002950C0 /* PBXTextBookmark */;
-			C2A4D9ED12F8EDA0002950C0 /* PBXTextBookmark */ = C2A4D9ED12F8EDA0002950C0 /* PBXTextBookmark */;
-			C2A4D9EE12F8EDB0002950C0 /* PBXTextBookmark */ = C2A4D9EE12F8EDB0002950C0 /* PBXTextBookmark */;
-			C2A4D9EF12F8EE78002950C0 /* PBXTextBookmark */ = C2A4D9EF12F8EE78002950C0 /* PBXTextBookmark */;
-			C2A4D9F012F8EE78002950C0 /* PBXTextBookmark */ = C2A4D9F012F8EE78002950C0 /* PBXTextBookmark */;
-			C2A4D9F212F8EE7C002950C0 /* PBXTextBookmark */ = C2A4D9F212F8EE7C002950C0 /* PBXTextBookmark */;
-			C2A4D9F912F8EFEE002950C0 /* PBXTextBookmark */ = C2A4D9F912F8EFEE002950C0 /* PBXTextBookmark */;
-			C2A4D9FA12F8EFEE002950C0 /* PBXTextBookmark */ = C2A4D9FA12F8EFEE002950C0 /* PBXTextBookmark */;
-			C2A4D9FB12F8EFEE002950C0 /* PBXTextBookmark */ = C2A4D9FB12F8EFEE002950C0 /* PBXTextBookmark */;
-			C2A4D9FC12F8F07E002950C0 /* PBXTextBookmark */ = C2A4D9FC12F8F07E002950C0 /* PBXTextBookmark */;
-			C2A4D9FD12F8F07E002950C0 /* PBXTextBookmark */ = C2A4D9FD12F8F07E002950C0 /* PBXTextBookmark */;
-			C2A4D9FE12F8F07E002950C0 /* PBXTextBookmark */ = C2A4D9FE12F8F07E002950C0 /* PBXTextBookmark */;
-			C2A4D9FF12F8F07E002950C0 /* PBXTextBookmark */ = C2A4D9FF12F8F07E002950C0 /* PBXTextBookmark */;
-			C2A4DA0012F8F07E002950C0 /* PBXTextBookmark */ = C2A4DA0012F8F07E002950C0 /* PBXTextBookmark */;
-			C2A4DA0612F8F165002950C0 /* PBXTextBookmark */ = C2A4DA0612F8F165002950C0 /* PBXTextBookmark */;
-			C2A4DA0712F8F165002950C0 /* PBXTextBookmark */ = C2A4DA0712F8F165002950C0 /* PBXTextBookmark */;
-			C2A4DA0812F8F165002950C0 /* PBXTextBookmark */ = C2A4DA0812F8F165002950C0 /* PBXTextBookmark */;
-			C2A4DA1412F8F22A002950C0 /* PBXTextBookmark */ = C2A4DA1412F8F22A002950C0 /* PBXTextBookmark */;
+			C26A439112F9B3A300524825 /* PBXTextBookmark */ = C26A439112F9B3A300524825 /* PBXTextBookmark */;
+			C26A43AB12F9F1DD00524825 /* PBXTextBookmark */ = C26A43AB12F9F1DD00524825 /* PBXTextBookmark */;
+			C26A43AC12F9F1DD00524825 /* PBXTextBookmark */ = C26A43AC12F9F1DD00524825 /* PBXTextBookmark */;
+			C26A43AD12F9F1DD00524825 /* PBXTextBookmark */ = C26A43AD12F9F1DD00524825 /* PBXTextBookmark */;
+			C26A43AE12F9F1DD00524825 /* PBXTextBookmark */ = C26A43AE12F9F1DD00524825 /* PBXTextBookmark */;
+			C26A43AF12F9F1DD00524825 /* PBXTextBookmark */ = C26A43AF12F9F1DD00524825 /* PBXTextBookmark */;
+			C26A43B012F9F1DD00524825 /* PBXTextBookmark */ = C26A43B012F9F1DD00524825 /* PBXTextBookmark */;
+			C26A43B812F9F1F100524825 /* PBXTextBookmark */ = C26A43B812F9F1F100524825 /* PBXTextBookmark */;
+			C26A43BB12F9F20700524825 /* PBXTextBookmark */ = C26A43BB12F9F20700524825 /* PBXTextBookmark */;
+			C26A43BC12F9F20D00524825 /* PBXTextBookmark */ = C26A43BC12F9F20D00524825 /* PBXTextBookmark */;
+			C26A43BD12F9F20F00524825 /* PBXTextBookmark */ = C26A43BD12F9F20F00524825 /* PBXTextBookmark */;
+			C26A43BE12F9F21700524825 /* PBXTextBookmark */ = C26A43BE12F9F21700524825 /* PBXTextBookmark */;
+			C26A43C912F9F27200524825 /* PBXTextBookmark */ = C26A43C912F9F27200524825 /* PBXTextBookmark */;
+			C26A43CA12F9F27200524825 /* PBXTextBookmark */ = C26A43CA12F9F27200524825 /* PBXTextBookmark */;
+			C26A43CB12F9F27200524825 /* PBXTextBookmark */ = C26A43CB12F9F27200524825 /* PBXTextBookmark */;
+			C26A43CC12F9F27200524825 /* PBXTextBookmark */ = C26A43CC12F9F27200524825 /* PBXTextBookmark */;
+			C26A43CD12F9F27200524825 /* PBXTextBookmark */ = C26A43CD12F9F27200524825 /* PBXTextBookmark */;
+			C26A43D312F9F28D00524825 /* PBXTextBookmark */ = C26A43D312F9F28D00524825 /* PBXTextBookmark */;
+			C2A4D9C612F8EC66002950C0 = C2A4D9C612F8EC66002950C0 /* PBXTextBookmark */;
+			C2A4D9C912F8EC66002950C0 = C2A4D9C912F8EC66002950C0 /* PBXTextBookmark */;
+			C2A4D9CB12F8EC66002950C0 = C2A4D9CB12F8EC66002950C0 /* PBXTextBookmark */;
+			C2A4D9CD12F8EC66002950C0 = C2A4D9CD12F8EC66002950C0 /* PBXTextBookmark */;
+			C2A4D9D012F8EC66002950C0 = C2A4D9D012F8EC66002950C0 /* PBXTextBookmark */;
+			C2A4D9FD12F8F07E002950C0 = C2A4D9FD12F8F07E002950C0 /* PBXTextBookmark */;
+			C2A4D9FE12F8F07E002950C0 = C2A4D9FE12F8F07E002950C0 /* PBXTextBookmark */;
+			C2A4DA0612F8F165002950C0 = C2A4DA0612F8F165002950C0 /* PBXTextBookmark */;
+			C2A4DA0712F8F165002950C0 = C2A4DA0712F8F165002950C0 /* PBXTextBookmark */;
+			C2A4DA2112F9257D002950C0 = C2A4DA2112F9257D002950C0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	C26A439112F9B3A300524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 279";
+		rLen = 0;
+		rLoc = 11816;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 0;
+	};
+	C26A43A012F9F08C00524825 /* AthleteBodyFat.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {865, 680}}";
+			sepNavSelRange = "{184, 160}";
+			sepNavVisRange = "{0, 350}";
+		};
+	};
+	C26A43A112F9F08C00524825 /* AthleteBodyFat.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {865, 682}}";
+			sepNavSelRange = "{438, 0}";
+			sepNavVisRange = "{0, 477}";
+		};
+	};
+	C26A43AB12F9F1DD00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D99612F8DBDF002950C0 /* AthleteHeight.h */;
+		name = "AthleteHeight.h: 11";
+		rLen = 378;
+		rLoc = 190;
+		rType = 0;
+		vrLen = 569;
+		vrLoc = 0;
+	};
+	C26A43AC12F9F1DD00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26A43A012F9F08C00524825 /* AthleteBodyFat.h */;
+		name = "AthleteBodyFat.h: 11";
+		rLen = 160;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 350;
+		vrLoc = 0;
+	};
+	C26A43AD12F9F1DD00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */;
+		name = "AthleteBodyFat.m: 18";
+		rLen = 0;
+		rLoc = 285;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 0;
+	};
+	C26A43AE12F9F1DD00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */;
+		name = "WeightPredictorViewController.m: 28";
+		rLen = 0;
+		rLoc = 889;
+		rType = 0;
+		vrLen = 1541;
+		vrLoc = 0;
+	};
+	C26A43AF12F9F1DD00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 279";
+		rLen = 0;
+		rLoc = 11816;
+		rType = 0;
+		vrLen = 1711;
+		vrLoc = 0;
+	};
+	C26A43B012F9F1DD00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 196";
+		rLen = 0;
+		rLoc = 8589;
+		rType = 0;
+		vrLen = 2122;
+		vrLoc = 7456;
+	};
+	C26A43B812F9F1F100524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 198";
+		rLen = 0;
+		rLoc = 8741;
+		rType = 0;
+		vrLen = 2056;
+		vrLoc = 7550;
+	};
+	C26A43BB12F9F20700524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 198";
+		rLen = 0;
+		rLoc = 8741;
+		rType = 0;
+		vrLen = 2056;
+		vrLoc = 7550;
+	};
+	C26A43BC12F9F20D00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 198";
+		rLen = 0;
+		rLoc = 8741;
+		rType = 0;
+		vrLen = 347;
+		vrLoc = 11582;
+	};
+	C26A43BD12F9F20F00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 198";
+		rLen = 0;
+		rLoc = 8741;
+		rType = 0;
+		vrLen = 1334;
+		vrLoc = 10595;
+	};
+	C26A43BE12F9F21700524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 198";
+		rLen = 0;
+		rLoc = 8741;
+		rType = 0;
+		vrLen = 348;
+		vrLoc = 11581;
+	};
+	C26A43C912F9F27200524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 198";
+		rLen = 0;
+		rLoc = 8741;
+		rType = 0;
+		vrLen = 1334;
+		vrLoc = 10595;
+	};
+	C26A43CA12F9F27200524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */;
+		name = "BodyFatPickerViewController.h: 27";
+		rLen = 0;
+		rLoc = 658;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 0;
+	};
+	C26A43CB12F9F27200524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */;
+		name = "BodyFatPickerViewController.m: 30";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 1356;
+		vrLoc = 2026;
+	};
+	C26A43CC12F9F27200524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */;
+		name = "AthleteBodyFat.m: 18";
+		rLen = 0;
+		rLoc = 285;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 0;
+	};
+	C26A43CD12F9F27200524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */;
+		name = "AthleteBodyFat.m: 26";
+		rLen = 0;
+		rLoc = 438;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 0;
+	};
+	C26A43D312F9F28D00524825 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */;
+		name = "AthleteBodyFat.m: 26";
+		rLen = 0;
+		rLoc = 438;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 0;
 	};
 	C2A4D93E12F8DB2D002950C0 /* Fitness Nut */ = {
 		isa = PBXExecutable;
@@ -155,11 +343,32 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
+	C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {865, 680}}";
+			sepNavSelRange = "{658, 0}";
+			sepNavVisRange = "{0, 1000}";
+		};
+	};
+	C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {865, 1755}}";
+			sepNavSelRange = "{783, 0}";
+			sepNavVisRange = "{2026, 1356}";
+		};
+	};
 	C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {942, 3367}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1004}";
+			sepNavIntBoundsRect = "{{0, 0}, {865, 3458}}";
+			sepNavSelRange = "{889, 0}";
+			sepNavVisRange = "{0, 1541}";
+		};
+	};
+	C2A4D99612F8DBDF002950C0 /* AthleteHeight.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {865, 680}}";
+			sepNavSelRange = "{190, 378}";
+			sepNavVisRange = "{0, 569}";
 		};
 	};
 	C2A4D9C612F8EC66002950C0 /* PBXTextBookmark */ = {
@@ -174,19 +383,10 @@
 	};
 	C2A4D9C712F8EC66002950C0 /* TopLevelController.m */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
 		name = TopLevelController.m;
 		path = "/Users/chadwick/Projects/Fitness Calculator/TopLevelController.m";
 		sourceTree = "<absolute>";
-	};
-	C2A4D9C812F8EC66002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
-		name = "RootViewController.m: 12";
-		rLen = 0;
-		rLoc = 202;
-		rType = 0;
-		vrLen = 881;
-		vrLoc = 0;
 	};
 	C2A4D9C912F8EC66002950C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -200,6 +400,7 @@
 	};
 	C2A4D9CA12F8EC66002950C0 /* TopLevelController.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = TopLevelController.h;
 		path = "/Users/chadwick/Projects/Fitness Calculator/TopLevelController.h";
 		sourceTree = "<absolute>";
@@ -214,16 +415,6 @@
 		vrLen = 1004;
 		vrLoc = 0;
 	};
-	C2A4D9CC12F8EC66002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */;
-		name = "RootViewController.h: 11";
-		rLen = 0;
-		rLoc = 272;
-		rType = 0;
-		vrLen = 557;
-		vrLoc = 0;
-	};
 	C2A4D9CD12F8EC66002950C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C2A4D9CE12F8EC66002950C0 /* Fitness_CalculatorAppDelegate.m */;
@@ -236,19 +427,10 @@
 	};
 	C2A4D9CE12F8EC66002950C0 /* Fitness_CalculatorAppDelegate.m */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
 		name = Fitness_CalculatorAppDelegate.m;
 		path = "/Users/chadwick/Projects/Fitness Calculator/Classes/Fitness_CalculatorAppDelegate.m";
 		sourceTree = "<absolute>";
-	};
-	C2A4D9CF12F8EC66002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 682;
-		vrLoc = 3;
 	};
 	C2A4D9D012F8EC66002950C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -262,189 +444,10 @@
 	};
 	C2A4D9D112F8EC66002950C0 /* Fitness_CalculatorAppDelegate.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = Fitness_CalculatorAppDelegate.h;
 		path = "/Users/chadwick/Projects/Fitness Calculator/Classes/Fitness_CalculatorAppDelegate.h";
 		sourceTree = "<absolute>";
-	};
-	C2A4D9D212F8EC66002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */;
-		name = "Fitness_NutAppDelegate.h: 11";
-		rLen = 0;
-		rLoc = 183;
-		rType = 0;
-		vrLen = 709;
-		vrLoc = 0;
-	};
-	C2A4D9D312F8EC66002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */;
-		name = "Fitness_NutAppDelegate.h: 22";
-		rLen = 0;
-		rLoc = 531;
-		rType = 0;
-		vrLen = 718;
-		vrLoc = 0;
-	};
-	C2A4D9D512F8EC72002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */;
-		name = "Fitness_NutAppDelegate.h: 22";
-		rLen = 0;
-		rLoc = 531;
-		rType = 0;
-		vrLen = 437;
-		vrLoc = 280;
-	};
-	C2A4D9D612F8EC87002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */;
-		name = "Fitness_NutAppDelegate.h: 22";
-		rLen = 0;
-		rLoc = 531;
-		rType = 0;
-		vrLen = 718;
-		vrLoc = 0;
-	};
-	C2A4D9D712F8EC87002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 682;
-		vrLoc = 3;
-	};
-	C2A4D9D812F8EC87002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 1";
-		rLen = 11477;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1074;
-		vrLoc = 8339;
-	};
-	C2A4D9E812F8ED9B002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */;
-		name = "Fitness_NutAppDelegate.h: 22";
-		rLen = 0;
-		rLoc = 531;
-		rType = 0;
-		vrLen = 718;
-		vrLoc = 0;
-	};
-	C2A4D9E912F8ED9B002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 214";
-		rLen = 81;
-		rLoc = 8946;
-		rType = 0;
-		vrLen = 705;
-		vrLoc = 0;
-	};
-	C2A4D9EA12F8ED9B002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 658;
-		vrLoc = 0;
-	};
-	C2A4D9ED12F8EDA0002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 658;
-		vrLoc = 0;
-	};
-	C2A4D9EE12F8EDB0002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 658;
-		vrLoc = 0;
-	};
-	C2A4D9EF12F8EE78002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */;
-		name = "Fitness_NutAppDelegate.h: 22";
-		rLen = 0;
-		rLoc = 531;
-		rType = 0;
-		vrLen = 437;
-		vrLoc = 280;
-	};
-	C2A4D9F012F8EE78002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 331;
-		vrLoc = 298;
-	};
-	C2A4D9F212F8EE7C002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 683;
-		vrLoc = 0;
-	};
-	C2A4D9F912F8EFEE002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
-		name = "RootViewController.m: 12";
-		rLen = 0;
-		rLoc = 202;
-		rType = 0;
-		vrLen = 772;
-		vrLoc = 4965;
-	};
-	C2A4D9FA12F8EFEE002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 20";
-		rLen = 0;
-		rLoc = 429;
-		rType = 0;
-		vrLen = 1378;
-		vrLoc = 5640;
-	};
-	C2A4D9FB12F8EFEE002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 208";
-		rLen = 0;
-		rLoc = 8857;
-		rType = 0;
-		vrLen = 725;
-		vrLoc = 94;
-	};
-	C2A4D9FC12F8F07E002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
-		name = "RootViewController.m: 12";
-		rLen = 0;
-		rLoc = 202;
-		rType = 0;
-		vrLen = 702;
-		vrLoc = 4965;
 	};
 	C2A4D9FD12F8F07E002950C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -466,26 +469,6 @@
 		vrLen = 718;
 		vrLoc = 0;
 	};
-	C2A4D9FF12F8F07E002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 208";
-		rLen = 0;
-		rLoc = 8857;
-		rType = 0;
-		vrLen = 823;
-		vrLoc = 246;
-	};
-	C2A4DA0012F8F07E002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 25";
-		rLen = 0;
-		rLoc = 658;
-		rType = 0;
-		vrLen = 949;
-		vrLoc = 8212;
-	};
 	C2A4DA0612F8F165002950C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
@@ -501,29 +484,19 @@
 		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
 		name = "Fitness_NutAppDelegate.m: 205";
 		rLen = 4;
-		rLoc = 8970;
+		rLoc = 9425;
 		rType = 0;
 		vrLen = 1222;
 		vrLoc = 5953;
 	};
-	C2A4DA0812F8F165002950C0 /* PBXTextBookmark */ = {
+	C2A4DA2112F9257D002950C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 212";
-		rLen = 81;
-		rLoc = 8946;
+		name = "Fitness_NutAppDelegate.m: 279";
+		rLen = 0;
+		rLoc = 11816;
 		rType = 0;
-		vrLen = 1080;
-		vrLoc = 8720;
-	};
-	C2A4DA1412F8F22A002950C0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
-		name = "Fitness_NutAppDelegate.m: 212";
-		rLen = 81;
-		rLoc = 8946;
-		rType = 0;
-		vrLen = 657;
+		vrLen = 1069;
 		vrLoc = 0;
 	};
 }

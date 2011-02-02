@@ -27,7 +27,7 @@
     // pick the selected row based upon a default or the user's existing value
     double bodyFat = 18.5;
     if (self.data) {
-        bodyFat = [self.data doubleValue];
+        bodyFat = [self.data.bodyFat doubleValue];
     }
     double intPart;
     double fracPart = modf(bodyFat, &intPart);
@@ -127,7 +127,7 @@
     double frac = [self.pickerView selectedRowInComponent:1] / 10.0;
     bodyFat += frac;
     
-    self.data = [NSNumber numberWithDouble:bodyFat];
+    self.data = [[[AthleteBodyFat alloc] initWithBodyFat:[NSNumber numberWithDouble:bodyFat]] autorelease];
     [delegate athleteDataInputDone:self withDataNamed:self.dataName withDataValue:data];
 }
 

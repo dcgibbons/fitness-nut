@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
+#import "AthleteBodyFat.h"
 
 
 @interface BodyFatPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     NSString *dataName;
-    NSNumber *data;
+    AthleteBodyFat *data;
     id<AthleteDataDelegate> delegate;
     
 @private
@@ -23,7 +24,7 @@
 }
 
 @property (nonatomic, retain) NSString *dataName;
-@property (nonatomic, retain) NSNumber *data;
+@property (nonatomic, retain) AthleteBodyFat *data;
 @property (nonatomic, assign) id<AthleteDataDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;

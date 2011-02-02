@@ -15,6 +15,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		C26A43A212F9F08C00524825 /* AthleteBodyFat.m in Sources */ = {isa = PBXBuildFile; fileRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */; };
 		C2A4D96912F8DB8F002950C0 /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */; };
 		C2A4D96A12F8DB8F002950C0 /* AgePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */; };
 		C2A4D96B12F8DB8F002950C0 /* BMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */; };
@@ -62,6 +63,8 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fitness_Nut-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C26A43A012F9F08C00524825 /* AthleteBodyFat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteBodyFat.h; sourceTree = "<group>"; };
+		C26A43A112F9F08C00524825 /* AthleteBodyFat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteBodyFat.m; sourceTree = "<group>"; };
 		C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
 		C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
 		C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgePickerViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				C2A4D99012F8DBDF002950C0 /* AthleteActivityLevel.m */,
 				C2A4D99112F8DBDF002950C0 /* AthleteAge.h */,
 				C2A4D99212F8DBDF002950C0 /* AthleteAge.m */,
+				C26A43A012F9F08C00524825 /* AthleteBodyFat.h */,
+				C26A43A112F9F08C00524825 /* AthleteBodyFat.m */,
 				C2A4D99312F8DBDF002950C0 /* AthleteDataDelegate.h */,
 				C2A4D99412F8DBDF002950C0 /* AthleteGender.h */,
 				C2A4D99512F8DBDF002950C0 /* AthleteGender.m */,
@@ -338,6 +343,7 @@
 				C2A4D9A312F8DBDF002950C0 /* AthleteMeasurement.m in Sources */,
 				C2A4D9A412F8DBDF002950C0 /* AthleteWeight.m in Sources */,
 				C2A4D9A512F8DBDF002950C0 /* FitnessCalculations.m in Sources */,
+				C26A43A212F9F08C00524825 /* AthleteBodyFat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
