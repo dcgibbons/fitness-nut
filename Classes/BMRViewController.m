@@ -79,7 +79,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize sections, userData;
+@synthesize sections, userData, tableView, infoButton;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -209,12 +209,12 @@
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView 
+- (UITableViewCell *)tableView:(UITableView *)aTableView 
          cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 
                                        reuseIdentifier:CellIdentifier] autorelease];
@@ -272,10 +272,6 @@
                                               initWithNibName:viewClassName bundle:nil];
     
     // TODO: BOGUS design, use a datasource instead?
-//    NSString *dataName = [rowDict objectForKey:@"dataName"];
-//    [detailViewController performSelector:NSSelectorFromString(dataName)
-//                               withObject:[userData objectForKey:dataName]];
-//    [detailViewController performSelector:@selector(setDelegate:) withObject:self];
     NSString *dataName = [rowDict objectForKey:@"dataName"];
     [detailViewController setDataName:dataName];
     [detailViewController setData:[userData objectForKey:dataName]];
@@ -316,10 +312,14 @@
     
     self.sections = nil;
     self.userData = nil;
+    self.tableView = nil;
+    self.infoButton = nil;
 }
 
 - (void)dealloc 
 {
+    [infoButton release];
+    [tableView release];
     [sections release];
     [userData release];
     [super dealloc];

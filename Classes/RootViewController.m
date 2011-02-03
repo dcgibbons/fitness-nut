@@ -172,8 +172,8 @@
     NSString *viewClassName = [d objectForKey:@"viewClass"];
     
     if (viewClassName) {
-        UIViewController *controller = [[NSClassFromString(viewClassName) alloc]
-                                        initWithStyle:UITableViewStyleGrouped];
+        UIViewController *controller = [[NSClassFromString(viewClassName) alloc] 
+                                        initWithNibName:viewClassName bundle:nil];
         [controller performSelector:@selector(setUserData:) withObject:self.userData];
         
         // Pass the selected object to the new view controller.

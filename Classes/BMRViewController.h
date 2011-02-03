@@ -10,16 +10,23 @@
 #import "AgePickerViewController.h"
 #import "AthleteDataDelegate.h"
 
-@interface BMRViewController : UITableViewController <UINavigationControllerDelegate, AthleteDataDelegate> 
+@interface BMRViewController : UIViewController <UITableViewDelegate, 
+                                                 UITableViewDataSource, 
+                                                 UINavigationControllerDelegate, 
+                                                 AthleteDataDelegate> 
 {
     NSMutableDictionary *userData;
 
 @private
     NSArray *sections;
+    UITableView *tableView;
+    UIButton *infoButton;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;
 @property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIButton *infoButton;
 
 - (NSString *)calculateBMR;
 
