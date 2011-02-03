@@ -26,5 +26,4 @@
     return [NSString stringWithFormat:@"%.1f%%", [bodyFat doubleValue]];
 }
 
-
 @end

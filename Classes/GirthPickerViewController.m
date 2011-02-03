@@ -7,6 +7,7 @@
 //
 
 #import "GirthPickerViewController.h"
+#import "InfoViewController.h"
 
 @implementation GirthPickerViewController
 
@@ -35,7 +36,7 @@
 #pragma mark Properties
 
 @synthesize data, dataName, delegate;
-@synthesize pickerView, unitsControl, cancelButton, doneButton;
+@synthesize pickerView, unitsControl, cancelButton, doneButton, infoButton;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -163,6 +164,20 @@
     [delegate athleteDataInputDone:self withDataNamed:dataName withDataValue:data];
 }
 
+- (IBAction)info:(id)sender
+{
+    NSString *nibName = [NSString stringWithFormat:@"%@_ViewController", self.dataName];
+    NSLog(@"Looking for InfoViewController with nibName of %@", nibName);
+    InfoViewController *controller = [[InfoViewController alloc] initWithNibName:nibName
+                                                                          bundle:nil];
+    controller.delegate = self;
+    
+    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:controller animated:YES];
+
+	[controller release];
+}
+
 - (IBAction)changeUnits:(id)sender
 {
     BOOL isInches = ![self isInches];
@@ -187,5 +202,14 @@
     [self.pickerView reloadAllComponents];
     [self selectRowsFromMeasurement:newMeasurement];
 }
+
+#pragma mark -
+#pragma mark InfoViewControllerDelegate methods
+
+- (void)infoViewControllerDidFinish:(InfoViewController *)controller {
+    
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 @end

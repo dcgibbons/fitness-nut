@@ -7,6 +7,7 @@
 //
 
 #import "BodyFatEstimatorViewController.h"
+#import "AthleteBodyFat.h"
 #import "AthleteHeight.h"
 #import "AthleteWeight.h"
 #import "AthleteGender.h"
@@ -54,7 +55,12 @@
         - 78.387;
     }
 
-    return [NSString stringWithFormat:@"%.0f%%", ceil(bodyFat)];
+    // Sometimes, it is awesome to just hack and not care.
+    bodyFat = ceil(bodyFat);
+    [userData setObject:[[[AthleteBodyFat alloc] initWithBodyFat:[NSNumber numberWithDouble:bodyFat]] autorelease]
+                 forKey:@"athleteBodyFat"];
+    
+    return [NSString stringWithFormat:@"%.0f%%", bodyFat];
 }
 
 #pragma mark -
