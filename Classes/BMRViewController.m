@@ -161,13 +161,13 @@
                       ],
                      
                      [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"BMR", @"sectionTitle",
+                      @"Basal Metabolic Rate", @"sectionTitle",
                       bmrItems, @"rows",
                       nil
                       ],
                      
                      [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"TDEE", @"sectionTitle",
+                      @"Total Daily Energy Expenditure", @"sectionTitle",
                       tdeeItems, @"rows",
                       nil
                       ],

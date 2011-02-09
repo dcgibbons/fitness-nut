@@ -70,16 +70,16 @@
                                      nil
                                      ],
 
+                                    [NSDictionary dictionaryWithObjectsAndKeys:
+                                     @"desired body fat", @"title",
+                                     @"BodyFatPickerViewController", @"viewController",
+                                     @"desiredBodyFat", @"dataName",
+                                     nil
+                                     ],
+                                    
                                     nil];
     
     NSArray *resultItems = [NSArray arrayWithObjects:
-                            
-                            [NSDictionary dictionaryWithObjectsAndKeys:
-                             @"desired body fat", @"title",
-                             @"BodyFatPickerViewController", @"viewController",
-                             @"desiredBodyFat", @"dataName",
-                             nil
-                             ],
                             
                             [NSDictionary dictionaryWithObjectsAndKeys:
                              @"predicted weight", @"title",

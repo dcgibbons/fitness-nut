@@ -7,6 +7,7 @@
 //
 
 #import "MacronutrientNeedsViewController.h"
+#import "AthleteType.h"
 #import "AthleteWeight.h"
 #import "FitnessCalculations.h"
 
@@ -21,6 +22,9 @@
     NSNumber *hours = [userData objectForKey:@"athleteHours"];
     if (!hours) return nil;
 
+    AthleteType *type = [userData objectForKey:@"athleteType"];
+    if (!type) return nil;
+
     int grams = [FitnessCalculations carbohydrateNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
                                                                 usingHours:[hours unsignedIntValue]];
     return [NSString stringWithFormat:@"%u gm", grams];
@@ -33,6 +37,9 @@
     
     NSNumber *hours = [userData objectForKey:@"athleteHours"];
     if (!hours) return nil;
+    
+    AthleteType *type = [userData objectForKey:@"athleteType"];
+    if (!type) return nil;
     
     int grams = [FitnessCalculations proteinNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
                                                            usingHours:[hours unsignedIntValue]];
@@ -47,6 +54,9 @@
     NSNumber *hours = [userData objectForKey:@"athleteHours"];
     if (!hours) return nil;
     
+    AthleteType *type = [userData objectForKey:@"athleteType"];
+    if (!type) return nil;
+    
     int grams = [FitnessCalculations fatNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
                                                        usingHours:[hours unsignedIntValue]];
     return [NSString stringWithFormat:@"%u gm", grams];
@@ -59,6 +69,9 @@
     
     NSNumber *hours = [userData objectForKey:@"athleteHours"];
     if (!hours) return nil;
+    
+    AthleteType *type = [userData objectForKey:@"athleteType"];
+    if (!type) return nil;
     
     int carbs = [FitnessCalculations carbohydrateNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
                                                                 usingHours:[hours unsignedIntValue]];
@@ -91,6 +104,13 @@
                                      @"weight", @"title",
                                      @"WeightPickerViewController", @"viewController",
                                      @"athleteWeight", @"dataName",
+                                     nil
+                                     ],
+                                    
+                                    [NSDictionary dictionaryWithObjectsAndKeys:
+                                     @"athlete type", @"title",
+                                     @"AthleteTypeViewController", @"viewController",
+                                     @"athleteType", @"dataName",
                                      nil
                                      ],
 

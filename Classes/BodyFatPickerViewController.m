@@ -25,14 +25,14 @@
     self.title = @"Athlete Body Fat";
     
     // pick the selected row based upon a default or the user's existing value
-    double bodyFat = 18.5;
+    double bodyFat = 18;
     if (self.data) {
         bodyFat = [self.data.bodyFat doubleValue];
     }
     double intPart;
     double fracPart = modf(bodyFat, &intPart);
     [self.pickerView selectRow:(int)intPart - 4 inComponent:0 animated:NO];
-    [self.pickerView selectRow:(int)(fracPart * 10.0) inComponent:1 animated:NO];
+//    [self.pickerView selectRow:(int)(fracPart * 10.0) inComponent:1 animated:NO];
 }
 
 /*
@@ -87,7 +87,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView 
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component 
@@ -105,8 +105,8 @@
     NSString *title;
     if (component == 0) {
         title = [NSString stringWithFormat:@"%d", row + 4];
-    } else {
-        title = [NSString stringWithFormat:@"%d", row];
+//    } else {
+//        title = [NSString stringWithFormat:@"%d", row];
     }
     return title;
 }
@@ -124,8 +124,8 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     double bodyFat = [self.pickerView selectedRowInComponent:0] + 4;
-    double frac = [self.pickerView selectedRowInComponent:1] / 10.0;
-    bodyFat += frac;
+//    double frac = [self.pickerView selectedRowInComponent:1] / 10.0;
+//    bodyFat += frac;
     
     self.data = [[[AthleteBodyFat alloc] initWithBodyFat:[NSNumber numberWithDouble:bodyFat]] autorelease];
     [delegate athleteDataInputDone:self withDataNamed:self.dataName withDataValue:data];

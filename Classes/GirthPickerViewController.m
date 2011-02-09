@@ -206,8 +206,8 @@
 #pragma mark -
 #pragma mark InfoViewControllerDelegate methods
 
-- (void)infoViewControllerDidFinish:(InfoViewController *)controller {
-    
+- (void)infoViewControllerDidFinish:(InfoViewController *)controller 
+{
 	[self dismissModalViewControllerAnimated:YES];
 }
 

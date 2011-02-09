@@ -51,6 +51,9 @@
 		C2A4D9A312F8DBDF002950C0 /* AthleteMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99912F8DBDF002950C0 /* AthleteMeasurement.m */; };
 		C2A4D9A412F8DBDF002950C0 /* AthleteWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */; };
 		C2A4D9A512F8DBDF002950C0 /* FitnessCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */; };
+		C2BF3C101302FB3500AF939D /* AthleteTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BF3C0F1302FB3500AF939D /* AthleteTypeViewController.m */; };
+		C2BF3C121302FB7C00AF939D /* AthleteTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */; };
+		C2BF3C1A1302FCD000AF939D /* AthleteType.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BF3C191302FCD000AF939D /* AthleteType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +129,11 @@
 		C2A4D99C12F8DBDF002950C0 /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
 		C2A4D99D12F8DBDF002950C0 /* FitnessCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FitnessCalculations.h; sourceTree = "<group>"; };
 		C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitnessCalculations.m; sourceTree = "<group>"; };
+		C2BF3C0E1302FB3500AF939D /* AthleteTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteTypeViewController.h; sourceTree = "<group>"; };
+		C2BF3C0F1302FB3500AF939D /* AthleteTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteTypeViewController.m; sourceTree = "<group>"; };
+		C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AthleteTypeViewController.xib; sourceTree = "<group>"; };
+		C2BF3C181302FCD000AF939D /* AthleteType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteType.h; sourceTree = "<group>"; };
+		C2BF3C191302FCD000AF939D /* AthleteType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,8 @@
 				C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */,
 				C2A4D99812F8DBDF002950C0 /* AthleteMeasurement.h */,
 				C2A4D99912F8DBDF002950C0 /* AthleteMeasurement.m */,
+				C2BF3C181302FCD000AF939D /* AthleteType.h */,
+				C2BF3C191302FCD000AF939D /* AthleteType.m */,
 				C2A4D99A12F8DBDF002950C0 /* AthleteWeight.h */,
 				C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */,
 				C2A4D99C12F8DBDF002950C0 /* Conversions.h */,
@@ -165,6 +175,8 @@
 				C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */,
 				C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */,
 				C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */,
+				C2BF3C0E1302FB3500AF939D /* AthleteTypeViewController.h */,
+				C2BF3C0F1302FB3500AF939D /* AthleteTypeViewController.m */,
 				C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */,
 				C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */,
 				C2A4D95512F8DB8F002950C0 /* BMRViewController.h */,
@@ -230,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */,
+				C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */,
 				C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */,
 				C2A4D97712F8DBAB002950C0 /* BMRViewController.xib */,
 				C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */,
@@ -328,6 +341,7 @@
 				C25C592C12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib in Resources */,
 				C25C599012FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib in Resources */,
 				C25C599612FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib in Resources */,
+				C2BF3C121302FB7C00AF939D /* AthleteTypeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +376,8 @@
 				C2A4D9A512F8DBDF002950C0 /* FitnessCalculations.m in Sources */,
 				C26A43A212F9F08C00524825 /* AthleteBodyFat.m in Sources */,
 				C25C592A12FB0656004A14E4 /* InfoViewController.m in Sources */,
+				C2BF3C101302FB3500AF939D /* AthleteTypeViewController.m in Sources */,
+				C2BF3C1A1302FCD000AF939D /* AthleteType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
 #import "AthleteGender.h"
 #import "AthleteActivityLevel.h"
 #import "AthleteMeasurement.h"
+#import "AthleteType.h"
 
 @implementation Fitness_NutAppDelegate
 
@@ -75,6 +76,14 @@
         athleteActivityLevel.activityLevel = [activityLevel intValue];
         NSLog(@"Loaded athleteActivityLevel from userDefaults: %@", athleteActivityLevel);
         [userData setObject:athleteActivityLevel forKey:@"athleteActivityLevel"];
+    }
+    
+    NSNumber *type = [defaults objectForKey:@"athleteType"];
+    if (type) {
+        AthleteType *athleteType = [[AthleteType alloc] init];
+        athleteType.athleteType = [type intValue];
+        NSLog(@"loaded athleteType from userDefaults: %@", athleteType);
+        [userData setObject:athleteType forKey:@"athleteType"];
     }
     
     NSNumber *athleteHours = [defaults objectForKey:@"athleteHours"];
@@ -167,6 +176,12 @@
                      forKey:@"athleteActivityLevel"];
     }
     
+    AthleteType *athleteType = [userData objectForKey:@"athleteType"];
+    if (athleteType) {
+        [defaults setObject:[NSNumber numberWithInt:athleteType.athleteType] 
+                                             forKey:@"athleteType"];
+    }
+         
     NSNumber *athleteHours = [userData objectForKey:@"athleteHours"];
     if (athleteHours) {
         [defaults setObject:athleteHours forKey:@"athleteHours"];

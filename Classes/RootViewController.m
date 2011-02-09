@@ -28,7 +28,7 @@
                                    
                                    [NSDictionary dictionaryWithObjectsAndKeys:
                                     @"BMR & TDEE", @"title",
-                                    @"daily calorie needs", @"subtitle",
+                                    @"basic daily calorie needs", @"subtitle",
                                     @"BMRViewController", @"viewClass",
                                     nil],
                                    
@@ -67,6 +67,16 @@
  return (interfaceOrientation == UIInterfaceOrientationPortrait);
  }
  */
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];    
+}
 
 - (void)didReceiveMemoryWarning 
 {
@@ -124,7 +134,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: do this better.
+    // TODO: do this better. I hate this. I hate it! I hate me. You wrote shit! Don't write shit.
+    // On the other hand, it works and I haven't had to think about it since.
     NSString *cellText = @"Go get some text for your cell.";
     UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);

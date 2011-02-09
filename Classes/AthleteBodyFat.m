@@ -23,7 +23,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%.1f%%", [bodyFat doubleValue]];
+    return [NSString stringWithFormat:@"%.0f%%", [bodyFat doubleValue]];
 }
 
 @end
