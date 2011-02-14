@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
 #import "AthleteBodyFat.h"
+#import "AthleteDataProtocol.h"
 
-
-@interface BodyFatPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface BodyFatPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,
+                                                            AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteBodyFat *data;

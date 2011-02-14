@@ -10,9 +10,11 @@
 #import "AthleteDataDelegate.h"
 #import "AthleteMeasurement.h"
 #import "InfoViewController.h"
+#import "AthleteDataProtocol.h"
 
 @interface GirthPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,
-                                                         InfoViewControllerDelegate>
+                                                         InfoViewControllerDelegate, 
+                                                            AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteMeasurement *data;

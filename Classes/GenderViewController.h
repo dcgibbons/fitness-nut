@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
+#import "AthleteDataProtocol.h"
+
 
 @class AthleteGender;
 
-@interface GenderViewController : UITableViewController 
+@interface GenderViewController : UITableViewController <AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteGender *data;

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
+#import "AthleteDataProtocol.h"
 
 @class AthleteWeight;
 
-@interface WeightPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> 
+@interface WeightPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,
+                                                            AthleteDataProtocol> 
 {
     NSString *dataName;
     AthleteWeight *data;

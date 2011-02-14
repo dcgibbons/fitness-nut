@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
 #import "AthleteType.h"
+#import "AthleteDataProtocol.h"
 
 
-@interface AthleteTypeViewController : UITableViewController 
+@interface AthleteTypeViewController : UITableViewController <AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteType *data;

@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
+#import "AthleteDataProtocol.h"
 
 @class AthleteHeight;
 
-@interface HeightPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> 
+@interface HeightPickerViewController : UIViewController <UIPickerViewDataSource, 
+                                                            UIPickerViewDelegate, 
+                                                            AthleteDataProtocol> 
 {
     NSString *dataName;
     AthleteHeight *data;

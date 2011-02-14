@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
+#import "AthleteDataProtocol.h"
 
 
 @class AthleteActivityLevel;
 
-@interface ActivityLevelViewController : UITableViewController
+@interface ActivityLevelViewController : UITableViewController <AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteActivityLevel *data;

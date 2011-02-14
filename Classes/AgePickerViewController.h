@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AthleteAge.h"
 #import "AthleteDataDelegate.h"
+#import "AthleteDataProtocol.h"
 
-@interface AgePickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> 
+
+@interface AgePickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, 
+                                                        AthleteDataProtocol> 
 {
     NSString *dataName;
     AthleteAge *data;

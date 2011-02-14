@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
+#import "AthleteDataProtocol.h"
 
-@interface HoursPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface HoursPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,
+                                                            AthleteDataProtocol>
 {
     NSString *dataName;
     NSNumber *data;

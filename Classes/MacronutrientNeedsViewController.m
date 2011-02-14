@@ -10,6 +10,7 @@
 #import "AthleteType.h"
 #import "AthleteWeight.h"
 #import "FitnessCalculations.h"
+#import "AthleteDataProtocol.h"
 
 @implementation MacronutrientNeedsViewController
 
@@ -122,7 +123,7 @@
     NSArray *resultItems = [NSArray arrayWithObjects:
                             
                             [NSDictionary dictionaryWithObjectsAndKeys:
-                             @"carb", @"title",
+                             @"carbohydrate", @"title",
                              @"calculateCarbIntake", @"selector",
                              nil
                              ],
@@ -257,8 +258,11 @@
     
     // TODO: BOGUS design, use a datasource instead?
     NSString *dataName = [rowDict objectForKey:@"dataName"];
-    [detailViewController setDataName:dataName];
-    [detailViewController setData:[userData objectForKey:dataName]];
+    if ([detailViewController conformsToProtocol:@protocol(AthleteDataProtocol)]) {
+        id <AthleteDataProtocol> p = (id<AthleteDataProtocol>)detailViewController;
+        [p setDataName:dataName];
+        [p setData:[userData objectForKey:dataName]];
+    }
     [detailViewController performSelector:@selector(setDelegate:) withObject:self];
     
     // Pass the selected object to the new view controller.

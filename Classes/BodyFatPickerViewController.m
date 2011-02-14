@@ -29,10 +29,7 @@
     if (self.data) {
         bodyFat = [self.data.bodyFat doubleValue];
     }
-    double intPart;
-    double fracPart = modf(bodyFat, &intPart);
-    [self.pickerView selectRow:(int)intPart - 4 inComponent:0 animated:NO];
-//    [self.pickerView selectRow:(int)(fracPart * 10.0) inComponent:1 animated:NO];
+    [self.pickerView selectRow:(int)bodyFat - 4 inComponent:0 animated:NO];
 }
 
 /*
