@@ -20,6 +20,14 @@
 		C25C599012FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C598F12FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib */; };
 		C25C599612FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C599512FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib */; };
 		C26A43A212F9F08C00524825 /* AthleteBodyFat.m in Sources */ = {isa = PBXBuildFile; fileRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */; };
+		C280E08013097F8600895519 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07813097F8600895519 /* Icon-72.png */; };
+		C280E08113097F8600895519 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07913097F8600895519 /* Icon@2x.png */; };
+		C280E08213097F8600895519 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07A13097F8600895519 /* Icon.png */; };
+		C280E08313097F8600895519 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = C280E07B13097F8600895519 /* iTunesArtwork */; };
+		C280E08413097F8600895519 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07C13097F8600895519 /* Icon-Small.png */; };
+		C280E08513097F8600895519 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07D13097F8600895519 /* Icon-Small-50.png */; };
+		C280E08613097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */; };
+		C280E08713097F8600895519 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07F13097F8600895519 /* Icon-Small@2x.png */; };
 		C2A4D96912F8DB8F002950C0 /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */; };
 		C2A4D96A12F8DB8F002950C0 /* AgePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */; };
 		C2A4D96B12F8DB8F002950C0 /* BMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */; };
@@ -77,6 +85,14 @@
 		C25C599512FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = athleteHipsGirth_ViewController.xib; sourceTree = "<group>"; };
 		C26A43A012F9F08C00524825 /* AthleteBodyFat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteBodyFat.h; sourceTree = "<group>"; };
 		C26A43A112F9F08C00524825 /* AthleteBodyFat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteBodyFat.m; sourceTree = "<group>"; };
+		C280E07813097F8600895519 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		C280E07913097F8600895519 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C280E07A13097F8600895519 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C280E07B13097F8600895519 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		C280E07C13097F8600895519 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		C280E07D13097F8600895519 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SN_Spotlight&Settings_29x29_papersky.co.png"; sourceTree = "<group>"; };
+		C280E07F13097F8600895519 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
 		C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
 		C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgePickerViewController.h; sourceTree = "<group>"; };
@@ -241,6 +257,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C280E07B13097F8600895519 /* iTunesArtwork */,
+				C280E07A13097F8600895519 /* Icon.png */,
+				C280E07913097F8600895519 /* Icon@2x.png */,
+				C280E07813097F8600895519 /* Icon-72.png */,
+				C280E07C13097F8600895519 /* Icon-Small.png */,
+				C280E07D13097F8600895519 /* Icon-Small-50.png */,
+				C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */,
+				C280E07F13097F8600895519 /* Icon-Small@2x.png */,
 				C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */,
 				C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */,
 				C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */,
@@ -342,6 +366,14 @@
 				C25C599012FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib in Resources */,
 				C25C599612FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib in Resources */,
 				C2BF3C121302FB7C00AF939D /* AthleteTypeViewController.xib in Resources */,
+				C280E08013097F8600895519 /* Icon-72.png in Resources */,
+				C280E08113097F8600895519 /* Icon@2x.png in Resources */,
+				C280E08213097F8600895519 /* Icon.png in Resources */,
+				C280E08313097F8600895519 /* iTunesArtwork in Resources */,
+				C280E08413097F8600895519 /* Icon-Small.png in Resources */,
+				C280E08513097F8600895519 /* Icon-Small-50.png in Resources */,
+				C280E08613097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png in Resources */,
+				C280E08713097F8600895519 /* Icon-Small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
