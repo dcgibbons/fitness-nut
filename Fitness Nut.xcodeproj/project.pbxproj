@@ -28,6 +28,7 @@
 		C280E08513097F8600895519 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07D13097F8600895519 /* Icon-Small-50.png */; };
 		C280E08613097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */; };
 		C280E08713097F8600895519 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07F13097F8600895519 /* Icon-Small@2x.png */; };
+		C280E0DC13098B0C00895519 /* Macronutrients.m in Sources */ = {isa = PBXBuildFile; fileRef = C280E0DB13098B0C00895519 /* Macronutrients.m */; };
 		C2A4D96912F8DB8F002950C0 /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */; };
 		C2A4D96A12F8DB8F002950C0 /* AgePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */; };
 		C2A4D96B12F8DB8F002950C0 /* BMRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */; };
@@ -93,6 +94,8 @@
 		C280E07D13097F8600895519 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SN_Spotlight&Settings_29x29_papersky.co.png"; sourceTree = "<group>"; };
 		C280E07F13097F8600895519 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		C280E0DA13098B0C00895519 /* Macronutrients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macronutrients.h; sourceTree = "<group>"; };
+		C280E0DB13098B0C00895519 /* Macronutrients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Macronutrients.m; sourceTree = "<group>"; };
 		C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
 		C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
 		C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgePickerViewController.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				C2A4D99C12F8DBDF002950C0 /* Conversions.h */,
 				C2A4D99D12F8DBDF002950C0 /* FitnessCalculations.h */,
 				C2A4D99E12F8DBDF002950C0 /* FitnessCalculations.m */,
+				C280E0DA13098B0C00895519 /* Macronutrients.h */,
+				C280E0DB13098B0C00895519 /* Macronutrients.m */,
 				C2A4D95112F8DB8F002950C0 /* ActivityLevelViewController.h */,
 				C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */,
 				C2BF3C0E1302FB3500AF939D /* AthleteTypeViewController.h */,
@@ -410,6 +415,7 @@
 				C25C592A12FB0656004A14E4 /* InfoViewController.m in Sources */,
 				C2BF3C101302FB3500AF939D /* AthleteTypeViewController.m in Sources */,
 				C2BF3C1A1302FCD000AF939D /* AthleteType.m in Sources */,
+				C280E0DC13098B0C00895519 /* Macronutrients.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

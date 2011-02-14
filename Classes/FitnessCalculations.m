@@ -27,52 +27,90 @@
 	return (NSInteger)ceil(p);
 }
 
-// TODO STUFF!
-+ (NSUInteger)carbohydrateNeedsUsingMassInKilograms:(double)mass
-                                         usingHours:(NSUInteger)hours
++ (Macronutrients *)macronutrientNeedsUsingMassInKilograms:(double)mass
+                                                usingHours:(NSUInteger)hours
+                                            andAthleteType:(AthleteType *)athleteType
 {
-    double gramsPerKg;
-    if (hours < 8.0) {
-        gramsPerKg = 2.5 * KILOGRAMS_PER_POUND;
-    } else if (hours >= 8.0 && hours < 12.0) {
-        gramsPerKg = 2.75 * KILOGRAMS_PER_POUND;
-    } else {
-        gramsPerKg = 3.0 * KILOGRAMS_PER_POUND;
+    double gmCarbs = 0.0;
+    double gmProtein = 0.0;
+    double gmFat = 0.0;
+    
+    switch (athleteType.athleteType) {
+        case BodyBuilder:
+            gmCarbs = 2.5 * KILOGRAMS_PER_POUND;
+            gmProtein = 1.0 * KILOGRAMS_PER_POUND;
+            gmFat = 0.35 * KILOGRAMS_PER_POUND;
+            break;
+        case EnduranceTransition:
+            if (hours < 8.0) {
+                gmCarbs = 2.0 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.6 * KILOGRAMS_PER_POUND;
+                gmFat = 0.30 * KILOGRAMS_PER_POUND;
+            } else if (hours >= 8.0 && hours < 12.0) {
+                gmCarbs = 2.5 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.65 * KILOGRAMS_PER_POUND;
+                gmFat = 0.35 * KILOGRAMS_PER_POUND;
+            } else {
+                gmCarbs = 2.75 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.7 * KILOGRAMS_PER_POUND;
+                gmFat = 0.40 * KILOGRAMS_PER_POUND;
+            }
+            break;
+        case EndurancePreparation:
+            if (hours < 8.0) {
+                gmCarbs = 2.5 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.5 * KILOGRAMS_PER_POUND;
+                gmFat = 0.35 * KILOGRAMS_PER_POUND;
+            } else if (hours >= 8.0 && hours < 12.0) {
+                gmCarbs = 2.75 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.55 * KILOGRAMS_PER_POUND;
+                gmFat = 0.40 * KILOGRAMS_PER_POUND;
+            } else {
+                gmCarbs = 3.0 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.6 * KILOGRAMS_PER_POUND;
+                gmFat = 0.45 * KILOGRAMS_PER_POUND;
+            }
+            break;
+        case EnduranceCompetitive:
+            if (hours < 8.0) {
+                gmCarbs = 4.0 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.8 * KILOGRAMS_PER_POUND;
+                gmFat = 0.40 * KILOGRAMS_PER_POUND;
+            } else if (hours >= 8.0 && hours < 12.0) {
+                gmCarbs = 4.5 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.85 * KILOGRAMS_PER_POUND;
+                gmFat = 0.45 * KILOGRAMS_PER_POUND;
+            } else {
+                gmCarbs = 5.0 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.9 * KILOGRAMS_PER_POUND;
+                gmFat = 0.50 * KILOGRAMS_PER_POUND;
+            }
+            break;
+        case GeneralFitness:
+        default:
+            if (hours < 8.0) {
+                gmCarbs = 2.0 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.6 * KILOGRAMS_PER_POUND;
+                gmFat = 0.30 * KILOGRAMS_PER_POUND;
+            } else if (hours >= 8.0 && hours < 12.0) {
+                gmCarbs = 2.5 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.65 * KILOGRAMS_PER_POUND;
+                gmFat = 0.35 * KILOGRAMS_PER_POUND;
+            } else {
+                gmCarbs = 2.75 * KILOGRAMS_PER_POUND;
+                gmProtein = 0.7 * KILOGRAMS_PER_POUND;
+                gmFat = 0.40 * KILOGRAMS_PER_POUND;
+            }
+            break;
     }
     
-    return ceil(gramsPerKg * mass);
-}
+    NSUInteger totalCarbs = ceil(gmCarbs * mass);
+    NSUInteger totalProtein = ceil(gmProtein * mass);
+    NSUInteger totalFat = ceil(gmFat * mass);
 
-+ (NSUInteger)proteinNeedsUsingMassInKilograms:(double)mass 
-                                    usingHours:(NSUInteger)hours
-{
-    double gramsPerKg;
-    if (hours < 8.0) {
-        gramsPerKg = 0.5 * KILOGRAMS_PER_POUND;
-    } else if (hours >= 8.0 & hours < 12.0) {
-        gramsPerKg = 0.55 * KILOGRAMS_PER_POUND;
-    } else {
-        gramsPerKg = 0.6 * KILOGRAMS_PER_POUND;
-    }
-    
-    return ceil(gramsPerKg * mass);
-}
-
-+ (NSUInteger)fatNeedsUsingMassInKilograms:(double)mass
-                                usingHours:(NSUInteger)hours
-{
-    double gramsPerKg;
-    
-    // 0.35 - 0.45 grams per lbs of body weight, foundation period
-    if (hours < 8.0) {
-        gramsPerKg = 0.35 * KILOGRAMS_PER_POUND;
-    } else if (hours >= 8.0 & hours < 12.0) {
-        gramsPerKg = 0.40 * KILOGRAMS_PER_POUND;
-    } else {
-        gramsPerKg = 0.45 * KILOGRAMS_PER_POUND;
-    }
-    
-    return ceil(gramsPerKg * mass);
+    return [[[Macronutrients alloc] initWithGramsOfCarbohydrates:totalCarbs
+                                               andGramsOfProtein:totalProtein
+                                                   andGramsOfFat:totalFat] autorelease];
 }
 
 

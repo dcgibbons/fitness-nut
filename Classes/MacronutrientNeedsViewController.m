@@ -25,9 +25,10 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
-    int grams = [FitnessCalculations carbohydrateNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
-                                                                usingHours:[hours unsignedIntValue]];
-    return [NSString stringWithFormat:@"%u gm", grams];
+    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
+                                                                                      usingHours:[hours unsignedIntValue]
+                                                                                  andAthleteType:type];
+    return [NSString stringWithFormat:@"%u gm", macronutrients.carbohydrates];
 }
 
 - (NSString *)calculateProteinIntake
@@ -41,9 +42,10 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
     
-    int grams = [FitnessCalculations proteinNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
-                                                           usingHours:[hours unsignedIntValue]];
-    return [NSString stringWithFormat:@"%u gm", grams];
+    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
+                                                                                      usingHours:[hours unsignedIntValue]
+                                                                                  andAthleteType:type];
+    return [NSString stringWithFormat:@"%u gm", macronutrients.protein];
 }
 
 - (NSString *)calculateFatIntake
@@ -57,9 +59,10 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
     
-    int grams = [FitnessCalculations fatNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
-                                                       usingHours:[hours unsignedIntValue]];
-    return [NSString stringWithFormat:@"%u gm", grams];
+    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
+                                                                                      usingHours:[hours unsignedIntValue]
+                                                                                  andAthleteType:type];
+    return [NSString stringWithFormat:@"%u gm", macronutrients.fat];
 }
 
 - (NSString *)calculateDailyCalories
@@ -73,17 +76,10 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
     
-    int carbs = [FitnessCalculations carbohydrateNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
-                                                                usingHours:[hours unsignedIntValue]];
-    
-    int protein = [FitnessCalculations proteinNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
-                                                           usingHours:[hours unsignedIntValue]];
-    
-    int fats = [FitnessCalculations fatNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue]
-                                                       usingHours:[hours unsignedIntValue]];
-    
-    int calories = (carbs * 4) + (protein * 4) + (fats * 9);
-    return [NSString stringWithFormat:@"%u kilocalories", calories];
+    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
+                                                                                      usingHours:[hours unsignedIntValue]
+                                                                                  andAthleteType:type];
+    return [NSString stringWithFormat:@"%u kilocalories", macronutrients.calories];
 }
 
 #pragma mark -

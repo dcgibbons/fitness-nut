@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Macronutrients.h"
+#import "AthleteType.h"
 
 @interface FitnessCalculations : NSObject {
 
@@ -19,13 +20,9 @@
 					 usingAgeInYears:(int)age
 							usingSex:(BOOL)isMale;
 
-+ (NSUInteger)carbohydrateNeedsUsingMassInKilograms:(double)mass
-                                         usingHours:(NSUInteger)hours;
++ (Macronutrients *)macronutrientNeedsUsingMassInKilograms:(double)mass
+                                                usingHours:(NSUInteger)hours
+                                            andAthleteType:(AthleteType *)athleteType;
 
-+ (NSUInteger)proteinNeedsUsingMassInKilograms:(double)mass 
-                                    usingHours:(NSUInteger)hours;
-
-+ (NSUInteger)fatNeedsUsingMassInKilograms:(double)mass
-                                usingHours:(NSUInteger)hours;
 
 @end
