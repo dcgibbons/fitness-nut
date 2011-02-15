@@ -35,9 +35,9 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Distribution;
+		activeBuildConfigurationName = Release;
 		activeExecutable = C2A4D93E12F8DB2D002950C0 /* Fitness Nut */;
-		activeSDKPreference = iphoneos4.2;
+		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Fitness Nut */;
 		addToTargets = (
 		);
@@ -48,6 +48,20 @@
 			C2A4D93E12F8DB2D002950C0 /* Fitness Nut */,
 		);
 		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					405,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
@@ -108,21 +122,24 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 319410959;
-			PBXWorkspaceStateSaveDate = 319410959;
+			PBXPerProjectTemplateStateSaveDate = 319480903;
+			PBXWorkspaceStateSaveDate = 319480903;
 		};
 		perUserProjectItems = {
+			C235A90F130AE44900DAE843 /* PBXTextBookmark */ = C235A90F130AE44900DAE843 /* PBXTextBookmark */;
+			C235A915130AE49900DAE843 /* PBXTextBookmark */ = C235A915130AE49900DAE843 /* PBXTextBookmark */;
+			C235A91E130AE49C00DAE843 /* PBXTextBookmark */ = C235A91E130AE49C00DAE843 /* PBXTextBookmark */;
+			C235A923130AE4DF00DAE843 /* PBXTextBookmark */ = C235A923130AE4DF00DAE843 /* PBXTextBookmark */;
+			C235A92C130AF16000DAE843 /* PBXTextBookmark */ = C235A92C130AF16000DAE843 /* PBXTextBookmark */;
+			C235A93A130AF27900DAE843 /* PBXTextBookmark */ = C235A93A130AF27900DAE843 /* PBXTextBookmark */;
+			C235A93F130AF2AC00DAE843 /* PBXTextBookmark */ = C235A93F130AF2AC00DAE843 /* PBXTextBookmark */;
+			C235A940130AF2B700DAE843 /* PBXTextBookmark */ = C235A940130AF2B700DAE843 /* PBXTextBookmark */;
 			C25C59C512FB275E004A14E4 = C25C59C512FB275E004A14E4 /* PBXTextBookmark */;
 			C25C59C812FB275E004A14E4 = C25C59C812FB275E004A14E4 /* PBXTextBookmark */;
 			C25C5A3B12FB3824004A14E4 = C25C5A3B12FB3824004A14E4 /* PBXTextBookmark */;
 			C26A43AB12F9F1DD00524825 = C26A43AB12F9F1DD00524825 /* PBXTextBookmark */;
 			C26A43AC12F9F1DD00524825 = C26A43AC12F9F1DD00524825 /* PBXTextBookmark */;
-			C2707CB01309D311007B67EF /* PBXTextBookmark */ = C2707CB01309D311007B67EF /* PBXTextBookmark */;
-			C2707CBD1309D448007B67EF /* PBXTextBookmark */ = C2707CBD1309D448007B67EF /* PBXTextBookmark */;
-			C2707CCA1309D45B007B67EF /* PBXTextBookmark */ = C2707CCA1309D45B007B67EF /* PBXTextBookmark */;
-			C2707CCC1309D672007B67EF /* PBXTextBookmark */ = C2707CCC1309D672007B67EF /* PBXTextBookmark */;
-			C2707CD11309D6B5007B67EF /* PBXTextBookmark */ = C2707CD11309D6B5007B67EF /* PBXTextBookmark */;
-			C2707CDE1309D7EE007B67EF /* PBXTextBookmark */ = C2707CDE1309D7EE007B67EF /* PBXTextBookmark */;
+			C2707CE11309E431007B67EF = C2707CE11309E431007B67EF /* PBXTextBookmark */;
 			C280E08D1309861E00895519 = C280E08D1309861E00895519 /* PBXBookmark */;
 			C280E0E7130991D400895519 = C280E0E7130991D400895519 /* PBXBookmark */;
 			C280E0E8130991D400895519 = C280E0E8130991D400895519 /* PBXBookmark */;
@@ -157,8 +174,6 @@
 			C280E1D21309CDA300895519 = C280E1D21309CDA300895519 /* PBXTextBookmark */;
 			C280E1D31309CDA300895519 = C280E1D31309CDA300895519 /* PBXTextBookmark */;
 			C280E1D41309CDA300895519 = C280E1D41309CDA300895519 /* PBXTextBookmark */;
-			C280E1D51309CDA300895519 = C280E1D51309CDA300895519 /* PBXTextBookmark */;
-			C280E1E51309D22F00895519 = C280E1E51309D22F00895519 /* PBXTextBookmark */;
 			C2A4D9C612F8EC66002950C0 = C2A4D9C612F8EC66002950C0 /* PBXTextBookmark */;
 			C2A4D9C912F8EC66002950C0 = C2A4D9C912F8EC66002950C0 /* PBXTextBookmark */;
 			C2A4D9CD12F8EC66002950C0 = C2A4D9CD12F8EC66002950C0 /* PBXTextBookmark */;
@@ -175,6 +190,7 @@
 			C2BF3C661303015A00AF939D = C2BF3C661303015A00AF939D /* PBXTextBookmark */;
 			C2BF3C6E1303027C00AF939D = C2BF3C6E1303027C00AF939D /* PBXTextBookmark */;
 			C2BF3C90130317DB00AF939D = C2BF3C90130317DB00AF939D /* PBXTextBookmark */;
+			C2DDB2CB130AE3E300074291 = C2DDB2CB130AE3E300074291 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
@@ -184,6 +200,86 @@
 		uiCtxt = {
 			sepNavWindowFrame = "{{261, 62}, {1005, 711}}";
 		};
+	};
+	C235A90F130AE44900DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A915130AE49900DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A91E130AE49C00DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A923130AE4DF00DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A92C130AF16000DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A93A130AF27900DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A93F130AF2AC00DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
+	};
+	C235A940130AF2B700DAE843 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
 	};
 	C25C592812FB0656004A14E4 /* InfoViewController.h */ = {
 		uiCtxt = {
@@ -270,64 +366,14 @@
 		vrLen = 350;
 		vrLoc = 0;
 	};
-	C2707CB01309D311007B67EF /* PBXTextBookmark */ = {
+	C2707CE11309E431007B67EF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
 		name = "WeightPredictorViewController.h: 10";
 		rLen = 0;
 		rLoc = 195;
 		rType = 0;
-		vrLen = 492;
-		vrLoc = 0;
-	};
-	C2707CBD1309D448007B67EF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 492;
-		vrLoc = 0;
-	};
-	C2707CCA1309D45B007B67EF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 492;
-		vrLoc = 0;
-	};
-	C2707CCC1309D672007B67EF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 492;
-		vrLoc = 0;
-	};
-	C2707CD11309D6B5007B67EF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 492;
-		vrLoc = 0;
-	};
-	C2707CDE1309D7EE007B67EF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 492;
+		vrLen = 497;
 		vrLoc = 0;
 	};
 	C280E07913097F8600895519 /* Icon@2x.png */ = {
@@ -660,26 +706,6 @@
 		vrLen = 488;
 		vrLoc = 8251;
 	};
-	C280E1D51309CDA300895519 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 491;
-		vrLoc = 0;
-	};
-	C280E1E51309D22F00895519 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 492;
-		vrLoc = 0;
-	};
 	C2A4D93E12F8DB2D002950C0 /* Fitness Nut */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -855,9 +881,9 @@
 	};
 	C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {695, 338}}";
+			sepNavIntBoundsRect = "{{0, 0}, {695, 403}}";
 			sepNavSelRange = "{195, 0}";
-			sepNavVisRange = "{0, 492}";
+			sepNavVisRange = "{0, 497}";
 		};
 	};
 	C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */ = {
@@ -1131,5 +1157,15 @@
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 9139;
+	};
+	C2DDB2CB130AE3E300074291 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 497;
+		vrLoc = 0;
 	};
 }

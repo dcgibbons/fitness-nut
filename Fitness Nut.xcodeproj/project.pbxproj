@@ -69,7 +69,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fitness_NutAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fitness_NutAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Fitness Nut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Nut.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* FitnessNut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* Fitness_Nut_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fitness_Nut_Prefix.pch; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Fitness Nut.app */,
+				1D6058910D05DD3D006BFB54 /* FitnessNut.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 			);
 			name = "Fitness Nut";
 			productName = "Fitness Nut";
-			productReference = 1D6058910D05DD3D006BFB54 /* Fitness Nut.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* FitnessNut.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -434,7 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
-				PRODUCT_NAME = "Fitness Nut";
+				PRODUCT_NAME = FitnessNut;
 			};
 			name = Debug;
 		};
@@ -446,7 +446,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
-				PRODUCT_NAME = "Fitness Nut";
+				PRODUCT_NAME = FitnessNut;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -461,6 +461,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PREBINDING = NO;
+				PRODUCT_NAME = FitnessNut;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -476,6 +477,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				PRODUCT_NAME = FitnessNut;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -491,6 +493,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				PRODUCT_NAME = FitnessNut;
 				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "D2DB0A25-CD56-4FA2-83D3-B7F1BFCC7F03";
 				SDKROOT = iphoneos;
 			};
@@ -504,7 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
-				PRODUCT_NAME = "Fitness Nut";
+				PRODUCT_NAME = FitnessNut;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
