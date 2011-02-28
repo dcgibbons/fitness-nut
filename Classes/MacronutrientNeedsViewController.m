@@ -112,7 +112,7 @@
                                      ],
 
                                     [NSDictionary dictionaryWithObjectsAndKeys:
-                                     @"hours", @"title",
+                                     @"weekly training hours", @"title",
                                      @"HoursPickerViewController", @"viewController",
                                      @"athleteHours", @"dataName",
                                      nil

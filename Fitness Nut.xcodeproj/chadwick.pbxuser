@@ -35,7 +35,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = C2A4D93E12F8DB2D002950C0 /* Fitness Nut */;
 		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Fitness Nut */;
@@ -67,7 +67,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					517,
+					734,
 					20,
 					48,
 					43,
@@ -105,7 +105,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					477,
+					694,
 					60,
 					20,
 					48,
@@ -122,24 +122,20 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 319480903;
-			PBXWorkspaceStateSaveDate = 319480903;
+			PBXPerProjectTemplateStateSaveDate = 320605655;
+			PBXWorkspaceStateSaveDate = 320605655;
 		};
 		perUserProjectItems = {
-			C235A90F130AE44900DAE843 /* PBXTextBookmark */ = C235A90F130AE44900DAE843 /* PBXTextBookmark */;
-			C235A915130AE49900DAE843 /* PBXTextBookmark */ = C235A915130AE49900DAE843 /* PBXTextBookmark */;
-			C235A91E130AE49C00DAE843 /* PBXTextBookmark */ = C235A91E130AE49C00DAE843 /* PBXTextBookmark */;
-			C235A923130AE4DF00DAE843 /* PBXTextBookmark */ = C235A923130AE4DF00DAE843 /* PBXTextBookmark */;
-			C235A92C130AF16000DAE843 /* PBXTextBookmark */ = C235A92C130AF16000DAE843 /* PBXTextBookmark */;
-			C235A93A130AF27900DAE843 /* PBXTextBookmark */ = C235A93A130AF27900DAE843 /* PBXTextBookmark */;
-			C235A93F130AF2AC00DAE843 /* PBXTextBookmark */ = C235A93F130AF2AC00DAE843 /* PBXTextBookmark */;
-			C235A940130AF2B700DAE843 /* PBXTextBookmark */ = C235A940130AF2B700DAE843 /* PBXTextBookmark */;
+			C23D2AE7130C466F0063BD6A = C23D2AE7130C466F0063BD6A /* PBXTextBookmark */;
+			C23D2AE8130C466F0063BD6A = C23D2AE8130C466F0063BD6A /* PBXTextBookmark */;
+			C23D2AE9130C466F0063BD6A = C23D2AE9130C466F0063BD6A /* PBXTextBookmark */;
 			C25C59C512FB275E004A14E4 = C25C59C512FB275E004A14E4 /* PBXTextBookmark */;
 			C25C59C812FB275E004A14E4 = C25C59C812FB275E004A14E4 /* PBXTextBookmark */;
 			C25C5A3B12FB3824004A14E4 = C25C5A3B12FB3824004A14E4 /* PBXTextBookmark */;
 			C26A43AB12F9F1DD00524825 = C26A43AB12F9F1DD00524825 /* PBXTextBookmark */;
 			C26A43AC12F9F1DD00524825 = C26A43AC12F9F1DD00524825 /* PBXTextBookmark */;
-			C2707CE11309E431007B67EF = C2707CE11309E431007B67EF /* PBXTextBookmark */;
+			C26F8C36131C0E200079E1CC /* PBXTextBookmark */ = C26F8C36131C0E200079E1CC /* PBXTextBookmark */;
+			C26F8C37131C0E200079E1CC /* PBXTextBookmark */ = C26F8C37131C0E200079E1CC /* PBXTextBookmark */;
 			C280E08D1309861E00895519 = C280E08D1309861E00895519 /* PBXBookmark */;
 			C280E0E7130991D400895519 = C280E0E7130991D400895519 /* PBXBookmark */;
 			C280E0E8130991D400895519 = C280E0E8130991D400895519 /* PBXBookmark */;
@@ -190,7 +186,6 @@
 			C2BF3C661303015A00AF939D = C2BF3C661303015A00AF939D /* PBXTextBookmark */;
 			C2BF3C6E1303027C00AF939D = C2BF3C6E1303027C00AF939D /* PBXTextBookmark */;
 			C2BF3C90130317DB00AF939D = C2BF3C90130317DB00AF939D /* PBXTextBookmark */;
-			C2DDB2CB130AE3E300074291 = C2DDB2CB130AE3E300074291 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
@@ -201,7 +196,7 @@
 			sepNavWindowFrame = "{{261, 62}, {1005, 711}}";
 		};
 	};
-	C235A90F130AE44900DAE843 /* PBXTextBookmark */ = {
+	C23D2AE7130C466F0063BD6A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
 		name = "WeightPredictorViewController.h: 10";
@@ -211,74 +206,22 @@
 		vrLen = 497;
 		vrLoc = 0;
 	};
-	C235A915130AE49900DAE843 /* PBXTextBookmark */ = {
+	C23D2AE8130C466F0063BD6A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
+		comments = "Compile /Users/chadwick/Projects/Fitness Nut/Classes/AthleteHeight.m";
+		fRef = C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */;
 		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
+		rLoc = 0;
+		rType = 1;
 	};
-	C235A91E130AE49C00DAE843 /* PBXTextBookmark */ = {
+	C23D2AE9130C466F0063BD6A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
+		fRef = C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */;
+		name = "AthleteHeight.m: 1";
 		rLen = 0;
-		rLoc = 195;
+		rLoc = 0;
 		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
-	};
-	C235A923130AE4DF00DAE843 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
-	};
-	C235A92C130AF16000DAE843 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
-	};
-	C235A93A130AF27900DAE843 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
-	};
-	C235A93F130AF2AC00DAE843 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
-	};
-	C235A940130AF2B700DAE843 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
+		vrLen = 677;
 		vrLoc = 0;
 	};
 	C25C592812FB0656004A14E4 /* InfoViewController.h */ = {
@@ -366,15 +309,25 @@
 		vrLen = 350;
 		vrLoc = 0;
 	};
-	C2707CE11309E431007B67EF /* PBXTextBookmark */ = {
+	C26F8C36131C0E200079E1CC /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
+		fRef = C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */;
+		name = "AthleteHeight.m: 1";
 		rLen = 0;
-		rLoc = 195;
+		rLoc = 0;
 		rType = 0;
-		vrLen = 497;
+		vrLen = 506;
 		vrLoc = 0;
+	};
+	C26F8C37131C0E200079E1CC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96412F8DB8F002950C0 /* MacronutrientNeedsViewController.m */;
+		name = "MacronutrientNeedsViewController.m: 115";
+		rLen = 0;
+		rLoc = 4829;
+		rType = 0;
+		vrLen = 1170;
+		vrLoc = 4460;
 	};
 	C280E07913097F8600895519 /* Icon@2x.png */ = {
 		uiCtxt = {
@@ -867,9 +820,9 @@
 	};
 	C2A4D96412F8DB8F002950C0 /* MacronutrientNeedsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 4160}}";
-			sepNavSelRange = "{332, 0}";
-			sepNavVisRange = "{1149, 981}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 3926}}";
+			sepNavSelRange = "{4829, 0}";
+			sepNavVisRange = "{4460, 1170}";
 		};
 	};
 	C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */ = {
@@ -881,7 +834,7 @@
 	};
 	C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {695, 403}}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 392}}";
 			sepNavSelRange = "{195, 0}";
 			sepNavVisRange = "{0, 497}";
 		};
@@ -912,6 +865,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {865, 680}}";
 			sepNavSelRange = "{190, 378}";
 			sepNavVisRange = "{0, 569}";
+		};
+	};
+	C2A4D99712F8DBDF002950C0 /* AthleteHeight.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {912, 780}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 506}";
 		};
 	};
 	C2A4D99A12F8DBDF002950C0 /* AthleteWeight.h */ = {
@@ -1157,15 +1117,5 @@
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 9139;
-	};
-	C2DDB2CB130AE3E300074291 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
-		name = "WeightPredictorViewController.h: 10";
-		rLen = 0;
-		rLoc = 195;
-		rType = 0;
-		vrLen = 497;
-		vrLoc = 0;
 	};
 }
