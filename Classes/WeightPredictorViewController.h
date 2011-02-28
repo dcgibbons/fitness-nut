@@ -7,18 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-
-@interface WeightPredictorViewController : UITableViewController 
+@interface WeightPredictorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,
+    ADBannerViewDelegate>
 {
     NSMutableDictionary *userData;
     
 @private
+    UITableView *tableView;
+    ADBannerView *adBannerView;
+    BOOL bannerIsVisible;
     NSArray *sections;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;
 @property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) ADBannerView *adBannerView;
+@property (nonatomic, assign) BOOL bannerIsVisible;
 
 - (NSString *)calculatePredictedWeight;
 

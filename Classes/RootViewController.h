@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface RootViewController :  UIViewController <UITableViewDataSource, UITableViewDelegate> 
+@interface RootViewController :  UIViewController <UITableViewDataSource, UITableViewDelegate, ADBannerViewDelegate> 
 {
 @private
     NSMutableDictionary *userData;
     NSArray *groups;
     UITableView *menuTableView;
+    ADBannerView *adBannerView;
+    BOOL bannerIsVisible;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;
 @property (nonatomic, retain) NSArray *groups;
 @property (nonatomic, retain) IBOutlet UITableView *menuTableView;
+@property (nonatomic, retain) ADBannerView *adBannerView;
+@property (nonatomic, assign) BOOL bannerIsVisible;
 
 @end

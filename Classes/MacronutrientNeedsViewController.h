@@ -7,17 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 #import "AthleteDataDelegate.h"
 
-@interface MacronutrientNeedsViewController : UITableViewController <AthleteDataDelegate>
+@interface MacronutrientNeedsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,
+        AthleteDataDelegate, ADBannerViewDelegate>
 {
     NSMutableDictionary *userData;
     
 @private
+    UITableView *tableView;
     NSArray *sections;
+    ADBannerView *adBannerView;
+    BOOL bannerIsVisible;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) ADBannerView *adBannerView;
+@property (nonatomic, assign) BOOL bannerIsVisible;
 @property (nonatomic, retain) NSArray *sections;
 
 @end

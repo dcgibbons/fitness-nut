@@ -80,7 +80,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize sections, userData, tableView, infoButton;
+@synthesize sections, userData, tableView, infoButton, adBannerView, bannerIsVisible;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -88,6 +88,17 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+    
+    // Create an ad banner just off the bottom of the view (i.e. not visible).
+    self.bannerIsVisible=NO;    
+    adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
+                                                                  self.view.frame.size.height,
+                                                                  0, 0)];
+    
+    adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObject:ADBannerContentSizeIdentifierPortrait];
+    adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    adBannerView.delegate=self;
+    [self.view addSubview:adBannerView];
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -318,15 +329,72 @@
     self.userData = nil;
     self.tableView = nil;
     self.infoButton = nil;
+    self.adBannerView.delegate = nil;
+    self.adBannerView = nil;
 }
 
 - (void)dealloc 
 {
+    adBannerView.delegate = nil;
+    [adBannerView release];
     [infoButton release];
     [tableView release];
     [sections release];
     [userData release];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark ADBannerViewDelegate
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        
+        CGFloat fullViewHeight = self.view.frame.size.height;
+        CGRect tableFrame = self.tableView.frame;
+        CGRect bannerFrame = self.adBannerView.frame;
+        
+        // Shrink the tableview to create space for banner
+        tableFrame.size.height = fullViewHeight - bannerFrame.size.height;
+        
+        // Move banner onscreen
+        bannerFrame.origin.y = fullViewHeight - bannerFrame.size.height;   
+        
+        self.tableView.frame = tableFrame;
+        self.adBannerView.frame = bannerFrame;        
+        
+        [UIView commitAnimations];
+        
+        self.bannerIsVisible = YES;
+    }    
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"adBanner didFailToReceiveAdWithError, error=%@\n", error);
+    
+    if (self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        
+        // Grow the tableview to occupy space left by banner
+        CGFloat fullViewHeight = self.view.frame.size.height;
+        CGRect tableFrame = self.tableView.frame;
+        tableFrame.size.height = fullViewHeight;
+        
+        // Move the banner view offscreen
+        CGRect bannerFrame = self.adBannerView.frame;
+        bannerFrame.origin.y = fullViewHeight;
+        
+        self.tableView.frame = tableFrame;
+        self.adBannerView.frame = bannerFrame;
+        
+        [UIView commitAnimations];
+        self.bannerIsVisible = NO;
+    }
 }
 
 @end
