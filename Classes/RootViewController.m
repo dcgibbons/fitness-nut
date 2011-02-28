@@ -25,7 +25,9 @@
     [super viewDidLoad];
 
     // Create an ad banner just off the bottom of the view (i.e. not visible).
-    self.bannerIsVisible=NO;    
+    self.bannerIsVisible = NO;
+
+#ifndef PRO_VERSION
     adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
                                                                   self.view.frame.size.height,
                                                                   0, 0)];
@@ -33,7 +35,8 @@
     adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
-    
+#endif
+
     NSArray *nutritionMenuItems = [NSArray arrayWithObjects:
                                    
                                    [NSDictionary dictionaryWithObjectsAndKeys:

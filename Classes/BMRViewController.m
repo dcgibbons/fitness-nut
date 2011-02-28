@@ -89,6 +89,7 @@
 {
     [super viewDidLoad];
     
+#ifndef PRO_VERSION
     // Create an ad banner just off the bottom of the view (i.e. not visible).
     self.bannerIsVisible=NO;    
     adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
@@ -99,6 +100,7 @@
     adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
+#endif
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
