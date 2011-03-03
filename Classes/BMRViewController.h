@@ -10,8 +10,9 @@
 #import <iAd/iAd.h>
 #import "AgePickerViewController.h"
 #import "AthleteDataDelegate.h"
+#import "DetailViewController.h"
 
-@interface BMRViewController : UIViewController <UITableViewDelegate, 
+@interface BMRViewController : DetailViewController <UITableViewDelegate, 
                                                  UITableViewDataSource, 
                                                  UINavigationControllerDelegate, 
                                                  AthleteDataDelegate,

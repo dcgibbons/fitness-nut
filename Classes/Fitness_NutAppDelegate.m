@@ -7,7 +7,6 @@
 //
 
 #import "Fitness_NutAppDelegate.h"
-#import "RootViewController.h"
 #import "AthleteAge.h"
 #import "AthleteBodyFat.h"
 #import "AthleteHeight.h"
@@ -19,16 +18,13 @@
 
 @implementation Fitness_NutAppDelegate
 
-@synthesize window;
-@synthesize topLevelController;
 @synthesize userData;
+@synthesize window;
+@synthesize contentController;
 
-- (UINavigationController *)navController 
+- (BOOL)isPadDevice 
 {
-	if (!navController) {
-		navController = [[UINavigationController alloc] init];
-	}
-	return navController;
+	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 }
 
 - (void)loadUserDefaults
@@ -227,15 +223,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
     // Override point for customization after application launch.
+	if (self.isPadDevice) {
+		// load the content controller object for Pad-based devices
+        [[NSBundle mainBundle] loadNibNamed:@"MainContent-iPad" owner:self options:nil];
+    } else {
+		// load the content controller object for Phone-based devices
+        [[NSBundle mainBundle] loadNibNamed:@"MainContent-iPhone" owner:self options:nil];
+	}
+    
     self.userData = [[[NSMutableDictionary alloc] init] autorelease];
     [self loadUserDefaults];
+    self.contentController.userData = self.userData;
     
-    self.topLevelController.userData = self.userData;
-    [self.navController pushViewController:self.topLevelController animated:NO];
-    
-    // Add the view controller's view to the window and display.
-    [self.window addSubview:self.navController.view];
-    [self.window makeKeyAndVisible];
+    [self.window addSubview:self.contentController.view];
+	[self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -295,8 +296,6 @@
 
 - (void)dealloc 
 {
-    [topLevelController release];
-	[navController release];
     [window release];
     [super dealloc];
 }

@@ -7,21 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class RootViewController;
+#import "ContentController.h"
 
 @interface Fitness_NutAppDelegate : NSObject <UIApplicationDelegate> 
 {
-    UIWindow *window;
-	UINavigationController *navController;
-    RootViewController *topLevelController;
     NSMutableDictionary *userData;
+    UIWindow *window;
+    ContentController *contentController;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain, readonly) IBOutlet UINavigationController *navController;
-@property (nonatomic, retain) IBOutlet RootViewController *topLevelController;
+@property (nonatomic, readonly) BOOL isPadDevice;
 @property (nonatomic, retain) NSMutableDictionary *userData;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet ContentController *contentController;
 
 @end
 

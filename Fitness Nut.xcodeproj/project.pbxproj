@@ -14,13 +14,23 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		28F335F11007B36200424DE2 /* RootViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController-iPhone.xib */; };
+		C2083901131F207B003BA287 /* RootViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2083900131F207B003BA287 /* RootViewController-iPad.xib */; };
 		C25C592A12FB0656004A14E4 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25C592912FB0656004A14E4 /* InfoViewController.m */; };
 		C25C592C12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C592B12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib */; };
 		C25C599012FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C598F12FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib */; };
 		C25C599612FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C599512FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib */; };
 		C26A43A212F9F08C00524825 /* AthleteBodyFat.m in Sources */ = {isa = PBXBuildFile; fileRef = C26A43A112F9F08C00524825 /* AthleteBodyFat.m */; };
 		C26F8C4F131C185C0079E1CC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C26F8C4E131C185C0079E1CC /* iAd.framework */; };
+		C26F8EAF131C4E320079E1CC /* AgePickerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26F8EAE131C4E320079E1CC /* AgePickerViewController-iPad.xib */; };
+		C26F8F65131C7CC10079E1CC /* MainContent-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26F8F64131C7CC10079E1CC /* MainContent-iPhone.xib */; };
+		C26F8F67131C7CD20079E1CC /* MainContent-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26F8F66131C7CD20079E1CC /* MainContent-iPad.xib */; };
+		C26F8F72131C7F120079E1CC /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F8F71131C7F120079E1CC /* ContentController.m */; };
+		C26F8F79131C7F640079E1CC /* ContentController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F8F78131C7F640079E1CC /* ContentController_iPhone.m */; };
+		C26F8F7C131C7F710079E1CC /* ContentController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F8F7B131C7F710079E1CC /* ContentController_iPad.m */; };
+		C26F9031131C8D8F0079E1CC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */; };
+		C26F910A131CA1530079E1CC /* EmptyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26F9109131CA1530079E1CC /* EmptyDetailViewController.m */; };
+		C26F910C131CA16D0079E1CC /* EmptyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26F910B131CA16D0079E1CC /* EmptyDetailViewController.xib */; };
 		C280E08013097F8600895519 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07813097F8600895519 /* Icon-72.png */; };
 		C280E08113097F8600895519 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07913097F8600895519 /* Icon@2x.png */; };
 		C280E08213097F8600895519 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C280E07A13097F8600895519 /* Icon.png */; };
@@ -77,9 +87,10 @@
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootViewController-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "RootViewController-iPhone.xib"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fitness_Nut-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C2083900131F207B003BA287 /* RootViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "RootViewController-iPad.xib"; sourceTree = "<group>"; };
 		C25C592812FB0656004A14E4 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		C25C592912FB0656004A14E4 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		C25C592B12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = athleteNeckGirth_ViewController.xib; sourceTree = "<group>"; };
@@ -88,6 +99,20 @@
 		C26A43A012F9F08C00524825 /* AthleteBodyFat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteBodyFat.h; sourceTree = "<group>"; };
 		C26A43A112F9F08C00524825 /* AthleteBodyFat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteBodyFat.m; sourceTree = "<group>"; };
 		C26F8C4E131C185C0079E1CC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		C26F8EAE131C4E320079E1CC /* AgePickerViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "AgePickerViewController-iPad.xib"; sourceTree = "<group>"; };
+		C26F8F64131C7CC10079E1CC /* MainContent-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainContent-iPhone.xib"; sourceTree = "<group>"; };
+		C26F8F66131C7CD20079E1CC /* MainContent-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainContent-iPad.xib"; sourceTree = "<group>"; };
+		C26F8F70131C7F120079E1CC /* ContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController.h; sourceTree = "<group>"; };
+		C26F8F71131C7F120079E1CC /* ContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentController.m; sourceTree = "<group>"; };
+		C26F8F77131C7F640079E1CC /* ContentController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController_iPhone.h; sourceTree = "<group>"; };
+		C26F8F78131C7F640079E1CC /* ContentController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentController_iPhone.m; sourceTree = "<group>"; };
+		C26F8F7A131C7F710079E1CC /* ContentController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController_iPad.h; sourceTree = "<group>"; };
+		C26F8F7B131C7F710079E1CC /* ContentController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentController_iPad.m; sourceTree = "<group>"; };
+		C26F902F131C8D8F0079E1CC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C26F9030131C8D8F0079E1CC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C26F9108131CA1530079E1CC /* EmptyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyDetailViewController.h; sourceTree = "<group>"; };
+		C26F9109131CA1530079E1CC /* EmptyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyDetailViewController.m; sourceTree = "<group>"; };
+		C26F910B131CA16D0079E1CC /* EmptyDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDetailViewController.xib; sourceTree = "<group>"; };
 		C280E07813097F8600895519 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		C280E07913097F8600895519 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C280E07A13097F8600895519 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -231,6 +256,16 @@
 				1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */,
 				C25C592812FB0656004A14E4 /* InfoViewController.h */,
 				C25C592912FB0656004A14E4 /* InfoViewController.m */,
+				C26F8F70131C7F120079E1CC /* ContentController.h */,
+				C26F8F71131C7F120079E1CC /* ContentController.m */,
+				C26F8F77131C7F640079E1CC /* ContentController_iPhone.h */,
+				C26F8F78131C7F640079E1CC /* ContentController_iPhone.m */,
+				C26F8F7A131C7F710079E1CC /* ContentController_iPad.h */,
+				C26F8F7B131C7F710079E1CC /* ContentController_iPad.m */,
+				C26F902F131C8D8F0079E1CC /* DetailViewController.h */,
+				C26F9030131C8D8F0079E1CC /* DetailViewController.m */,
+				C26F9108131CA1530079E1CC /* EmptyDetailViewController.h */,
+				C26F9109131CA1530079E1CC /* EmptyDetailViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -267,33 +302,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C280E07B13097F8600895519 /* iTunesArtwork */,
-				C280E07A13097F8600895519 /* Icon.png */,
-				C280E07913097F8600895519 /* Icon@2x.png */,
-				C280E07813097F8600895519 /* Icon-72.png */,
-				C280E07C13097F8600895519 /* Icon-Small.png */,
-				C280E07D13097F8600895519 /* Icon-Small-50.png */,
-				C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */,
-				C280E07F13097F8600895519 /* Icon-Small@2x.png */,
-				C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */,
-				C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */,
-				C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */,
-				C2A4D97712F8DBAB002950C0 /* BMRViewController.xib */,
-				C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */,
-				C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */,
-				C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */,
-				C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */,
-				C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */,
-				C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */,
-				C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */,
-				C2A4D97F12F8DBAB002950C0 /* WeightPickerViewController.xib */,
-				C2A4D98012F8DBAB002950C0 /* WeightPredictorViewController.xib */,
-				28F335F01007B36200424DE2 /* RootViewController.xib */,
-				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				C20838FF131F203D003BA287 /* iPhone */,
+				C20838FE131F2037003BA287 /* iPad */,
+				C26F8F4D131C5CBF0079E1CC /* Artwork */,
 				8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */,
-				C25C592B12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib */,
-				C25C598F12FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib */,
-				C25C599512FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -307,6 +319,58 @@
 				C26F8C4E131C185C0079E1CC /* iAd.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C20838FE131F2037003BA287 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				C26F8F66131C7CD20079E1CC /* MainContent-iPad.xib */,
+				C26F910B131CA16D0079E1CC /* EmptyDetailViewController.xib */,
+				C2083900131F207B003BA287 /* RootViewController-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		C20838FF131F203D003BA287 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				C25C592B12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib */,
+				C25C598F12FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib */,
+				C25C599512FB16A1004A14E4 /* athleteHipsGirth_ViewController.xib */,
+				C2A4D97512F8DBAB002950C0 /* ActivityLevelViewController.xib */,
+				C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */,
+				C2A4D97612F8DBAB002950C0 /* AgePickerViewController.xib */,
+				C2A4D97712F8DBAB002950C0 /* BMRViewController.xib */,
+				C26F8EAE131C4E320079E1CC /* AgePickerViewController-iPad.xib */,
+				C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */,
+				C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */,
+				C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */,
+				C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */,
+				C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */,
+				C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */,
+				C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */,
+				C2A4D97F12F8DBAB002950C0 /* WeightPickerViewController.xib */,
+				C2A4D98012F8DBAB002950C0 /* WeightPredictorViewController.xib */,
+				28F335F01007B36200424DE2 /* RootViewController-iPhone.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				C26F8F64131C7CC10079E1CC /* MainContent-iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		C26F8F4D131C5CBF0079E1CC /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				C280E07B13097F8600895519 /* iTunesArtwork */,
+				C280E07A13097F8600895519 /* Icon.png */,
+				C280E07913097F8600895519 /* Icon@2x.png */,
+				C280E07813097F8600895519 /* Icon-72.png */,
+				C280E07C13097F8600895519 /* Icon-Small.png */,
+				C280E07D13097F8600895519 /* Icon-Small-50.png */,
+				C280E07E13097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png */,
+				C280E07F13097F8600895519 /* Icon-Small@2x.png */,
+			);
+			name = Artwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
-				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootViewController-iPhone.xib in Resources */,
 				C2A4D98112F8DBAB002950C0 /* ActivityLevelViewController.xib in Resources */,
 				C2A4D98212F8DBAB002950C0 /* AgePickerViewController.xib in Resources */,
 				C2A4D98312F8DBAB002950C0 /* BMRViewController.xib in Resources */,
@@ -385,6 +449,11 @@
 				C280E08513097F8600895519 /* Icon-Small-50.png in Resources */,
 				C280E08613097F8600895519 /* SN_Spotlight&Settings_29x29_papersky.co.png in Resources */,
 				C280E08713097F8600895519 /* Icon-Small@2x.png in Resources */,
+				C26F8EAF131C4E320079E1CC /* AgePickerViewController-iPad.xib in Resources */,
+				C26F8F65131C7CC10079E1CC /* MainContent-iPhone.xib in Resources */,
+				C26F8F67131C7CD20079E1CC /* MainContent-iPad.xib in Resources */,
+				C26F910C131CA16D0079E1CC /* EmptyDetailViewController.xib in Resources */,
+				C2083901131F207B003BA287 /* RootViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +491,11 @@
 				C2BF3C101302FB3500AF939D /* AthleteTypeViewController.m in Sources */,
 				C2BF3C1A1302FCD000AF939D /* AthleteType.m in Sources */,
 				C280E0DC13098B0C00895519 /* Macronutrients.m in Sources */,
+				C26F8F72131C7F120079E1CC /* ContentController.m in Sources */,
+				C26F8F79131C7F640079E1CC /* ContentController_iPhone.m in Sources */,
+				C26F8F7C131C7F710079E1CC /* ContentController_iPad.m in Sources */,
+				C26F9031131C8D8F0079E1CC /* DetailViewController.m in Sources */,
+				C26F910A131CA1530079E1CC /* EmptyDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

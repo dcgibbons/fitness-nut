@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import "AthleteDataDelegate.h"
+#import "DetailViewController.h"
 
-@interface MacronutrientNeedsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,
+
+@interface MacronutrientNeedsViewController : DetailViewController <UITableViewDelegate, UITableViewDataSource,
         AthleteDataDelegate, ADBannerViewDelegate>
 {
     NSMutableDictionary *userData;

@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "ContentController.h"
 
 
 @implementation RootViewController
@@ -14,7 +15,12 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize userData, groups, menuTableView, adBannerView, bannerIsVisible;
+@synthesize userData, groups, menuTableView, adBannerView, bannerIsVisible, contentController;
+
+- (BOOL)isPadDevice 
+{
+	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+}
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -23,7 +29,12 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-
+    
+    self.title = @"Fitness Nut";
+    
+//    self.menuTableView.clearsSelectionOnViewWillAppear = NO;
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    
     // Create an ad banner just off the bottom of the view (i.e. not visible).
     self.bannerIsVisible = NO;
 
@@ -73,22 +84,25 @@
     self.groups = a;
 }
 
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations.
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    // Return YES for supported orientations.
+    return YES;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    if (![self isPadDevice]) {
+        [self.navigationController setNavigationBarHidden:YES animated:animated];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];    
+    if (![self isPadDevice]) {
+        [self.navigationController setNavigationBarHidden:NO animated:animated];
+    }
 }
 
 - (void)didReceiveMemoryWarning 
@@ -145,7 +159,8 @@
     cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.detailTextLabel.numberOfLines = 0;    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -201,12 +216,11 @@
     NSString *viewClassName = [d objectForKey:@"viewClass"];
     
     if (viewClassName) {
-        UIViewController *controller = [[NSClassFromString(viewClassName) alloc] 
-                                        initWithNibName:viewClassName bundle:nil];
+        DetailViewController *controller = [[NSClassFromString(viewClassName) alloc] 
+                                            initWithNibName:viewClassName bundle:nil];
         [controller performSelector:@selector(setUserData:) withObject:self.userData];
         
-        // Pass the selected object to the new view controller.
-        [self.navigationController pushViewController:controller animated:YES];
+        self.contentController.detailViewController = controller;
         [controller release];
     }
 }

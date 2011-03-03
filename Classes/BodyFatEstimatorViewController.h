@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import "DetailViewController.h"
 
 
-@interface BodyFatEstimatorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate>
+@interface BodyFatEstimatorViewController : DetailViewController <UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate>
 {
     NSMutableDictionary *userData;
     

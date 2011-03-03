@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import "DetailViewController.h"
 
-@interface WeightPredictorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,
+
+@interface WeightPredictorViewController : DetailViewController <UITableViewDelegate, UITableViewDataSource,
     ADBannerViewDelegate>
 {
     NSMutableDictionary *userData;

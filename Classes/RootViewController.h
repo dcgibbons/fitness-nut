@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import "ContentController.h"
 
-@interface RootViewController :  UIViewController <UITableViewDataSource, UITableViewDelegate, ADBannerViewDelegate> 
+@interface RootViewController :  UIViewController <UITableViewDataSource, 
+                                                   UITableViewDelegate, 
+                                                   ADBannerViewDelegate> 
 {
-@private
+    ContentController *contentController;
     NSMutableDictionary *userData;
     NSArray *groups;
     UITableView *menuTableView;
@@ -19,6 +22,7 @@
     BOOL bannerIsVisible;
 }
 
+@property (nonatomic, retain) IBOutlet ContentController *contentController;
 @property (nonatomic, retain) NSMutableDictionary *userData;
 @property (nonatomic, retain) NSArray *groups;
 @property (nonatomic, retain) IBOutlet UITableView *menuTableView;
