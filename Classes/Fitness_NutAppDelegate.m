@@ -223,14 +223,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
     // Override point for customization after application launch.
-	if (self.isPadDevice) {
-		// load the content controller object for Pad-based devices
-        [[NSBundle mainBundle] loadNibNamed:@"MainContent-iPad" owner:self options:nil];
-    } else {
-		// load the content controller object for Phone-based devices
-        [[NSBundle mainBundle] loadNibNamed:@"MainContent-iPhone" owner:self options:nil];
-	}
-    
+
     self.userData = [[[NSMutableDictionary alloc] init] autorelease];
     [self loadUserDefaults];
     self.contentController.userData = self.userData;

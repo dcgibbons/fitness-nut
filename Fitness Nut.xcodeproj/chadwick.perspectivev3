@@ -255,7 +255,7 @@
 						<dict>
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
-								<real>280</real>
+								<real>339</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -268,6 +268,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>C20838FF131F203D003BA287</string>
 								<string>C20838FE131F2037003BA287</string>
@@ -280,11 +281,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>113</integer>
+									<integer>99</integer>
+									<integer>72</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1114}, {280, 858}}</string>
+							<string>{{0, 968}, {339, 858}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -294,19 +297,19 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {297, 876}}</string>
+						<string>{{0, 0}, {356, 876}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
-							<real>280</real>
+							<real>339</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>323 201 1365 917 0 0 1920 1178 </string>
+						<string>307 215 1365 917 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>297pt</string>
+					<string>356pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
@@ -319,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C2A4D94912F8DB3B002950C0</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>WeightPickerViewController.m</string>
+								<string>Fitness_NutAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C2A4D94A12F8DB3B002950C0</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>WeightPickerViewController.m</string>
+										<string>Fitness_NutAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C2C6E02E132585B100910E89</string>
+										<string>C2C6E0CC13258C6500910E89</string>
 										<key>history</key>
 										<array>
 											<string>C2A4D9C612F8EC66002950C0</string>
@@ -361,22 +364,15 @@
 											<string>C280E1911309C75600895519</string>
 											<string>C280E1931309C75600895519</string>
 											<string>C26F8C36131C0E200079E1CC</string>
-											<string>C26F8C68131C1BB10079E1CC</string>
 											<string>C26F8FD7131C84B60079E1CC</string>
 											<string>C26F9046131C8FE50079E1CC</string>
-											<string>C26F9316131EEFA00079E1CC</string>
 											<string>C2083A6E131F3380003BA287</string>
-											<string>C2083A87131F3456003BA287</string>
 											<string>C2083A8A131F3456003BA287</string>
 											<string>C2083A8B131F3456003BA287</string>
 											<string>C2083A8D131F3456003BA287</string>
 											<string>C2083AAA131F37AA003BA287</string>
 											<string>C2083AAB131F37AA003BA287</string>
-											<string>C2083B7B132030B4003BA287</string>
-											<string>C2083C4D13203E5C003BA287</string>
 											<string>C2083D2E13205302003BA287</string>
-											<string>C2C6DC5A132533B800910E89</string>
-											<string>C2C6DC7C132534C000910E89</string>
 											<string>C2C6DCB913253A0F00910E89</string>
 											<string>C2C6DDB6132555CB00910E89</string>
 											<string>C2C6DDD713255B2F00910E89</string>
@@ -409,9 +405,17 @@
 											<string>C2C6DFA8132581C600910E89</string>
 											<string>C2C6DFB41325838500910E89</string>
 											<string>C2C6DFB61325838500910E89</string>
-											<string>C2C6DFD8132583CC00910E89</string>
 											<string>C2C6DFE71325841100910E89</string>
-											<string>C2C6E01C1325853D00910E89</string>
+											<string>C2C6E0351325867600910E89</string>
+											<string>C2C6E0441325873500910E89</string>
+											<string>C2C6E0451325873500910E89</string>
+											<string>C2C6E05F132588DB00910E89</string>
+											<string>C2C6E060132588DB00910E89</string>
+											<string>C2C6E061132588DB00910E89</string>
+											<string>C2C6E062132588DB00910E89</string>
+											<string>C2C6E063132588DB00910E89</string>
+											<string>C2C6E064132588DB00910E89</string>
+											<string>C2C6E0B713258B6000910E89</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -425,9 +429,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1063, 653}}</string>
+								<string>{{0, 0}, {1004, 653}}</string>
 								<key>RubberWindowFrame</key>
-								<string>323 201 1365 917 0 0 1920 1178 </string>
+								<string>307 215 1365 917 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -450,9 +454,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1063, 191}}</string>
+										<string>{{10, 27}, {1004, 191}}</string>
 										<key>RubberWindowFrame</key>
-										<string>323 201 1365 917 0 0 1920 1178 </string>
+										<string>307 215 1365 917 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -515,7 +519,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1063pt</string>
+					<string>1004pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -705,7 +709,7 @@
 	<key>PerspectivesBarVisible</key>
 	<true/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>C2C6DEDE132570D400910E89</string>
+	<string>C2C6E0A813258B2900910E89</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -730,13 +734,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C2C6E02F132585B100910E89</string>
+		<string>C2C6E0CD13258C6500910E89</string>
 		<string>C2C6DCDF13253B3F00910E89</string>
 		<string>C2C6DCC713253A0F00910E89</string>
 		<string>/Users/chadwick/Projects/Fitness Nut/Fitness Nut.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>323 201 1365 917 0 0 1920 1178 </string>
+	<string>307 215 1365 917 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

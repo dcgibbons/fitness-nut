@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
 
-@interface EmptyDetailViewController : DetailViewController {
+@interface EmptyDetailViewController : DetailViewController 
+{
 
 }
 

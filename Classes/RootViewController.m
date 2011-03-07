@@ -30,15 +30,13 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Fitness Nut";
-    
-//    self.menuTableView.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    
-    // Create an ad banner just off the bottom of the view (i.e. not visible).
-    self.bannerIsVisible = NO;
+
+    self.title = @"Fitness Nut";
 
 #ifndef PRO_VERSION
+    // Create an ad banner just off the bottom of the view (i.e. not visible).
+    self.bannerIsVisible = NO;
     adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
                                                                   self.view.frame.size.height,
                                                                   0, 0)];
