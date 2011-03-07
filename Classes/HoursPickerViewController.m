@@ -11,11 +11,7 @@
 
 @implementation HoursPickerViewController
 
-#pragma mark -
-#pragma mark Properties
-
-@synthesize data, dataName, delegate;
-@synthesize pickerView, cancelButton, doneButton;
+@synthesize data, dataName, delegate, pickerView;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -25,19 +21,15 @@
 {
     [super viewDidLoad];
 
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
     
     self.title = @"Training Hours";
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    return YES;
 }
-*/
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -66,10 +58,12 @@
     // e.g. self.myOutlet = nil;
     self.data = nil;
     self.dataName = nil;
+    self.pickerView = nil;
 }
 
 - (void)dealloc 
 {
+    [pickerView release];
     [dataName release];
     [data release];
     [super dealloc];
@@ -101,15 +95,10 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
-    
+    [super done:sender];
+
     int row = [self.pickerView selectedRowInComponent:0];
     NSUInteger hours = row + 4;
 

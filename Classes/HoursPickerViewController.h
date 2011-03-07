@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
-@interface HoursPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,
-                                                            AthleteDataProtocol>
+
+@interface HoursPickerViewController : SecondaryDetailViewController <UIPickerViewDataSource, 
+                                                                      UIPickerViewDelegate,
+                                                                      AthleteDataProtocol>
 {
     NSString *dataName;
     NSNumber *data;
@@ -19,18 +22,11 @@
     
 @private
     UIPickerView *pickerView;
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
 }
 
 @property (nonatomic, retain) NSString *dataName;
 @property (nonatomic, retain) NSNumber *data;
 @property (nonatomic, assign) id<AthleteDataDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
 
 @end
