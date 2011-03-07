@@ -10,9 +10,12 @@
 #import "AthleteDataDelegate.h"
 #import "AthleteType.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
 
-@interface AthleteTypeViewController : UITableViewController <AthleteDataProtocol>
+@interface AthleteTypeViewController : SecondaryDetailViewController <AthleteDataProtocol,
+                                                                      UITableViewDataSource,
+                                                                      UITableViewDelegate>
 {
     NSString *dataName;
     AthleteType *data;
@@ -20,18 +23,13 @@
     
 @private
     NSArray *athleteTypes;
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
+    UITableView *tableView;
 }
 
 @property (nonatomic, retain) NSString *dataName;
 @property (nonatomic, retain) AthleteType *data;
 @property (nonatomic, retain) id<AthleteDataDelegate> delegate;
 @property (nonatomic, retain) NSArray *athleteTypes;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

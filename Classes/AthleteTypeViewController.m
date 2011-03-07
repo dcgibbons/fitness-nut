@@ -11,7 +11,7 @@
 
 @implementation AthleteTypeViewController
 
-@synthesize dataName, data, athleteTypes, delegate, cancelButton, doneButton;
+@synthesize dataName, data, athleteTypes, delegate, tableView;
 
 - (void)updateAthleteType
 {
@@ -24,18 +24,17 @@
     self.data.athleteType = row;    
 }
 
+- (BOOL)shouldShowInPopover
+{
+    return NO;
+}
+
 #pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
     
     self.title = @"Athlete Type";
 
@@ -49,13 +48,10 @@
                          ];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    return YES;
 }
-*/
 
 - (void)didReceiveMemoryWarning 
 {
@@ -73,8 +69,7 @@
     self.dataName = nil;
     self.data = nil;
     self.athleteTypes = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
+    self.tableView = tableView;
 }
 
 - (void)dealloc 
@@ -82,8 +77,7 @@
     [dataName release];
     [data release];
     [athleteTypes release];
-    [cancelButton release];
-    [doneButton release];
+    [tableView release];
     [super dealloc];
 }
 
@@ -105,12 +99,12 @@
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView 
+- (UITableViewCell *)tableView:(UITableView *)aTableView 
          cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {    
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
                                        reuseIdentifier:CellIdentifier] autorelease];
@@ -130,23 +124,18 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     [self updateAthleteType];
-    [tableView reloadData];
+    [aTableView reloadData];
 }
 
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
     
     if (!self.data) {
         [self updateAthleteType];
