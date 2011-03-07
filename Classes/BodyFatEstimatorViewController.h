@@ -11,22 +11,9 @@
 #import "DetailViewController.h"
 
 
-@interface BodyFatEstimatorViewController : DetailViewController <UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate>
+@interface BodyFatEstimatorViewController : DetailViewController
 {
-    NSMutableDictionary *userData;
-    
-@private
-    UITableView *tableView;
-    NSArray *sections;
-    ADBannerView *adBannerView;
-    BOOL bannerIsVisible;
 }
-
-@property (nonatomic, retain) NSMutableDictionary *userData;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) NSArray *sections;
-@property (nonatomic, retain) ADBannerView *adBannerView;
-@property (nonatomic, assign) BOOL bannerIsVisible;
 
 - (NSString *)calculatePredictedBodyFat;
 

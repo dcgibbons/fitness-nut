@@ -7,15 +7,36 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
+#import "AthleteDataDelegate.h"
+#import "SecondaryDetailViewController.h"
 
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate,
+                                                    UITableViewDataSource,
+                                                    UITableViewDelegate,
+                                                    SecondaryDetailInputDelegate,
+                                                    UIPopoverControllerDelegate,
+                                                    ADBannerViewDelegate, 
+                                                    AthleteDataDelegate>
 {
-    UINavigationBar *navBar;
+    NSMutableDictionary *userData;
+
     UIPopoverController *popoverController;
+    UITableView *tableView;
+    
+    NSArray *sections;
+
+    ADBannerView *adBannerView;
+    BOOL bannerIsVisible;
+    
 }
 
-@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
+@property (nonatomic, retain) NSMutableDictionary *userData;
 @property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, retain) ADBannerView *adBannerView;
+@property (nonatomic, assign) BOOL bannerIsVisible;
 
 @end

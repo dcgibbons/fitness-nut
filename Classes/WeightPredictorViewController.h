@@ -11,23 +11,9 @@
 #import "DetailViewController.h"
 
 
-@interface WeightPredictorViewController : DetailViewController <UITableViewDelegate, UITableViewDataSource,
-    ADBannerViewDelegate>
+@interface WeightPredictorViewController : DetailViewController
 {
-    NSMutableDictionary *userData;
-    
-@private
-    UITableView *tableView;
-    ADBannerView *adBannerView;
-    BOOL bannerIsVisible;
-    NSArray *sections;
 }
-
-@property (nonatomic, retain) NSMutableDictionary *userData;
-@property (nonatomic, retain) NSArray *sections;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) ADBannerView *adBannerView;
-@property (nonatomic, assign) BOOL bannerIsVisible;
 
 - (NSString *)calculatePredictedWeight;
 

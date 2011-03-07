@@ -13,30 +13,12 @@
 #import "DetailViewController.h"
 #import "SecondaryDetailViewController.h"
 
-@interface BMRViewController : DetailViewController <UITableViewDelegate, 
-                                                 UITableViewDataSource, 
-                                                 UINavigationControllerDelegate, 
-                                                 AthleteDataDelegate,
-                                                 ADBannerViewDelegate,
-                                                 UIPopoverControllerDelegate,
-                                                 SecondaryDetailInputDelegate> 
+@interface BMRViewController : DetailViewController
 {
-    NSMutableDictionary *userData;
-
-@private
-    NSArray *sections;
-    UITableView *tableView;
     UIButton *infoButton;
-    ADBannerView *adBannerView;
-    BOOL bannerIsVisible;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *userData;
-@property (nonatomic, retain) NSArray *sections;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIButton *infoButton;
-@property (nonatomic, retain) ADBannerView *adBannerView;
-@property (nonatomic, assign) BOOL bannerIsVisible;
 
 - (NSString *)calculateBMR;
 

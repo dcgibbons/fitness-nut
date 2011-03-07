@@ -31,14 +31,16 @@ static NSString *buttonTitle = @"Fitness Nut";
                                          style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(presentMasterInPopoverFromBarButtonItem:)];
-        [self.detailViewController.navBar.topItem setLeftBarButtonItem:popoverMasterViewControllerBarButtonItem 
-                                                              animated:YES];
+        // TODO XXX FIXME
+//        [self.detailViewController.navBar.topItem setLeftBarButtonItem:popoverMasterViewControllerBarButtonItem 
+//                                                              animated:YES];
         self.popoverBarButton = popoverMasterViewControllerBarButtonItem;
         [popoverMasterViewControllerBarButtonItem release];
     }
     else
     {
-        [self.detailViewController.navBar.topItem setLeftBarButtonItem:nil animated:YES];
+        // TODO XXX FIXME
+//        [self.detailViewController.navBar.topItem setLeftBarButtonItem:nil animated:YES];
     }
 }
 
