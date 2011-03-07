@@ -58,7 +58,7 @@
 		C2A4D98412F8DBAB002950C0 /* BodyFatEstimatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */; };
 		C2A4D98512F8DBAB002950C0 /* BodyFatPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */; };
 		C2A4D98612F8DBAB002950C0 /* GenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */; };
-		C2A4D98712F8DBAB002950C0 /* GirthPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */; };
+		C2A4D98712F8DBAB002950C0 /* GirthPickerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController~iphone.xib */; };
 		C2A4D98812F8DBAB002950C0 /* HeightPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */; };
 		C2A4D98912F8DBAB002950C0 /* HoursPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */; };
 		C2A4D98A12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */; };
@@ -75,6 +75,7 @@
 		C2BF3C121302FB7C00AF939D /* AthleteTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */; };
 		C2BF3C1A1302FCD000AF939D /* AthleteType.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BF3C191302FCD000AF939D /* AthleteType.m */; };
 		C2C6DC4B132531FC00910E89 /* SecondaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */; };
+		C2C6DF5813257B9400910E89 /* GirthPickerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,7 +156,7 @@
 		C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyFatEstimatorViewController.xib; sourceTree = "<group>"; };
 		C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyFatPickerViewController.xib; sourceTree = "<group>"; };
 		C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderViewController.xib; sourceTree = "<group>"; };
-		C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GirthPickerViewController.xib; sourceTree = "<group>"; };
+		C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController~iphone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GirthPickerViewController~iphone.xib"; sourceTree = "<group>"; };
 		C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeightPickerViewController.xib; sourceTree = "<group>"; };
 		C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursPickerViewController.xib; sourceTree = "<group>"; };
 		C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacronutrientNeedsViewController.xib; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 		C2BF3C191302FCD000AF939D /* AthleteType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteType.m; sourceTree = "<group>"; };
 		C2C6DC49132531FC00910E89 /* SecondaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryDetailViewController.h; sourceTree = "<group>"; };
 		C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryDetailViewController.m; sourceTree = "<group>"; };
+		C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GirthPickerViewController~ipad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 				C26F8F66131C7CD20079E1CC /* MainContent-iPad.xib */,
 				C26F910B131CA16D0079E1CC /* EmptyDetailViewController.xib */,
 				C2083900131F207B003BA287 /* RootViewController-iPad.xib */,
+				C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -351,7 +354,7 @@
 				C2A4D97812F8DBAB002950C0 /* BodyFatEstimatorViewController.xib */,
 				C2A4D97912F8DBAB002950C0 /* BodyFatPickerViewController.xib */,
 				C2A4D97A12F8DBAB002950C0 /* GenderViewController.xib */,
-				C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController.xib */,
+				C2A4D97B12F8DBAB002950C0 /* GirthPickerViewController~iphone.xib */,
 				C2A4D97C12F8DBAB002950C0 /* HeightPickerViewController.xib */,
 				C2A4D97D12F8DBAB002950C0 /* HoursPickerViewController.xib */,
 				C2A4D97E12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib */,
@@ -436,7 +439,7 @@
 				C2A4D98412F8DBAB002950C0 /* BodyFatEstimatorViewController.xib in Resources */,
 				C2A4D98512F8DBAB002950C0 /* BodyFatPickerViewController.xib in Resources */,
 				C2A4D98612F8DBAB002950C0 /* GenderViewController.xib in Resources */,
-				C2A4D98712F8DBAB002950C0 /* GirthPickerViewController.xib in Resources */,
+				C2A4D98712F8DBAB002950C0 /* GirthPickerViewController~iphone.xib in Resources */,
 				C2A4D98812F8DBAB002950C0 /* HeightPickerViewController.xib in Resources */,
 				C2A4D98912F8DBAB002950C0 /* HoursPickerViewController.xib in Resources */,
 				C2A4D98A12F8DBAB002950C0 /* MacronutrientNeedsViewController.xib in Resources */,
@@ -459,6 +462,7 @@
 				C26F8F67131C7CD20079E1CC /* MainContent-iPad.xib in Resources */,
 				C26F910C131CA16D0079E1CC /* EmptyDetailViewController.xib in Resources */,
 				C2083901131F207B003BA287 /* RootViewController-iPad.xib in Resources */,
+				C2C6DF5813257B9400910E89 /* GirthPickerViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,10 +11,12 @@
 #import "AthleteMeasurement.h"
 #import "InfoViewController.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
-@interface GirthPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,
-                                                         InfoViewControllerDelegate, 
-                                                            AthleteDataProtocol>
+@interface GirthPickerViewController : SecondaryDetailViewController <UIPickerViewDataSource, 
+                                                                      UIPickerViewDelegate,
+                                                                      InfoViewControllerDelegate, 
+                                                                      AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteMeasurement *data;
@@ -24,8 +26,6 @@
     UIPickerView *pickerView;
     UISegmentedControl *unitsControl;
     UIButton *infoButton;
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
 }
 
 @property (nonatomic, retain) NSString *dataName;
@@ -34,11 +34,7 @@
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *unitsControl;
 @property (nonatomic, retain) IBOutlet UIButton *infoButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
 - (IBAction)info:(id)sender;
 
 @end

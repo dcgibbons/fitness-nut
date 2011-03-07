@@ -102,9 +102,6 @@
                                      nil
                                      ],
 
-    // TODO: add neck & waist measurements
-    // TODO: add hip measurements for females only
-    
                                     [NSDictionary dictionaryWithObjectsAndKeys:
                                      @"neck girth", @"title",
                                      @"GirthPickerViewController", @"viewController",
@@ -158,13 +155,10 @@
                      nil];
 }
 
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations.
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    return YES;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

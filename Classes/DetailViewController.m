@@ -165,8 +165,10 @@
     NSString *viewClassName = [rowDict objectForKey:@"viewController"];
     if (!viewClassName) return;
     
+    NSString *nibName = viewClassName;
+        
     SecondaryDetailViewController *detailViewController = [[NSClassFromString(viewClassName) alloc]
-                                                           initWithNibName:viewClassName bundle:nil];
+                                                           initWithNibName:nibName bundle:nil];
     
     detailViewController.inputDelegate = self;
     

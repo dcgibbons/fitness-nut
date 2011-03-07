@@ -11,6 +11,9 @@
 
 @implementation BodyFatPickerViewController
 
+@synthesize dataName, data, delegate, pickerView;
+
+
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -19,8 +22,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
     
     self.title = @"Athlete Body Fat";
     
@@ -59,8 +61,6 @@
     self.dataName = nil;
     self.data = nil;
     self.pickerView = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
 }
 
 - (void)dealloc 
@@ -68,16 +68,8 @@
     [dataName release];
     [data release];
     [pickerView release];
-    [cancelButton release];
-    [doneButton release];
     [super dealloc];
 }
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize dataName, data, delegate;
-@synthesize pickerView, cancelButton, doneButton;
 
 #pragma mark -
 #pragma mark Picker View Data Source
@@ -102,8 +94,6 @@
     NSString *title;
     if (component == 0) {
         title = [NSString stringWithFormat:@"%d", row + 4];
-//    } else {
-//        title = [NSString stringWithFormat:@"%d", row];
     }
     return title;
 }
@@ -111,18 +101,11 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
     
     double bodyFat = [self.pickerView selectedRowInComponent:0] + 4;
-//    double frac = [self.pickerView selectedRowInComponent:1] / 10.0;
-//    bodyFat += frac;
     
     self.data = [[[AthleteBodyFat alloc] initWithBodyFat:[NSNumber numberWithDouble:bodyFat]] autorelease];
     [delegate athleteDataInputDone:self withDataNamed:self.dataName withDataValue:data];

@@ -36,7 +36,7 @@
 #pragma mark Properties
 
 @synthesize data, dataName, delegate;
-@synthesize pickerView, unitsControl, cancelButton, doneButton, infoButton;
+@synthesize pickerView, unitsControl, infoButton;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -45,20 +45,16 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+
+    self.contentSizeForViewInPopover = CGSizeMake(320, 300);
     
     self.title = @"Girth";
 }
 
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations.
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    return YES;
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -75,6 +71,26 @@
                           action:@selector(changeUnits:)
                 forControlEvents:UIControlEventValueChanged];
     
+}
+
+// Use frame of containing view to work out the correct origin and size
+// of the UIDatePicker.
+- (void)layoutView:(UIInterfaceOrientation)orientation 
+{
+    if (IS_PAD_DEVICE()) {
+        self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+        self.unitsControl.frame = CGRectMake(56, 224, 207, 44);
+        self.infoButton.frame = CGRectMake(282, 224+44+8, 18, 19);
+    } else {
+        if (UIInterfaceOrientationIsLandscape(orientation)) {
+            self.unitsControl.frame = CGRectMake(253, 86, 207, 44);
+            self.pickerView.frame = CGRectMake(0, 0, 245, 216);
+        } else {
+            self.unitsControl.frame = CGRectMake(56, 353, 207, 44);
+            self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+        }
+    }
 }
 
 #pragma mark -
@@ -98,8 +114,6 @@
     self.dataName = nil;
     self.pickerView = nil;
     self.unitsControl = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
 }
 
 - (void)dealloc 
@@ -108,8 +122,6 @@
     [data release];
     [pickerView release];
     [unitsControl release];
-    [cancelButton release];
-    [doneButton release];
     [super dealloc];
 }
 
@@ -146,14 +158,9 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
     
     int row = [self.pickerView selectedRowInComponent:0];
     NSNumber *m = [NSNumber numberWithInt:row];
