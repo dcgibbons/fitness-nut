@@ -56,11 +56,12 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+
+    // TODO: document the magic numbers before you forget, fool!
+    self.contentSizeForViewInPopover = CGSizeMake(320, 224 + 44 + 19);
     
     self.title = @"Athlete Height";
+    self.navigationItem.title = @"Athlete Height";
     
     int height = [self isInches] ? 66 : 168; // 5'6" or 168cm
     HeightUnits units = Inches;
@@ -78,14 +79,51 @@
                 forControlEvents:UIControlEventValueChanged];
 }
 
-/*
+- (void)viewWillAppear:(BOOL)animated 
+{
+    [super viewWillAppear:animated];
+    
+    // Layout once here to ensure the current orientation is respected.
+    [self layoutPicker:[UIApplication sharedApplication].statusBarOrientation];
+
+    if (IS_PAD_DEVICE()) {
+        [self.navigationController setNavigationBarHidden:NO animated:animated];
+    }
+}
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
     // Return YES for supported orientations.
     return YES;
 }
-*/
+
+// Use frame of containing view to work out the correct origin and size
+// of the UIDatePicker.
+- (void)layoutPicker:(UIInterfaceOrientation)orientation 
+{
+    if (IS_PAD_DEVICE()) {
+        self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+        self.unitsControl.frame = CGRectMake(56, 224, 207, 44);
+    } else {
+        if (UIInterfaceOrientationIsLandscape(orientation)) {
+            self.unitsControl.frame = CGRectMake(253, 86, 207, 44);
+            self.pickerView.frame = CGRectMake(0, 0, 245, 216);
+        } else {
+            self.unitsControl.frame = CGRectMake(56, 353, 207, 44);
+            self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+        }
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation
+                                         duration:(NSTimeInterval)duration 
+{
+    [super willAnimateRotationToInterfaceOrientation:orientation duration:duration];
+    [self layoutPicker:orientation];
+}
+
 
 #pragma mark -
 #pragma mark Memory Management
@@ -108,8 +146,6 @@
     self.data = nil;
     self.pickerView = nil;
     self.unitsControl = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
 }
 
 - (void)dealloc 
@@ -118,8 +154,6 @@
     [data release];
     [pickerView release];
     [unitsControl release];
-    [cancelButton release];
-    [doneButton release];
     [super dealloc];
 }
 
@@ -127,19 +161,14 @@
 #pragma mark Properties
 
 @synthesize data, dataName, delegate;
-@synthesize pickerView, unitsControl, cancelButton, doneButton;
+@synthesize pickerView, unitsControl;
 
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
 
     AthleteHeight *athleteHeight = [self getHeightUsingUnits:[self isInches] ? Inches : Centimeters];
     self.data = athleteHeight;

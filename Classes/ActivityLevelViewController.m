@@ -11,6 +11,7 @@
 
 
 @implementation ActivityLevelViewController
+@synthesize delegate, dataName, data, activityLevels, tableView;
 
 
 - (void)updateActivityLevel
@@ -24,6 +25,10 @@
     self.data.activityLevel = row;    
 }
 
+- (BOOL)shouldShowInPopover
+{
+    return NO;
+}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -34,9 +39,8 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+
+    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
     
     self.title = @"Activity Level";
     
@@ -50,26 +54,22 @@
                            ];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    return YES;
 }
-*/
-
 
 #pragma mark -
 #pragma mark Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView 
 {
     // Return the number of sections.
     return 1;
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section 
 {
     // Return the number of rows in the section.
     return [activityLevels count];
@@ -77,12 +77,12 @@
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView 
+- (UITableViewCell *)tableView:(UITableView *)aTableView 
          cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {    
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
                                        reuseIdentifier:CellIdentifier] autorelease];
@@ -102,10 +102,10 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     [self updateActivityLevel];
-    [tableView reloadData];
+    [aTableView reloadData];
 }
 
 #pragma mark -
@@ -127,8 +127,7 @@
     self.dataName = nil;
     self.data = nil;
     self.activityLevels = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
+    self.tableView = nil;
 }
 
 - (void)dealloc 
@@ -136,28 +135,16 @@
     [dataName release];
     [data release];
     [activityLevels release];
-    [cancelButton release];
-    [doneButton release];
+    [tableView release];
     [super dealloc];
 }
 
 #pragma mark -
-#pragma mark Properties
-
-@synthesize delegate, dataName, data, activityLevels;
-@synthesize cancelButton, doneButton;
-
-#pragma mark -
 #pragma mark UI Actions
-
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
     
     if (!self.data) {
         [self updateActivityLevel];

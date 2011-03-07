@@ -33,6 +33,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.navBar = nil;
+    self.popoverController = nil;
 }
 
 // Override to allow orientations other than the default portrait orientation.

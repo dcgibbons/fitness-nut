@@ -9,28 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
 #import "AthleteDataProtocol.h"
-
+#import "SecondaryDetailViewController.h"
 
 @class AthleteGender;
 
-@interface GenderViewController : UITableViewController <AthleteDataProtocol>
+@interface GenderViewController : SecondaryDetailViewController <AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteGender *data;
     id<AthleteDataDelegate> delegate;
     
 @private
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
+    IBOutlet UITableView *tableView;
 }
 
 @property (nonatomic, retain) NSString *dataName;
 @property (nonatomic, retain) AthleteGender* data;
 @property (nonatomic, assign) id<AthleteDataDelegate> delegate;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
+@property (nonatomic, retain) UITableView *tableView;
 
 @end

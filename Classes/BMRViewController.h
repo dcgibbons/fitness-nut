@@ -11,12 +11,15 @@
 #import "AgePickerViewController.h"
 #import "AthleteDataDelegate.h"
 #import "DetailViewController.h"
+#import "SecondaryDetailViewController.h"
 
 @interface BMRViewController : DetailViewController <UITableViewDelegate, 
                                                  UITableViewDataSource, 
                                                  UINavigationControllerDelegate, 
                                                  AthleteDataDelegate,
-                                                 ADBannerViewDelegate> 
+                                                 ADBannerViewDelegate,
+                                                 UIPopoverControllerDelegate,
+                                                 SecondaryDetailInputDelegate> 
 {
     NSMutableDictionary *userData;
 

@@ -12,4 +12,6 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
     #import <iAd/iAd.h>
+
+    #define IS_PAD_DEVICE() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #endif

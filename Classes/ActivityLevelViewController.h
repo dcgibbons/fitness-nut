@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
 
 @class AthleteActivityLevel;
 
-@interface ActivityLevelViewController : UITableViewController <AthleteDataProtocol>
+@interface ActivityLevelViewController : SecondaryDetailViewController <AthleteDataProtocol>
 {
     NSString *dataName;
     AthleteActivityLevel *data;
@@ -21,18 +22,13 @@
     
 @private
     NSArray *activityLevels;
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
+    UITableView *tableView;
 }
 
 @property (nonatomic, retain) NSString *dataName;
 @property (nonatomic, retain) AthleteActivityLevel *data;
 @property (nonatomic, retain) id<AthleteDataDelegate> delegate;
 @property (nonatomic, retain) NSArray *activityLevels;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

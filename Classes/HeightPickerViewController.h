@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AthleteDataDelegate.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
 @class AthleteHeight;
 
-@interface HeightPickerViewController : UIViewController <UIPickerViewDataSource, 
+@interface HeightPickerViewController : SecondaryDetailViewController <UIPickerViewDataSource, 
                                                             UIPickerViewDelegate, 
                                                             AthleteDataProtocol> 
 {
@@ -23,8 +24,6 @@
 @private
     UIPickerView *pickerView;
     UISegmentedControl *unitsControl;
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
 }
 
 @property (nonatomic, retain) NSString *dataName;
@@ -32,11 +31,8 @@
 @property (nonatomic, assign) id<AthleteDataDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *unitsControl;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
 - (IBAction)changeUnits:(id)sender;
+- (void)layoutPicker:(UIInterfaceOrientation)orientation;
 
 @end

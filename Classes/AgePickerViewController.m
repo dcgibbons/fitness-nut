@@ -9,6 +9,7 @@
 #import "AgePickerViewController.h"
 
 @implementation AgePickerViewController
+@synthesize dataName, data, delegate, pickerView;
 
 #define AGE_DEFAULT     (30)
 #define AGE_OFFSET      (10)
@@ -22,8 +23,7 @@
 {
     [super viewDidLoad];
 
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
     
     self.title = @"Athlete Age";
 
@@ -35,13 +35,12 @@
     [self.pickerView selectRow:(age - AGE_OFFSET) inComponent:0 animated:NO];
 }
 
-/*
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
     // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
 
 #pragma mark -
 #pragma mark Memory management
@@ -60,24 +59,14 @@
     self.dataName = nil;
     self.data = nil;
     self.pickerView = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
 }
 
 - (void)dealloc {
     [dataName release];
     [data release];
     [pickerView release];
-    [cancelButton release];
-    [doneButton release];
     [super dealloc];
 }
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize dataName, data, delegate;
-@synthesize pickerView, cancelButton, doneButton;
 
 #pragma mark -
 #pragma mark Picker View Data Source
@@ -105,14 +94,9 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
     
     int row = [self.pickerView selectedRowInComponent:0];
     NSUInteger age = row + AGE_OFFSET;

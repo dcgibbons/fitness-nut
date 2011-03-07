@@ -10,10 +10,12 @@
 #import "AthleteAge.h"
 #import "AthleteDataDelegate.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
 
-@interface AgePickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, 
-                                                        AthleteDataProtocol> 
+@interface AgePickerViewController : SecondaryDetailViewController <UIPickerViewDataSource, 
+                                                                    UIPickerViewDelegate, 
+                                                                    AthleteDataProtocol> 
 {
     NSString *dataName;
     AthleteAge *data;
@@ -21,19 +23,11 @@
 
 @private
     UIPickerView *pickerView;
-    UIBarButtonItem *cancelButton;
-    UIBarButtonItem *doneButton;
-    
 }
 
 @property (nonatomic, retain) NSString *dataName;
 @property (nonatomic, retain) AthleteAge *data;
 @property (nonatomic, assign) id<AthleteDataDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
 
 @end

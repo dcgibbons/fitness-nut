@@ -14,6 +14,7 @@
 #import "AthleteGender.h"
 #import "FitnessCalculations.h"
 #import "AthleteDataProtocol.h"
+#import "SecondaryDetailViewController.h"
 
 @implementation BMRViewController
 
@@ -189,13 +190,12 @@
                      nil];
 }
 
-/*
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
     // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -269,7 +269,7 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     // Navigation logic may go here. Create and push another view controller.
 
@@ -282,8 +282,10 @@
     NSString *viewClassName = [rowDict objectForKey:@"viewController"];
     if (!viewClassName) return;
 
-    UIViewController *detailViewController = [[NSClassFromString(viewClassName) alloc]
+    SecondaryDetailViewController *detailViewController = [[NSClassFromString(viewClassName) alloc]
                                               initWithNibName:viewClassName bundle:nil];
+    
+    detailViewController.inputDelegate = self;
     
     // TODO: BOGUS design, use a datasource instead?
     NSString *dataName = [rowDict objectForKey:@"dataName"];
@@ -295,7 +297,32 @@
     [detailViewController performSelector:@selector(setDelegate:) withObject:self];
 
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    // TODO: delegate this stuff to the contentcontroller for consistency?
+    if (IS_PAD_DEVICE() && [detailViewController shouldShowInPopover]) {
+        // Create a navigation controller to contain the recent searches controller, and create the popover controller to contain the navigation controller.
+        UINavigationController *navigationController = [[UINavigationController alloc] 
+                                                        initWithRootViewController:detailViewController];
+        
+        if (!popoverController) {
+            UIPopoverController *pc = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+            self.popoverController = pc;
+            [pc release];
+        } else {
+            self.popoverController.contentViewController = navigationController;
+        }
+        
+        navigationController.navigationBar.barStyle = UIBarStyleBlack;
+        self.popoverController.delegate = self;
+        
+        CGRect rect = [aTableView rectForRowAtIndexPath:indexPath];
+        [popoverController presentPopoverFromRect:rect 
+                                           inView:self.view 
+                         permittedArrowDirections:UIPopoverArrowDirectionAny 
+                                         animated:YES];
+    } else {
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+    
     [detailViewController release];
 }
 
@@ -396,6 +423,40 @@
         
         [UIView commitAnimations];
         self.bannerIsVisible = NO;
+    }
+}
+
+#pragma mark -
+#pragma mark UIPopoverControllerDelegate methods
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)aPopoverController
+{
+    UIViewController *contentViewController = aPopoverController.contentViewController;
+    if ([contentViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navController = (UINavigationController *)contentViewController;
+        contentViewController = navController.visibleViewController;
+    }
+    
+    if ([contentViewController isKindOfClass:[SecondaryDetailViewController class]]) {
+        SecondaryDetailViewController *vc = (SecondaryDetailViewController *)contentViewController;
+        [vc done:self];
+    }
+}
+
+- (BOOL)popoverControllerShouldDismissPopover:(UIPopoverController *)popoverController
+{
+    return YES;
+}
+
+#pragma mark -
+#pragma mark SecondaryDetailInputDelegate methods
+
+- (void)didDismissInputView:(SecondaryDetailViewController *)aViewController
+{
+    if (IS_PAD_DEVICE() && [aViewController shouldShowInPopover]) {
+        [self.popoverController dismissPopoverAnimated:YES];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

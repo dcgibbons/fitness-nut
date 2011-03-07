@@ -52,8 +52,8 @@
 {
     [super viewDidLoad];
 
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
-    self.navigationItem.rightBarButtonItem = self.doneButton;
+    // TODO: document the magic numbers before you forget, fool!
+    self.contentSizeForViewInPopover = CGSizeMake(320, 224 + 44 + 19);
     
     self.title = @"Athlete Weight";
     
@@ -73,13 +73,27 @@
                 forControlEvents:UIControlEventValueChanged];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)layoutView:(UIInterfaceOrientation)orientation
+{
+    if (IS_PAD_DEVICE()) {
+        self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+        self.unitsControl.frame = CGRectMake(56, 224, 207, 44);
+    } else {
+        if (UIInterfaceOrientationIsLandscape(orientation)) {
+            self.unitsControl.frame = CGRectMake(253, 86, 207, 44);
+            self.pickerView.frame = CGRectMake(0, 0, 245, 216);
+        } else {
+            self.unitsControl.frame = CGRectMake(56, 353, 207, 44);
+            self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+        }
+    }
 }
-*/
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    return YES;
+}
 
 #pragma mark -
 #pragma mark Memory management
@@ -101,9 +115,6 @@
     self.data = nil;
     self.pickerView = nil;
     self.unitsControl = nil;
-    self.unitsControl = nil;
-    self.cancelButton = nil;
-    self.doneButton = nil;
 }
 
 - (void)dealloc 
@@ -112,8 +123,6 @@
     [data release];
     [pickerView release];
     [unitsControl release];
-    [cancelButton release];
-    [doneButton release];
     [super dealloc];
 }
 
@@ -166,19 +175,14 @@
 #pragma mark Properties
 
 @synthesize dataName, data, delegate;
-@synthesize pickerView, unitsControl, cancelButton, doneButton;
+@synthesize pickerView, unitsControl;
 
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [super done:sender];
     
     switch (self.unitsControl.selectedSegmentIndex) {
         case 0: { // lbs
