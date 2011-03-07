@@ -9,7 +9,10 @@
 #import "WeightPickerViewController.h"
 #import "AthleteWeight.h"
 
+
 @implementation WeightPickerViewController
+
+@synthesize dataName, data, delegate, pickerView, unitsControl;
 
 - (BOOL) isPounds
 {
@@ -35,13 +38,17 @@
     return athleteWeight;
 }
 
-- (void)selectRowsFromWeight:(AthleteWeight *)weight
+- (void)selectRowsFromWeight:(AthleteWeight *)weight animated:(BOOL)animated
 {
+    NSInteger row = 0;
+    
     if (weight.units == Pounds) {
-        [self.pickerView selectRow:[weight.weight intValue] - 90 inComponent:0 animated:YES];
+        row = [weight.weight intValue] - 90;
     } else {
-        [self.pickerView selectRow:[weight.weight intValue] - 40 inComponent:0 animated:YES];
+        row = [weight.weight intValue] - 40;
     }
+
+    [self.pickerView selectRow:row inComponent:0 animated:animated];
 }
 
 #pragma mark -
@@ -66,7 +73,8 @@
     self.unitsControl.selectedSegmentIndex = (units == Pounds) ? 0 : 1;
     [self selectRowsFromWeight:[[[AthleteWeight alloc] initWithWeight:[NSNumber numberWithInt:weight]
                                                            usingUnits:units]
-                                autorelease]];
+                                                            
+                                autorelease] animated:NO];
 
     [self.unitsControl addTarget:self 
                           action:@selector(changeUnits:)
@@ -172,12 +180,6 @@
 }
 
 #pragma mark -
-#pragma mark Properties
-
-@synthesize dataName, data, delegate;
-@synthesize pickerView, unitsControl;
-
-#pragma mark -
 #pragma mark UI Actions
 
 - (IBAction)done:(id)sender
@@ -226,7 +228,7 @@
     NSLog(@"newAthleteWeight=%@\n", newWeight);
 
     [self.pickerView reloadAllComponents];
-    [self selectRowsFromWeight:newWeight];
+    [self selectRowsFromWeight:newWeight animated:YES];
 }
 
 @end

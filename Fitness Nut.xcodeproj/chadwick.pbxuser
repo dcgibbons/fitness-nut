@@ -58,6 +58,30 @@
 			C2A4D93E12F8DB2D002950C0 /* Fitness Nut */,
 		);
 		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA23EDF0692099D00951B8B" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					326,
+					20,
+					226,
+					226,
+					156,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
@@ -454,6 +478,65 @@
 			C2C6DF8A13257F2500910E89 /* PBXTextBookmark */ = C2C6DF8A13257F2500910E89 /* PBXTextBookmark */;
 			C2C6DF9013257FC600910E89 /* PBXTextBookmark */ = C2C6DF9013257FC600910E89 /* PBXTextBookmark */;
 			C2C6DF9213257FF600910E89 /* PBXTextBookmark */ = C2C6DF9213257FF600910E89 /* PBXTextBookmark */;
+			C2C6DFA6132581C600910E89 /* PBXTextBookmark */ = C2C6DFA6132581C600910E89 /* PBXTextBookmark */;
+			C2C6DFA7132581C600910E89 /* PBXTextBookmark */ = C2C6DFA7132581C600910E89 /* PBXTextBookmark */;
+			C2C6DFA8132581C600910E89 /* PBXTextBookmark */ = C2C6DFA8132581C600910E89 /* PBXTextBookmark */;
+			C2C6DFA9132581C600910E89 /* PBXTextBookmark */ = C2C6DFA9132581C600910E89 /* PBXTextBookmark */;
+			C2C6DFAA132581C600910E89 /* PBXTextBookmark */ = C2C6DFAA132581C600910E89 /* PBXTextBookmark */;
+			C2C6DFAB132581C600910E89 /* PBXTextBookmark */ = C2C6DFAB132581C600910E89 /* PBXTextBookmark */;
+			C2C6DFB41325838500910E89 /* PBXTextBookmark */ = C2C6DFB41325838500910E89 /* PBXTextBookmark */;
+			C2C6DFB51325838500910E89 /* PBXTextBookmark */ = C2C6DFB51325838500910E89 /* PBXTextBookmark */;
+			C2C6DFB61325838500910E89 /* PBXTextBookmark */ = C2C6DFB61325838500910E89 /* PBXTextBookmark */;
+			C2C6DFB71325838500910E89 /* PBXTextBookmark */ = C2C6DFB71325838500910E89 /* PBXTextBookmark */;
+			C2C6DFB81325838500910E89 /* PBXTextBookmark */ = C2C6DFB81325838500910E89 /* PBXTextBookmark */;
+			C2C6DFC1132583B800910E89 /* PBXTextBookmark */ = C2C6DFC1132583B800910E89 /* PBXTextBookmark */;
+			C2C6DFC2132583B800910E89 /* PBXTextBookmark */ = C2C6DFC2132583B800910E89 /* PBXTextBookmark */;
+			C2C6DFC3132583B800910E89 /* PBXTextBookmark */ = C2C6DFC3132583B800910E89 /* PBXTextBookmark */;
+			C2C6DFC8132583C300910E89 /* PBXTextBookmark */ = C2C6DFC8132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFC9132583C300910E89 /* PBXTextBookmark */ = C2C6DFC9132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFCB132583C300910E89 /* PBXTextBookmark */ = C2C6DFCB132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFCD132583C300910E89 /* PBXTextBookmark */ = C2C6DFCD132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFCF132583C300910E89 /* PBXTextBookmark */ = C2C6DFCF132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFD1132583C300910E89 /* PBXTextBookmark */ = C2C6DFD1132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFD2132583C300910E89 /* PBXTextBookmark */ = C2C6DFD2132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFD4132583C300910E89 /* PBXTextBookmark */ = C2C6DFD4132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFD6132583C300910E89 /* PBXTextBookmark */ = C2C6DFD6132583C300910E89 /* PBXTextBookmark */;
+			C2C6DFD8132583CC00910E89 /* PBXTextBookmark */ = C2C6DFD8132583CC00910E89 /* PBXTextBookmark */;
+			C2C6DFD9132583CC00910E89 /* PBXTextBookmark */ = C2C6DFD9132583CC00910E89 /* PBXTextBookmark */;
+			C2C6DFDA132583CC00910E89 /* PBXTextBookmark */ = C2C6DFDA132583CC00910E89 /* PBXTextBookmark */;
+			C2C6DFDB132583CF00910E89 /* PBXTextBookmark */ = C2C6DFDB132583CF00910E89 /* PBXTextBookmark */;
+			C2C6DFDC132583CF00910E89 /* PBXTextBookmark */ = C2C6DFDC132583CF00910E89 /* PBXTextBookmark */;
+			C2C6DFE1132583D700910E89 /* PBXTextBookmark */ = C2C6DFE1132583D700910E89 /* PBXTextBookmark */;
+			C2C6DFE2132583D700910E89 /* PBXTextBookmark */ = C2C6DFE2132583D700910E89 /* PBXTextBookmark */;
+			C2C6DFE71325841100910E89 /* PBXTextBookmark */ = C2C6DFE71325841100910E89 /* PBXTextBookmark */;
+			C2C6DFE81325841100910E89 /* PBXTextBookmark */ = C2C6DFE81325841100910E89 /* PBXTextBookmark */;
+			C2C6DFE91325841100910E89 /* PBXTextBookmark */ = C2C6DFE91325841100910E89 /* PBXTextBookmark */;
+			C2C6DFEA1325841500910E89 /* PBXTextBookmark */ = C2C6DFEA1325841500910E89 /* PBXTextBookmark */;
+			C2C6DFED1325842000910E89 /* PBXTextBookmark */ = C2C6DFED1325842000910E89 /* PBXTextBookmark */;
+			C2C6DFF01325843800910E89 /* PBXTextBookmark */ = C2C6DFF01325843800910E89 /* PBXTextBookmark */;
+			C2C6DFF11325844200910E89 /* PBXTextBookmark */ = C2C6DFF11325844200910E89 /* PBXTextBookmark */;
+			C2C6DFF21325844500910E89 /* PBXTextBookmark */ = C2C6DFF21325844500910E89 /* PBXTextBookmark */;
+			C2C6DFF41325845000910E89 /* PBXTextBookmark */ = C2C6DFF41325845000910E89 /* PBXTextBookmark */;
+			C2C6DFF71325845200910E89 /* PBXTextBookmark */ = C2C6DFF71325845200910E89 /* PBXTextBookmark */;
+			C2C6DFF81325845200910E89 /* PBXTextBookmark */ = C2C6DFF81325845200910E89 /* PBXTextBookmark */;
+			C2C6DFFC1325849000910E89 /* PBXTextBookmark */ = C2C6DFFC1325849000910E89 /* PBXTextBookmark */;
+			C2C6DFFD1325849300910E89 /* PBXTextBookmark */ = C2C6DFFD1325849300910E89 /* PBXTextBookmark */;
+			C2C6E002132584C300910E89 /* PBXTextBookmark */ = C2C6E002132584C300910E89 /* PBXTextBookmark */;
+			C2C6E004132584C400910E89 /* PBXTextBookmark */ = C2C6E004132584C400910E89 /* PBXTextBookmark */;
+			C2C6E005132584C600910E89 /* PBXTextBookmark */ = C2C6E005132584C600910E89 /* PBXTextBookmark */;
+			C2C6E007132584DA00910E89 /* PBXTextBookmark */ = C2C6E007132584DA00910E89 /* PBXTextBookmark */;
+			C2C6E008132584E000910E89 /* PBXTextBookmark */ = C2C6E008132584E000910E89 /* PBXTextBookmark */;
+			C2C6E00F1325851700910E89 /* PBXTextBookmark */ = C2C6E00F1325851700910E89 /* PBXTextBookmark */;
+			C2C6E0111325851B00910E89 /* PBXTextBookmark */ = C2C6E0111325851B00910E89 /* PBXTextBookmark */;
+			C2C6E0121325851B00910E89 /* PBXTextBookmark */ = C2C6E0121325851B00910E89 /* PBXTextBookmark */;
+			C2C6E0131325852200910E89 /* PBXTextBookmark */ = C2C6E0131325852200910E89 /* PBXTextBookmark */;
+			C2C6E0181325852C00910E89 /* PBXTextBookmark */ = C2C6E0181325852C00910E89 /* PBXTextBookmark */;
+			C2C6E01A1325853400910E89 /* PBXTextBookmark */ = C2C6E01A1325853400910E89 /* PBXTextBookmark */;
+			C2C6E01B1325853800910E89 /* PBXTextBookmark */ = C2C6E01B1325853800910E89 /* PBXTextBookmark */;
+			C2C6E01C1325853D00910E89 /* PBXTextBookmark */ = C2C6E01C1325853D00910E89 /* PBXTextBookmark */;
+			C2C6E0211325854700910E89 /* PBXTextBookmark */ = C2C6E0211325854700910E89 /* PBXTextBookmark */;
+			C2C6E0271325859200910E89 /* PBXTextBookmark */ = C2C6E0271325859200910E89 /* PBXTextBookmark */;
+			C2C6E02E132585B100910E89 /* PBXTextBookmark */ = C2C6E02E132585B100910E89 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
@@ -731,7 +814,7 @@
 		fRef = C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */;
 		name = "BodyFatPickerViewController.m: 87";
 		rLen = 0;
-		rLoc = 2104;
+		rLoc = 1853;
 		rType = 0;
 		vrLen = 752;
 		vrLoc = 2109;
@@ -808,9 +891,9 @@
 	};
 	C26F9030131C8D8F0079E1CC /* DetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {824, 3978}}";
-			sepNavSelRange = "{5459, 0}";
-			sepNavVisRange = "{4760, 2107}";
+			sepNavIntBoundsRect = "{{0, 0}, {1126, 3939}}";
+			sepNavSelRange = "{6680, 0}";
+			sepNavVisRange = "{6443, 541}";
 			sepNavWindowFrame = "{{60, 423}, {1005, 711}}";
 		};
 	};
@@ -829,7 +912,7 @@
 		fRef = C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */;
 		name = "BodyFatPickerViewController.h: 15";
 		rLen = 0;
-		rLoc = 469;
+		rLoc = 610;
 		rType = 0;
 		vrLen = 1077;
 		vrLoc = 0;
@@ -1151,9 +1234,9 @@
 	};
 	C2A4D95612F8DB8F002950C0 /* BMRViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 2899}}";
-			sepNavSelRange = "{2366, 0}";
-			sepNavVisRange = "{1842, 1342}";
+			sepNavIntBoundsRect = "{{0, 0}, {824, 2847}}";
+			sepNavSelRange = "{3859, 13}";
+			sepNavVisRange = "{2303, 1990}";
 			sepNavWindowFrame = "{{669, 237}, {1005, 711}}";
 		};
 	};
@@ -1174,16 +1257,16 @@
 	};
 	C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {905, 481}}";
-			sepNavSelRange = "{469, 0}";
-			sepNavVisRange = "{0, 1077}";
+			sepNavIntBoundsRect = "{{0, 0}, {824, 567}}";
+			sepNavSelRange = "{981, 0}";
+			sepNavVisRange = "{0, 986}";
 		};
 	};
 	C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {905, 1716}}";
-			sepNavSelRange = "{2104, 0}";
-			sepNavVisRange = "{2109, 752}";
+			sepNavIntBoundsRect = "{{0, 0}, {824, 1495}}";
+			sepNavSelRange = "{559, 0}";
+			sepNavVisRange = "{3, 1207}";
 			sepNavWindowFrame = "{{15, 62}, {1005, 711}}";
 		};
 	};
@@ -1261,16 +1344,16 @@
 	};
 	C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 633}}";
-			sepNavSelRange = "{1082, 0}";
-			sepNavVisRange = "{0, 1124}";
+			sepNavIntBoundsRect = "{{0, 0}, {824, 592}}";
+			sepNavSelRange = "{299, 0}";
+			sepNavVisRange = "{0, 1125}";
 		};
 	};
 	C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 2977}}";
-			sepNavSelRange = "{3547, 0}";
-			sepNavVisRange = "{5057, 1803}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 2964}}";
+			sepNavSelRange = "{2331, 0}";
+			sepNavVisRange = "{1460, 1801}";
 		};
 	};
 	C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */ = {
@@ -1324,9 +1407,9 @@
 	};
 	C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 754}}";
-			sepNavSelRange = "{427, 265}";
-			sepNavVisRange = "{206, 673}";
+			sepNavIntBoundsRect = "{{0, 0}, {824, 767}}";
+			sepNavSelRange = "{1105, 0}";
+			sepNavVisRange = "{309, 829}";
 		};
 	};
 	C2A4D99D12F8DBDF002950C0 /* FitnessCalculations.h */ = {
@@ -1629,7 +1712,7 @@
 		fRef = C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */;
 		name = "WeightPickerViewController.h: 18";
 		rLen = 0;
-		rLoc = 511;
+		rLoc = 512;
 		rType = 0;
 		vrLen = 1198;
 		vrLoc = 192;
@@ -1639,7 +1722,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 38";
 		rLen = 20;
-		rLoc = 1064;
+		rLoc = 1130;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 1027;
@@ -1962,7 +2045,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 38";
 		rLen = 20;
-		rLoc = 1064;
+		rLoc = 1130;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 1027;
@@ -1972,7 +2055,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 84";
 		rLen = 0;
-		rLoc = 2615;
+		rLoc = 2778;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 2008;
@@ -1982,7 +2065,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 84";
 		rLen = 0;
-		rLoc = 2615;
+		rLoc = 2778;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 2008;
@@ -1992,7 +2075,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 84";
 		rLen = 0;
-		rLoc = 2615;
+		rLoc = 2778;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 2008;
@@ -2042,7 +2125,7 @@
 		fRef = C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */;
 		name = "WeightPickerViewController.h: 35";
 		rLen = 0;
-		rLoc = 1082;
+		rLoc = 1083;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 0;
@@ -2062,7 +2145,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 194";
 		rLen = 0;
-		rLoc = 4973;
+		rLoc = 5019;
 		rType = 0;
 		vrLen = 1410;
 		vrLoc = 4712;
@@ -2378,7 +2461,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 125;
+		rLoc = 133;
 		rType = 1;
 	};
 	C2C6DDAF1325557B00910E89 /* PBXTextBookmark */ = {
@@ -2386,7 +2469,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 58";
 		rLen = 0;
-		rLoc = 1683;
+		rLoc = 1773;
 		rType = 0;
 		vrLen = 1379;
 		vrLoc = 1022;
@@ -2396,7 +2479,7 @@
 		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
 		name = "WeightPickerViewController.m: 117";
 		rLen = 0;
-		rLoc = 3547;
+		rLoc = 3710;
 		rType = 0;
 		vrLen = 1803;
 		vrLoc = 5057;
@@ -4039,5 +4122,612 @@
 		rType = 0;
 		vrLen = 2107;
 		vrLoc = 4760;
+	};
+	C2C6DFA6132581C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */;
+		name = "DetailViewController.m: 170";
+		rLen = 0;
+		rLoc = 5459;
+		rType = 0;
+		vrLen = 2041;
+		vrLoc = 4759;
+	};
+	C2C6DFA7132581C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95912F8DB8F002950C0 /* BodyFatPickerViewController.h */;
+		name = "BodyFatPickerViewController.h: 33";
+		rLen = 0;
+		rLoc = 981;
+		rType = 0;
+		vrLen = 986;
+		vrLoc = 0;
+	};
+	C2C6DFA8132581C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95A12F8DB8F002950C0 /* BodyFatPickerViewController.m */;
+		name = "BodyFatPickerViewController.m: 25";
+		rLen = 0;
+		rLoc = 559;
+		rType = 0;
+		vrLen = 1207;
+		vrLoc = 3;
+	};
+	C2C6DFA9132581C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */;
+		name = "WeightPickerViewController.h: 14";
+		rLen = 0;
+		rLoc = 299;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 0;
+	};
+	C2C6DFAA132581C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 117";
+		rLen = 0;
+		rLoc = 3710;
+		rType = 0;
+		vrLen = 1352;
+		vrLoc = 0;
+	};
+	C2C6DFAB132581C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 58";
+		rLen = 0;
+		rLoc = 1696;
+		rType = 0;
+		vrLen = 1590;
+		vrLoc = 1673;
+	};
+	C2C6DFB41325838500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
+		name = "BMRViewController.m: 117";
+		rLen = 13;
+		rLoc = 3859;
+		rType = 0;
+		vrLen = 1990;
+		vrLoc = 2303;
+	};
+	C2C6DFB51325838500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */;
+		name = "DetailViewController.m: 170";
+		rLen = 0;
+		rLoc = 5459;
+		rType = 0;
+		vrLen = 2072;
+		vrLoc = 4903;
+	};
+	C2C6DFB61325838500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96512F8DB8F002950C0 /* WeightPickerViewController.h */;
+		name = "WeightPickerViewController.h: 14";
+		rLen = 0;
+		rLoc = 299;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 0;
+	};
+	C2C6DFB71325838500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 202";
+		rLen = 0;
+		rLoc = 5905;
+		rType = 0;
+		vrLen = 1586;
+		vrLoc = 1121;
+	};
+	C2C6DFB81325838500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 202";
+		rLen = 0;
+		rLoc = 5905;
+		rType = 0;
+		vrLen = 1573;
+		vrLoc = 1121;
+	};
+	C2C6DFC1132583B800910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */;
+		name = "AthleteWeight.m: 17";
+		rLen = 0;
+		rLoc = 311;
+		rType = 0;
+		vrLen = 908;
+		vrLoc = 0;
+	};
+	C2C6DFC2132583B800910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		rLen = 0;
+		rLoc = 78;
+		rType = 1;
+	};
+	C2C6DFC3132583B800910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 1601;
+		vrLoc = 1582;
+	};
+	C2C6DFC8132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 2022;
+	};
+	C2C6DFC9132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2C6DFCA132583C300910E89 /* asm -[UIViewController view]  0x0038e5ab */;
+		name = "asm -[UIViewController view]  0x0038e5ab: 49";
+		rLen = 0;
+		rLoc = 2239;
+		rType = 0;
+		vrLen = 524;
+		vrLoc = 2046;
+	};
+	C2C6DFCA132583C300910E89 /* asm -[UIViewController view]  0x0038e5ab */ = {
+		isa = PBXFileReference;
+		path = "asm -[UIViewController view]  0x0038e5ab";
+		sourceTree = "<group>";
+	};
+	C2C6DFCB132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2C6DFCC132583C300910E89 /* asm -[UINavigationController contentSizeForViewInPopover]  0x00396363 */;
+		name = "asm -[UINavigationController contentSizeForViewInPopover]  0x00396363: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 534;
+		vrLoc = 868;
+	};
+	C2C6DFCC132583C300910E89 /* asm -[UINavigationController contentSizeForViewInPopover]  0x00396363 */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		path = "asm -[UINavigationController contentSizeForViewInPopover]  0x00396363";
+		sourceTree = "<group>";
+	};
+	C2C6DFCD132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2C6DFCE132583C300910E89 /* asm -[UIPopoverController _setupIncomingViewController:presenting:animated:]  0x00623b0c */;
+		name = "asm -[UIPopoverController _setupIncomingViewController:presenting:animated:]  0x00623b0c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 573;
+		vrLoc = 2452;
+	};
+	C2C6DFCE132583C300910E89 /* asm -[UIPopoverController _setupIncomingViewController:presenting:animated:]  0x00623b0c */ = {
+		isa = PBXFileReference;
+		path = "asm -[UIPopoverController _setupIncomingViewController:presenting:animated:]  0x00623b0c";
+		sourceTree = "<group>";
+	};
+	C2C6DFCF132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2C6DFD0132583C300910E89 /* asm -[UIPopoverController initWithContentViewController:]  0x006230ef */;
+		name = "asm -[UIPopoverController initWithContentViewController:]  0x006230ef: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 2900;
+	};
+	C2C6DFD0132583C300910E89 /* asm -[UIPopoverController initWithContentViewController:]  0x006230ef */ = {
+		isa = PBXFileReference;
+		path = "asm -[UIPopoverController initWithContentViewController:]  0x006230ef";
+		sourceTree = "<group>";
+	};
+	C2C6DFD1132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */;
+		rLen = 0;
+		rLoc = 191;
+		rType = 1;
+	};
+	C2C6DFD2132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */;
+		name = "DetailViewController.m: 192";
+		rLen = 0;
+		rLoc = 6680;
+		rType = 0;
+		vrLen = 357;
+		vrLoc = 6443;
+	};
+	C2C6DFD4132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2C6DFD5132583C300910E89 /* asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175 */;
+		rLen = 0;
+		rLoc = 65;
+		rType = 1;
+	};
+	C2C6DFD5132583C300910E89 /* asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175 */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		path = "asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175";
+		sourceTree = "<group>";
+	};
+	C2C6DFD6132583C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2C6DFD7132583C300910E89 /* asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175 */;
+		name = "asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175: 66";
+		rLen = 0;
+		rLoc = 3034;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 2802;
+	};
+	C2C6DFD7132583C300910E89 /* asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175 */ = {
+		isa = PBXFileReference;
+		path = "asm -[DetailViewController tableView:didSelectRowAtIndexPath:]  0x00011175";
+		sourceTree = "<group>";
+	};
+	C2C6DFD8132583CC00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */;
+		name = "DetailViewController.m: 192";
+		rLen = 0;
+		rLoc = 6680;
+		rType = 0;
+		vrLen = 2259;
+		vrLoc = 5275;
+	};
+	C2C6DFD9132583CC00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 1600;
+		vrLoc = 1582;
+	};
+	C2C6DFDA132583CC00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 1699;
+		vrLoc = 1465;
+	};
+	C2C6DFDB132583CF00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F9030131C8D8F0079E1CC /* DetailViewController.m */;
+		name = "DetailViewController.m: 192";
+		rLen = 0;
+		rLoc = 6680;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 6443;
+	};
+	C2C6DFDC132583CF00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 370;
+		vrLoc = 2124;
+	};
+	C2C6DFE1132583D700910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 1525;
+		vrLoc = 425;
+	};
+	C2C6DFE2132583D700910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 74";
+		rLen = 0;
+		rLoc = 2346;
+		rType = 0;
+		vrLen = 1486;
+		vrLoc = 425;
+	};
+	C2C6DFE71325841100910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */;
+		name = "AthleteWeight.m: 56";
+		rLen = 0;
+		rLoc = 1105;
+		rType = 0;
+		vrLen = 829;
+		vrLoc = 309;
+	};
+	C2C6DFE81325841100910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		rLen = 0;
+		rLoc = 47;
+		rType = 1;
+	};
+	C2C6DFE91325841100910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1428;
+		vrLoc = 483;
+	};
+	C2C6DFEA1325841500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 315;
+		vrLoc = 1121;
+	};
+	C2C6DFED1325842000910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 5206;
+	};
+	C2C6DFF01325843800910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1419;
+		vrLoc = 425;
+	};
+	C2C6DFF11325844200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1419;
+		vrLoc = 425;
+	};
+	C2C6DFF21325844500910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 315;
+		vrLoc = 1121;
+	};
+	C2C6DFF41325845000910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		rLen = 1;
+		rLoc = 146;
+		rType = 1;
+	};
+	C2C6DFF71325845200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 942;
+		vrLoc = 3565;
+	};
+	C2C6DFF81325845200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 45";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 921;
+		vrLoc = 3586;
+	};
+	C2C6DFFC1325849000910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 140";
+		rLen = 12;
+		rLoc = 4050;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 3645;
+	};
+	C2C6DFFD1325849300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 140";
+		rLen = 12;
+		rLoc = 4050;
+		rType = 0;
+		vrLen = 192;
+		vrLoc = 3645;
+	};
+	C2C6E002132584C300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 49";
+		rLen = 0;
+		rLoc = 1442;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 233;
+	};
+	C2C6E004132584C400910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 49";
+		rLen = 0;
+		rLoc = 1442;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 233;
+	};
+	C2C6E005132584C600910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 49";
+		rLen = 0;
+		rLoc = 1442;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 233;
+	};
+	C2C6E007132584DA00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 49";
+		rLen = 0;
+		rLoc = 1442;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 233;
+	};
+	C2C6E008132584E000910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 49";
+		rLen = 0;
+		rLoc = 1442;
+		rType = 0;
+		vrLen = 287;
+		vrLoc = 4009;
+	};
+	C2C6E00F1325851700910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1408;
+		rType = 0;
+		vrLen = 1415;
+		vrLoc = 278;
+	};
+	C2C6E0111325851B00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1408;
+		rType = 0;
+		vrLen = 1415;
+		vrLoc = 278;
+	};
+	C2C6E0121325851B00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1408;
+		rType = 0;
+		vrLen = 1415;
+		vrLoc = 278;
+	};
+	C2C6E0131325852200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1408;
+		rType = 0;
+		vrLen = 344;
+		vrLoc = 1349;
+	};
+	C2C6E0181325852C00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1439;
+		rType = 0;
+		vrLen = 1558;
+		vrLoc = 825;
+	};
+	C2C6E01A1325853400910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1439;
+		rType = 0;
+		vrLen = 1558;
+		vrLoc = 825;
+	};
+	C2C6E01B1325853800910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1439;
+		rType = 0;
+		vrLen = 1558;
+		vrLoc = 825;
+	};
+	C2C6E01C1325853D00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 53";
+		rLen = 0;
+		rLoc = 1439;
+		rType = 0;
+		vrLen = 345;
+		vrLoc = 1349;
+	};
+	C2C6E0211325854700910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 52";
+		rLen = 0;
+		rLoc = 1442;
+		rType = 0;
+		vrLen = 1576;
+		vrLoc = 825;
+	};
+	C2C6E0271325859200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 231";
+		rLen = 0;
+		rLoc = 6908;
+		rType = 0;
+		vrLen = 1925;
+		vrLoc = 4994;
+	};
+	C2C6E02E132585B100910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 77";
+		rLen = 0;
+		rLoc = 2331;
+		rType = 0;
+		vrLen = 1801;
+		vrLoc = 1460;
 	};
 }
