@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 4004}}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 3939}}";
 			sepNavSelRange = "{1199, 0}";
-			sepNavVisRange = "{409, 2123}";
+			sepNavVisRange = "{10975, 1266}";
 			sepNavWindowFrame = "{{15, 62}, {1005, 711}}";
 		};
 	};
@@ -597,6 +597,9 @@
 			C2C6E1041325920600910E89 /* PBXTextBookmark */ = C2C6E1041325920600910E89 /* PBXTextBookmark */;
 			C2C6E1091325922600910E89 /* PBXTextBookmark */ = C2C6E1091325922600910E89 /* PBXTextBookmark */;
 			C2C6E10C1325924D00910E89 /* PBXTextBookmark */ = C2C6E10C1325924D00910E89 /* PBXTextBookmark */;
+			C2C6E114132593C900910E89 /* PBXTextBookmark */ = C2C6E114132593C900910E89 /* PBXTextBookmark */;
+			C2C6E11F132597D800910E89 /* PBXTextBookmark */ = C2C6E11F132597D800910E89 /* PBXTextBookmark */;
+			C2C6E1221325984200910E89 /* PBXTextBookmark */ = C2C6E1221325984200910E89 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
@@ -1218,7 +1221,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -5422,5 +5425,35 @@
 		rType = 0;
 		vrLen = 2123;
 		vrLoc = 409;
+	};
+	C2C6E114132593C900910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 43";
+		rLen = 0;
+		rLoc = 1199;
+		rType = 0;
+		vrLen = 1594;
+		vrLoc = 0;
+	};
+	C2C6E11F132597D800910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 43";
+		rLen = 0;
+		rLoc = 1199;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 10975;
+	};
+	C2C6E1221325984200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */;
+		name = "Fitness_NutAppDelegate.m: 43";
+		rLen = 0;
+		rLoc = 1199;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 10975;
 	};
 }
