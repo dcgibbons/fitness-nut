@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "DetailViewController.h"
 
 
-@interface WeightPredictorViewController : DetailViewController
+@interface WeightPredictorViewController : DetailViewController <MFMailComposeViewControllerDelegate>
 {
 }
 

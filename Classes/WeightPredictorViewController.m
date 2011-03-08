@@ -25,6 +25,8 @@
     AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (!desiredBodyFat) return nil;
     
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
     double leanMass = [[weight weightAsKilograms] doubleValue] * (1.0 - [bodyFat.bodyFat doubleValue] / 100.0);
     double predictedMass = leanMass / (1.0 - [desiredBodyFat.bodyFat doubleValue] / 100.0);
 
@@ -102,17 +104,10 @@
                      nil];
 }
 
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-    // Return YES for supported orientations.
     return YES;
 }
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [self.tableView reloadData];
-//}
 
 #pragma mark -
 #pragma mark Memory management
@@ -135,6 +130,69 @@
 {
     [super dealloc];
 }
+
+#pragma mark -
+#pragma mark UI Actions
+
+- (void)emailResults:(id)sender
+{
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+    
+	[picker setSubject:@"FitnessNutPro: Daily Macronutrient Needs"];
+    
+	// Fill out the email body text
+    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+    AthleteBodyFat *bodyFat = [userData objectForKey:@"athleteBodyFat"];
+    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
+
+    NSString *predictedMass = [self calculatePredictedWeight];
+    
+    if (predictedMass) {
+        NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                               "<body>"
+                               "<table>"
+                               "<tbody>"
+                               "<tr>"
+                               "<th>Current Weight</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Current Body Fat</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Desired Body Fat</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Predicted Weight</th><td>%@</td>"
+                               "</tr>",
+                               weight,
+                               bodyFat,
+                               desiredBodyFat,
+                               predictedMass
+                               ];
+
+        emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
+                     "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
+                     "for quick answers to your sports nutrition questions!"
+                     "</p></body></html>"
+                     ];
+        
+        [picker setMessageBody:emailBody isHTML:YES];
+        
+        [self presentModalViewController:picker animated:YES];
+    }
+    
+    [picker release];    
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 @end
 

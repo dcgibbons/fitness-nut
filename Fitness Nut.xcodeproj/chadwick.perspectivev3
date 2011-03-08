@@ -278,7 +278,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>34</integer>
+									<integer>50</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -301,7 +301,7 @@
 							<real>339</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>348 159 1365 917 0 0 1920 1178 </string>
+						<string>342 159 1365 917 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C2A4D94912F8DB3B002950C0</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BodyFatEstimatorViewController.m</string>
+								<string>WeightPredictorViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C2A4D94A12F8DB3B002950C0</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BodyFatEstimatorViewController.m</string>
+										<string>WeightPredictorViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C2C6E2BC1325BEDF00910E89</string>
+										<string>C2C6E2D11325C00F00910E89</string>
 										<key>history</key>
 										<array>
 											<string>C2A4D9C612F8EC66002950C0</string>
@@ -377,7 +377,6 @@
 											<string>C2C6DE631325667F00910E89</string>
 											<string>C2C6DE651325667F00910E89</string>
 											<string>C2C6DED31325706D00910E89</string>
-											<string>C2C6DEEC1325713600910E89</string>
 											<string>C2C6DF291325769200910E89</string>
 											<string>C2C6DF2B1325769200910E89</string>
 											<string>C2C6DF2C1325769200910E89</string>
@@ -390,7 +389,6 @@
 											<string>C2C6DFA8132581C600910E89</string>
 											<string>C2C6DFB61325838500910E89</string>
 											<string>C2C6DFE71325841100910E89</string>
-											<string>C2C6E0351325867600910E89</string>
 											<string>C2C6E0441325873500910E89</string>
 											<string>C2C6E0451325873500910E89</string>
 											<string>C2C6E061132588DB00910E89</string>
@@ -408,11 +406,13 @@
 											<string>C2C6E2701325BBCE00910E89</string>
 											<string>C2C6E2721325BBCE00910E89</string>
 											<string>C2C6E2921325BCC800910E89</string>
-											<string>C2C6E2B71325BEDF00910E89</string>
 											<string>C2C6E2B81325BEDF00910E89</string>
-											<string>C2C6E2B91325BEDF00910E89</string>
-											<string>C2C6E2BA1325BEDF00910E89</string>
-											<string>C2C6E2BB1325BEDF00910E89</string>
+											<string>C2C6E2C31325BFEB00910E89</string>
+											<string>C2C6E2C41325BFEB00910E89</string>
+											<string>C2C6E2C61325BFEB00910E89</string>
+											<string>C2C6E2CE1325C00F00910E89</string>
+											<string>C2C6E2CF1325C00F00910E89</string>
+											<string>C2C6E2D01325C00F00910E89</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -428,7 +428,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1004, 653}}</string>
 								<key>RubberWindowFrame</key>
-								<string>348 159 1365 917 0 0 1920 1178 </string>
+								<string>342 159 1365 917 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -507,7 +507,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {1004, 191}}</string>
 										<key>RubberWindowFrame</key>
-										<string>348 159 1365 917 0 0 1920 1178 </string>
+										<string>342 159 1365 917 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -731,13 +731,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C2C6E2BD1325BEDF00910E89</string>
+		<string>C2C6E2D21325C00F00910E89</string>
 		<string>C2C6DCDF13253B3F00910E89</string>
 		<string>C2C6DCC713253A0F00910E89</string>
 		<string>/Users/chadwick/Projects/Fitness Nut/Fitness Nut.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>348 159 1365 917 0 0 1920 1178 </string>
+	<string>342 159 1365 917 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
