@@ -32,7 +32,9 @@
     AthleteGender *gender = [userData objectForKey:@"athleteGender"];
     if (!gender) return nil;
     
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
+#endif
 
     int bmr = [FitnessCalculations bmrUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                   usingHeightInCentimeters:[[height heightAsCentimeters] doubleValue]
@@ -224,7 +226,7 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
 
-	[picker setSubject:@"FitnessNutPro: BMR & TDEE results"];
+	[picker setSubject:@"Fitness Nut Pro: BMR & TDEE results"];
     
 	// Fill out the email body text
     AthleteAge *age = [userData objectForKey:@"athleteAge"];

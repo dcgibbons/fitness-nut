@@ -26,7 +26,9 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
+#endif
     
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
@@ -45,7 +47,9 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
+#endif
     
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
@@ -64,8 +68,10 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-    
+#endif
+
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
                                                                                   andAthleteType:type];
@@ -83,8 +89,10 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-    
+#endif
+
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
                                                                                   andAthleteType:type];
@@ -207,7 +215,7 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     
-	[picker setSubject:@"FitnessNutPro: Daily Macronutrient Needs"];
+	[picker setSubject:@"Fitness Nut Pro: Daily Macronutrient Needs"];
     
 	// Fill out the email body text
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];

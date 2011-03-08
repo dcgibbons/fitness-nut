@@ -25,8 +25,10 @@
     AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (!desiredBodyFat) return nil;
     
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-    
+#endif
+
     double leanMass = [[weight weightAsKilograms] doubleValue] * (1.0 - [bodyFat.bodyFat doubleValue] / 100.0);
     double predictedMass = leanMass / (1.0 - [desiredBodyFat.bodyFat doubleValue] / 100.0);
 
@@ -139,7 +141,7 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     
-	[picker setSubject:@"FitnessNutPro: Daily Macronutrient Needs"];
+	[picker setSubject:@"Fitness Nut Pro: Weight Predictor"];
     
 	// Fill out the email body text
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];

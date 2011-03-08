@@ -42,8 +42,10 @@
     AthleteMeasurement *hipsGirth = [userData objectForKey:@"athleteHipsGirth"];
     if (gender.gender == Female && !hipsGirth) return nil;
     
+#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-    
+#endif
+
     double bodyFat;
     if (gender.gender == Male) {
         bodyFat = 86.010 * log10([[waistGirth measurementAsInches] doubleValue] -
@@ -210,7 +212,7 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     
-	[picker setSubject:@"FitnessNutPro: Daily Macronutrient Needs"];
+	[picker setSubject:@"Fitness Nut Pro: Body Fat Estimation"];
     
 	// Fill out the email body text
     AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
