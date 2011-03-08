@@ -46,7 +46,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = "Debug - Pro Version";
 		activeExecutable = C2A4D93E12F8DB2D002950C0 /* Fitness Nut */;
-		activeSDKPreference = iphoneos4.2;
+		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Fitness Nut */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Fitness Nut */,
@@ -658,6 +658,12 @@
 			C2C6E2371325AAF500910E89 /* PBXTextBookmark */ = C2C6E2371325AAF500910E89 /* PBXTextBookmark */;
 			C2C6E2381325AAF500910E89 /* PBXTextBookmark */ = C2C6E2381325AAF500910E89 /* PBXTextBookmark */;
 			C2C6E2391325AAF500910E89 /* PBXTextBookmark */ = C2C6E2391325AAF500910E89 /* PBXTextBookmark */;
+			C2C6E2401325AF9C00910E89 /* PBXTextBookmark */ = C2C6E2401325AF9C00910E89 /* PBXTextBookmark */;
+			C2C6E2411325AF9C00910E89 /* PBXTextBookmark */ = C2C6E2411325AF9C00910E89 /* PBXTextBookmark */;
+			C2C6E2421325AF9C00910E89 /* PBXTextBookmark */ = C2C6E2421325AF9C00910E89 /* PBXTextBookmark */;
+			C2C6E2451325B6E400910E89 /* PBXTextBookmark */ = C2C6E2451325B6E400910E89 /* PBXTextBookmark */;
+			C2C6E24A1325B71200910E89 /* PBXTextBookmark */ = C2C6E24A1325B71200910E89 /* PBXTextBookmark */;
+			C2C6E25B1325B8D700910E89 /* PBXTextBookmark */ = C2C6E25B1325B8D700910E89 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
@@ -1355,9 +1361,9 @@
 	};
 	C2A4D95612F8DB8F002950C0 /* BMRViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 4056}}";
-			sepNavSelRange = "{8830, 0}";
-			sepNavVisRange = "{8220, 1602}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 4030}}";
+			sepNavSelRange = "{9304, 0}";
+			sepNavVisRange = "{8270, 1560}";
 			sepNavWindowFrame = "{{669, 237}, {1005, 711}}";
 		};
 	};
@@ -2800,7 +2806,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 447";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1304;
 		vrLoc = 14660;
@@ -2810,7 +2816,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 447";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 14891;
@@ -2840,7 +2846,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 445";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 14882;
@@ -2860,7 +2866,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1109;
 		vrLoc = 14939;
@@ -2955,7 +2961,7 @@
 		isa = PBXTextBookmark;
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		rLen = 0;
-		rLoc = 292;
+		rLoc = 291;
 		rType = 1;
 	};
 	C2C6DE0113255FF800910E89 /* PBXTextBookmark */ = {
@@ -2963,7 +2969,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 391;
 		vrLoc = 15648;
@@ -3019,7 +3025,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1364;
 		vrLoc = 50;
@@ -3076,7 +3082,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 367;
 		vrLoc = 15525;
@@ -3116,7 +3122,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 27;
@@ -3126,7 +3132,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1205;
 		vrLoc = 14839;
@@ -3136,7 +3142,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 14789;
@@ -3146,7 +3152,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 14789;
@@ -3166,7 +3172,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 450";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 15633;
@@ -3215,7 +3221,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 456";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1372;
 		vrLoc = 15049;
@@ -3225,7 +3231,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 456";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1372;
 		vrLoc = 15049;
@@ -3285,7 +3291,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 456";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 336;
 		vrLoc = 15713;
@@ -3355,7 +3361,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 456";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 2186;
 		vrLoc = 9851;
@@ -3435,7 +3441,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 456";
 		rLen = 0;
-		rLoc = 9833;
+		rLoc = 9823;
 		rType = 0;
 		vrLen = 1940;
 		vrLoc = 0;
@@ -5878,7 +5884,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 261";
 		rLen = 0;
-		rLoc = 9783;
+		rLoc = 9773;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 7949;
@@ -5958,7 +5964,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 268";
 		rLen = 0;
-		rLoc = 9320;
+		rLoc = 9310;
 		rType = 0;
 		vrLen = 1855;
 		vrLoc = 7927;
@@ -6018,7 +6024,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 271";
 		rLen = 0;
-		rLoc = 9071;
+		rLoc = 9053;
 		rType = 0;
 		vrLen = 1525;
 		vrLoc = 8046;
@@ -6028,7 +6034,7 @@
 		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
 		name = "BMRViewController.m: 277";
 		rLen = 0;
-		rLoc = 9320;
+		rLoc = 9310;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 7998;
@@ -6092,5 +6098,65 @@
 		rType = 0;
 		vrLen = 1410;
 		vrLoc = 0;
+	};
+	C2C6E2401325AF9C00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C26F902F131C8D8F0079E1CC /* DetailViewController.h */;
+		name = "DetailViewController.h: 26";
+		rLen = 0;
+		rLoc = 912;
+		rType = 0;
+		vrLen = 1410;
+		vrLoc = 0;
+	};
+	C2C6E2411325AF9C00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
+		name = "BMRViewController.m: 262";
+		rLen = 0;
+		rLoc = 8830;
+		rType = 0;
+		vrLen = 1602;
+		vrLoc = 8220;
+	};
+	C2C6E2421325AF9C00910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
+		name = "BMRViewController.m: 272";
+		rLen = 0;
+		rLoc = 9149;
+		rType = 0;
+		vrLen = 1623;
+		vrLoc = 8220;
+	};
+	C2C6E2451325B6E400910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
+		name = "BMRViewController.m: 286";
+		rLen = 0;
+		rLoc = 9571;
+		rType = 0;
+		vrLen = 1542;
+		vrLoc = 8302;
+	};
+	C2C6E24A1325B71200910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
+		name = "BMRViewController.m: 286";
+		rLen = 0;
+		rLoc = 9571;
+		rType = 0;
+		vrLen = 1542;
+		vrLoc = 8302;
+	};
+	C2C6E25B1325B8D700910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95612F8DB8F002950C0 /* BMRViewController.m */;
+		name = "BMRViewController.m: 274";
+		rLen = 0;
+		rLoc = 9304;
+		rType = 0;
+		vrLen = 1560;
+		vrLoc = 8270;
 	};
 }

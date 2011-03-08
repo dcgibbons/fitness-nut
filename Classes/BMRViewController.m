@@ -267,9 +267,8 @@
             ];
     }
     
-    emailBody = [emailBody stringByAppendingString:
-                 @"</tbody></table><p>"
-                 "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut/id420480042?mt=8\">Fitness Nut</a> "
+    emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
+                 "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
                  "for quick answers to your sports nutrition questions!"
                  "</p></body></html>"
                  ];
