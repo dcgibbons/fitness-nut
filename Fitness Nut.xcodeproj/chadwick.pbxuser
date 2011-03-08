@@ -44,7 +44,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = "Debug - Pro Version";
+		activeBuildConfigurationName = Debug;
 		activeExecutable = C2A4D93E12F8DB2D002950C0 /* Fitness Nut */;
 		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Fitness Nut */;
@@ -711,6 +711,7 @@
 			C2C6E2CF1325C00F00910E89 /* PBXTextBookmark */ = C2C6E2CF1325C00F00910E89 /* PBXTextBookmark */;
 			C2C6E2D01325C00F00910E89 /* PBXTextBookmark */ = C2C6E2D01325C00F00910E89 /* PBXTextBookmark */;
 			C2C6E2D11325C00F00910E89 /* PBXTextBookmark */ = C2C6E2D11325C00F00910E89 /* PBXTextBookmark */;
+			C2C6E2DB1325C30300910E89 /* PBXTextBookmark */ = C2C6E2DB1325C30300910E89 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C2A4D94F12F8DB3B002950C0 /* Source Control */;
 		userBuildSettings = {
@@ -1539,9 +1540,9 @@
 	};
 	C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 2691}}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2587}}";
 			sepNavSelRange = "{807, 0}";
-			sepNavVisRange = "{3, 1359}";
+			sepNavVisRange = "{5295, 1680}";
 		};
 	};
 	C2A4D98F12F8DBDF002950C0 /* AthleteActivityLevel.h */ = {
@@ -6694,5 +6695,15 @@
 		rType = 0;
 		vrLen = 1359;
 		vrLoc = 3;
+	};
+	C2C6E2DB1325C30300910E89 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96812F8DB8F002950C0 /* WeightPredictorViewController.m */;
+		name = "WeightPredictorViewController.m: 29";
+		rLen = 0;
+		rLoc = 807;
+		rType = 0;
+		vrLen = 1680;
+		vrLoc = 5295;
 	};
 }
