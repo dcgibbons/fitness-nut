@@ -42,6 +42,8 @@
     AthleteMeasurement *hipsGirth = [userData objectForKey:@"athleteHipsGirth"];
     if (gender.gender == Female && !hipsGirth) return nil;
     
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
     double bodyFat;
     if (gender.gender == Male) {
         bodyFat = 86.010 * log10([[waistGirth measurementAsInches] doubleValue] -
@@ -200,6 +202,86 @@
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark UI Actions
+
+- (void)emailResults:(id)sender
+{
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+    
+	[picker setSubject:@"FitnessNutPro: Daily Macronutrient Needs"];
+    
+	// Fill out the email body text
+    AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
+    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+    AthleteGender *gender = [userData objectForKey:@"athleteGender"];
+    AthleteMeasurement *neckGirth = [userData objectForKey:@"athleteNeckGirth"];
+    AthleteMeasurement *waistGirth = [userData objectForKey:@"athleteWaistGirth"];
+    AthleteMeasurement *hipsGirth = [userData objectForKey:@"athleteHipsGirth"];
+
+    NSString *bodyFat = [self calculatePredictedBodyFat];
+    
+    if (bodyFat) {
+        NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                               "<body>"
+                               "<table>"
+                               "<tbody>"
+                               "<tr>"
+                               "<th>Height</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Weight</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Gender</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Neck Girth</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Waist Girth</th><td>%@</td>"
+                               "</tr>",
+                               weight, 
+                               height,
+                               gender,
+                               neckGirth,
+                               waistGirth
+                               ];
+
+        if (gender.gender == Female) {
+            emailBody = [emailBody stringByAppendingFormat:@"<tr>"
+                         "<th>Hips Girth</th><td>%@</td>"
+                         "</tr>",
+                         hipsGirth
+                         ];
+        }
+
+        emailBody = [emailBody stringByAppendingFormat:@"<tr>"
+                     "<th>Estimated Body Fat</th><td>%@</td>",
+                     bodyFat
+                     ];
+        
+        emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
+                     "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
+                     "for quick answers to your sports nutrition questions!"
+                     "</p></body></html>"
+                     ];
+        
+        [picker setMessageBody:emailBody isHTML:YES];
+        
+        [self presentModalViewController:picker animated:YES];
+    }
+    
+    [picker release];    
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 @end
 
