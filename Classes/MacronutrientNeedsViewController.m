@@ -26,6 +26,8 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
                                                                                   andAthleteType:type];
@@ -42,6 +44,8 @@
     
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
+
+    [self.navigationController setToolbarHidden:NO animated:YES];
     
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
@@ -59,6 +63,8 @@
     
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
+
+    [self.navigationController setToolbarHidden:NO animated:YES];
     
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
@@ -76,6 +82,8 @@
     
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
+
+    [self.navigationController setToolbarHidden:NO animated:YES];
     
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
@@ -164,14 +172,10 @@
     
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
 
 #pragma mark -
 #pragma mark Memory management
@@ -193,6 +197,76 @@
 - (void)dealloc 
 {
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UI Actions
+
+- (void)emailResults:(id)sender
+{
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+    
+	[picker setSubject:@"FitnessNutPro: Daily Macronutrient Needs"];
+    
+	// Fill out the email body text
+    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+    NSNumber *hours = [userData objectForKey:@"athleteHours"];
+    AthleteType *type = [userData objectForKey:@"athleteType"];
+    
+    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
+                                                                                      usingHours:[hours unsignedIntValue]
+                                                                                  andAthleteType:type];
+    if (macronutrients) {
+        NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                               "<body>"
+                               "<table>"
+                               "<tbody>"
+                               "<tr>"
+                               "<th>Weight</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Weekly Training Hours</th><td>%u</td>"
+                               "</tr><tr>"
+                               "<th>Athlete Type</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Cabrohydrates</th><td>%u gm</td>"
+                               "</tr><tr>"
+                               "<th>Protein</th><td>%u gm</td>"
+                               "</tr><tr>"
+                               "<th>Fat</th><td>%u gm</td>"
+                               "</tr><tr>"
+                               "<th>Calories</th><td>%u</td>"
+                               "</tr>",
+                               weight, [hours unsignedIntValue], type, 
+                               macronutrients.carbohydrates, 
+                               macronutrients.protein,
+                               macronutrients.fat,
+                               macronutrients.calories
+                               ];
+        
+        emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
+                     "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
+                     "for quick answers to your sports nutrition questions!"
+                     "</p></body></html>"
+                     ];
+        
+        [picker setMessageBody:emailBody isHTML:YES];
+        
+        [self presentModalViewController:picker animated:YES];
+    }
+    
+    [picker release];    
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

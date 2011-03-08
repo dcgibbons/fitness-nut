@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "AthleteDataDelegate.h"
 #import "DetailViewController.h"
 
 
-@interface MacronutrientNeedsViewController : DetailViewController
+@interface MacronutrientNeedsViewController : DetailViewController <MFMailComposeViewControllerDelegate>
 {
 }
 
