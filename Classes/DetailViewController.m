@@ -204,6 +204,7 @@
             self.popoverController = pc;
             [pc release];
         } else {
+            self.popoverController.popoverContentSize = CGSizeZero;
             self.popoverController.contentViewController = navigationController;
         }
         

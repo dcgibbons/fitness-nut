@@ -25,10 +25,10 @@
     self.data.activityLevel = row;    
 }
 
-- (BOOL)shouldShowInPopover
-{
-    return NO;
-}
+//- (BOOL)shouldShowInPopover
+//{
+//    return NO;
+//}
 
 #pragma mark -
 #pragma mark View lifecycle

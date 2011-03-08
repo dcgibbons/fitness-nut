@@ -46,7 +46,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = "Debug - Pro Version";
 		activeExecutable = C2C2C1591325CEEA0041E995 /* Fitness Nut Pro */;
-		activeSDKPreference = iphonesimulator4.2;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = C2C2C10B1325CEEA0041E995 /* Fitness Nut Pro */;
 		addToTargets = (
 			C2C2C10B1325CEEA0041E995 /* Fitness Nut Pro */,
@@ -209,6 +209,39 @@
 			C281F30A1325D288002E3A7D /* PlistBookmark */ = C281F30A1325D288002E3A7D /* PlistBookmark */;
 			C281F30B1325D288002E3A7D /* PlistBookmark */ = C281F30B1325D288002E3A7D /* PlistBookmark */;
 			C281F30C1325D288002E3A7D /* PlistBookmark */ = C281F30C1325D288002E3A7D /* PlistBookmark */;
+			C281F3111325D46C002E3A7D /* PlistBookmark */ = C281F3111325D46C002E3A7D /* PlistBookmark */;
+			C281F31E1325D48A002E3A7D /* PlistBookmark */ = C281F31E1325D48A002E3A7D /* PlistBookmark */;
+			C281F31F1325D533002E3A7D /* PlistBookmark */ = C281F31F1325D533002E3A7D /* PlistBookmark */;
+			C281F3391325D6EF002E3A7D /* PlistBookmark */ = C281F3391325D6EF002E3A7D /* PlistBookmark */;
+			C281F33A1325D6EF002E3A7D /* PBXTextBookmark */ = C281F33A1325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F33B1325D6EF002E3A7D /* PBXTextBookmark */ = C281F33B1325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F33C1325D6EF002E3A7D /* PBXTextBookmark */ = C281F33C1325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F33D1325D6EF002E3A7D /* PBXTextBookmark */ = C281F33D1325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F33E1325D6EF002E3A7D /* PBXTextBookmark */ = C281F33E1325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F33F1325D6EF002E3A7D /* PBXTextBookmark */ = C281F33F1325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F3401325D6EF002E3A7D /* PBXTextBookmark */ = C281F3401325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F3411325D6EF002E3A7D /* PBXTextBookmark */ = C281F3411325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F3421325D6EF002E3A7D /* PBXTextBookmark */ = C281F3421325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F3441325D6EF002E3A7D /* PBXTextBookmark */ = C281F3441325D6EF002E3A7D /* PBXTextBookmark */;
+			C281F3461325D6F3002E3A7D /* PBXTextBookmark */ = C281F3461325D6F3002E3A7D /* PBXTextBookmark */;
+			C281F3491325D6FB002E3A7D /* PBXTextBookmark */ = C281F3491325D6FB002E3A7D /* PBXTextBookmark */;
+			C281F34B1325D748002E3A7D /* PBXTextBookmark */ = C281F34B1325D748002E3A7D /* PBXTextBookmark */;
+			C281F34C1325D748002E3A7D /* PBXTextBookmark */ = C281F34C1325D748002E3A7D /* PBXTextBookmark */;
+			C281F34D1325D748002E3A7D /* PBXTextBookmark */ = C281F34D1325D748002E3A7D /* PBXTextBookmark */;
+			C281F34F1325D75B002E3A7D /* PBXTextBookmark */ = C281F34F1325D75B002E3A7D /* PBXTextBookmark */;
+			C281F3501325D75D002E3A7D /* PBXTextBookmark */ = C281F3501325D75D002E3A7D /* PBXTextBookmark */;
+			C281F3511325D75D002E3A7D /* PBXTextBookmark */ = C281F3511325D75D002E3A7D /* PBXTextBookmark */;
+			C281F3521325D75E002E3A7D /* PBXTextBookmark */ = C281F3521325D75E002E3A7D /* PBXTextBookmark */;
+			C281F3551325D8B6002E3A7D /* PBXTextBookmark */ = C281F3551325D8B6002E3A7D /* PBXTextBookmark */;
+			C281F3561325D8B6002E3A7D /* PlistBookmark */ = C281F3561325D8B6002E3A7D /* PlistBookmark */;
+			C281F3571325D8B6002E3A7D /* PlistBookmark */ = C281F3571325D8B6002E3A7D /* PlistBookmark */;
+			C281F3581325D8B6002E3A7D /* PlistBookmark */ = C281F3581325D8B6002E3A7D /* PlistBookmark */;
+			C281F35E1325D8CE002E3A7D /* PlistBookmark */ = C281F35E1325D8CE002E3A7D /* PlistBookmark */;
+			C281F35F1325D8CE002E3A7D /* PBXTextBookmark */ = C281F35F1325D8CE002E3A7D /* PBXTextBookmark */;
+			C281F3601325D8CE002E3A7D /* PBXTextBookmark */ = C281F3601325D8CE002E3A7D /* PBXTextBookmark */;
+			C281F3611325D8D2002E3A7D /* PBXTextBookmark */ = C281F3611325D8D2002E3A7D /* PBXTextBookmark */;
+			C281F3621325D8D2002E3A7D /* PBXTextBookmark */ = C281F3621325D8D2002E3A7D /* PBXTextBookmark */;
+			C281F3641325D8D2002E3A7D /* PBXTextBookmark */ = C281F3641325D8D2002E3A7D /* PBXTextBookmark */;
 			C2A4D9C612F8EC66002950C0 = C2A4D9C612F8EC66002950C0 /* PBXTextBookmark */;
 			C2A4D9C912F8EC66002950C0 = C2A4D9C912F8EC66002950C0 /* PBXTextBookmark */;
 			C2A4D9CD12F8EC66002950C0 = C2A4D9CD12F8EC66002950C0 /* PBXTextBookmark */;
@@ -746,6 +779,365 @@
 		rLen = 0;
 		rLoc = 9223372036854775807;
 	};
+	C281F3111325D46C002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F31E1325D48A002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F31F1325D533002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F3391325D6EF002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F33A1325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */;
+		name = "ActivityLevelViewController.m: 28";
+		rLen = 55;
+		rLoc = 633;
+		rType = 0;
+		vrLen = 1209;
+		vrLoc = 0;
+	};
+	C281F33B1325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */;
+		name = "AgePickerViewController.m: 12";
+		rLen = 0;
+		rLoc = 291;
+		rType = 0;
+		vrLen = 1289;
+		vrLoc = 0;
+	};
+	C281F33C1325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95C12F8DB8F002950C0 /* GenderViewController.m */;
+		name = "GenderViewController.m: 14";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 0;
+	};
+	C281F33D1325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2BF3C0F1302FB3500AF939D /* AthleteTypeViewController.m */;
+		name = "AthleteTypeViewController.m: 35";
+		rLen = 0;
+		rLoc = 730;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 243;
+	};
+	C281F33E1325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D95E12F8DB8F002950C0 /* GirthPickerViewController.m */;
+		name = "GirthPickerViewController.m: 91";
+		rLen = 1;
+		rLoc = 2844;
+		rType = 0;
+		vrLen = 1377;
+		vrLoc = 0;
+	};
+	C281F33F1325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */;
+		name = "AthleteWeight.m: 56";
+		rLen = 0;
+		rLoc = 1105;
+		rType = 0;
+		vrLen = 957;
+		vrLoc = 181;
+	};
+	C281F3401325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */;
+		name = "WeightPredictorViewController.h: 16";
+		rLen = 0;
+		rLoc = 433;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 0;
+	};
+	C281F3411325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 63";
+		rLen = 0;
+		rLoc = 1697;
+		rType = 0;
+		vrLen = 1471;
+		vrLoc = 1093;
+	};
+	C281F3421325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3431325D6EF002E3A7D /* CGGeometry.h */;
+		rLen = 0;
+		rLoc = 263;
+		rType = 1;
+	};
+	C281F3431325D6EF002E3A7D /* CGGeometry.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = CGGeometry.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h;
+		sourceTree = "<absolute>";
+	};
+	C281F3441325D6EF002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3451325D6EF002E3A7D /* CGGeometry.h */;
+		name = "CGGeometry.h: 264";
+		rLen = 0;
+		rLoc = 8272;
+		rType = 0;
+		vrLen = 1390;
+		vrLoc = 7407;
+	};
+	C281F3451325D6EF002E3A7D /* CGGeometry.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = CGGeometry.h;
+		path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1304, 3614}}";
+			sepNavSelRange = "{8272, 0}";
+			sepNavVisRange = "{7483, 444}";
+		};
+	};
+	C281F3461325D6F3002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3451325D6EF002E3A7D /* CGGeometry.h */;
+		name = "CGGeometry.h: 264";
+		rLen = 0;
+		rLoc = 8272;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 7483;
+	};
+	C281F3491325D6FB002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3451325D6EF002E3A7D /* CGGeometry.h */;
+		name = "CGGeometry.h: 264";
+		rLen = 0;
+		rLoc = 8272;
+		rType = 0;
+		vrLen = 1461;
+		vrLoc = 7407;
+	};
+	C281F34B1325D748002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3451325D6EF002E3A7D /* CGGeometry.h */;
+		name = "CGGeometry.h: 264";
+		rLen = 0;
+		rLoc = 8272;
+		rType = 0;
+		vrLen = 1390;
+		vrLoc = 7407;
+	};
+	C281F34C1325D748002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		rLen = 0;
+		rLoc = 62;
+		rType = 1;
+	};
+	C281F34D1325D748002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 78";
+		rLen = 0;
+		rLoc = 2345;
+		rType = 0;
+		vrLen = 1469;
+		vrLoc = 1093;
+	};
+	C281F34F1325D75B002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 78";
+		rLen = 0;
+		rLoc = 2345;
+		rType = 0;
+		vrLen = 1469;
+		vrLoc = 1093;
+	};
+	C281F3501325D75D002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3451325D6EF002E3A7D /* CGGeometry.h */;
+		name = "CGGeometry.h: 264";
+		rLen = 0;
+		rLoc = 8272;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 7483;
+	};
+	C281F3511325D75D002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 78";
+		rLen = 0;
+		rLoc = 2345;
+		rType = 0;
+		vrLen = 516;
+		vrLoc = 2046;
+	};
+	C281F3521325D75E002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 78";
+		rLen = 0;
+		rLoc = 2345;
+		rType = 0;
+		vrLen = 1498;
+		vrLoc = 1093;
+	};
+	C281F3551325D8B6002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 78";
+		rLen = 0;
+		rLoc = 2345;
+		rType = 0;
+		vrLen = 1498;
+		vrLoc = 1093;
+	};
+	C281F3561325D8B6002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F3571325D8B6002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C281F3051325D21A002E3A7D /* Fitness_Nut_Pro-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut_Pro-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F3581325D8B6002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C281F3051325D21A002E3A7D /* Fitness_Nut_Pro-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut_Pro-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F35E1325D8CE002E3A7D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C281F3051325D21A002E3A7D /* Fitness_Nut_Pro-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/chadwick/Projects/Fitness Nut/Fitness_Nut_Pro-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C281F35F1325D8CE002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		rLen = 0;
+		rLoc = 62;
+		rType = 1;
+	};
+	C281F3601325D8CE002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 63";
+		rLen = 0;
+		rLoc = 1697;
+		rType = 0;
+		vrLen = 1546;
+		vrLoc = 1121;
+	};
+	C281F3611325D8D2002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */;
+		name = "WeightPickerViewController.m: 63";
+		rLen = 0;
+		rLoc = 1697;
+		rType = 0;
+		vrLen = 357;
+		vrLoc = 1489;
+	};
+	C281F3621325D8D2002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3631325D8D2002E3A7D /* asm -[UIViewController view]  0x341e3208 */;
+		rLen = 0;
+		rLoc = 46;
+		rType = 1;
+	};
+	C281F3631325D8D2002E3A7D /* asm -[UIViewController view]  0x341e3208 */ = {
+		isa = PBXFileReference;
+		path = "asm -[UIViewController view]  0x341e3208";
+		sourceTree = "<group>";
+	};
+	C281F3641325D8D2002E3A7D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C281F3651325D8D2002E3A7D /* asm -[UIViewController view]  0x341e3208 */;
+		name = "asm -[UIViewController view]  0x341e3208: 47";
+		rLen = 0;
+		rLoc = 2186;
+		rType = 0;
+		vrLen = 507;
+		vrLoc = 1940;
+	};
+	C281F3651325D8D2002E3A7D /* asm -[UIViewController view]  0x341e3208 */ = {
+		isa = PBXFileReference;
+		path = "asm -[UIViewController view]  0x341e3208";
+		sourceTree = "<group>";
+	};
 	C2A4D93E12F8DB2D002950C0 /* Fitness Nut */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -801,9 +1193,9 @@
 	};
 	C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {824, 2080}}";
-			sepNavSelRange = "{677, 0}";
-			sepNavVisRange = "{3, 1053}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2093}}";
+			sepNavSelRange = "{633, 55}";
+			sepNavVisRange = "{0, 1209}";
 		};
 	};
 	C2A4D95312F8DB8F002950C0 /* AgePickerViewController.h */ = {
@@ -815,9 +1207,9 @@
 	};
 	C2A4D95412F8DB8F002950C0 /* AgePickerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 1482}}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 1417}}";
 			sepNavSelRange = "{291, 0}";
-			sepNavVisRange = "{0, 1198}";
+			sepNavVisRange = "{0, 1289}";
 		};
 	};
 	C2A4D95512F8DB8F002950C0 /* BMRViewController.h */ = {
@@ -874,9 +1266,9 @@
 	};
 	C2A4D95C12F8DB8F002950C0 /* GenderViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 1989}}";
-			sepNavSelRange = "{436, 0}";
-			sepNavVisRange = "{352, 1383}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2054}}";
+			sepNavSelRange = "{260, 0}";
+			sepNavVisRange = "{0, 1015}";
 		};
 	};
 	C2A4D95D12F8DB8F002950C0 /* GirthPickerViewController.h */ = {
@@ -888,9 +1280,9 @@
 	};
 	C2A4D95E12F8DB8F002950C0 /* GirthPickerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 2925}}";
-			sepNavSelRange = "{2784, 0}";
-			sepNavVisRange = "{1565, 1726}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2977}}";
+			sepNavSelRange = "{2844, 1}";
+			sepNavVisRange = "{0, 1377}";
 		};
 	};
 	C2A4D95F12F8DB8F002950C0 /* HeightPickerViewController.h */ = {
@@ -946,14 +1338,14 @@
 	};
 	C2A4D96612F8DB8F002950C0 /* WeightPickerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 3055}}";
-			sepNavSelRange = "{1845, 0}";
-			sepNavVisRange = "{4921, 1842}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 3029}}";
+			sepNavSelRange = "{1697, 0}";
+			sepNavVisRange = "{1121, 1670}";
 		};
 	};
 	C2A4D96712F8DB8F002950C0 /* WeightPredictorViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 611}}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 626}}";
 			sepNavSelRange = "{433, 0}";
 			sepNavVisRange = "{0, 485}";
 		};
@@ -1002,9 +1394,9 @@
 	};
 	C2A4D99B12F8DBDF002950C0 /* AthleteWeight.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {824, 767}}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 767}}";
 			sepNavSelRange = "{1105, 0}";
-			sepNavVisRange = "{309, 829}";
+			sepNavVisRange = "{181, 957}";
 		};
 	};
 	C2A4D99D12F8DBDF002950C0 /* FitnessCalculations.h */ = {
@@ -1098,9 +1490,9 @@
 	};
 	C2BF3C0F1302FB3500AF939D /* AthleteTypeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {824, 2002}}";
-			sepNavSelRange = "{619, 0}";
-			sepNavVisRange = "{3, 992}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 1963}}";
+			sepNavSelRange = "{730, 0}";
+			sepNavVisRange = "{243, 1218}";
 		};
 	};
 	C2BF3C181302FCD000AF939D /* AthleteType.h */ = {
@@ -1160,7 +1552,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -1177,9 +1569,13 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = "Fitness Nut Pro";
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	C2C2C1781325D0620041E995 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1245,7 +1641,7 @@
 		fRef = C2A4D95C12F8DB8F002950C0 /* GenderViewController.m */;
 		name = "GenderViewController.m: 26";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 454;
 		rType = 0;
 		vrLen = 1383;
 		vrLoc = 352;
@@ -1332,7 +1728,7 @@
 		fRef = C2BF3C0F1302FB3500AF939D /* AthleteTypeViewController.m */;
 		name = "AthleteTypeViewController.m: 31";
 		rLen = 0;
-		rLoc = 619;
+		rLoc = 572;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 3;
@@ -1342,7 +1738,7 @@
 		fRef = C2A4D95212F8DB8F002950C0 /* ActivityLevelViewController.m */;
 		name = "ActivityLevelViewController.m: 30";
 		rLen = 0;
-		rLoc = 677;
+		rLoc = 633;
 		rType = 0;
 		vrLen = 1053;
 		vrLoc = 3;

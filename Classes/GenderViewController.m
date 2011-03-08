@@ -11,11 +11,6 @@
 
 @implementation GenderViewController
 
-- (BOOL)shouldShowInPopover
-{
-    return NO;
-}
-
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -23,17 +18,15 @@
 {
     [super viewDidLoad];
 
+    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    
     self.title = @"Athlete Gender";
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
 
 #pragma mark -
 #pragma mark Table view data source

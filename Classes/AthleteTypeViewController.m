@@ -24,11 +24,6 @@
     self.data.athleteType = row;    
 }
 
-- (BOOL)shouldShowInPopover
-{
-    return NO;
-}
-
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -36,6 +31,8 @@
 {
     [super viewDidLoad];
     
+    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+
     self.title = @"Athlete Type";
 
     self.athleteTypes = [NSArray arrayWithObjects:
