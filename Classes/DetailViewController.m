@@ -39,6 +39,17 @@
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
 #endif
+
+#ifdef PRO_VERSION
+    self.navigationController.toolbarHidden = YES;
+    self.navigationController.toolbar.barStyle = UIBarStyleBlack;
+    
+    UIBarButtonItem *composeItem = [[UIBarButtonItem alloc] 
+                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                    target:self 
+                                    action:@selector(emailResults:)];
+    self.toolbarItems = [NSArray arrayWithObjects:composeItem, nil];
+#endif
 }
 
 - (void)viewDidUnload 
@@ -309,6 +320,14 @@
     NSLog(@"received athlete data: %@=%@\n", dataName, data);
     [userData setObject:data forKey:dataName];
     [self.tableView reloadData];
+}
+
+#pragma mark -
+#pragma mark UI Actions
+
+- (void)emailResults:(id)sender
+{
+    // NO-OP
 }
 
 @end

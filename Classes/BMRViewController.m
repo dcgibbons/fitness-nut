@@ -32,6 +32,8 @@
     AthleteGender *gender = [userData objectForKey:@"athleteGender"];
     if (!gender) return nil;
     
+    [self.navigationController setToolbarHidden:NO animated:YES];
+
     int bmr = [FitnessCalculations bmrUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                   usingHeightInCentimeters:[[height heightAsCentimeters] doubleValue]
                                            usingAgeInYears:age.age
@@ -212,6 +214,81 @@
 {
     [infoButton release];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UI Actions
+
+- (void)emailResults:(id)sender
+{
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+
+	[picker setSubject:@"FitnessNutPro: BMR & TDEE results"];
+    
+	// Fill out the email body text
+    AthleteAge *age = [userData objectForKey:@"athleteAge"];
+    AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
+    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+    AthleteGender *gender = [userData objectForKey:@"athleteGender"];
+    NSString *bmr = [self calculateBMR];
+    
+    AthleteActivityLevel *activityLevel = [userData objectForKey:@"athleteActivityLevel"];
+    NSString *tdee = [self calculateTDEE];
+    
+    NSString *emailBody = 
+        [NSString stringWithFormat:
+        @"<html>"
+         "<body>"
+            "<table>"
+                "<tbody>"
+                    "<tr>"
+                        "<th>Age</th><td>%@</td>"
+                    "</tr><tr>"
+                        "<th>Height</th><td>%@</td>"
+                    "</tr><tr>"
+                        "<th>Weight</th><td>%@</td>"
+                    "</tr><tr>"
+                        "<th>Gender</th><td>%@</td>"
+                    "</tr><tr>"
+                        "<th>BMR</th><td>%@</td>"
+                    "</tr>",
+         age, height, weight, gender, bmr
+         ];
+    
+    if (tdee) {
+        emailBody = [emailBody stringByAppendingFormat:
+            @"<tr>"
+                "<th>Activity</th><td>%@</td>"
+            "</tr><tr>"
+                "<th>TDEE</th><td>%@</td>"
+            "</tr>",
+            activityLevel, tdee
+            ];
+    }
+    
+    emailBody = [emailBody stringByAppendingString:
+                 @"</tbody></table><p>"
+                 "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut/id420480042?mt=8\">Fitness Nut</a> "
+                 "for quick answers to your sports nutrition questions!"
+                 "</p></body></html>"
+                 ];
+    
+	[picker setMessageBody:emailBody isHTML:YES];
+	
+	[self presentModalViewController:picker animated:YES];
+    [picker release];    
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

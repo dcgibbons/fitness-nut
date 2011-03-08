@@ -76,6 +76,7 @@
 		C2C6DC4B132531FC00910E89 /* SecondaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */; };
 		C2C6DF5813257B9400910E89 /* GirthPickerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */; };
 		C2C6E0341325866F00910E89 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C6E0331325866F00910E89 /* iTunesArtwork.png */; };
+		C2C6E1BE1325A07300910E89 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6E1BD1325A07300910E89 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +187,7 @@
 		C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryDetailViewController.m; sourceTree = "<group>"; };
 		C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GirthPickerViewController~ipad.xib"; sourceTree = "<group>"; };
 		C2C6E0331325866F00910E89 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		C2C6E1BD1325A07300910E89 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				C26F8C4F131C185C0079E1CC /* iAd.framework in Frameworks */,
+				C2C6E1BE1325A07300910E89 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +348,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 				C26F8C4E131C185C0079E1CC /* iAd.framework */,
+				C2C6E1BD1325A07300910E89 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -530,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnut;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gibbons (474Z9G6L7E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -547,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnut;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gibbons (474Z9G6L7E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -565,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnutpro;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gibbons (474Z9G6L7E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
@@ -597,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnutpro;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gibbons (474Z9G6L7E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
@@ -629,6 +637,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnutpro;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Gibbons";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
@@ -661,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnut;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Gibbons";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";

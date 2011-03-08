@@ -23,13 +23,12 @@
     NSMutableDictionary *userData;
 
     UIPopoverController *popoverController;
-    UITableView *tableView;
+    IBOutlet UITableView *tableView;
     
     NSArray *sections;
 
     ADBannerView *adBannerView;
     BOOL bannerIsVisible;
-    
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;
@@ -38,5 +37,7 @@
 @property (nonatomic, retain) NSArray *sections;
 @property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, assign) BOOL bannerIsVisible;
+
+- (void)emailResults:(id)sender;
 
 @end

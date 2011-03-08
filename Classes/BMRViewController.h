@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
+
 #import "AgePickerViewController.h"
 #import "AthleteDataDelegate.h"
 #import "DetailViewController.h"
 #import "SecondaryDetailViewController.h"
 
-@interface BMRViewController : DetailViewController
+@interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate>
 {
     UIButton *infoButton;
 }
