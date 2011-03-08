@@ -278,13 +278,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>46</integer>
-									<integer>1</integer>
+									<integer>79</integer>
+									<integer>70</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 524}, {339, 858}}</string>
+							<string>{{0, 735}, {339, 858}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C2A4D94912F8DB3B002950C0</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MacronutrientNeedsViewController.m</string>
+								<string>GirthPickerViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C2A4D94A12F8DB3B002950C0</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MacronutrientNeedsViewController.m</string>
+										<string>GirthPickerViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C2C6E34F1325CB3000910E89</string>
+										<string>C2C6E35B1325CC5300910E89</string>
 										<key>history</key>
 										<array>
 											<string>C2A4D9C612F8EC66002950C0</string>
@@ -380,7 +380,6 @@
 											<string>C2C6DF2D1325769200910E89</string>
 											<string>C2C6DF401325770900910E89</string>
 											<string>C2C6DF411325770900910E89</string>
-											<string>C2C6DF6313257C4000910E89</string>
 											<string>C2C6DFA7132581C600910E89</string>
 											<string>C2C6DFB61325838500910E89</string>
 											<string>C2C6DFE71325841100910E89</string>
@@ -412,7 +411,8 @@
 											<string>C2C6E3241325C91000910E89</string>
 											<string>C2C6E3251325C91000910E89</string>
 											<string>C2C6E3431325CB1500910E89</string>
-											<string>C2C6E34A1325CB2700910E89</string>
+											<string>C2C6E3591325CC5300910E89</string>
+											<string>C2C6E35A1325CC5300910E89</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -731,6 +731,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C2C6E35C1325CC5300910E89</string>
 		<string>C2C6DCDF13253B3F00910E89</string>
 		<string>C2C6DCC713253A0F00910E89</string>
 		<string>/Users/chadwick/Projects/Fitness Nut/Fitness Nut.xcodeproj</string>

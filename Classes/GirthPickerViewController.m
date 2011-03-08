@@ -86,9 +86,11 @@
         if (UIInterfaceOrientationIsLandscape(orientation)) {
             self.unitsControl.frame = CGRectMake(253, 86, 207, 44);
             self.pickerView.frame = CGRectMake(0, 0, 245, 216);
+            self.infoButton.frame = CGRectMake(442, 217, 18, 19);
         } else {
             self.unitsControl.frame = CGRectMake(56, 353, 207, 44);
             self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+            self.infoButton.frame = CGRectMake(282, 377, 18, 19);
         }
     }
 }
