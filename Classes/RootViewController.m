@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "ContentController.h"
+#import "UpgradeBannerView.h"
 
 
 @implementation RootViewController
@@ -16,11 +17,7 @@
 #pragma mark Properties
 
 @synthesize userData, groups, menuTableView, adBannerView, bannerIsVisible, contentController;
-
-- (BOOL)isPadDevice 
-{
-	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
-}
+@synthesize upgradeBannerView;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -44,6 +41,22 @@
     adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
+    
+    UIView *v = [[UpgradeBannerView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    self.upgradeBannerView = [v retain];
+    [v release];
+    [self.view addSubview:upgradeBannerView];
+    
+    CGFloat fullViewHeight = self.view.frame.size.height;
+    CGRect tableFrame = self.menuTableView.frame;
+    CGRect bannerFrame = self.upgradeBannerView.frame;
+    
+    // Shrink the tableview to create space for banner
+    tableFrame.size.height = fullViewHeight - bannerFrame.size.height;
+    tableFrame.origin.y = bannerFrame.size.height;
+    
+    self.menuTableView.frame = tableFrame;
+    self.upgradeBannerView.frame = bannerFrame;        
 #endif
 
     NSArray *nutritionMenuItems = [NSArray arrayWithObjects:
@@ -91,14 +104,43 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (![self isPadDevice]) {
+    NSLog(@"viewWillAppear!!");
+    
+    if (!IS_PAD_DEVICE()) {
         [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
+    
+#ifndef PRO_VERSION
+    NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
+    if (!seenUpgradeNotice) {
+        NSString *msg = @"For additional features, such as the ability to e-mail your calculations, "
+        "full-screen iPad support, and no advertisements, check out Fitness Nut Pro!";
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Fitness Nut Pro" 
+                                                            message:msg 
+                                                           delegate:self 
+                                                  cancelButtonTitle:@"Not yet." 
+                                                  otherButtonTitles:@"Yes!", nil
+                                  ];
+        [alertView show];
+        [alertView release];
+        [userData setObject:[NSNumber numberWithUnsignedInt:1] forKey:@"seenUpgradeNotice"];
+    }
+#endif
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+#ifndef PRO_VERSION
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8&ls=1"];
+        [[UIApplication sharedApplication] openURL:url];        
+    }
+#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    if (![self isPadDevice]) {
+    if (!IS_PAD_DEVICE()) {
         [self.navigationController setNavigationBarHidden:NO animated:animated];
     }
 }
@@ -114,9 +156,9 @@
 - (void)viewDidUnload 
 {
     [super viewDidUnload];
+    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    
     self.userData = nil;
     self.menuTableView = nil;
     self.adBannerView.delegate = nil;
@@ -157,8 +199,12 @@
     cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.detailTextLabel.numberOfLines = 0;    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    if (IS_PAD_DEVICE()) {
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    } else {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
     
     return cell;
 }
@@ -237,13 +283,18 @@
         CGRect bannerFrame = self.adBannerView.frame;
         
         // Shrink the tableview to create space for banner
-        tableFrame.size.height = fullViewHeight - bannerFrame.size.height;
+        tableFrame.size.height = tableFrame.size.height - bannerFrame.size.height;
         
         // Move banner onscreen
         bannerFrame.origin.y = fullViewHeight - bannerFrame.size.height;   
         
         self.menuTableView.frame = tableFrame;
         self.adBannerView.frame = bannerFrame;        
+        
+        NSLog(@"menuTableView.frame=%d,%d,%d,%d", tableFrame.origin.x,tableFrame.origin.y,
+              tableFrame.size.width,tableFrame.size.height);
+        NSLog(@"adBannerView.frame=%d,%d,%d,%d", bannerFrame.origin.x,bannerFrame.origin.y,
+              bannerFrame.size.width,bannerFrame.size.height);
         
         [UIView commitAnimations];
         

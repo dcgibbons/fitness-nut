@@ -31,6 +31,12 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSNumber *seenUpgradeNotice = [defaults objectForKey:@"seenUpgradeNotice"];
+    if (seenUpgradeNotice) {
+        NSLog(@"Loaded seenUpgradeNotice from userDefaults: %@", seenUpgradeNotice);
+        [userData setObject:seenUpgradeNotice forKey:@"seenUpgradeNotice"];
+    }
+    
     NSNumber *age = [defaults objectForKey:@"athleteAge"];
     if (age) {
         AthleteAge *athleteAge = [[[AthleteAge alloc] initWithAge:[age intValue]] autorelease];
@@ -140,6 +146,12 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
+    if (seenUpgradeNotice) {
+        [defaults setObject:seenUpgradeNotice forKey:@"seenUpgradeNotice"];
+        NSLog(@"seenUpgradeNotice saved\n");
+    }
+    
     AthleteAge *age = [userData objectForKey:@"athleteAge"];
     if (age) {
         [defaults setObject:[NSNumber numberWithInt:age.age] forKey:@"athleteAge"];
@@ -226,6 +238,7 @@
 
     self.userData = [[[NSMutableDictionary alloc] init] autorelease];
     [self loadUserDefaults];
+    
     self.contentController.userData = self.userData;
     
     [self.window addSubview:self.contentController.view];
@@ -249,8 +262,6 @@
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
     
-    //   [[NSUserDefaults standardUserDefaults] setObject:self.userData forKey:@"userData"];
-    //    NSLog(@"userData saved in standardUserDefaults, %@\n", userData);
     [self saveUserDefaults];
 }
 

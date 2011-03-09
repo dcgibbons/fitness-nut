@@ -12,7 +12,8 @@
 
 @interface RootViewController :  UIViewController <UITableViewDataSource, 
                                                    UITableViewDelegate, 
-                                                   ADBannerViewDelegate> 
+                                                   ADBannerViewDelegate,
+                                                   UIAlertViewDelegate> 
 {
     ContentController *contentController;
     NSMutableDictionary *userData;
@@ -20,6 +21,8 @@
     UITableView *menuTableView;
     ADBannerView *adBannerView;
     BOOL bannerIsVisible;
+    
+    UIView *upgradeBannerView;
 }
 
 @property (nonatomic, retain) IBOutlet ContentController *contentController;
@@ -28,5 +31,6 @@
 @property (nonatomic, retain) IBOutlet UITableView *menuTableView;
 @property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, assign) BOOL bannerIsVisible;
+@property (nonatomic, retain) UIView *upgradeBannerView;
 
 @end

@@ -14,6 +14,7 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		C247BEF21328027000A69694 /* UpgradeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C247BEF11328027000A69694 /* UpgradeBannerView.m */; };
 		C25C592A12FB0656004A14E4 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25C592912FB0656004A14E4 /* InfoViewController.m */; };
 		C25C592C12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C592B12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib */; };
 		C25C599012FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25C598F12FB15F6004A14E4 /* athleteWaistGirth_ViewController.xib */; };
@@ -149,7 +150,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Fitness_NutAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fitness_NutAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Fitness_NutAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fitness_NutAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* FitnessNutPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNutPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* FitnessNut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* Fitness_Nut_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fitness_Nut_Prefix.pch; sourceTree = "<group>"; };
@@ -159,6 +160,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Fitness_Nut-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fitness_Nut-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C2083900131F207B003BA287 /* RootViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "RootViewController~ipad.xib"; sourceTree = "<group>"; };
+		C247BEF01328027000A69694 /* UpgradeBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeBannerView.h; sourceTree = "<group>"; };
+		C247BEF11328027000A69694 /* UpgradeBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeBannerView.m; sourceTree = "<group>"; };
 		C25C592812FB0656004A14E4 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		C25C592912FB0656004A14E4 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		C25C592B12FB067D004A14E4 /* athleteNeckGirth_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = athleteNeckGirth_ViewController.xib; sourceTree = "<group>"; };
@@ -249,7 +252,7 @@
 		C2BF3C111302FB7C00AF939D /* AthleteTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AthleteTypeViewController.xib; sourceTree = "<group>"; };
 		C2BF3C181302FCD000AF939D /* AthleteType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteType.h; sourceTree = "<group>"; };
 		C2BF3C191302FCD000AF939D /* AthleteType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteType.m; sourceTree = "<group>"; };
-		C2C2C1581325CEEA0041E995 /* FitnessNutPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNutPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2C2C1581325CEEA0041E995 /* FitnessNut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C6DC49132531FC00910E89 /* SecondaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryDetailViewController.h; sourceTree = "<group>"; };
 		C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryDetailViewController.m; sourceTree = "<group>"; };
 		C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GirthPickerViewController~ipad.xib"; sourceTree = "<group>"; };
@@ -355,6 +358,8 @@
 				C26F9109131CA1530079E1CC /* EmptyDetailViewController.m */,
 				C2C6DC49132531FC00910E89 /* SecondaryDetailViewController.h */,
 				C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */,
+				C247BEF01328027000A69694 /* UpgradeBannerView.h */,
+				C247BEF11328027000A69694 /* UpgradeBannerView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -362,8 +367,8 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* FitnessNutPro.app */,
-				C2C2C1581325CEEA0041E995 /* FitnessNutPro.app */,
+				1D6058910D05DD3D006BFB54 /* FitnessNut.app */,
+				C2C2C1581325CEEA0041E995 /* FitnessNut.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -466,7 +471,7 @@
 			);
 			name = "Fitness Nut";
 			productName = "Fitness Nut";
-			productReference = 1D6058910D05DD3D006BFB54 /* FitnessNutPro.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* FitnessNut.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C2C2C10B1325CEEA0041E995 /* Fitness Nut Pro */ = {
@@ -483,7 +488,7 @@
 			);
 			name = "Fitness Nut Pro";
 			productName = "Fitness Nut";
-			productReference = C2C2C1581325CEEA0041E995 /* FitnessNutPro.app */;
+			productReference = C2C2C1581325CEEA0041E995 /* FitnessNut.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -630,6 +635,7 @@
 				C26F9031131C8D8F0079E1CC /* DetailViewController.m in Sources */,
 				C26F910A131CA1530079E1CC /* EmptyDetailViewController.m in Sources */,
 				C2C6DC4B132531FC00910E89 /* SecondaryDetailViewController.m in Sources */,
+				C247BEF21328027000A69694 /* UpgradeBannerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
