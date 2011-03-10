@@ -24,10 +24,10 @@
         }          
         
         CGFloat fullViewHeight = self.view.frame.size.height;
-        NSLog(@"fullViewHeight=%f", fullViewHeight);
+//        NSLog(@"fullViewHeight=%f", fullViewHeight);
         
         CGSize adBannerSize = [ADBannerView sizeFromBannerContentSizeIdentifier:adBannerView.currentContentSizeIdentifier];
-        NSLog(@"adBannerSize=%f,%f", adBannerSize.width, adBannerSize.height);
+//        NSLog(@"adBannerSize=%f,%f", adBannerSize.width, adBannerSize.height);
         
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
         
