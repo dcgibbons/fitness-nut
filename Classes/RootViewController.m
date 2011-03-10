@@ -13,6 +13,51 @@
 
 @implementation RootViewController
 
+- (void)fixupAdView:(UIInterfaceOrientation)toInterfaceOrientation 
+{
+    if (adBannerView) {
+        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierLandscape];
+        } else {
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierPortrait];
+        }          
+
+        CGFloat fullViewHeight = self.view.frame.size.height;
+        NSLog(@"fullViewHeight=%f", fullViewHeight);
+        
+        CGSize adBannerSize = [ADBannerView sizeFromBannerContentSizeIdentifier:adBannerView.currentContentSizeIdentifier];        
+        NSLog(@"adBannerSize=%f,%f", adBannerSize.width, adBannerSize.height);
+
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+
+        if (bannerIsVisible) {
+            CGRect adBannerViewFrame = adBannerView.frame;
+            adBannerViewFrame.origin.x = 0;
+            adBannerViewFrame.origin.y = fullViewHeight - adBannerViewFrame.size.height;
+            adBannerView.frame = adBannerViewFrame;
+            
+            CGRect tableViewFrame = menuTableView.frame;
+            tableViewFrame.size.height = fullViewHeight - upgradeBannerView.frame.size.height - adBannerSize.height;
+            menuTableView.frame = tableViewFrame;
+        } else {
+            // Move the banner view offscreen
+            CGRect bannerFrame = self.adBannerView.frame;
+            bannerFrame.origin.y = fullViewHeight;
+            
+            CGRect tableViewFrame = menuTableView.frame;
+            tableViewFrame.size.height = fullViewHeight - upgradeBannerView.frame.size.height;
+            menuTableView.frame = tableViewFrame;
+        }
+        
+//        NSLog(@"menuTableView.frame=%f,%f,%f,%f", menuTableView.frame.origin.x,menuTableView.frame.origin.y,
+//              menuTableView.frame.size.width,menuTableView.frame.size.height);
+//        NSLog(@"adBannerView.frame=%f,%f,%f,%f", adBannerView.frame.origin.x,adBannerView.frame.origin.y,
+//              adBannerView.frame.size.width,adBannerView.frame.size.height);
+//        
+        [UIView commitAnimations];
+    } 
+}
+
 #pragma mark -
 #pragma mark Properties
 
@@ -37,7 +82,6 @@
     adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
                                                                   self.view.frame.size.height,
                                                                   0, 0)];
-    adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObject:ADBannerContentSizeIdentifierPortrait];
     adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
@@ -102,14 +146,19 @@
     return YES;
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self fixupAdView:[UIDevice currentDevice].orientation];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"viewWillAppear!!");
-    
+
     if (!IS_PAD_DEVICE()) {
         [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
-    
+
 #ifndef PRO_VERSION
     NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
     if (!seenUpgradeNotice) {
@@ -125,6 +174,13 @@
         [alertView release];
         [userData setObject:[NSNumber numberWithUnsignedInt:1] forKey:@"seenUpgradeNotice"];
     }
+#endif
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+#ifndef PRO_VERSION
+    [self fixupAdView:[UIDevice currentDevice].orientation];
 #endif
 }
 
@@ -163,13 +219,14 @@
     self.menuTableView = nil;
     self.adBannerView.delegate = nil;
     self.adBannerView = nil;
+    self.upgradeBannerView = nil;
 }
 
 - (void)dealloc
 {
     adBannerView.delegate=nil;
     [adBannerView release];
-    
+    [upgradeBannerView release];
     [userData release];
     [menuTableView release];
     [super dealloc];
@@ -274,46 +331,24 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-    if (!self.bannerIsVisible)
-    {
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        
-        CGFloat fullViewHeight = self.view.frame.size.height;
-        CGRect tableFrame = self.menuTableView.frame;
-        CGRect bannerFrame = self.adBannerView.frame;
-        
-        // Shrink the tableview to create space for banner
-        tableFrame.size.height = tableFrame.size.height - bannerFrame.size.height;
-        
-        // Move banner onscreen
-        bannerFrame.origin.y = fullViewHeight - bannerFrame.size.height;   
-        
-        self.menuTableView.frame = tableFrame;
-        self.adBannerView.frame = bannerFrame;        
-        
-        NSLog(@"menuTableView.frame=%d,%d,%d,%d", tableFrame.origin.x,tableFrame.origin.y,
-              tableFrame.size.width,tableFrame.size.height);
-        NSLog(@"adBannerView.frame=%d,%d,%d,%d", bannerFrame.origin.x,bannerFrame.origin.y,
-              bannerFrame.size.width,bannerFrame.size.height);
-        
-        [UIView commitAnimations];
-        
-        self.bannerIsVisible = YES;
-    }    
+    if (!bannerIsVisible) {
+        bannerIsVisible = YES;
+        [self fixupAdView:[UIDevice currentDevice].orientation];
+    }
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
     NSLog(@"adBanner didFailToReceiveAdWithError, error=%@\n", error);
     
-    if (self.bannerIsVisible)
+    if (bannerIsVisible)
     {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
         
         // Grow the tableview to occupy space left by banner
         CGFloat fullViewHeight = self.view.frame.size.height;
         CGRect tableFrame = self.menuTableView.frame;
-        tableFrame.size.height = fullViewHeight;
+        tableFrame.size.height = fullViewHeight - upgradeBannerView.frame.size.height;
         
         // Move the banner view offscreen
         CGRect bannerFrame = self.adBannerView.frame;

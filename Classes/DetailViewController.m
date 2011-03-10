@@ -12,8 +12,53 @@
 
 
 @implementation DetailViewController
-
 @synthesize userData, popoverController, tableView, sections, adBannerView, bannerIsVisible;
+
+- (void)fixupAdView:(UIInterfaceOrientation)toInterfaceOrientation 
+{
+    if (adBannerView) {
+        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierLandscape];
+        } else {
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierPortrait];
+        }          
+        
+        CGFloat fullViewHeight = self.view.frame.size.height;
+        NSLog(@"fullViewHeight=%f", fullViewHeight);
+        
+        CGSize adBannerSize = [ADBannerView sizeFromBannerContentSizeIdentifier:adBannerView.currentContentSizeIdentifier];
+        NSLog(@"adBannerSize=%f,%f", adBannerSize.width, adBannerSize.height);
+        
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        
+        if (bannerIsVisible) {
+            CGRect adBannerViewFrame = adBannerView.frame;
+            adBannerViewFrame.origin.x = 0;
+            adBannerViewFrame.origin.y = fullViewHeight - adBannerViewFrame.size.height;
+            adBannerView.frame = adBannerViewFrame;
+            
+            CGRect tableViewFrame = tableView.frame;
+            tableViewFrame.size.height = fullViewHeight - adBannerSize.height;
+            tableView.frame = tableViewFrame;
+        } else {
+            CGRect adBannerViewFrame = adBannerView.frame;
+            adBannerViewFrame.origin.x = 0;
+            adBannerViewFrame.origin.y = fullViewHeight - adBannerSize.height;
+            adBannerView.frame = adBannerViewFrame;
+            
+            CGRect tableViewFrame = tableView.frame;
+            tableViewFrame.size.height = fullViewHeight - tableViewFrame.origin.y;
+            tableView.frame = tableViewFrame;
+        }
+        
+        //        NSLog(@"menuTableView.frame=%f,%f,%f,%f", menuTableView.frame.origin.x,menuTableView.frame.origin.y,
+        //              menuTableView.frame.size.width,menuTableView.frame.size.height);
+        //        NSLog(@"adBannerView.frame=%f,%f,%f,%f", adBannerView.frame.origin.x,adBannerView.frame.origin.y,
+        //              adBannerView.frame.size.width,adBannerView.frame.size.height);
+        //        
+        [UIView commitAnimations];
+    } 
+}
 
 - (void)didReceiveMemoryWarning 
 {
@@ -33,8 +78,6 @@
     adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
                                                                   self.view.frame.size.height,
                                                                   0, 0)];
-    
-    adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObject:ADBannerContentSizeIdentifierPortrait];
     adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
@@ -52,6 +95,11 @@
 #endif
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self fixupAdView:[UIDevice currentDevice].orientation];
+}
+
 - (void)viewDidUnload 
 {
     [super viewDidUnload];
@@ -67,6 +115,11 @@
 {
     // Return YES for supported orientations.
     return YES;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self fixupAdView:[UIDevice currentDevice].orientation];
 }
 
 - (void)dealloc 
@@ -263,27 +316,10 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-    if (!self.bannerIsVisible)
-    {
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        
-        CGFloat fullViewHeight = self.view.frame.size.height;
-        CGRect tableFrame = self.tableView.frame;
-        CGRect bannerFrame = self.adBannerView.frame;
-        
-        // Shrink the tableview to create space for banner
-        tableFrame.size.height = fullViewHeight - bannerFrame.size.height;
-        
-        // Move banner onscreen
-        bannerFrame.origin.y = fullViewHeight - bannerFrame.size.height;   
-        
-        self.tableView.frame = tableFrame;
-        self.adBannerView.frame = bannerFrame;        
-        
-        [UIView commitAnimations];
-        
-        self.bannerIsVisible = YES;
-    }    
+    if (!bannerIsVisible) {
+        bannerIsVisible = YES;
+        [self fixupAdView:[UIDevice currentDevice].orientation];
+    }
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
