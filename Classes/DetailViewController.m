@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 #import "AthleteDataProtocol.h"
 #import "SecondaryDetailViewController.h"
-
+#import "GANTracker.h"
 
 @implementation DetailViewController
 @synthesize userData, popoverController, tableView, sections, adBannerView, bannerIsVisible;
@@ -204,6 +204,11 @@
         }
     }
     
+    NSString *detailDisclosureKey = [rowDict objectForKey:@"detailDisclosureView"];
+    if (detailDisclosureKey && cell.detailTextLabel.text) { // TODO: test if this works when label is @""
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
+    
     NSString *viewClassName = [rowDict objectForKey:@"viewController"];
     if (viewClassName) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -215,6 +220,41 @@
 
 #pragma mark -
 #pragma mark Table view delegate
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                         action:@"view_bmr_graph"
+                                          label:@""
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track calculate event for view_bmr_graph, %@",
+              error);
+    }
+
+    int section = [indexPath section];
+    int row = [indexPath row];
+    
+    NSDictionary *rowDict = [[[sections objectAtIndex:section] objectForKey:@"rows"] 
+                             objectAtIndex:row];
+    
+    NSString *viewClassName = [rowDict objectForKey:@"detailDisclosureView"];
+    if (!viewClassName) return;
+    
+    NSString *nibName = viewClassName;
+    
+    UIViewController *vc = [[NSClassFromString(viewClassName) alloc]
+                            initWithNibName:nibName bundle:nil];
+    
+    [vc setUserData:userData]; // TODO fix the nasty
+//    [vc performSelector:@selector(setDelegate:) withObject:self];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc release];
+    
+    // TODO: use a popup on the iPad
+}
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
@@ -228,6 +268,16 @@
     
     NSString *viewClassName = [rowDict objectForKey:@"viewController"];
     if (!viewClassName) return;
+    
+    NSError *error;
+    NSString *path = [NSString stringWithFormat:@"/%@/%@",
+                      NSStringFromClass([self class]),
+                      viewClassName];
+    NSLog(@"Logging analytics for path %@", path);
+    if (![[GANTracker sharedTracker] trackPageview:path withError:&error]) {
+        NSLog(@"Unable to track page view for %@, %@", viewClassName, 
+              error);
+    }
     
     NSString *nibName = viewClassName;
         
@@ -364,7 +414,15 @@
 
 - (void)emailResults:(id)sender
 {
-    // NO-OP
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                         action:@"email_results"
+                                          label:NSStringFromClass([self class])
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track calculate event for email_results, %@",
+              error);
+    }
 }
 
 @end

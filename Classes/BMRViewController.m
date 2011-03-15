@@ -136,6 +136,7 @@
                          [NSDictionary dictionaryWithObjectsAndKeys:
                           @"bmr", @"title",
                           @"calculateBMR", @"selector",
+                          @"BMRGraphViewController", @"detailDisclosureView",
                           nil
                           ]
                          
@@ -223,6 +224,8 @@
 
 - (void)emailResults:(id)sender
 {
+    [super emailResults:sender];
+    
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
 

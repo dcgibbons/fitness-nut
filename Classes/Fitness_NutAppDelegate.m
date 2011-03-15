@@ -16,7 +16,12 @@
 #import "AthleteMeasurement.h"
 #import "AthleteType.h"
 
+#import "GANTracker.h"
+
 @implementation Fitness_NutAppDelegate
+
+// Dispatch period in seconds
+static const NSInteger kGANDispatchPeriodSec = 10;
 
 @synthesize userData;
 @synthesize window;
@@ -235,7 +240,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
     // Override point for customization after application launch.
-
+    [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-2943120-3"
+                                           dispatchPeriod:kGANDispatchPeriodSec
+                                                 delegate:nil];
+    
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"app_status"
+                                         action:@"app_launched"
+                                          label:@""
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track app_launched event with GANTracker, %@", error);
+    }
+    
     self.userData = [[[NSMutableDictionary alloc] init] autorelease];
     [self loadUserDefaults];
     

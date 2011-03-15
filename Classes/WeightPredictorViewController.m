@@ -138,6 +138,8 @@
 
 - (void)emailResults:(id)sender
 {
+    [super emailResults:sender];
+
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     

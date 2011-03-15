@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 #import "ContentController.h"
 #import "UpgradeBannerView.h"
-
+#import "GANTracker.h"
 
 @implementation RootViewController
 
@@ -317,6 +317,14 @@
     NSString *viewClassName = [d objectForKey:@"viewClass"];
     
     if (viewClassName) {
+        NSError *error;
+        if (![[GANTracker sharedTracker] 
+              trackPageview:[NSString stringWithFormat:@"/%@", viewClassName]
+                                             withError:&error]) {
+            NSLog(@"Unable to track page view for %@, %@", viewClassName, 
+                  error);
+        }
+        
         DetailViewController *controller = [[NSClassFromString(viewClassName) alloc] 
                                             initWithNibName:viewClassName bundle:nil];
         [controller performSelector:@selector(setUserData:) withObject:self.userData];

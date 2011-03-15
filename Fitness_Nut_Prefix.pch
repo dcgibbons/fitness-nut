@@ -13,5 +13,10 @@
     #import <UIKit/UIKit.h>
     #import <iAd/iAd.h>
 
+#ifdef PRO_VERSION
+    // CorePlot SDK installed from http://code.google.com/p/core-plot/
+    #import <CorePlot/CorePlot.h>
+#endif
+
     #define IS_PAD_DEVICE() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #endif
