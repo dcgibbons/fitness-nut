@@ -38,7 +38,6 @@
         fat = gmFat;
         calories = (carbohydrates * 4) + (protein * 4) + (fat * 9);
     }
-    NSLog(@"macronutrients: carbs=%u protein=%u fat=%u", carbohydrates, protein, fat);
     return self;
 }
 

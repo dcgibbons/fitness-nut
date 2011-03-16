@@ -23,10 +23,8 @@
         }          
 
         CGFloat fullViewHeight = self.view.frame.size.height;
-//        NSLog(@"fullViewHeight=%f", fullViewHeight);
         
         CGSize adBannerSize = [ADBannerView sizeFromBannerContentSizeIdentifier:adBannerView.currentContentSizeIdentifier];        
-//        NSLog(@"adBannerSize=%f,%f", adBannerSize.width, adBannerSize.height);
 
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
 
@@ -49,11 +47,6 @@
             menuTableView.frame = tableViewFrame;
         }
         
-//        NSLog(@"menuTableView.frame=%f,%f,%f,%f", menuTableView.frame.origin.x,menuTableView.frame.origin.y,
-//              menuTableView.frame.size.width,menuTableView.frame.size.height);
-//        NSLog(@"adBannerView.frame=%f,%f,%f,%f", adBannerView.frame.origin.x,adBannerView.frame.origin.y,
-//              adBannerView.frame.size.width,adBannerView.frame.size.height);
-//        
         [UIView commitAnimations];
     } 
 }
@@ -153,8 +146,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"viewWillAppear!!");
-
     if (!IS_PAD_DEVICE()) {
         [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
@@ -347,8 +338,6 @@
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-    NSLog(@"adBanner didFailToReceiveAdWithError, error=%@\n", error);
-    
     if (bannerIsVisible)
     {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];

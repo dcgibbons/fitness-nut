@@ -151,6 +151,9 @@
 		C2D37EBE132FAB72006D81CF /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EBC132FAB72006D81CF /* libGoogleAnalytics.a */; };
 		C2D37EC0132FABD5006D81CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EBF132FABD5006D81CF /* CFNetwork.framework */; };
 		C2D37EC2132FABEF006D81CF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EC1132FABEF006D81CF /* libsqlite3.0.dylib */; };
+		C2D37EF1133031EB006D81CF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EF0133031EB006D81CF /* libsqlite3.0.dylib */; };
+		C2D37EF3133031FA006D81CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EF2133031F9006D81CF /* QuartzCore.framework */; };
+		C2D37EF513303204006D81CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EF413303203006D81CF /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,6 +276,9 @@
 		C2D37EBC132FAB72006D81CF /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		C2D37EBF132FABD5006D81CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C2D37EC1132FABEF006D81CF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		C2D37EF0133031EB006D81CF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		C2D37EF2133031F9006D81CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C2D37EF413303203006D81CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D37EF513303204006D81CF /* CFNetwork.framework in Frameworks */,
+				C2D37EF3133031FA006D81CF /* QuartzCore.framework in Frameworks */,
+				C2D37EF1133031EB006D81CF /* libsqlite3.0.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -453,6 +462,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2D37EF413303203006D81CF /* CFNetwork.framework */,
+				C2D37EF2133031F9006D81CF /* QuartzCore.framework */,
+				C2D37EF0133031EB006D81CF /* libsqlite3.0.dylib */,
 				C2D37EC1132FABEF006D81CF /* libsqlite3.0.dylib */,
 				C2D37EBF132FABD5006D81CF /* CFNetwork.framework */,
 				C2D37EBC132FAB72006D81CF /* libGoogleAnalytics.a */,
@@ -721,6 +733,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,6 +750,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,7 +769,7 @@
 				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnutpro;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -779,7 +793,7 @@
 				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnutpro;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -805,6 +819,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
 				INFOPLIST_FILE = "Fitness_Nut_Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -823,6 +838,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
 				INFOPLIST_FILE = "Fitness_Nut_Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -842,6 +858,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
 				INFOPLIST_FILE = "Fitness_Nut_Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -862,7 +879,7 @@
 				BUNDLE_IDENTIFIER = com.nuclearbunny.fitnessnutpro;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -886,6 +903,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Fitness_Nut-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

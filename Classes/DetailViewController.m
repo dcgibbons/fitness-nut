@@ -24,10 +24,8 @@
         }          
         
         CGFloat fullViewHeight = self.view.frame.size.height;
-//        NSLog(@"fullViewHeight=%f", fullViewHeight);
         
         CGSize adBannerSize = [ADBannerView sizeFromBannerContentSizeIdentifier:adBannerView.currentContentSizeIdentifier];
-//        NSLog(@"adBannerSize=%f,%f", adBannerSize.width, adBannerSize.height);
         
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
         
@@ -51,11 +49,6 @@
             tableView.frame = tableViewFrame;
         }
         
-        //        NSLog(@"menuTableView.frame=%f,%f,%f,%f", menuTableView.frame.origin.x,menuTableView.frame.origin.y,
-        //              menuTableView.frame.size.width,menuTableView.frame.size.height);
-        //        NSLog(@"adBannerView.frame=%f,%f,%f,%f", adBannerView.frame.origin.x,adBannerView.frame.origin.y,
-        //              adBannerView.frame.size.width,adBannerView.frame.size.height);
-        //        
         [UIView commitAnimations];
     } 
 }
@@ -195,7 +188,6 @@
     NSString *dataKey = [rowDict objectForKey:@"dataName"];
     if (dataKey) {
         NSString *desc = [[userData objectForKey:dataKey] description];
-        NSLog(@"description for %@ is %@\n", dataKey, desc);
         cell.detailTextLabel.text = desc;
     } else {
         NSString *selector = [rowDict objectForKey:@"selector"];
@@ -248,7 +240,6 @@
                             initWithNibName:nibName bundle:nil];
     
     [vc setUserData:userData]; // TODO fix the nasty
-//    [vc performSelector:@selector(setDelegate:) withObject:self];
     
     [self.navigationController pushViewController:vc animated:YES];
     [vc release];
@@ -273,7 +264,6 @@
     NSString *path = [NSString stringWithFormat:@"/%@/%@",
                       NSStringFromClass([self class]),
                       viewClassName];
-    NSLog(@"Logging analytics for path %@", path);
     if (![[GANTracker sharedTracker] trackPageview:path withError:&error]) {
         NSLog(@"Unable to track page view for %@, %@", viewClassName, 
               error);
@@ -374,8 +364,6 @@
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-    NSLog(@"adBanner didFailToReceiveAdWithError, error=%@\n", error);
-    
     if (self.bannerIsVisible)
     {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -404,7 +392,6 @@
                withDataNamed:(NSString *)dataName
                withDataValue:(id)data
 {
-    NSLog(@"received athlete data: %@=%@\n", dataName, data);
     [userData setObject:data forKey:dataName];
     [self.tableView reloadData];
 }

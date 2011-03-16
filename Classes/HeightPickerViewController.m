@@ -182,7 +182,6 @@
     
     // Get the height using the previous units
     AthleteHeight *athleteHeight = [self getHeightUsingUnits:isInches ? Inches: Centimeters];
-    NSLog(@"previousHeight=%@\n", athleteHeight);
     
     // Now change the selected rows using the new units
     AthleteHeight *newAthleteHeight;
@@ -193,7 +192,6 @@
         newAthleteHeight = [[[AthleteHeight alloc] initWithHeight:[athleteHeight heightAsInches]
                                                                    usingUnits:Inches] autorelease];
     }
-    NSLog(@"newAthleteHeight=%@", newAthleteHeight);
     
     [self.pickerView reloadAllComponents];
     [self selectRowsFromHeight:newAthleteHeight];

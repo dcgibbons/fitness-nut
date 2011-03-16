@@ -38,14 +38,12 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     
     NSNumber *seenUpgradeNotice = [defaults objectForKey:@"seenUpgradeNotice"];
     if (seenUpgradeNotice) {
-        NSLog(@"Loaded seenUpgradeNotice from userDefaults: %@", seenUpgradeNotice);
         [userData setObject:seenUpgradeNotice forKey:@"seenUpgradeNotice"];
     }
     
     NSNumber *age = [defaults objectForKey:@"athleteAge"];
     if (age) {
         AthleteAge *athleteAge = [[[AthleteAge alloc] initWithAge:[age intValue]] autorelease];
-        NSLog(@"Loaded athleteAge from userDefaults: %@", athleteAge);
         [userData setObject:athleteAge forKey:@"athleteAge"];
     }
     
@@ -55,7 +53,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
         AthleteHeight *athleteHeight = [[[AthleteHeight alloc] initWithHeight:height 
                                                                    usingUnits:[heightUnits intValue]] 
                                         autorelease];
-        NSLog(@"Loaded athleteHeight form userDefaults: %@", athleteHeight);
         [userData setObject:athleteHeight forKey:@"athleteHeight"];
     }
     
@@ -65,7 +62,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
         AthleteWeight *athleteWeight = [[[AthleteWeight alloc] initWithWeight:weight 
                                                                    usingUnits:[weightUnits intValue]] 
                                         autorelease];
-        NSLog(@"Loaded athleteWeight from userDefaults: %@", athleteWeight);
         [userData setObject:athleteWeight forKey:@"athleteWeight"];
     }
     
@@ -73,7 +69,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     if (gender) {
         AthleteGender *athleteGender = [[[AthleteGender alloc] init] autorelease];
         athleteGender.gender = [gender intValue];
-        NSLog(@"Loaded athleteGender from userDefaults: %@", athleteGender);
         [userData setObject:athleteGender forKey:@"athleteGender"];
     }
     
@@ -81,7 +76,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     if (activityLevel) {
         AthleteActivityLevel *athleteActivityLevel = [[[AthleteActivityLevel alloc] init] autorelease];
         athleteActivityLevel.activityLevel = [activityLevel intValue];
-        NSLog(@"Loaded athleteActivityLevel from userDefaults: %@", athleteActivityLevel);
         [userData setObject:athleteActivityLevel forKey:@"athleteActivityLevel"];
     }
     
@@ -89,13 +83,11 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     if (type) {
         AthleteType *athleteType = [[AthleteType alloc] init];
         athleteType.athleteType = [type intValue];
-        NSLog(@"loaded athleteType from userDefaults: %@", athleteType);
         [userData setObject:athleteType forKey:@"athleteType"];
     }
     
     NSNumber *athleteHours = [defaults objectForKey:@"athleteHours"];
     if (athleteHours) {
-        NSLog(@"Loaded athleteHours from userdefaults: %@", athleteHours);
         [userData setObject:athleteHours forKey:@"athleteHours"];
     }
     
@@ -106,7 +98,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
                                                  initWithMeasurement:neckGirth 
                                                  usingUnits:[neckGirthUnits intValue]] 
                                                 autorelease];
-        NSLog(@"Loaded athleteNeckGirth from userDefaults: %@", athleteNeckGirth);
         [userData setObject:athleteNeckGirth forKey:@"athleteNeckGirth"];
     }
     
@@ -117,7 +108,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
                                                   initWithMeasurement:waistGirth 
                                                   usingUnits:[waistGirthUnits intValue]] 
                                                  autorelease];
-        NSLog(@"Loaded athleteWaistGirth from userDefaults: %@", athleteWaistGirth);
         [userData setObject:athleteWaistGirth forKey:@"athleteWaistGirth"];
     }
     
@@ -128,21 +118,18 @@ static const NSInteger kGANDispatchPeriodSec = 10;
                                                  initWithMeasurement:hipsGirth 
                                                  usingUnits:[hipsGirthUnits intValue]] 
                                                 autorelease];
-        NSLog(@"Loaded athleteHipsGirth from userDefaults: %@", athleteHipsGirth);
         [userData setObject:athleteHipsGirth forKey:@"athleteHipsGirth"];
     }
     
     NSNumber *athleteBodyFat = [defaults objectForKey:@"athleteBodyFat"];
     if (athleteBodyFat) {
         AthleteBodyFat *bodyFat = [[[AthleteBodyFat alloc] initWithBodyFat:athleteBodyFat] autorelease];
-        NSLog(@"Loaded athleteBodyFat from userDefaults: %@", bodyFat);
         [userData setObject:bodyFat forKey:@"athleteBodyFat"];
     }
     
     NSNumber *desiredBodyFat = [defaults objectForKey:@"desiredBodyFat"];
     if (desiredBodyFat) {
         AthleteBodyFat *bodyFat = [[[AthleteBodyFat alloc] initWithBodyFat:desiredBodyFat] autorelease];
-        NSLog(@"Loaded desiredBodyFat from userDefaults: %@", bodyFat);
         [userData setObject:bodyFat forKey:@"desiredBodyFat"];
     }
 }
@@ -154,33 +141,28 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
     if (seenUpgradeNotice) {
         [defaults setObject:seenUpgradeNotice forKey:@"seenUpgradeNotice"];
-        NSLog(@"seenUpgradeNotice saved\n");
     }
     
     AthleteAge *age = [userData objectForKey:@"athleteAge"];
     if (age) {
         [defaults setObject:[NSNumber numberWithInt:age.age] forKey:@"athleteAge"];
-        NSLog(@"athelteAge saved\n");
     }
     
     AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
     if (height) {
         [defaults setObject:height.height forKey:@"athleteHeight"];
         [defaults setObject:[NSNumber numberWithInt:height.units] forKey:@"athleteHeightUnits"];
-        NSLog(@"athleteHeight saved\n");
     }
     
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
     if (weight) {
         [defaults setObject:weight.weight forKey:@"athleteWeight"];
         [defaults setObject:[NSNumber numberWithInt:weight.units] forKey:@"athleteWeightUnits"];
-        NSLog(@"athleteWeight saved\n");
     }
     
     AthleteGender *gender = [userData objectForKey:@"athleteGender"];
     if (gender) {
         [defaults setObject:[NSNumber numberWithInt:gender.gender] forKey:@"athleteGender"];
-        NSLog(@"athleteGender saved\n");
     }
     
     AthleteActivityLevel *activityLevel = [userData objectForKey:@"athleteActivityLevel"];
@@ -229,7 +211,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (desiredBodyFat) {
         [defaults setObject:desiredBodyFat.bodyFat forKey:@"desiredBodyFat"];
-        NSLog(@"desiredBodyFat saved");
     }
 }
 

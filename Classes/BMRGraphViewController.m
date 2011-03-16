@@ -54,7 +54,9 @@
 
     barChart = [[CPXYGraph alloc] initWithFrame:CGRectZero];
 	CPTheme *theme = [CPTheme themeNamed:kCPDarkGradientTheme];
+//	CPTheme *theme = [CPTheme themeNamed:kCPSlateTheme];
     [barChart applyTheme:theme];
+    
 	CPGraphHostingView *hostingView = (CPGraphHostingView *)self.view;
     hostingView.hostedGraph = barChart;
     
@@ -84,18 +86,44 @@
     
 	// Plot Space - X,Y coordinate system for the plots
     CPXYPlotSpace *plotSpace = (CPXYPlotSpace *)barChart.defaultPlotSpace;
-    plotSpace.xRange = [CPPlotRange plotRangeWithLocation:CPDecimalFromFloat(0)
-                                                   length:CPDecimalFromFloat(1)];
+    plotSpace.xRange = [CPPlotRange plotRangeWithLocation:CPDecimalFromFloat(0.0f)
+                                                   length:CPDecimalFromFloat(16.0f)];
     
-    plotSpace.yRange = [CPPlotRange plotRangeWithLocation:CPDecimalFromFloat(1000.0)
-                                                   length:CPDecimalFromFloat(4000.0)];
+    plotSpace.yRange = [CPPlotRange plotRangeWithLocation:CPDecimalFromFloat(1000.0f)
+                                                   length:CPDecimalFromFloat(2000.0f)];
+    
     
     // Plot Axis
     CPXYAxisSet *axisSet = (CPXYAxisSet *)barChart.axisSet;
     
     CPXYAxis *x = axisSet.xAxis;
-    x.majorIntervalLength = CPDecimalFromFloat(0.5);
-	x.labelingPolicy = CPAxisLabelingPolicyNone;
+//    x.axisLineStyle = nil;
+//    x.majorTickLineStyle = nil;
+//    x.minorTickLineStyle = nil;
+//    x.majorIntervalLength = CPDecimalFromString(@"1");
+//    x.orthogonalCoordinateDecimal = CPDecimalFromString(@"0");
+//    x.titleLocation = CPDecimalFromFloat(2.5f);
+	x.titleOffset = 20.0f;
+	x.title = @"X Axis";
+    x.majorIntervalLength = CPDecimalFromInt(1);
+    x.labelingPolicy = CPAxisLabelingPolicyAutomatic;
+    x.orthogonalCoordinateDecimal = CPDecimalFromFloat(25.0f);
+	// Define some custom labels for the data elements
+//	x.labelRotation = M_PI/4;
+//	x.labelingPolicy = CPAxisLabelingPolicyNone;
+//	NSArray *customTickLocations = [NSArray arrayWithObjects:[NSDecimalNumber numberWithInt:1], [NSDecimalNumber numberWithInt:5], nil];
+//	NSArray *xAxisLabels = [NSArray arrayWithObjects:@"BMR", @"TDEE", nil];
+//	NSUInteger labelLocation = 0;
+//	NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:[xAxisLabels count]];
+//	for (NSNumber *tickLocation in customTickLocations) {
+//		CPAxisLabel *newLabel = [[CPAxisLabel alloc] initWithText:[xAxisLabels objectAtIndex:labelLocation++] textStyle:x.labelTextStyle];
+//		newLabel.tickLocation = [tickLocation decimalValue];
+//		newLabel.offset = x.labelOffset + x.majorTickLength;
+//		newLabel.rotation = M_PI/4;
+//		[customLabels addObject:newLabel];
+//		[newLabel release];
+//	}    
+//    x.axisLabels = [NSSet setWithArray:customLabels];
 
     CPXYAxis *y = axisSet.yAxis;
     y.axisLineStyle = nil;
@@ -103,20 +131,20 @@
     y.minorTickLineStyle = nil;
     y.majorIntervalLength = CPDecimalFromString(@"250");
     y.orthogonalCoordinateDecimal = CPDecimalFromString(@"0");
-	y.title = @"Y Axis";
+	y.title = @"calories";
 	y.titleOffset = 45.0f;
-    y.titleLocation = CPDecimalFromFloat(150.0f);    
-    
+    y.titleLocation = CPDecimalFromFloat(150.0f);  
+
     CPBarPlot *barPlot = [[CPBarPlot alloc] init];
     barPlot.identifier = @"bmr";
-    barPlot.barOffset = -1.0f;
+    barPlot.baseValue = CPDecimalFromString(@"0");
     barPlot.dataSource = self;
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     [barPlot release];
 
     barPlot = [[CPBarPlot alloc] init];
     barPlot.identifier = @"tdee";
-    barPlot.barOffset = 1.0f;
+    barPlot.baseValue = CPDecimalFromString(@"0");
     barPlot.dataSource = self;
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     [barPlot release];
@@ -160,7 +188,12 @@
     switch (fieldEnum)
     {
         case CPBarPlotFieldBarLocation:
-            num = (NSDecimalNumber *)[NSDecimalNumber numberWithFloat:0.5];
+//            num = (NSDecimalNumber *)[NSDecimalNumber numberWithFloat:0.5];
+            if ([plot.identifier isEqual:@"bmr"]) {
+                num = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:1];
+            } else if ([plot.identifier isEqual:@"tdee"]) {
+                num = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:5];
+            }
             break;
         case CPBarPlotFieldBarLength:
             if ([plot.identifier isEqual:@"bmr"]) {

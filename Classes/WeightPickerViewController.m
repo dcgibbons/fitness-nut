@@ -190,7 +190,6 @@
         case 0: { // lbs
             int pounds = [self.pickerView selectedRowInComponent:0] + 90;
             NSNumber *aWeight = [NSNumber numberWithInt:pounds];
-            NSLog(@"weight (lbs)=%d\n", [aWeight intValue]);
             self.data = [[[AthleteWeight alloc] initWithWeight:aWeight 
                                                     usingUnits:Pounds] autorelease];
             break;
@@ -198,7 +197,6 @@
         case 1: { // kgs
             int kg = [self.pickerView selectedRowInComponent:0] + 40;
             NSNumber *aWeight = [NSNumber numberWithFloat:kg];
-            NSLog(@"weight (kgs)=%f\n", [aWeight doubleValue]);
             self.data = [[[AthleteWeight alloc] initWithWeight:aWeight
                                                     usingUnits:Kilograms] autorelease];
             break;
@@ -214,7 +212,6 @@
     
     // Get the weight using the previous units
     AthleteWeight *athleteWeight = [self getWeightUsingUnits:isPounds ? Pounds : Kilograms];
-    NSLog(@"previousWeight=%@\n", athleteWeight);
     
     // Change the selected row using the new units
     AthleteWeight *newWeight;
@@ -225,7 +222,6 @@
         newWeight = [[[AthleteWeight alloc] initWithWeight:[athleteWeight weightAsPounds] 
                                                 usingUnits:Pounds] autorelease];
     }
-    NSLog(@"newAthleteWeight=%@\n", newWeight);
 
     [self.pickerView reloadAllComponents];
     [self selectRowsFromWeight:newWeight animated:YES];

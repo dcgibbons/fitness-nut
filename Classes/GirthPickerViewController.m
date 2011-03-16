@@ -176,7 +176,6 @@
 - (IBAction)info:(id)sender
 {
     NSString *nibName = [NSString stringWithFormat:@"%@_ViewController", self.dataName];
-    NSLog(@"Looking for InfoViewController with nibName of %@", nibName);
     InfoViewController *controller = [[InfoViewController alloc] initWithNibName:nibName
                                                                           bundle:nil];
     controller.delegate = self;
@@ -193,7 +192,6 @@
     
     // Get the height using the previous units
     AthleteMeasurement *measurement = [self getMeasurementUsingUnits:isInches ? MeasurementInches: MeasurementCentimeters];
-    NSLog(@"previousmeasurement=%@\n", measurement);
     
     // Now change the selected rows using the new units
     AthleteMeasurement *newMeasurement;
@@ -206,7 +204,6 @@
                                                                usingUnits:MeasurementInches] 
                           autorelease];
     }
-    NSLog(@"newAthleteMeasurement=%@", newMeasurement);
     
     [self.pickerView reloadAllComponents];
     [self selectRowsFromMeasurement:newMeasurement];
