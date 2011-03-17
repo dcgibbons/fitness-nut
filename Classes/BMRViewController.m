@@ -15,8 +15,11 @@
 #import "FitnessCalculations.h"
 #import "AthleteDataProtocol.h"
 #import "SecondaryDetailViewController.h"
-#import "BMRGraphViewController.h"
 #import "GANTracker.h"
+
+#ifdef PRO_VERSION
+#import "BMRGraphViewController.h"
+#endif
 
 @implementation BMRViewController
 
@@ -232,6 +235,7 @@
 #pragma mark -
 #pragma mark UI Actions
 
+#ifdef PRO_VERSION
 - (void)emailResults:(id)sender
 {
     [super emailResults:sender];
@@ -322,8 +326,6 @@
 {	
 	[self dismissModalViewControllerAnimated:YES];
 }
-
-#ifdef PRO_VERSION
 
 #pragma mark -
 #pragma mark Plot Data Source Methods

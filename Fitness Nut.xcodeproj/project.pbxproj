@@ -144,6 +144,8 @@
 		C2C6DC4B132531FC00910E89 /* SecondaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */; };
 		C2C6E0341325866F00910E89 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C6E0331325866F00910E89 /* iTunesArtwork.png */; };
 		C2C6E1BE1325A07300910E89 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6E1BD1325A07300910E89 /* MessageUI.framework */; };
+		C2D036151332C65A00F0AD65 /* MainContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26F8F64131C7CC10079E1CC /* MainContent.xib */; };
+		C2D036161332C68E00F0AD65 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		C2D37EA0132DAF90006D81CF /* BMRGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D37E9F132DAF90006D81CF /* BMRGraphViewController.m */; };
 		C2D37EA2132E64A5006D81CF /* BMRGraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D37EA1132E64A5006D81CF /* BMRGraphViewController.xib */; };
 		C2D37EA4132E6768006D81CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EA3132E6768006D81CF /* QuartzCore.framework */; };
@@ -632,6 +634,8 @@
 				C2BFD5D7132DA372004A5298 /* WeightPredictorViewController.xib in Resources */,
 				C2BFD5D8132DA372004A5298 /* Fitness_Nut_Pro-Info.plist in Resources */,
 				C2D37EA2132E64A5006D81CF /* BMRGraphViewController.xib in Resources */,
+				C2D036151332C65A00F0AD65 /* MainContent.xib in Resources */,
+				C2D036161332C68E00F0AD65 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
