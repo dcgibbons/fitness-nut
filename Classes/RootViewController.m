@@ -146,11 +146,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+#ifndef PRO_VERSION
     if (!IS_PAD_DEVICE()) {
         [self.navigationController setNavigationBarHidden:YES animated:animated];
     }
 
-#ifndef PRO_VERSION
     NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
     if (!seenUpgradeNotice) {
         NSString *msg = @"For additional features, such as the ability to e-mail your calculations, "

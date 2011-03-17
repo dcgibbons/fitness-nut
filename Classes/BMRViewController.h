@@ -16,7 +16,12 @@
 #import "DetailViewController.h"
 #import "SecondaryDetailViewController.h"
 
+#ifdef PRO_VERSION
+@interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate,
+                                                     CPPlotDataSource>
+#else
 @interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate>
+#endif
 {
     UIButton *infoButton;
 }
@@ -24,5 +29,9 @@
 @property (nonatomic, retain) IBOutlet UIButton *infoButton;
 
 - (NSString *)calculateBMR;
+
+#ifdef PRO_VERSION
+- (CPXYGraph *)createGraph;
+#endif
 
 @end

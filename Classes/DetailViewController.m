@@ -197,7 +197,7 @@
     }
     
     NSString *detailDisclosureKey = [rowDict objectForKey:@"detailDisclosureView"];
-    if (detailDisclosureKey && cell.detailTextLabel.text) { // TODO: test if this works when label is @""
+    if (detailDisclosureKey && cell.detailTextLabel.text) {
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     
@@ -215,36 +215,7 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSError *error;
-    if (![[GANTracker sharedTracker] trackEvent:@"calculate"
-                                         action:@"view_bmr_graph"
-                                          label:@""
-                                          value:-1
-                                      withError:&error]) {
-        NSLog(@"Unable to track calculate event for view_bmr_graph, %@",
-              error);
-    }
-
-    int section = [indexPath section];
-    int row = [indexPath row];
-    
-    NSDictionary *rowDict = [[[sections objectAtIndex:section] objectForKey:@"rows"] 
-                             objectAtIndex:row];
-    
-    NSString *viewClassName = [rowDict objectForKey:@"detailDisclosureView"];
-    if (!viewClassName) return;
-    
-    NSString *nibName = viewClassName;
-    
-    UIViewController *vc = [[NSClassFromString(viewClassName) alloc]
-                            initWithNibName:nibName bundle:nil];
-    
-    [vc setUserData:userData]; // TODO fix the nasty
-    
-    [self.navigationController pushViewController:vc animated:YES];
-    [vc release];
-    
-    // TODO: use a popup on the iPad
+    // NO-OP - be lazy and let the subclasses deal with this
 }
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -310,7 +281,11 @@
                          permittedArrowDirections:UIPopoverArrowDirectionAny 
                                          animated:YES];
     } else {
-        [self.navigationController pushViewController:detailViewController animated:YES];
+#ifdef PRO_VERSION
+        self.navigationController.toolbarHidden = YES;
+#endif    
+        [self.navigationController pushViewController:detailViewController 
+                                             animated:YES];
     }
     
     [detailViewController release];
