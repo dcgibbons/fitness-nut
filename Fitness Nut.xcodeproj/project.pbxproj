@@ -146,6 +146,8 @@
 		C2C6E1BE1325A07300910E89 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C6E1BD1325A07300910E89 /* MessageUI.framework */; };
 		C2D036151332C65A00F0AD65 /* MainContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26F8F64131C7CC10079E1CC /* MainContent.xib */; };
 		C2D036161332C68E00F0AD65 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		C2D036191332CA2D00F0AD65 /* ReviewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D036181332CA2C00F0AD65 /* ReviewRequest.m */; };
+		C2D0361A1332CA2D00F0AD65 /* ReviewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D036181332CA2C00F0AD65 /* ReviewRequest.m */; };
 		C2D37EA0132DAF90006D81CF /* BMRGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D37E9F132DAF90006D81CF /* BMRGraphViewController.m */; };
 		C2D37EA2132E64A5006D81CF /* BMRGraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D37EA1132E64A5006D81CF /* BMRGraphViewController.xib */; };
 		C2D37EA4132E6768006D81CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D37EA3132E6768006D81CF /* QuartzCore.framework */; };
@@ -270,6 +272,8 @@
 		C2C6DF5713257B9400910E89 /* GirthPickerViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "GirthPickerViewController~ipad.xib"; sourceTree = "<group>"; };
 		C2C6E0331325866F00910E89 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		C2C6E1BD1325A07300910E89 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C2D036171332CA2C00F0AD65 /* ReviewRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewRequest.h; sourceTree = "<group>"; };
+		C2D036181332CA2C00F0AD65 /* ReviewRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewRequest.m; sourceTree = "<group>"; };
 		C2D37E9E132DAF90006D81CF /* BMRGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRGraphViewController.h; sourceTree = "<group>"; };
 		C2D37E9F132DAF90006D81CF /* BMRGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRGraphViewController.m; sourceTree = "<group>"; };
 		C2D37EA1132E64A5006D81CF /* BMRGraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMRGraphViewController.xib; sourceTree = "<group>"; };
@@ -393,6 +397,8 @@
 				C2C6DC4A132531FC00910E89 /* SecondaryDetailViewController.m */,
 				C247BEF01328027000A69694 /* UpgradeBannerView.h */,
 				C247BEF11328027000A69694 /* UpgradeBannerView.m */,
+				C2D036171332CA2C00F0AD65 /* ReviewRequest.h */,
+				C2D036181332CA2C00F0AD65 /* ReviewRequest.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -680,6 +686,7 @@
 				C26F910A131CA1530079E1CC /* EmptyDetailViewController.m in Sources */,
 				C2C6DC4B132531FC00910E89 /* SecondaryDetailViewController.m in Sources */,
 				C247BEF21328027000A69694 /* UpgradeBannerView.m in Sources */,
+				C2D036191332CA2D00F0AD65 /* ReviewRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +729,7 @@
 				C21BA78D132A9B7E006C21F2 /* SecondaryDetailViewController.m in Sources */,
 				C21BA78E132A9B7E006C21F2 /* UpgradeBannerView.m in Sources */,
 				C2D37EA0132DAF90006D81CF /* BMRGraphViewController.m in Sources */,
+				C2D0361A1332CA2D00F0AD65 /* ReviewRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
