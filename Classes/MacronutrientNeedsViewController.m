@@ -213,6 +213,18 @@
 - (void)emailResults:(id)sender
 {
     [super emailResults:sender];
+    
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Device cannot send mail.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
+                                                        message:@"Your device has not yet been configured to send mail."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
 
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;

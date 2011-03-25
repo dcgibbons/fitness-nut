@@ -240,7 +240,21 @@
 {
     [super emailResults:sender];
     
-	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Device cannot send mail.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
+                                                        message:@"Your device has not yet been configured to send mail."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] 
+                                           init];
+    NSLog(@"MFMailComposeViewController=%@", picker);
 	picker.mailComposeDelegate = self;
 
 	[picker setSubject:@"Fitness Nut Pro: BMR & TDEE results"];
