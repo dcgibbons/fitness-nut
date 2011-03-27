@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BMRGraphViewController : UIViewController <CPPlotDataSource>
+@interface BMRGraphViewController : UIViewController
 {
     NSMutableDictionary *userData;
     CPXYGraph *graph;    

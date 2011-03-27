@@ -7,27 +7,47 @@
 		<key>Fitness Nut Pro.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Fitness Nut.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D6058900D05DD3D006BFB54</key>
+		<key>C266C011133E2DCB00F79EA2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C21BA74E132A9B7E006C21F2</key>
+		<key>C266C02F133E2DCB00F79EA2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2C2C10B1325CEEA0041E995</key>
+		<key>C2E6CBC0133EB55200ADAF89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2E6CBE4133EB55200ADAF89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2E6CC02133EB61B00ADAF89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2ED6273133E2FB500FE9C55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2ED6297133E2FB500FE9C55</key>
 		<dict>
 			<key>primary</key>
 			<true/>

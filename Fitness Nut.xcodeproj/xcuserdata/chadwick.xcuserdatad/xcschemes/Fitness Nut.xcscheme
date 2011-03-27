@@ -13,8 +13,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "FitnessNut.app"
+               BlueprintIdentifier = "C266C011133E2DCB00F79EA2"
+               BuildableName = "Fitness Nut.app"
                BlueprintName = "Fitness Nut"
                ReferencedContainer = "container:Fitness Nut.xcodeproj">
             </BuildableReference>
@@ -27,6 +27,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C266C02F133E2DCB00F79EA2"
+               BuildableName = "Fitness NutTests.octest"
+               BlueprintName = "Fitness NutTests"
+               ReferencedContainer = "container:Fitness Nut.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -40,8 +50,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "FitnessNut.app"
+            BlueprintIdentifier = "C266C011133E2DCB00F79EA2"
+            BuildableName = "Fitness Nut.app"
             BlueprintName = "Fitness Nut"
             ReferencedContainer = "container:Fitness Nut.xcodeproj">
          </BuildableReference>
@@ -59,8 +69,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "FitnessNut.app"
+            BlueprintIdentifier = "C266C011133E2DCB00F79EA2"
+            BuildableName = "Fitness Nut.app"
             BlueprintName = "Fitness Nut"
             ReferencedContainer = "container:Fitness Nut.xcodeproj">
          </BuildableReference>

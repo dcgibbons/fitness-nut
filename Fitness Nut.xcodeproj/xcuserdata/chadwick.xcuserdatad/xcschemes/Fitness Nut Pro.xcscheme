@@ -13,8 +13,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C21BA74E132A9B7E006C21F2"
-               BuildableName = "Fitness Nut-iPad.app"
+               BlueprintIdentifier = "C2E6CC02133EB61B00ADAF89"
+               BuildableName = "Fitness Nut Pro.app"
                BlueprintName = "Fitness Nut Pro"
                ReferencedContainer = "container:Fitness Nut.xcodeproj">
             </BuildableReference>
@@ -40,8 +40,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C21BA74E132A9B7E006C21F2"
-            BuildableName = "Fitness Nut-iPad.app"
+            BlueprintIdentifier = "C2E6CC02133EB61B00ADAF89"
+            BuildableName = "Fitness Nut Pro.app"
             BlueprintName = "Fitness Nut Pro"
             ReferencedContainer = "container:Fitness Nut.xcodeproj">
          </BuildableReference>
@@ -59,8 +59,8 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C21BA74E132A9B7E006C21F2"
-            BuildableName = "Fitness Nut-iPad.app"
+            BlueprintIdentifier = "C2E6CC02133EB61B00ADAF89"
+            BuildableName = "Fitness Nut Pro.app"
             BlueprintName = "Fitness Nut Pro"
             ReferencedContainer = "container:Fitness Nut.xcodeproj">
          </BuildableReference>
