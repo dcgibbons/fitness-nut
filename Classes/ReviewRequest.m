@@ -30,21 +30,8 @@ NSString *KeySessionCountSinceLastAsked = @"ReviewRequestSessionCountSinceLastAs
 	
 	case 1: // rate it now
 	{
-		NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-		[defaults setValue:version forKey:KeyReviewed];
-		// http://creativealgorithms.com/blog/content/review-app-links-sorted-out
-		// http://bjango.com/articles/ituneslinks/
-        
-#ifdef PRO_VERSION
-        NSString *appId = @"424734288";
-#else
-        NSString *appId = @"420480042";
-#endif
-
-        NSString *iTunesLink = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appId];
-        NSLog(@"Opening review link: %@", iTunesLink);
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
-		break;
+        ReviewApp();
+        break;
 	}
 	
 	case 2: // don't ask again
@@ -116,6 +103,26 @@ void AskForReview()
 					delegate:delegate cancelButtonTitle:@"Remind me later" otherButtonTitles:@"Yes, rate it!", @"Don't ask again", nil];
 	[alert show];
 	[alert release];
+}
+
+void ReviewApp()
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    [defaults setValue:version forKey:KeyReviewed];
+    // http://creativealgorithms.com/blog/content/review-app-links-sorted-out
+    // http://bjango.com/articles/ituneslinks/
+    
+#ifdef PRO_VERSION
+    NSString *appId = @"424734288";
+#else
+    NSString *appId = @"420480042";
+#endif
+    
+    NSString *iTunesLink = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appId];
+    NSLog(@"Opening review link: %@", iTunesLink);
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
 }
 
 

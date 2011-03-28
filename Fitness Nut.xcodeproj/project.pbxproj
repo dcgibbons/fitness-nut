@@ -77,7 +77,6 @@
 		C2BED972133E2E370053AD16 /* ReviewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED92D133E2E370053AD16 /* ReviewRequest.m */; };
 		C2BED974133E2E370053AD16 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED92F133E2E370053AD16 /* RootViewController.m */; };
 		C2BED976133E2E370053AD16 /* SecondaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED931133E2E370053AD16 /* SecondaryDetailViewController.m */; };
-		C2BED978133E2E370053AD16 /* UpgradeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED933133E2E370053AD16 /* UpgradeBannerView.m */; };
 		C2BED97A133E2E370053AD16 /* WeightPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED935133E2E370053AD16 /* WeightPickerViewController.m */; };
 		C2BED97C133E2E370053AD16 /* WeightPredictorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED937133E2E370053AD16 /* WeightPredictorViewController.m */; };
 		C2E6CC05133EB61B00ADAF89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C016133E2DCB00F79EA2 /* UIKit.framework */; };
@@ -145,7 +144,6 @@
 		C2E6CC60133EB67700ADAF89 /* ReviewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED92D133E2E370053AD16 /* ReviewRequest.m */; };
 		C2E6CC61133EB67700ADAF89 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED92F133E2E370053AD16 /* RootViewController.m */; };
 		C2E6CC62133EB67700ADAF89 /* SecondaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED931133E2E370053AD16 /* SecondaryDetailViewController.m */; };
-		C2E6CC63133EB67700ADAF89 /* UpgradeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED933133E2E370053AD16 /* UpgradeBannerView.m */; };
 		C2E6CC64133EB67700ADAF89 /* WeightPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED935133E2E370053AD16 /* WeightPickerViewController.m */; };
 		C2E6CC65133EB67700ADAF89 /* WeightPredictorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED937133E2E370053AD16 /* WeightPredictorViewController.m */; };
 		C2E6CC66133EB68000ADAF89 /* EmptyDetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24DB5D7133E32C40021DFA0 /* EmptyDetailViewController~ipad.xib */; };
@@ -296,8 +294,6 @@
 		C2BED92F133E2E370053AD16 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C2BED930133E2E370053AD16 /* SecondaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryDetailViewController.h; sourceTree = "<group>"; };
 		C2BED931133E2E370053AD16 /* SecondaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryDetailViewController.m; sourceTree = "<group>"; };
-		C2BED932133E2E370053AD16 /* UpgradeBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeBannerView.h; sourceTree = "<group>"; };
-		C2BED933133E2E370053AD16 /* UpgradeBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeBannerView.m; sourceTree = "<group>"; };
 		C2BED934133E2E370053AD16 /* WeightPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPickerViewController.h; sourceTree = "<group>"; };
 		C2BED935133E2E370053AD16 /* WeightPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPickerViewController.m; sourceTree = "<group>"; };
 		C2BED936133E2E370053AD16 /* WeightPredictorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPredictorViewController.h; sourceTree = "<group>"; };
@@ -531,8 +527,6 @@
 				C2BED92F133E2E370053AD16 /* RootViewController.m */,
 				C2BED930133E2E370053AD16 /* SecondaryDetailViewController.h */,
 				C2BED931133E2E370053AD16 /* SecondaryDetailViewController.m */,
-				C2BED932133E2E370053AD16 /* UpgradeBannerView.h */,
-				C2BED933133E2E370053AD16 /* UpgradeBannerView.m */,
 				C2BED934133E2E370053AD16 /* WeightPickerViewController.h */,
 				C2BED935133E2E370053AD16 /* WeightPickerViewController.m */,
 				C2BED936133E2E370053AD16 /* WeightPredictorViewController.h */,
@@ -770,7 +764,6 @@
 				C2BED972133E2E370053AD16 /* ReviewRequest.m in Sources */,
 				C2BED974133E2E370053AD16 /* RootViewController.m in Sources */,
 				C2BED976133E2E370053AD16 /* SecondaryDetailViewController.m in Sources */,
-				C2BED978133E2E370053AD16 /* UpgradeBannerView.m in Sources */,
 				C2BED97A133E2E370053AD16 /* WeightPickerViewController.m in Sources */,
 				C2BED97C133E2E370053AD16 /* WeightPredictorViewController.m in Sources */,
 				C219B016133E2EE0007C7F39 /* main.m in Sources */,
@@ -814,7 +807,6 @@
 				C2E6CC60133EB67700ADAF89 /* ReviewRequest.m in Sources */,
 				C2E6CC61133EB67700ADAF89 /* RootViewController.m in Sources */,
 				C2E6CC62133EB67700ADAF89 /* SecondaryDetailViewController.m in Sources */,
-				C2E6CC63133EB67700ADAF89 /* UpgradeBannerView.m in Sources */,
 				C2E6CC64133EB67700ADAF89 /* WeightPickerViewController.m in Sources */,
 				C2E6CC65133EB67700ADAF89 /* WeightPredictorViewController.m in Sources */,
 			);

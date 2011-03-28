@@ -4,5 +4,6 @@
 BOOL ShouldAskForReview();
 BOOL ShouldAskForReviewAtLaunch();
 void AskForReview();
+void ReviewApp();
 
 #endif

@@ -8,10 +8,98 @@
 
 #import "RootViewController.h"
 #import "ContentController.h"
-#import "UpgradeBannerView.h"
 #import "GANTracker.h"
+#import "ReviewRequest.h"
 
 @implementation RootViewController
+
+- (void)rateThisApp
+{
+#ifndef DEBUG
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                         action:@"rate_this_app"
+                                          label:NSStringFromClass([self class])
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track calculate event for rate_this_app, %@",
+              error);
+    }
+#endif
+    
+    ReviewApp();
+}
+
+- (void)sendFeedback
+{
+#ifndef DEBUG
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                         action:@"send_feedback"
+                                          label:NSStringFromClass([self class])
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track calculate event for send_feedback, %@",
+              error);
+    }
+#endif
+    
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Device cannot send mail.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
+                                                        message:@"Your device has not yet been configured to send mail."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+    
+#ifdef PRO_VERSION
+	[picker setSubject:@"Fitness Nut Pro: User Feedback"];
+#else
+	[picker setSubject:@"Fitness Nut: User Feedback"];
+#endif
+    
+    CFBundleRef bundleRef = CFBundleGetMainBundle();
+    UInt32 version = CFBundleGetVersionNumber(bundleRef);
+//    int ver0 = (version & 0xf0000000) >> 28;
+    int ver1 = (version & 0x0f000000) >> 24;
+    int ver2 = (version & 0x00f00000) >> 20;
+    int ver3 = (version & 0x000f0000) >> 16;
+    
+	// Fill out the email body text
+    NSString *emailBody = [NSString stringWithFormat:@"<table><tbody>"
+                           "<tr><th>App Version</th><td>%u.%u.%U</td></tr>"
+                           "</table>"
+                           "<p>Please provide your feedback below:</p>",
+                           ver1, ver2, ver3];
+    [picker setMessageBody:emailBody isHTML:YES];
+    [self presentModalViewController:picker animated:YES];
+    [picker release];    
+}
+
+- (void)upgradeToProVersion
+{
+#ifndef DEBUG
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                         action:@"upgrade_to_pro"
+                                          label:NSStringFromClass([self class])
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track calculate event for upgrade_to_pro, %@",
+              error);
+    }
+#endif
+    
+    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8&uo=4"];
+    [[UIApplication sharedApplication] openURL:url];        
+}
 
 - (void)fixupAdView:(UIInterfaceOrientation)toInterfaceOrientation 
 {
@@ -35,7 +123,7 @@
             adBannerView.frame = adBannerViewFrame;
             
             CGRect tableViewFrame = menuTableView.frame;
-            tableViewFrame.size.height = fullViewHeight - upgradeBannerView.frame.size.height - adBannerSize.height;
+            tableViewFrame.size.height = fullViewHeight - adBannerSize.height;
             menuTableView.frame = tableViewFrame;
         } else {
             // Move the banner view offscreen
@@ -43,7 +131,7 @@
             bannerFrame.origin.y = fullViewHeight;
             
             CGRect tableViewFrame = menuTableView.frame;
-            tableViewFrame.size.height = fullViewHeight - upgradeBannerView.frame.size.height;
+            tableViewFrame.size.height = fullViewHeight;
             menuTableView.frame = tableViewFrame;
         }
         
@@ -55,7 +143,6 @@
 #pragma mark Properties
 
 @synthesize userData, groups, menuTableView, adBannerView, bannerIsVisible, contentController;
-@synthesize upgradeBannerView;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -68,7 +155,16 @@
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 
     self.title = @"Fitness Nut";
-
+    
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self 
+                   action:@selector(infoButton:) 
+         forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
+                                    initWithCustomView:infoButton];
+    self.navigationItem.rightBarButtonItem = modalButton;
+    [modalButton release];    
+    
 #ifndef PRO_VERSION
     // Create an ad banner just off the bottom of the view (i.e. not visible).
     self.bannerIsVisible = NO;
@@ -78,24 +174,8 @@
     adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     adBannerView.delegate=self;
     [self.view addSubview:adBannerView];
-    
-    UIView *v = [[UpgradeBannerView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    self.upgradeBannerView = [v retain];
-    [v release];
-    [self.view addSubview:upgradeBannerView];
-    
-    CGFloat fullViewHeight = self.view.frame.size.height;
-    CGRect tableFrame = self.menuTableView.frame;
-    CGRect bannerFrame = self.upgradeBannerView.frame;
-    
-    // Shrink the tableview to create space for banner
-    tableFrame.size.height = fullViewHeight - bannerFrame.size.height;
-    tableFrame.origin.y = bannerFrame.size.height;
-    
-    self.menuTableView.frame = tableFrame;
-    self.upgradeBannerView.frame = bannerFrame;        
 #endif
-
+    
     NSArray *nutritionMenuItems = [NSArray arrayWithObjects:
                                    
                                    [NSDictionary dictionaryWithObjectsAndKeys:
@@ -147,10 +227,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 #ifndef PRO_VERSION
-    if (!IS_PAD_DEVICE()) {
-        [self.navigationController setNavigationBarHidden:YES animated:animated];
-    }
-
     NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
     if (!seenUpgradeNotice) {
         NSString *msg = @"For additional features, such as the ability to e-mail your calculations, "
@@ -177,12 +253,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-#ifndef PRO_VERSION
-    if (buttonIndex != alertView.cancelButtonIndex) {
-        NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8&ls=1"];
-        [[UIApplication sharedApplication] openURL:url];        
-    }
-#endif
+    [self upgradeToProVersion];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -210,14 +281,12 @@
     self.menuTableView = nil;
     self.adBannerView.delegate = nil;
     self.adBannerView = nil;
-    self.upgradeBannerView = nil;
 }
 
 - (void)dealloc
 {
     adBannerView.delegate=nil;
     [adBannerView release];
-    [upgradeBannerView release];
     [userData release];
     [menuTableView release];
     [super dealloc];
@@ -345,7 +414,7 @@
         // Grow the tableview to occupy space left by banner
         CGFloat fullViewHeight = self.view.frame.size.height;
         CGRect tableFrame = self.menuTableView.frame;
-        tableFrame.size.height = fullViewHeight - upgradeBannerView.frame.size.height;
+        tableFrame.size.height = fullViewHeight;
         
         // Move the banner view offscreen
         CGRect bannerFrame = self.adBannerView.frame;
@@ -357,6 +426,58 @@
         [UIView commitAnimations];
         self.bannerIsVisible = NO;
     }
+}
+
+#pragma mark -
+#pragma UI Actions
+
+- (void)infoButton:(id)sender
+{
+    NSLog(@"infoButton pressed!");
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Rate this App", @"Send Feedback", 
+#ifndef PRO_VERSION
+                                                    @"Upgrade to Pro Version",
+#endif
+                                  nil];
+    [actionSheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem 
+                              animated:YES];
+    [actionSheet release];
+}
+
+#pragma mark -
+#pragma UIActionSheetDelegate methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0: // Rate this app
+            [self rateThisApp];
+            break;
+        case 1: // Send Feedback
+            [self sendFeedback];
+            break;
+#ifndef PRO_VERSION
+        case 2: // Upgrade to Pro version
+            [self upgradeToProVersion];
+            break;
+#endif
+    }
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

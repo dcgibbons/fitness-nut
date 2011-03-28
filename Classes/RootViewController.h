@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "ContentController.h"
 
 @interface RootViewController :  UIViewController <UITableViewDataSource, 
                                                    UITableViewDelegate, 
                                                    ADBannerViewDelegate,
-                                                   UIAlertViewDelegate> 
+                                                   UIAlertViewDelegate,
+                                                   UIActionSheetDelegate,
+                                                   MFMailComposeViewControllerDelegate> 
 {
     ContentController *contentController;
     NSMutableDictionary *userData;
@@ -21,8 +25,6 @@
     UITableView *menuTableView;
     ADBannerView *adBannerView;
     BOOL bannerIsVisible;
-    
-    UIView *upgradeBannerView;
 }
 
 @property (nonatomic, retain) IBOutlet ContentController *contentController;
@@ -31,6 +33,9 @@
 @property (nonatomic, retain) IBOutlet UITableView *menuTableView;
 @property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, assign) BOOL bannerIsVisible;
-@property (nonatomic, retain) UIView *upgradeBannerView;
+
+- (void)rateThisApp;
+- (void)sendFeedback;
+- (void)upgradeToProVersion;
 
 @end
