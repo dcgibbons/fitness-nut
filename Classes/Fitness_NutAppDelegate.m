@@ -222,6 +222,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
     // Override point for customization after application launch.
+#ifndef DEBUG
     [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-2943120-3"
                                            dispatchPeriod:kGANDispatchPeriodSec
                                                  delegate:nil];
@@ -234,6 +235,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
                                       withError:&error]) {
         NSLog(@"Unable to track app_launched event with GANTracker, %@", error);
     }
+#endif
     
     self.userData = [[[NSMutableDictionary alloc] init] autorelease];
     [self loadUserDefaults];
@@ -306,7 +308,9 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 
 - (void)dealloc 
 {
+#ifndef DEBUG
     [[GANTracker sharedTracker] stopTracker];
+#endif    
     [window release];
     [super dealloc];
 }

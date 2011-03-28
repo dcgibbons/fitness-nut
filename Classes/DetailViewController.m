@@ -231,6 +231,7 @@
     NSString *viewClassName = [rowDict objectForKey:@"viewController"];
     if (!viewClassName) return;
     
+#ifndef DEBUG
     NSError *error;
     NSString *path = [NSString stringWithFormat:@"/%@/%@",
                       NSStringFromClass([self class]),
@@ -239,6 +240,7 @@
         NSLog(@"Unable to track page view for %@, %@", viewClassName, 
               error);
     }
+#endif
     
     NSString *nibName = viewClassName;
         
@@ -376,6 +378,7 @@
 
 - (void)emailResults:(id)sender
 {
+#ifndef DEBUG
     NSError *error;
     if (![[GANTracker sharedTracker] trackEvent:@"calculate"
                                          action:@"email_results"
@@ -385,6 +388,7 @@
         NSLog(@"Unable to track calculate event for email_results, %@",
               error);
     }
+#endif
 }
 
 @end

@@ -527,6 +527,7 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
+#ifndef DEBUG
     NSError *error;
     if (![[GANTracker sharedTracker] trackEvent:@"calculate"
                                          action:@"view_bmr_graph"
@@ -536,6 +537,7 @@
         NSLog(@"Unable to track calculate event for view_bmr_graph, %@",
               error);
     }
+#endif
     
     int section = [indexPath section];
     int row = [indexPath row];

@@ -377,6 +377,7 @@
     NSString *viewClassName = [d objectForKey:@"viewClass"];
     
     if (viewClassName) {
+#ifndef DEBUG
         NSError *error;
         if (![[GANTracker sharedTracker] 
               trackPageview:[NSString stringWithFormat:@"/%@", viewClassName]
@@ -384,7 +385,7 @@
             NSLog(@"Unable to track page view for %@, %@", viewClassName, 
                   error);
         }
-        
+#endif
         DetailViewController *controller = [[NSClassFromString(viewClassName) alloc] 
                                             initWithNibName:viewClassName bundle:nil];
         [controller performSelector:@selector(setUserData:) withObject:self.userData];
