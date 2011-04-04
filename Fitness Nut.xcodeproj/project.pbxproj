@@ -81,6 +81,10 @@
 		C2BED97C133E2E370053AD16 /* WeightPredictorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BED937133E2E370053AD16 /* WeightPredictorViewController.m */; };
 		C2C8CAB8134A2A150022A651 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAB4134A27C50022A651 /* Default.png */; };
 		C2C8CAB9134A2A1D0022A651 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAB6134A27CB0022A651 /* Default@2x.png */; };
+		C2C8CABA134A2B3A0022A651 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAB4134A27C50022A651 /* Default.png */; };
+		C2C8CABB134A2B3D0022A651 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAB6134A27CB0022A651 /* Default@2x.png */; };
+		C2C8CABD134A2BA50022A651 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CABC134A2BA50022A651 /* Default-Portrait~ipad.png */; };
+		C2C8CAC2134A2C110022A651 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CABE134A2BAE0022A651 /* Default-Landscape~ipad.png */; };
 		C2E6CC05133EB61B00ADAF89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C016133E2DCB00F79EA2 /* UIKit.framework */; };
 		C2E6CC06133EB61B00ADAF89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C018133E2DCB00F79EA2 /* Foundation.framework */; };
 		C2E6CC07133EB61B00ADAF89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C01A133E2DCB00F79EA2 /* CoreGraphics.framework */; };
@@ -302,6 +306,8 @@
 		C2BED937133E2E370053AD16 /* WeightPredictorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPredictorViewController.m; sourceTree = "<group>"; };
 		C2C8CAB4134A27C50022A651 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C2C8CAB6134A27CB0022A651 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C2C8CABC134A2BA50022A651 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		C2C8CABE134A2BAE0022A651 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		C2E6CC03133EB61B00ADAF89 /* Fitness Nut Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Nut Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6CC69133EB7A000ADAF89 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C2E6CC6A133EB7A000ADAF89 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -353,6 +359,8 @@
 		C219AFC9133E2EAE007C7F39 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2C8CABE134A2BAE0022A651 /* Default-Landscape~ipad.png */,
+				C2C8CABC134A2BA50022A651 /* Default-Portrait~ipad.png */,
 				C2C8CAB6134A27CB0022A651 /* Default@2x.png */,
 				C2C8CAB4134A27C50022A651 /* Default.png */,
 				C219B028133E2F3E007C7F39 /* GANTracker.h */,
@@ -731,6 +739,10 @@
 				C2E6CC66133EB68000ADAF89 /* EmptyDetailViewController~ipad.xib in Resources */,
 				C2E6CC67133EB68400ADAF89 /* MainContent~ipad.xib in Resources */,
 				C2E6CC68133EB69000ADAF89 /* RootViewController~ipad.xib in Resources */,
+				C2C8CABA134A2B3A0022A651 /* Default.png in Resources */,
+				C2C8CABB134A2B3D0022A651 /* Default@2x.png in Resources */,
+				C2C8CABD134A2BA50022A651 /* Default-Portrait~ipad.png in Resources */,
+				C2C8CAC2134A2C110022A651 /* Default-Landscape~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
