@@ -15,18 +15,18 @@
 #import "AthleteDataDelegate.h"
 #import "DetailViewController.h"
 #import "SecondaryDetailViewController.h"
+#import "InfoViewController.h"
 
 #ifdef PRO_VERSION
 @interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate,
-                                                     CPPlotDataSource>
+                                                     CPPlotDataSource,
+                                                     InfoViewControllerDelegate>
 #else
-@interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate>
+@interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate,
+                                                     InfoViewControllerDelegate>
 #endif
 {
-    UIButton *infoButton;
 }
-
-@property (nonatomic, retain) IBOutlet UIButton *infoButton;
 
 - (NSString *)calculateBMR;
 

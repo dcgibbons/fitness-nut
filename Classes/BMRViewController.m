@@ -94,11 +94,6 @@
 }
 
 #pragma mark -
-#pragma mark Properties
-
-@synthesize infoButton;
-
-#pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad 
@@ -107,6 +102,15 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self 
+                   action:@selector(info:) 
+         forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
+                                    initWithCustomView:infoButton];
+    self.navigationItem.rightBarButtonItem = modalButton;
+    [modalButton release];    
     
     self.title = @"BMR & TDEE";
     
@@ -222,18 +226,28 @@
 {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
-    
-    self.infoButton = nil;
 }
 
 - (void)dealloc 
 {
-    [infoButton release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark UI Actions
+
+- (IBAction)info:(id)sender
+{
+    NSString *nibName = @"BMRInfoViewController";
+    InfoViewController *controller = [[InfoViewController alloc] initWithNibName:nibName
+                                                                          bundle:nil];
+    controller.delegate = self;
+    
+    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:controller animated:YES];
+    
+	[controller release];
+}
 
 #ifdef PRO_VERSION
 - (void)emailResults:(id)sender
@@ -563,6 +577,14 @@
     // TODO: use a popup on the iPad
 }
 #endif
+
+#pragma mark -
+#pragma mark InfoViewControllerDelegate methods
+
+-(void)infoViewControllerDidFinish:(InfoViewController *)controller
+{
+ 	[self dismissModalViewControllerAnimated:YES];
+}
 
 @end
 
