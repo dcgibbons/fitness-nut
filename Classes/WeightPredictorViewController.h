@@ -11,12 +11,15 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "DetailViewController.h"
+#import "InfoViewController.h"
 
 
-@interface WeightPredictorViewController : DetailViewController <MFMailComposeViewControllerDelegate>
+@interface WeightPredictorViewController : DetailViewController <MFMailComposeViewControllerDelegate,
+                                                                 InfoViewControllerDelegate>
 {
 }
 
 - (NSString *)calculatePredictedWeight;
+- (IBAction)info:(id)sender;
 
 @end

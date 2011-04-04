@@ -85,6 +85,8 @@
 		C2C8CABB134A2B3D0022A651 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAB6134A27CB0022A651 /* Default@2x.png */; };
 		C2C8CABD134A2BA50022A651 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CABC134A2BA50022A651 /* Default-Portrait~ipad.png */; };
 		C2C8CAC2134A2C110022A651 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CABE134A2BAE0022A651 /* Default-Landscape~ipad.png */; };
+		C2C8CAC4134A2F4E0022A651 /* WeightPredictorInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAC3134A2F4E0022A651 /* WeightPredictorInfoViewController.xib */; };
+		C2C8CAC5134A2F4E0022A651 /* WeightPredictorInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAC3134A2F4E0022A651 /* WeightPredictorInfoViewController.xib */; };
 		C2E6CC05133EB61B00ADAF89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C016133E2DCB00F79EA2 /* UIKit.framework */; };
 		C2E6CC06133EB61B00ADAF89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C018133E2DCB00F79EA2 /* Foundation.framework */; };
 		C2E6CC07133EB61B00ADAF89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C01A133E2DCB00F79EA2 /* CoreGraphics.framework */; };
@@ -308,6 +310,7 @@
 		C2C8CAB6134A27CB0022A651 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C2C8CABC134A2BA50022A651 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		C2C8CABE134A2BAE0022A651 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		C2C8CAC3134A2F4E0022A651 /* WeightPredictorInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightPredictorInfoViewController.xib; sourceTree = "<group>"; };
 		C2E6CC03133EB61B00ADAF89 /* Fitness Nut Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Nut Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6CC69133EB7A000ADAF89 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C2E6CC6A133EB7A000ADAF89 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -395,6 +398,7 @@
 				C219AFE5133E2EE0007C7F39 /* SN_Spotlight&Settings_29x29_papersky.co.png */,
 				C219AFE6133E2EE0007C7F39 /* WeightPickerViewController.xib */,
 				C219AFE7133E2EE0007C7F39 /* WeightPredictorViewController.xib */,
+				C2C8CAC3134A2F4E0022A651 /* WeightPredictorInfoViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -701,6 +705,7 @@
 				C219B020133E2EE0007C7F39 /* WeightPredictorViewController.xib in Resources */,
 				C2C8CAB8134A2A150022A651 /* Default.png in Resources */,
 				C2C8CAB9134A2A1D0022A651 /* Default@2x.png in Resources */,
+				C2C8CAC4134A2F4E0022A651 /* WeightPredictorInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +748,7 @@
 				C2C8CABB134A2B3D0022A651 /* Default@2x.png in Resources */,
 				C2C8CABD134A2BA50022A651 /* Default-Portrait~ipad.png in Resources */,
 				C2C8CAC2134A2C110022A651 /* Default-Landscape~ipad.png in Resources */,
+				C2C8CAC5134A2F4E0022A651 /* WeightPredictorInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

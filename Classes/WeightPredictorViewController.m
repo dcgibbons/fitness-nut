@@ -52,6 +52,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self 
+                   action:@selector(info:) 
+         forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
+                                    initWithCustomView:infoButton];
+    self.navigationItem.rightBarButtonItem = modalButton;
+    [modalButton release];    
+    
     self.title = @"Weight Predictor";
     
     NSArray *athleteDetailsItems = [NSArray arrayWithObjects:
@@ -198,6 +207,19 @@
     [picker release];    
 }
 
+- (IBAction)info:(id)sender
+{
+    NSString *nibName = @"WeightPredictorInfoViewController";
+    InfoViewController *controller = [[InfoViewController alloc] initWithNibName:nibName
+                                                                          bundle:nil];
+    controller.delegate = self;
+    
+    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:controller animated:YES];
+    
+	[controller release];
+}
+
 #pragma mark -
 #pragma mark MFMailComposeViewControllerDelegate methods
 
@@ -207,6 +229,14 @@
                         error:(NSError*)error 
 {	
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark InfoViewControllerDelegate methods
+
+-(void)infoViewControllerDidFinish:(InfoViewController *)controller
+{
+ 	[self dismissModalViewControllerAnimated:YES];
 }
 
 
