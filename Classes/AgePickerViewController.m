@@ -23,7 +23,10 @@
 {
     [super viewDidLoad];
 
-    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    // Only iOS 3.2.x or iOS 4.2.x and newer supports popovers
+    if (NSClassFromString(@"UIPopoverController")) {
+        self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    }
     
     self.title = @"Athlete Age";
 

@@ -58,7 +58,10 @@
     [super viewDidLoad];
 
     // TODO: document the magic numbers before you forget, fool!
-    self.contentSizeForViewInPopover = CGSizeMake(320, 224 + 44 + 19);
+    // Only iOS 3.2.x or iOS 4.2.x and newer supports popovers
+    if (NSClassFromString(@"UIPopoverController")) {
+        self.contentSizeForViewInPopover = CGSizeMake(320, 224 + 44 + 19);
+    }
     
     self.title = @"Athlete Height";
     self.navigationItem.title = @"Athlete Height";

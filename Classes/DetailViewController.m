@@ -66,14 +66,16 @@
     [super viewDidLoad];
     
 #ifndef PRO_VERSION
-    // Create an ad banner just off the bottom of the view (i.e. not visible).
-    self.bannerIsVisible=NO;    
-    adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
-                                                                  self.view.frame.size.height,
-                                                                  0, 0)];
-    adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    adBannerView.delegate=self;
-    [self.view addSubview:adBannerView];
+    if (NSClassFromString(@"ADBannerView")) {
+        // Create an ad banner just off the bottom of the view (i.e. not visible).
+        self.bannerIsVisible=NO;    
+        adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
+                                                                      self.view.frame.size.height,
+                                                                      0, 0)];
+        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+        adBannerView.delegate=self;
+        [self.view addSubview:adBannerView];
+    }
 #endif
 
 #ifdef PRO_VERSION

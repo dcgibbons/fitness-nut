@@ -21,9 +21,18 @@
 {
     [super viewDidLoad];
 
-    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    // Only iOS 3.2.x or iOS 4.2.x and newer supports popovers
+    if (NSClassFromString(@"UIPopoverController")) {
+        self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    }
     
     self.title = @"Training Hours";
+    
+    NSUInteger hours = 6;
+    if (data) {
+        hours = [data intValue];
+    }
+    [self.pickerView selectRow:hours - 4 inComponent:0 animated:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
@@ -31,14 +40,37 @@
     return YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSUInteger hours = 6;
-    if (data) {
-        hours = [data intValue];
-    }
-    [self.pickerView selectRow:hours - 4 inComponent:0 animated:NO];
-}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    // TODO: this had the pickerView select code in
+//    
+//    [super viewDidAppear:animated];
+//    
+//    NSLog(@"HoursPickerViewControler::viewDidAppear: picker.frame.size=%f,%f", 
+//          self.pickerView.frame.size.height,
+//          self.pickerView.frame.size.width);
+//}
+//
+//- (void)layoutView:(UIInterfaceOrientation)orientation
+//{
+//    if (IS_PAD_DEVICE()) {
+//        self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//        self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+//    } else {
+//        self.pickerView.autoresizingMask = UIViewAutoresizingNone;
+//        
+//        if (UIInterfaceOrientationIsLandscape(orientation)) {
+//            self.pickerView.frame = CGRectMake(0, 0, 245, 216);
+//        } else {
+//            self.pickerView.frame = CGRectMake(0, 0, 320, 216);
+//        }
+//    }    
+//    
+//    NSLog(@"HoursPickerViewControler::layoutView: picker.frame.size=%f,%f", 
+//          self.pickerView.frame.size.height,
+//          self.pickerView.frame.size.width);
+//    
+//}
 
 #pragma mark -
 #pragma mark Memory Management

@@ -152,7 +152,10 @@
 {
     [super viewDidLoad];
     
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    // Only iOS 3.2.x or iOS 4.2.x and newer supports popovers
+    if (NSClassFromString(@"UIPopoverController")) {
+        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    }
 
     self.title = @"Fitness Nut";
     
@@ -166,14 +169,17 @@
     [modalButton release];    
     
 #ifndef PRO_VERSION
-    // Create an ad banner just off the bottom of the view (i.e. not visible).
-    self.bannerIsVisible = NO;
-    adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
-                                                                  self.view.frame.size.height,
-                                                                  0, 0)];
-    adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    adBannerView.delegate=self;
-    [self.view addSubview:adBannerView];
+    if (NSClassFromString(@"ADBannerView") )
+    {
+        // Create an ad banner just off the bottom of the view (i.e. not visible).
+        self.bannerIsVisible = NO;
+        adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
+                                                                      self.view.frame.size.height,
+                                                                      0, 0)];
+        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+        adBannerView.delegate=self;
+        [self.view addSubview:adBannerView];
+    }
 #endif
     
     NSArray *nutritionMenuItems = [NSArray arrayWithObjects:
@@ -253,7 +259,9 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [self upgradeToProVersion];
+    if (buttonIndex == 1) {
+        [self upgradeToProVersion];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -434,8 +442,6 @@
 
 - (void)infoButton:(id)sender
 {
-    NSLog(@"infoButton pressed!");
-    
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
@@ -445,8 +451,18 @@
                                                     @"Upgrade to Pro Version",
 #endif
                                   nil];
-    [actionSheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem 
-                              animated:YES];
+    
+    // Only iOS 3.2.x or iOS 4.2.x and newer the showFromBarButtonItem API
+    if (IS_PAD_DEVICE() &&
+        [actionSheet respondsToSelector:NSSelectorFromString(@"showFromBarButtonItem:animated:")]) {
+        [actionSheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem 
+                                  animated:YES];
+    } else {
+        [actionSheet showInView:self.view];
+//        // Show in the keyWindow so that all the buttons work. Hack?
+//        [actionSheet showInView:[UIApplication sharedApplication].keyWindow];        
+    }
+    
     [actionSheet release];
 }
 

@@ -37,7 +37,7 @@
 		C219B01E133E2EE0007C7F39 /* WeightPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219AFE6133E2EE0007C7F39 /* WeightPickerViewController.xib */; };
 		C219B020133E2EE0007C7F39 /* WeightPredictorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219AFE7133E2EE0007C7F39 /* WeightPredictorViewController.xib */; };
 		C219B023133E2F1C007C7F39 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B022133E2F1C007C7F39 /* CFNetwork.framework */; };
-		C219B025133E2F22007C7F39 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B024133E2F22007C7F39 /* iAd.framework */; };
+		C219B025133E2F22007C7F39 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B024133E2F22007C7F39 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C219B027133E2F28007C7F39 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B026133E2F28007C7F39 /* libsqlite3.0.dylib */; };
 		C219B02A133E2F3E007C7F39 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */; };
 		C219B02D133E2F58007C7F39 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B02C133E2F58007C7F39 /* MessageUI.framework */; };
@@ -150,7 +150,7 @@
 		C2E6CC67133EB68400ADAF89 /* MainContent~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24DB5D9133E32C40021DFA0 /* MainContent~ipad.xib */; };
 		C2E6CC68133EB69000ADAF89 /* RootViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24DB5DA133E32C40021DFA0 /* RootViewController~ipad.xib */; };
 		C2E6CC6E133EB7A000ADAF89 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E6CC69133EB7A000ADAF89 /* CFNetwork.framework */; };
-		C2E6CC6F133EB7A000ADAF89 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E6CC6A133EB7A000ADAF89 /* iAd.framework */; };
+		C2E6CC6F133EB7A000ADAF89 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E6CC6A133EB7A000ADAF89 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C2E6CC70133EB7A000ADAF89 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E6CC6B133EB7A000ADAF89 /* libsqlite3.0.dylib */; };
 		C2E6CC71133EB7A000ADAF89 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E6CC6C133EB7A000ADAF89 /* MessageUI.framework */; };
 		C2E6CC72133EB7A000ADAF89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E6CC6D133EB7A000ADAF89 /* QuartzCore.framework */; };
@@ -854,7 +854,8 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -868,8 +869,9 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -883,6 +885,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				INFOPLIST_FILE = "Fitness Nut/Fitness Nut-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -900,6 +903,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				INFOPLIST_FILE = "Fitness Nut/Fitness Nut-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -928,7 +932,7 @@
 					"\"${PROJECT_DIR}/CorePlot 0.2.2/Source/framework\"/**",
 				);
 				INFOPLIST_FILE = "Fitness Nut Pro/Fitness Nut Pro-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -957,7 +961,7 @@
 					"\"${PROJECT_DIR}/CorePlot 0.2.2/Source/framework\"/**",
 				);
 				INFOPLIST_FILE = "Fitness Nut Pro/Fitness Nut Pro-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

@@ -40,7 +40,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    // Only iOS 3.2.x or iOS 4.2.x and newer supports popovers
+    if (NSClassFromString(@"UIPopoverController")) {
+        self.contentSizeForViewInPopover = CGSizeMake(320, 240);
+    }
     
     self.title = @"Activity Level";
     
