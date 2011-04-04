@@ -353,6 +353,8 @@
 		C219AFC9133E2EAE007C7F39 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2C8CAB6134A27CB0022A651 /* Default@2x.png */,
+				C2C8CAB4134A27C50022A651 /* Default.png */,
 				C219B028133E2F3E007C7F39 /* GANTracker.h */,
 				C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */,
 				C219AFCA133E2EE0007C7F39 /* ActivityLevelViewController.xib */,
@@ -392,8 +394,6 @@
 		C266C007133E2DCA00F79EA2 = {
 			isa = PBXGroup;
 			children = (
-				C2C8CAB6134A27CB0022A651 /* Default@2x.png */,
-				C2C8CAB4134A27C50022A651 /* Default.png */,
 				C29246C2133EBA8C00E795EA /* libCorePlot-CocoaTouch.a */,
 				C29246B6133EBA8000E795EA /* CorePlot-CocoaTouch.xcodeproj */,
 				C219AFC9133E2EAE007C7F39 /* Supporting Files */,
