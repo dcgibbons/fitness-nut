@@ -12,9 +12,10 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "AthleteDataDelegate.h"
 #import "DetailViewController.h"
+#import "InfoViewController.h"
 
-
-@interface MacronutrientNeedsViewController : DetailViewController <MFMailComposeViewControllerDelegate>
+@interface MacronutrientNeedsViewController : DetailViewController <MFMailComposeViewControllerDelegate,
+                                                                    InfoViewControllerDelegate>
 {
 }
 
