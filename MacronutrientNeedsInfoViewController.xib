@@ -57,7 +57,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUINavigationItem" id="183627390">
 								<reference key="IBUINavigationBar" ref="404548732"/>
-								<string key="IBUITitle">Macronutrient Needs</string>
+								<string key="IBUITitle">Macronutrients</string>
 								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="1045785397">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>

@@ -33,6 +33,6 @@
 @property (nonatomic, retain) IBOutlet UISegmentedControl *unitsControl;
 
 - (IBAction)changeUnits:(id)sender;
-- (void)layoutPicker:(UIInterfaceOrientation)orientation;
+//- (void)layoutPicker:(UIInterfaceOrientation)orientation;
 
 @end

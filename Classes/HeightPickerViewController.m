@@ -66,32 +66,9 @@
     self.title = @"Athlete Height";
     self.navigationItem.title = @"Athlete Height";
     
-    int height = [self isInches] ? 66 : 168; // 5'6" or 168cm
-    HeightUnits units = Inches;
-    if (self.data) {
-        height = [self.data.height intValue];
-        units = self.data.units;
-    }
-    self.unitsControl.selectedSegmentIndex = (units == Inches) ? 0 : 1;
-    [self selectRowsFromHeight:[[[AthleteHeight alloc] initWithHeight:[NSNumber numberWithInt:height]
-                                                           usingUnits:[self isInches] ? Inches : Centimeters]
-                                autorelease]];
-
     [self.unitsControl addTarget:self 
                           action:@selector(changeUnits:)
                 forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)viewWillAppear:(BOOL)animated 
-{
-    [super viewWillAppear:animated];
-    
-    // Layout once here to ensure the current orientation is respected.
-    [self layoutPicker:[UIApplication sharedApplication].statusBarOrientation];
-
-    if (IS_PAD_DEVICE()) {
-        [self.navigationController setNavigationBarHidden:NO animated:animated];
-    }
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -102,8 +79,8 @@
 }
 
 // Use frame of containing view to work out the correct origin and size
-// of the UIDatePicker.
-- (void)layoutPicker:(UIInterfaceOrientation)orientation 
+// of the UIPicker.
+- (void)layoutView:(UIInterfaceOrientation)orientation
 {
     if (IS_PAD_DEVICE()) {
         self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -118,15 +95,20 @@
             self.pickerView.frame = CGRectMake(0, 0, 320, 216);
         }
     }
+    
+    // changing the pickerView's frame seems to cause it to look it's selection
+    // so select the height here
+    int height = [self isInches] ? 66 : 168; // 5'6" or 168cm
+    HeightUnits units = Inches;
+    if (self.data) {
+        height = [self.data.height intValue];
+        units = self.data.units;
+    }
+    self.unitsControl.selectedSegmentIndex = (units == Inches) ? 0 : 1;
+    [self selectRowsFromHeight:[[[AthleteHeight alloc] initWithHeight:[NSNumber numberWithInt:height]
+                                                           usingUnits:[self isInches] ? Inches : Centimeters]
+                                autorelease]];
 }
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation
-                                         duration:(NSTimeInterval)duration 
-{
-    [super willAnimateRotationToInterfaceOrientation:orientation duration:duration];
-    [self layoutPicker:orientation];
-}
-
 
 #pragma mark -
 #pragma mark Memory Management
