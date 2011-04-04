@@ -223,6 +223,11 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 {
     // Override point for customization after application launch.
 #ifndef DEBUG
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    NSString *label = [NSString stringWithFormat:@"%@ %@ on %@",
+                       currentDevice.systemName, currentDevice.systemVersion,
+                       currentDevice.model];
+    
     [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-2943120-3"
                                            dispatchPeriod:kGANDispatchPeriodSec
                                                  delegate:nil];
@@ -230,7 +235,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     NSError *error;
     if (![[GANTracker sharedTracker] trackEvent:@"app_status"
                                          action:@"app_launched"
-                                          label:@""
+                                          label:label
                                           value:-1
                                       withError:&error]) {
         NSLog(@"Unable to track app_launched event with GANTracker, %@", error);
@@ -282,6 +287,26 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+#ifndef DEBUG
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    NSString *label = [NSString stringWithFormat:@"%@ %@ on %@",
+                       currentDevice.systemName, currentDevice.systemVersion,
+                       currentDevice.model];
+    
+    [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-2943120-3"
+                                           dispatchPeriod:kGANDispatchPeriodSec
+                                                 delegate:nil];
+    
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"app_status"
+                                         action:@"app_became_active"
+                                          label:label
+                                          value:-1
+                                      withError:&error]) {
+        NSLog(@"Unable to track app_launched event with GANTracker, %@", error);
+    }
+#endif
+    
     if (ShouldAskForReviewAtLaunch()) {
         AskForReview();
     }
