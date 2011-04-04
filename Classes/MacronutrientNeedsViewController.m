@@ -117,7 +117,7 @@
                                     initWithCustomView:infoButton];
     self.navigationItem.rightBarButtonItem = modalButton;
     [modalButton release];    
-    self.title = @"Macronutrient Needs";
+    self.title = @"Macronutrients";
     
     NSArray *athleteDetailsItems = [NSArray arrayWithObjects:
                                     

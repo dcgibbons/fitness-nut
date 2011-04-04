@@ -178,6 +178,10 @@
                                                                       self.view.frame.size.height,
                                                                       0, 0)];
         adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+        adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObjects:
+                                                       ADBannerContentSizeIdentifier320x50,
+                                                       ADBannerContentSizeIdentifier480x32,
+                                                       nil];
         // TODO: use ADBannerContentSizeIdentifierPortrait once you stop supporting
         // anything older than iOS 4.2
         adBannerView.delegate=self;
