@@ -158,7 +158,11 @@
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
 
+#ifdef PRO_VERSION
+    self.title = @"Fitness Nut Pro";
+#else
     self.title = @"Fitness Nut";
+#endif
     
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [infoButton addTarget:self 
