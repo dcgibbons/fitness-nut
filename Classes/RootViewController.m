@@ -145,7 +145,8 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize userData, groups, menuTableView, adBannerView, bannerIsVisible, contentController;
+@synthesize userData, groups, menuTableView, adBannerView, bannerIsVisible;
+@synthesize contentController, infoActionSheet;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -308,10 +309,12 @@
     self.menuTableView = nil;
     self.adBannerView.delegate = nil;
     self.adBannerView = nil;
+    self.infoActionSheet = nil;
 }
 
 - (void)dealloc
 {
+    [infoActionSheet release];
     adBannerView.delegate=nil;
     [adBannerView release];
     [userData release];
@@ -461,6 +464,10 @@
 
 - (void)infoButton:(id)sender
 {
+    if (self.infoActionSheet && self.infoActionSheet.visible) {
+        [self.infoActionSheet dismissWithClickedButtonIndex:2 animated:YES];
+    }
+    
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
@@ -470,16 +477,15 @@
                                                     @"Upgrade to Pro Version",
 #endif
                                   nil];
+    self.infoActionSheet = actionSheet;
     
-    // Only iOS 3.2.x or iOS 4.2.x and newer the showFromBarButtonItem API
+    // Only iOS 3.2.x or iOS 4.2.x and newer have showFromBarButtonItem API
     if (IS_PAD_DEVICE() &&
         [actionSheet respondsToSelector:NSSelectorFromString(@"showFromBarButtonItem:animated:")]) {
         [actionSheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem 
                                   animated:YES];
     } else {
         [actionSheet showInView:self.view];
-//        // Show in the keyWindow so that all the buttons work. Hack?
-//        [actionSheet showInView:[UIApplication sharedApplication].keyWindow];        
     }
     
     [actionSheet release];

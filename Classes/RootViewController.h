@@ -25,6 +25,7 @@
     UITableView *menuTableView;
     ADBannerView *adBannerView;
     BOOL bannerIsVisible;
+    UIActionSheet *infoActionSheet;
 }
 
 @property (nonatomic, retain) IBOutlet ContentController *contentController;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *menuTableView;
 @property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, assign) BOOL bannerIsVisible;
+@property (nonatomic, retain) UIActionSheet *infoActionSheet;
 
 - (void)rateThisApp;
 - (void)sendFeedback;
