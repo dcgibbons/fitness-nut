@@ -59,6 +59,8 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     
+    [picker setToRecipients:[NSArray arrayWithObject:@"fitnessnut-support@nuclearbunny.org"]];
+     
 #ifdef PRO_VERSION
 	[picker setSubject:@"Fitness Nut Pro: User Feedback"];
 #else
@@ -164,15 +166,6 @@
     self.title = @"Fitness Nut";
 #endif
     
-    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self 
-                   action:@selector(infoButton:) 
-         forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
-                                    initWithCustomView:infoButton];
-    self.navigationItem.rightBarButtonItem = modalButton;
-    [modalButton release];    
-    
 #ifndef PRO_VERSION
     if (NSClassFromString(@"ADBannerView") )
     {
@@ -259,6 +252,21 @@
         [userData setObject:[NSNumber numberWithUnsignedInt:1] forKey:@"seenUpgradeNotice"];
     }
 #endif
+
+    NSLog(@"RootViewController, barStyle=%d", self.navigationController.navigationBar.barStyle);
+    
+    UIButtonType buttonType = UIButtonTypeInfoLight;
+    if (IS_PAD_DEVICE() && self.navigationController.navigationBar.barStyle == UIBarStyleDefault) {
+        buttonType = UIButtonTypeInfoDark;
+    }
+    UIButton* infoButton = [UIButton buttonWithType:buttonType];
+    [infoButton addTarget:self 
+                   action:@selector(infoButton:) 
+         forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
+                                    initWithCustomView:infoButton];
+    self.navigationItem.rightBarButtonItem = modalButton;
+    [modalButton release];    
 }
 
 - (void)viewDidAppear:(BOOL)animated

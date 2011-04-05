@@ -109,14 +109,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self 
-                   action:@selector(info:) 
-         forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
-                                    initWithCustomView:infoButton];
-    self.navigationItem.rightBarButtonItem = modalButton;
-    [modalButton release];    
     self.title = @"Macronutrients";
     
     NSArray *athleteDetailsItems = [NSArray arrayWithObjects:
@@ -191,6 +183,24 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
     return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    UIButtonType buttonType = UIButtonTypeInfoLight;
+    if (IS_PAD_DEVICE() && self.navigationController.navigationBar.barStyle == UIBarStyleDefault) {
+        buttonType = UIButtonTypeInfoDark;
+    }
+    UIButton* infoButton = [UIButton buttonWithType:buttonType];
+    [infoButton addTarget:self 
+                   action:@selector(info:) 
+         forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] 
+                                    initWithCustomView:infoButton];
+    self.navigationItem.rightBarButtonItem = modalButton;
+    [modalButton release];    
 }
 
 #pragma mark -
