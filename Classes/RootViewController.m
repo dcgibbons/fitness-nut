@@ -254,8 +254,6 @@
     }
 #endif
 
-    NSLog(@"RootViewController, barStyle=%d", self.navigationController.navigationBar.barStyle);
-    
     UIButtonType buttonType = UIButtonTypeInfoLight;
     if (IS_PAD_DEVICE() && self.navigationController.navigationBar.barStyle == UIBarStyleDefault) {
         buttonType = UIButtonTypeInfoDark;
