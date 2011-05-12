@@ -99,7 +99,7 @@
     }
 #endif
     
-    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8&uo=4"];
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
     [[UIApplication sharedApplication] openURL:url];        
 }
 

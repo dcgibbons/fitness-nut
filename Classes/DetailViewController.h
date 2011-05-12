@@ -15,6 +15,7 @@
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate,
                                                     UITableViewDataSource,
                                                     UITableViewDelegate,
+                                                    UIActionSheetDelegate,
                                                     SecondaryDetailInputDelegate,
                                                     UIPopoverControllerDelegate,
                                                     ADBannerViewDelegate, 
@@ -38,6 +39,9 @@
 @property (nonatomic, retain) ADBannerView *adBannerView;
 @property (nonatomic, assign) BOOL bannerIsVisible;
 
-- (void)emailResults:(id)sender;
+- (void)share:(id)sender;
+- (void)shareViaEmail;
+- (void)shareViaFacebook;
+- (void)shareViaTwitter;
 
 @end

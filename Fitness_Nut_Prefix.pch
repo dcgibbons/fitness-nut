@@ -18,4 +18,10 @@
 #endif
 
     #define IS_PAD_DEVICE() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 #endif
+
+#define kFITNESS_NUT_PRO_AFFILIATE_URL @"http://click.linksynergy.com/fs-bin/stat?id=SAUpQV4sYlg&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=http%253A%252F%252Fitunes.apple.com%252Fus%252Fapp%252Ffitness-nut-pro%252Fid424734288%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30"
+
+#define kFITNESS_NUT_PRO_URL @"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8"
+

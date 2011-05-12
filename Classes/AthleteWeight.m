@@ -27,7 +27,7 @@
     if (units == Kilograms) {
         desc = [NSString stringWithFormat:@"%.0f kg", [weight floatValue]];
     } else {
-        desc = [NSString stringWithFormat:@"%u lbs", [weight intValue]];
+        desc = [NSString stringWithFormat:@"%u lb.", [weight intValue]];
     }
     return desc;
 }

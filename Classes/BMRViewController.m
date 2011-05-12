@@ -16,6 +16,10 @@
 #import "AthleteDataProtocol.h"
 #import "SecondaryDetailViewController.h"
 #import "GANTracker.h"
+#import "SHK.h"
+#import "SHKMail.h"
+#import "SHKFacebook.h"
+#import "SHKTwitter.h"
 
 #ifdef PRO_VERSION
 #import "BMRGraphViewController.h"
@@ -56,7 +60,7 @@
     NSNumber *bmr = [self calculateBMRAsNumber];
     if (!bmr) return nil;
     
-    return [NSString stringWithFormat:@"%u kcals", [bmr intValue]];
+    return [NSString stringWithFormat:@"%u calories", [bmr intValue]];
 }
 
 - (NSString *)calculateTDEE
@@ -90,7 +94,7 @@
     NSNumber *tdeeNumber = [NSNumber numberWithInt:tdee];
     [userData setObject:tdeeNumber forKey:@"athleteTDEE"];
     
-    return [NSString stringWithFormat:@"%u kcals", tdee];
+    return [NSString stringWithFormat:@"%u calories", tdee];
 }
 
 #pragma mark -
@@ -254,110 +258,6 @@
 }
 
 #ifdef PRO_VERSION
-- (void)emailResults:(id)sender
-{
-    [super emailResults:sender];
-    
-    if (![MFMailComposeViewController canSendMail]) {
-        NSLog(@"Device cannot send mail.");
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
-                                                        message:@"Your device has not yet been configured to send mail."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK" 
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        [alert release];
-        return;
-    }
-    
-	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] 
-                                           init];
-    NSLog(@"MFMailComposeViewController=%@", picker);
-	picker.mailComposeDelegate = self;
-
-	[picker setSubject:@"Fitness Nut Pro: BMR & TDEE results"];
-    
-	// Fill out the email body text
-    AthleteAge *age = [userData objectForKey:@"athleteAge"];
-    AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
-    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
-    AthleteGender *gender = [userData objectForKey:@"athleteGender"];
-    NSString *bmr = [self calculateBMR];
-    
-    AthleteActivityLevel *activityLevel = [userData objectForKey:@"athleteActivityLevel"];
-    NSString *tdee = [self calculateTDEE];
-    
-    NSString *emailBody = 
-        [NSString stringWithFormat:
-        @"<html>"
-         "<body>"
-            "<table>"
-                "<tbody>"
-                    "<tr>"
-                        "<th>Age</th><td>%@</td>"
-                    "</tr><tr>"
-                        "<th>Height</th><td>%@</td>"
-                    "</tr><tr>"
-                        "<th>Weight</th><td>%@</td>"
-                    "</tr><tr>"
-                        "<th>Gender</th><td>%@</td>"
-                    "</tr><tr>"
-                        "<th>BMR</th><td>%@</td>"
-                    "</tr>",
-         age, height, weight, gender, bmr
-         ];
-    
-    if (tdee) {
-        emailBody = [emailBody stringByAppendingFormat:
-            @"<tr>"
-                "<th>Activity</th><td>%@</td>"
-            "</tr><tr>"
-                "<th>TDEE</th><td>%@</td>"
-            "</tr>",
-            activityLevel, tdee
-            ];
-    
-        CPXYGraph *graph = [self createGraph];
-        CGSize size = CGSizeMake(320, 480);
-        UIGraphicsBeginImageContext(size);
-        
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextTranslateCTM(context, 0, 480);
-        CGContextScaleCTM(context, 1, -1);
-        graph.frame = CGRectMake(0, 0, 320, 480);
-        [graph layoutAndRenderInContext:context];
-        
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        NSData *pngData = UIImagePNGRepresentation(image);
-        [picker addAttachmentData:pngData mimeType:@"image/png" 
-                                   fileName:@"calories.png"];
-
-        UIGraphicsEndImageContext();
-        [graph release];
-    }
-    
-    emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
-                 "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
-                 "for quick answers to your sports nutrition questions!"
-                 "</p></body></html>"
-                 ];
-    
-	[picker setMessageBody:emailBody isHTML:YES];
-	
-	[self presentModalViewController:picker animated:YES];
-    [picker release];    
-}
-
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
-
-// Dismisses the email composition interface when users tap Cancel or Send.
-- (void)mailComposeController:(MFMailComposeViewController*)controller
-          didFinishWithResult:(MFMailComposeResult)result 
-                        error:(NSError*)error 
-{	
-	[self dismissModalViewControllerAnimated:YES];
-}
 
 #pragma mark -
 #pragma mark Plot Data Source Methods
@@ -479,7 +379,7 @@
 	x.labelRotation = M_PI/4;
 	x.labelingPolicy = CPAxisLabelingPolicyNone;
 	NSArray *customTickLocations = [NSArray arrayWithObjects:[NSDecimalNumber numberWithInt:1], [NSDecimalNumber numberWithInt:5], [NSDecimalNumber numberWithInt:10], [NSDecimalNumber numberWithInt:15], nil];
-	NSArray *xAxisLabels = [NSArray arrayWithObjects:@"BMR", @"TDEE", @"-1 lbs/week", @"-2 lbs/week", nil];
+	NSArray *xAxisLabels = [NSArray arrayWithObjects:@"BMR", @"TDEE", @"-1 lb./week", @"-2 lb./week", nil];
 	NSUInteger labelLocation = 0;
 	NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:[xAxisLabels count]];
 	for (NSNumber *tickLocation in customTickLocations) {
@@ -580,7 +480,8 @@
     
     // TODO: use a popup on the iPad
 }
-#endif
+
+#endif // PRO_VERSION
 
 #pragma mark -
 #pragma mark InfoViewControllerDelegate methods
@@ -588,6 +489,115 @@
 -(void)infoViewControllerDidFinish:(InfoViewController *)controller
 {
  	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma Sharing
+
+- (void)shareViaEmail
+{
+    AthleteAge *age = [userData objectForKey:@"athleteAge"];
+    AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
+    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+    AthleteGender *gender = [userData objectForKey:@"athleteGender"];
+    NSString *bmr = [self calculateBMR];
+    
+    AthleteActivityLevel *activityLevel = [userData objectForKey:@"athleteActivityLevel"];
+    NSString *tdee = [self calculateTDEE];
+    
+    // Fill out the email body text
+    NSString *emailBody = [NSString stringWithFormat:
+                           @"<html>"
+                           "<body>"
+                           "<table>"
+                           "<tbody>"
+                           "<tr>"
+                           "<th>Age</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Height</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Weight</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Gender</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>BMR</th><td>%@</td>"
+                           "</tr>",
+                           age, height, weight, gender, bmr
+                           ];
+    
+    SHKItem *item = [SHKItem text:nil];
+    
+    if (tdee) {
+        emailBody = [emailBody stringByAppendingFormat:
+                     @"<tr>"
+                     "<th>Activity</th><td>%@</td>"
+                     "</tr><tr>"
+                     "<th>TDEE</th><td>%@</td>"
+                     "</tr>",
+                     activityLevel, tdee
+                     ];
+#ifdef PRO_VERSION
+        CPXYGraph *graph = [self createGraph];
+        CGSize size = CGSizeMake(320, 480);
+        UIGraphicsBeginImageContext(size);
+        
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextTranslateCTM(context, 0, 480);
+        CGContextScaleCTM(context, 1, -1);
+        graph.frame = CGRectMake(0, 0, 320, 480);
+        [graph layoutAndRenderInContext:context];
+        
+        item.image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        [graph release];
+#endif
+    }
+    
+    emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
+                 "Use <a href=\"%@\">Fitness Nut Pro</a> "
+                 "for quick answers to your sports nutrition questions!"
+                 "</p></body></html>",
+                 kFITNESS_NUT_PRO_AFFILIATE_URL
+                 ];
+    
+    item.text = emailBody;
+    item.title = @"Fitness Nut Pro: BMR & TDEE results";
+    
+    [SHKMail shareItem:item];
+}
+
+- (void)shareViaFacebook
+{
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    
+    NSString *bmr = [self calculateBMR];
+    NSString *tdee = [self calculateTDEE];
+    
+    NSString *text = [NSString stringWithFormat:@"I just calculated my BMR as %@", bmr];
+    if (tdee) {
+        text = [text stringByAppendingFormat:@" & my TDEE as %@", tdee];
+    }
+    text = [text stringByAppendingString:@" with Fitness Nut!"];
+    SHKItem *item = [SHKItem URL:url title:text];
+    [SHKFacebook shareItem:item];
+    
+}
+
+- (void)shareViaTwitter
+{
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    
+    NSString *bmr = [self calculateBMR];
+    NSString *tdee = [self calculateTDEE];
+    
+    NSString *text = [NSString stringWithFormat:@"I just calculated my BMR as %@", bmr];
+    if (tdee) {
+        text = [text stringByAppendingFormat:@" & my TDEE as %@", tdee];
+    }
+    text = [text stringByAppendingString:@" with #FitnessNut"];
+    SHKItem *item = [SHKItem URL:url title:text];
+    [SHKTwitter shareItem:item];
 }
 
 @end
