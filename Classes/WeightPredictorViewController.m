@@ -29,9 +29,9 @@
     AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (!desiredBodyFat) return nil;
     
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-#endif
+//#endif
 
     double leanMass = [[weight weightAsKilograms] doubleValue] * (1.0 - [bodyFat.bodyFat doubleValue] / 100.0);
     double predictedMass = leanMass / (1.0 - [desiredBodyFat.bodyFat doubleValue] / 100.0);
@@ -211,14 +211,14 @@
                            ];
     
     emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
-                 "Use <a href=\"%@\">Fitness Nut Pro</a> "
+                 "Use <a href=\"%@\">Fitness Nut</a> "
                  "for quick answers to your sports nutrition questions!"
                  "</p></body></html>",
                  kFITNESS_NUT_PRO_AFFILIATE_URL
                  ];
     
     SHKItem *item = [SHKItem text:emailBody];
-    item.title = @"Fitness Nut Pro: Daily Macronutrient Needs";
+    item.title = @"Fitness Nut: Daily Macronutrient Needs";
     
     [SHKMail shareItem:item];
 }

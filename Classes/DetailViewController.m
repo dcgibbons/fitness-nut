@@ -84,16 +84,9 @@
     }
 #endif
 
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     self.navigationController.toolbarHidden = YES;
     self.navigationController.toolbar.barStyle = UIBarStyleBlack;
-    
-//    UIBarButtonItem *composeItem = [[UIBarButtonItem alloc] 
-//                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-//                                    target:self 
-//                                    action:@selector(emailResults:)];
-//    self.toolbarItems = [NSArray arrayWithObjects:composeItem, nil];
-//    [composeItem release];
     
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                                target:self
@@ -101,7 +94,7 @@
     self.toolbarItems = [NSArray arrayWithObjects:shareItem, nil];
     [shareItem release];
     
-#endif
+//#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated

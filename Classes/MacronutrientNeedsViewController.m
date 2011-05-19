@@ -30,9 +30,9 @@
     AthleteType *type = [userData objectForKey:@"athleteType"];
     if (!type) return nil;
 
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-#endif
+//#endif
     
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
@@ -294,14 +294,14 @@
                            ];
     
     emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
-                 "Use <a href=\"%@\">Fitness Nut Pro</a> "
+                 "Use <a href=\"%@\">Fitness Nut</a> "
                  "for quick answers to your sports nutrition questions!"
                  "</p></body></html>",
                  kFITNESS_NUT_PRO_AFFILIATE_URL
                  ];
     
     SHKItem *item = [SHKItem text:emailBody];
-    item.title = @"Fitness Nut Pro: Daily Macronutrient Needs";
+    item.title = @"Fitness Nut: Daily Macronutrient Needs";
     
     [SHKMail shareItem:item];
 }

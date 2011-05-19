@@ -41,9 +41,9 @@
     AthleteGender *gender = [userData objectForKey:@"athleteGender"];
     if (!gender) return nil;
     
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-#endif
+//#endif
 
     int bmr = [FitnessCalculations bmrUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                   usingHeightInCentimeters:[[height heightAsCentimeters] doubleValue]
@@ -555,14 +555,14 @@
     }
     
     emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
-                 "Use <a href=\"%@\">Fitness Nut Pro</a> "
+                 "Use <a href=\"%@\">Fitness Nut</a> "
                  "for quick answers to your sports nutrition questions!"
                  "</p></body></html>",
                  kFITNESS_NUT_PRO_AFFILIATE_URL
                  ];
     
     item.text = emailBody;
-    item.title = @"Fitness Nut Pro: BMR & TDEE results";
+    item.title = @"Fitness Nut: BMR & TDEE results";
     
     [SHKMail shareItem:item];
 }

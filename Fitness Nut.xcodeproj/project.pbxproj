@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2096C5613857B4100053571 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2096C5513857B4100053571 /* SystemConfiguration.framework */; };
+		C2096C5813857B4900053571 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2096C5713857B4900053571 /* Security.framework */; };
 		C219AFE8133E2EE0007C7F39 /* ActivityLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219AFCA133E2EE0007C7F39 /* ActivityLevelViewController.xib */; };
 		C219AFEA133E2EE0007C7F39 /* AgePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219AFCB133E2EE0007C7F39 /* AgePickerViewController.xib */; };
 		C219AFEC133E2EE0007C7F39 /* athleteHipsGirth_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219AFCC133E2EE0007C7F39 /* athleteHipsGirth_ViewController.xib */; };
@@ -314,6 +316,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2096C5513857B4100053571 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C2096C5713857B4900053571 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C219AFCA133E2EE0007C7F39 /* ActivityLevelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityLevelViewController.xib; sourceTree = "<group>"; };
 		C219AFCB133E2EE0007C7F39 /* AgePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgePickerViewController.xib; sourceTree = "<group>"; };
 		C219AFCC133E2EE0007C7F39 /* athleteHipsGirth_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = athleteHipsGirth_ViewController.xib; sourceTree = "<group>"; };
@@ -593,6 +597,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2096C5813857B4900053571 /* Security.framework in Frameworks */,
+				C2096C5613857B4100053571 /* SystemConfiguration.framework in Frameworks */,
 				C219B02D133E2F58007C7F39 /* MessageUI.framework in Frameworks */,
 				C219B027133E2F28007C7F39 /* libsqlite3.0.dylib in Frameworks */,
 				C219B025133E2F22007C7F39 /* iAd.framework in Frameworks */,
@@ -675,6 +681,8 @@
 		C266C007133E2DCA00F79EA2 = {
 			isa = PBXGroup;
 			children = (
+				C2096C5713857B4900053571 /* Security.framework */,
+				C2096C5513857B4100053571 /* SystemConfiguration.framework */,
 				C2C07B1713777A4900D622EF /* ShareKit */,
 				C2C07B0A13775E7600D622EF /* MessageUI.framework */,
 				C2C07B0B13775E7600D622EF /* Security.framework */,
