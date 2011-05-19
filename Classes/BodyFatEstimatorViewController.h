@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
-#import <MessageUI/MessageUI.h>
-#import <MessageUI/MFMailComposeViewController.h>
+
 #import "DetailViewController.h"
 
 
-@interface BodyFatEstimatorViewController : DetailViewController <MFMailComposeViewControllerDelegate>
+@interface BodyFatEstimatorViewController : DetailViewController
 {
 }
 

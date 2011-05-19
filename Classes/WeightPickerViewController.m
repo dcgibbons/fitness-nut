@@ -150,8 +150,8 @@
     NSInteger rows = 0;
 
     switch (self.unitsControl.selectedSegmentIndex) {
-        case 0: // lbs
-            rows = 400 - 90; // 90 through 400 lbs
+        case 0: // lb.
+            rows = 400 - 90; // 90 through 400 lb.
             break;
         case 1: // kgs
             rows = 181 - 40; // 40 through 181 kg
@@ -171,7 +171,7 @@
     NSString *title;
 
     switch (self.unitsControl.selectedSegmentIndex) {
-        case 0: // lbs
+        case 0: // lb.
             title = [NSString stringWithFormat:@"%u", row + 90];
             break;
         case 1: // kgs
@@ -190,7 +190,7 @@
     [super done:sender];
     
     switch (self.unitsControl.selectedSegmentIndex) {
-        case 0: { // lbs
+        case 0: { // lb.
             int pounds = [self.pickerView selectedRowInComponent:0] + 90;
             NSNumber *aWeight = [NSNumber numberWithInt:pounds];
             self.data = [[[AthleteWeight alloc] initWithWeight:aWeight 

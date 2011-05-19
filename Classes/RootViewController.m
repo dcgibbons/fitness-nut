@@ -99,7 +99,7 @@
     }
 #endif
     
-    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8&uo=4"];
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
     [[UIApplication sharedApplication] openURL:url];        
 }
 
@@ -240,8 +240,8 @@
 #ifndef PRO_VERSION
     NSNumber *seenUpgradeNotice = [userData objectForKey:@"seenUpgradeNotice"];
     if (!seenUpgradeNotice) {
-        NSString *msg = @"For additional features, such as the ability to e-mail your calculations, "
-        "full-screen iPad support, and no advertisements, check out Fitness Nut Pro!";
+        NSString *msg = @"For additional features, full-screen iPad support, "
+            "and no advertisements, check out Fitness Nut Pro!";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Fitness Nut Pro" 
                                                             message:msg 
                                                            delegate:self 

@@ -13,6 +13,10 @@
 #import "AthleteGender.h"
 #import "AthleteMeasurement.h"
 #import "AthleteDataProtocol.h"
+#import "SHK.h"
+#import "SHKFacebook.h"
+#import "SHKTwitter.h"
+#import "SHKMail.h"
 
 @implementation BodyFatEstimatorViewController
 
@@ -42,9 +46,9 @@
     AthleteMeasurement *hipsGirth = [userData objectForKey:@"athleteHipsGirth"];
     if (gender.gender == Female && !hipsGirth) return nil;
     
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-#endif
+//#endif
 
     double bodyFat;
     if (gender.gender == Male) {
@@ -205,29 +209,10 @@
 }
 
 #pragma mark -
-#pragma mark UI Actions
+#pragma mark Sharing
 
-- (void)emailResults:(id)sender
+- (void)shareViaEmail
 {
-    [super emailResults:sender];
-    
-    if (![MFMailComposeViewController canSendMail]) {
-        NSLog(@"Device cannot send mail.");
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
-                                                        message:@"Your device has not yet been configured to send mail."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK" 
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        [alert release];
-        return;
-    }
-    
-	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-	picker.mailComposeDelegate = self;
-    
-	[picker setSubject:@"Fitness Nut Pro: Body Fat Estimation"];
-    
 	// Fill out the email body text
     AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
@@ -235,68 +220,79 @@
     AthleteMeasurement *neckGirth = [userData objectForKey:@"athleteNeckGirth"];
     AthleteMeasurement *waistGirth = [userData objectForKey:@"athleteWaistGirth"];
     AthleteMeasurement *hipsGirth = [userData objectForKey:@"athleteHipsGirth"];
-
+    
     NSString *bodyFat = [self calculatePredictedBodyFat];
     
-    if (bodyFat) {
-        NSString *emailBody = [NSString stringWithFormat:@"<html>"
-                               "<body>"
-                               "<table>"
-                               "<tbody>"
-                               "<tr>"
-                               "<th>Height</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Weight</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Gender</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Neck Girth</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Waist Girth</th><td>%@</td>"
-                               "</tr>",
-                               weight, 
-                               height,
-                               gender,
-                               neckGirth,
-                               waistGirth
-                               ];
-
-        if (gender.gender == Female) {
-            emailBody = [emailBody stringByAppendingFormat:@"<tr>"
-                         "<th>Hips Girth</th><td>%@</td>"
-                         "</tr>",
-                         hipsGirth
-                         ];
-        }
-
+    NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                           "<body>"
+                           "<table>"
+                           "<tbody>"
+                           "<tr>"
+                           "<th>Height</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Weight</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Gender</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Neck Girth</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Waist Girth</th><td>%@</td>"
+                           "</tr>",
+                           weight, 
+                           height,
+                           gender,
+                           neckGirth,
+                           waistGirth
+                           ];
+    
+    if (gender.gender == Female) {
         emailBody = [emailBody stringByAppendingFormat:@"<tr>"
-                     "<th>Estimated Body Fat</th><td>%@</td>",
-                     bodyFat
+                     "<th>Hips Girth</th><td>%@</td>"
+                     "</tr>",
+                     hipsGirth
                      ];
-        
-        emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
-                     "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
-                     "for quick answers to your sports nutrition questions!"
-                     "</p></body></html>"
-                     ];
-        
-        [picker setMessageBody:emailBody isHTML:YES];
-        
-        [self presentModalViewController:picker animated:YES];
     }
     
-    [picker release];    
+    emailBody = [emailBody stringByAppendingFormat:@"<tr>"
+                 "<th>Estimated Body Fat</th><td>%@</td>",
+                 bodyFat
+                 ];
+    
+    emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
+                 "Use <a href=\"%@\">Fitness Nut</a> "
+                 "for quick answers to your sports nutrition questions!"
+                 "</p></body></html>",
+                 kFITNESS_NUT_PRO_AFFILIATE_URL
+                 ];
+    
+    SHKItem *item = [SHKItem text:emailBody];
+    item.title = @"Fitness Nut: Daily Macronutrient Needs";
+    
+    [SHKMail shareItem:item];
 }
 
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
+- (void)shareViaFacebook
+{
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    NSString *bodyFat = [self calculatePredictedBodyFat];
+    
+    NSString *text = [NSString stringWithFormat:@"I just estimated my body fat as %@", 
+                      bodyFat];
+    text = [text stringByAppendingString:@" with Fitness Nut!"];
+    SHKItem *item = [SHKItem URL:url title:text];
+    [SHKFacebook shareItem:item];
+}
 
-// Dismisses the email composition interface when users tap Cancel or Send.
-- (void)mailComposeController:(MFMailComposeViewController*)controller
-          didFinishWithResult:(MFMailComposeResult)result 
-                        error:(NSError*)error 
-{	
-	[self dismissModalViewControllerAnimated:YES];
+- (void)shareViaTwitter
+{
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    NSString *bodyFat = [self calculatePredictedBodyFat];
+
+    NSString *text = [NSString stringWithFormat:@"I just estimated my body fat as %@", 
+                      bodyFat];
+    text = [text stringByAppendingString:@" with #FitnessNut"];
+    SHKItem *item = [SHKItem URL:url title:text];
+    [SHKTwitter shareItem:item];
 }
 
 @end

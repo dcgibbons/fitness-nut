@@ -11,6 +11,10 @@
 #import "AthleteWeight.h"
 #import "Conversions.h"
 #import "AthleteDataProtocol.h"
+#import "SHK.h"
+#import "SHKFacebook.h"
+#import "SHKTwitter.h"
+#import "SHKMail.h"
 
 @implementation WeightPredictorViewController
 
@@ -25,9 +29,9 @@
     AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
     if (!desiredBodyFat) return nil;
     
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     [self.navigationController setToolbarHidden:NO animated:YES];
-#endif
+//#endif
 
     double leanMass = [[weight weightAsKilograms] doubleValue] * (1.0 - [bodyFat.bodyFat doubleValue] / 100.0);
     double predictedMass = leanMass / (1.0 - [desiredBodyFat.bodyFat doubleValue] / 100.0);
@@ -154,68 +158,6 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (void)emailResults:(id)sender
-{
-    [super emailResults:sender];
-    
-    if (![MFMailComposeViewController canSendMail]) {
-        NSLog(@"Device cannot send mail.");
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
-                                                        message:@"Your device has not yet been configured to send mail."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK" 
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        [alert release];
-        return;
-    }
-
-	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-	picker.mailComposeDelegate = self;
-    
-	[picker setSubject:@"Fitness Nut Pro: Weight Predictor"];
-    
-	// Fill out the email body text
-    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
-    AthleteBodyFat *bodyFat = [userData objectForKey:@"athleteBodyFat"];
-    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
-
-    NSString *predictedMass = [self calculatePredictedWeight];
-    
-    if (predictedMass) {
-        NSString *emailBody = [NSString stringWithFormat:@"<html>"
-                               "<body>"
-                               "<table>"
-                               "<tbody>"
-                               "<tr>"
-                               "<th>Current Weight</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Current Body Fat</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Desired Body Fat</th><td>%@</td>"
-                               "</tr><tr>"
-                               "<th>Predicted Weight</th><td>%@</td>"
-                               "</tr>",
-                               weight,
-                               bodyFat,
-                               desiredBodyFat,
-                               predictedMass
-                               ];
-
-        emailBody = [emailBody stringByAppendingString:@"</tbody></table><p>"
-                     "Use <a href=\"http://itunes.apple.com/us/app/fitness-nut-pro/id424734288?mt=8\">Fitness Nut Pro</a> "
-                     "for quick answers to your sports nutrition questions!"
-                     "</p></body></html>"
-                     ];
-        
-        [picker setMessageBody:emailBody isHTML:YES];
-        
-        [self presentModalViewController:picker animated:YES];
-    }
-    
-    [picker release];    
-}
-
 - (IBAction)info:(id)sender
 {
     NSString *nibName = @"WeightPredictorInfoViewController";
@@ -230,17 +172,6 @@
 }
 
 #pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
-
-// Dismisses the email composition interface when users tap Cancel or Send.
-- (void)mailComposeController:(MFMailComposeViewController*)controller
-          didFinishWithResult:(MFMailComposeResult)result 
-                        error:(NSError*)error 
-{	
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-#pragma mark -
 #pragma mark InfoViewControllerDelegate methods
 
 -(void)infoViewControllerDidFinish:(InfoViewController *)controller
@@ -248,6 +179,76 @@
  	[self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark -
+#pragma Sharing
+
+- (void)shareViaEmail
+{
+	// Fill out the email body text
+    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+    AthleteBodyFat *bodyFat = [userData objectForKey:@"athleteBodyFat"];
+    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
+    
+    NSString *predictedMass = [self calculatePredictedWeight];
+    
+    NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                           "<body>"
+                           "<table>"
+                           "<tbody>"
+                           "<tr>"
+                           "<th>Current Weight</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Current Body Fat</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Desired Body Fat</th><td>%@</td>"
+                           "</tr><tr>"
+                           "<th>Predicted Weight</th><td>%@</td>"
+                           "</tr>",
+                           weight,
+                           bodyFat,
+                           desiredBodyFat,
+                           predictedMass
+                           ];
+    
+    emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
+                 "Use <a href=\"%@\">Fitness Nut</a> "
+                 "for quick answers to your sports nutrition questions!"
+                 "</p></body></html>",
+                 kFITNESS_NUT_PRO_AFFILIATE_URL
+                 ];
+    
+    SHKItem *item = [SHKItem text:emailBody];
+    item.title = @"Fitness Nut: Daily Macronutrient Needs";
+    
+    [SHKMail shareItem:item];
+}
+- (void)shareViaFacebook
+{
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    AthleteBodyFat *bodyFat = [userData objectForKey:@"athleteBodyFat"];
+    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
+    NSString *predictedMass = [self calculatePredictedWeight];
+    
+    NSString *text = [NSString stringWithFormat:@"I just predicted my weight as %@ if I change my body fat to %@ from %@", 
+                      predictedMass, desiredBodyFat, bodyFat];
+    text = [text stringByAppendingString:@" with Fitness Nut!"];
+    SHKItem *item = [SHKItem URL:url title:text];
+    [SHKFacebook shareItem:item];
+}
+
+- (void)shareViaTwitter
+{
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    AthleteBodyFat *bodyFat = [userData objectForKey:@"athleteBodyFat"];
+    AthleteBodyFat *desiredBodyFat = [userData objectForKey:@"desiredBodyFat"];
+    NSString *predictedMass = [self calculatePredictedWeight];
+    
+    NSString *text = [NSString stringWithFormat:@"I just predicted my weight as %@ if I change my body fat to %@ from %@", 
+                      predictedMass, desiredBodyFat, bodyFat];
+    text = [text stringByAppendingString:@" with #FitnessNut"];
+    SHKItem *item = [SHKItem URL:url title:text];
+    [SHKTwitter shareItem:item];
+}
 
 @end
 

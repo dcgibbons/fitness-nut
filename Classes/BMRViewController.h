@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
-#import <MessageUI/MessageUI.h>
-#import <MessageUI/MFMailComposeViewController.h>
 
 #import "AgePickerViewController.h"
 #import "AthleteDataDelegate.h"
@@ -18,12 +16,10 @@
 #import "InfoViewController.h"
 
 #ifdef PRO_VERSION
-@interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate,
-                                                     CPPlotDataSource,
+@interface BMRViewController : DetailViewController <CPPlotDataSource,
                                                      InfoViewControllerDelegate>
 #else
-@interface BMRViewController : DetailViewController <MFMailComposeViewControllerDelegate,
-                                                     InfoViewControllerDelegate>
+@interface BMRViewController : DetailViewController <InfoViewControllerDelegate>
 #endif
 {
 }

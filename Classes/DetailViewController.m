@@ -84,16 +84,17 @@
     }
 #endif
 
-#ifdef PRO_VERSION
+//#ifdef PRO_VERSION
     self.navigationController.toolbarHidden = YES;
     self.navigationController.toolbar.barStyle = UIBarStyleBlack;
     
-    UIBarButtonItem *composeItem = [[UIBarButtonItem alloc] 
-                                    initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                    target:self 
-                                    action:@selector(emailResults:)];
-    self.toolbarItems = [NSArray arrayWithObjects:composeItem, nil];
-#endif
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                               target:self
+                                                                               action:@selector(share:)];
+    self.toolbarItems = [NSArray arrayWithObjects:shareItem, nil];
+    [shareItem release];
+    
+//#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -384,19 +385,105 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (void)emailResults:(id)sender
+- (void)share:(id)sender
 {
 #ifndef DEBUG
     NSError *error;
     if (![[GANTracker sharedTracker] trackEvent:@"calculate"
-                                         action:@"email_results"
+                                         action:@"share"
                                           label:NSStringFromClass([self class])
                                           value:-1
                                       withError:&error]) {
-        NSLog(@"Unable to track calculate event for email_results, %@",
+        NSLog(@"Unable to track calculate event for share, %@",
               error);
     }
 #endif
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Email", 
+                                  @"Facebook", 
+                                  @"Twitter", 
+                                  nil];
+    
+    [actionSheet showFromToolbar:self.navigationController.toolbar];
+    [actionSheet release];
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0: { // email
+#ifndef DEBUG
+            NSError *error;
+            if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                                 action:@"share_via_email"
+                                                  label:NSStringFromClass([self class])
+                                                  value:-1
+                                              withError:&error]) {
+                NSLog(@"Unable to track calculate event for share, %@",
+                      error);
+            }
+#endif
+            [self shareViaEmail];
+            break;
+        }
+        case 1: { // facebook
+#ifndef DEBUG
+            NSError *error;
+            if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                                 action:@"share_via_facebook"
+                                                  label:NSStringFromClass([self class])
+                                                  value:-1
+                                              withError:&error]) {
+                NSLog(@"Unable to track calculate event for share, %@",
+                      error);
+            }
+#endif
+            [self shareViaFacebook];
+            break;
+        }
+        case 2: { // twitter
+#ifndef DEBUG
+            NSError *error;
+            if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+                                                 action:@"share_via_twitter"
+                                                  label:NSStringFromClass([self class])
+                                                  value:-1
+                                              withError:&error]) {
+                NSLog(@"Unable to track calculate event for share, %@",
+                      error);
+            }
+#endif
+            [self shareViaTwitter];
+            break;
+        }
+        default: // cancel
+            break;
+    }
+}
+
+#pragma mark -
+#pragma mark Sharing
+
+- (void)shareViaEmail 
+{
+    // NO-OP
+}
+
+- (void)shareViaFacebook
+{
+    // NO-OP
+}
+
+- (void)shareViaTwitter
+{    
+    // NO-OP
 }
 
 @end
