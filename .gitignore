@@ -1,2 +1,7 @@
 Fitness_Nut__Prefix.pch
+xcuserdata/
+*.pbxuser
+*.perspective
+*.perspectiveV3
+*.xcworkspace/
 build/
