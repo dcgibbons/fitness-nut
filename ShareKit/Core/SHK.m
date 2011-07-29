@@ -122,7 +122,16 @@ BOOL SHKinit;
 	if (currentView != nil)
 	{
 		self.pendingView = vc;
-		[[currentView parentViewController] dismissModalViewControllerAnimated:YES];
+        
+        // DCG - changed to work with iOS 5
+        // [[currentView parentViewController] dismissModalViewControllerAnimated:YES];
+        if ([currentView respondsToSelector:@selector(presentingViewController)]) {
+            [[currentView presentingViewController] dismissViewControllerAnimated:YES 
+                                                                       completion:^{ /*now you can clean up too */ }];
+        } else { 
+            [[currentView parentViewController] dismissModalViewControllerAnimated:YES];
+        }
+        
 		return;
 	}
 		
@@ -173,15 +182,23 @@ BOOL SHKinit;
 	
 	if (currentView != nil)
 	{
+        // DCG - changed to work with iOS 5
 		// Dismiss the modal view
-		if ([currentView parentViewController] != nil)
+        UIViewController *owner = nil;
+        
+        if ([currentView respondsToSelector:@selector(presentingViewController)]) {
+            owner = [currentView presentingViewController];
+        } else {
+            owner = [currentView parentViewController];
+        }
+        
+		if (owner != nil)
 		{
 			self.isDismissingView = YES;
-			[[currentView parentViewController] dismissModalViewControllerAnimated:animated];
-		}
-		
-		else
+            [owner dismissModalViewControllerAnimated:YES];
+		} else {
 			self.currentView = nil;
+        }
 	}
 }
 

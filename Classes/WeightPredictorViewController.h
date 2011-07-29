@@ -17,7 +17,9 @@
 {
 }
 
+- (NSNumber *)calculatePredictedMass;
 - (NSString *)calculatePredictedWeight;
+- (void)calculateWeightChangeGoodies;
 - (IBAction)info:(id)sender;
 
 @end

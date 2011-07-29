@@ -43,6 +43,8 @@
 		C219B027133E2F28007C7F39 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B026133E2F28007C7F39 /* libsqlite3.0.dylib */; };
 		C219B02A133E2F3E007C7F39 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */; };
 		C219B02D133E2F58007C7F39 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B02C133E2F58007C7F39 /* MessageUI.framework */; };
+		C229909B138586EF00E214F2 /* WeightPredictionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C229909A138586EF00E214F2 /* WeightPredictionDetailViewController.m */; };
+		C229909D13858A1D00E214F2 /* WeightPredictionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C229909C13858A1D00E214F2 /* WeightPredictionDetailViewController.xib */; };
 		C266C017133E2DCB00F79EA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C016133E2DCB00F79EA2 /* UIKit.framework */; };
 		C266C019133E2DCB00F79EA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C018133E2DCB00F79EA2 /* Foundation.framework */; };
 		C266C01B133E2DCB00F79EA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C01A133E2DCB00F79EA2 /* CoreGraphics.framework */; };
@@ -354,6 +356,9 @@
 		C219B028133E2F3E007C7F39 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
 		C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		C219B02C133E2F58007C7F39 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C2299099138586EF00E214F2 /* WeightPredictionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPredictionDetailViewController.h; sourceTree = "<group>"; };
+		C229909A138586EF00E214F2 /* WeightPredictionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPredictionDetailViewController.m; sourceTree = "<group>"; };
+		C229909C13858A1D00E214F2 /* WeightPredictionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightPredictionDetailViewController.xib; sourceTree = "<group>"; };
 		C24DB5CD133E31C80021DFA0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C24DB5CF133E31D10021DFA0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C24DB5D1133E31D70021DFA0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -830,6 +835,8 @@
 				C2BED935133E2E370053AD16 /* WeightPickerViewController.m */,
 				C2BED936133E2E370053AD16 /* WeightPredictorViewController.h */,
 				C2BED937133E2E370053AD16 /* WeightPredictorViewController.m */,
+				C2299099138586EF00E214F2 /* WeightPredictionDetailViewController.h */,
+				C229909A138586EF00E214F2 /* WeightPredictionDetailViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1206,6 +1213,7 @@
 		C2ED627A133E2FB500FE9C55 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C229909C13858A1D00E214F2 /* WeightPredictionDetailViewController.xib */,
 				C2ED627B133E2FB500FE9C55 /* Fitness Nut Pro-Info.plist */,
 				C2ED627C133E2FB500FE9C55 /* InfoPlist.strings */,
 			);
@@ -1275,6 +1283,9 @@
 /* Begin PBXProject section */
 		C266C009133E2DCA00F79EA2 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = C266C00C133E2DCA00F79EA2 /* Build configuration list for PBXProject "Fitness Nut" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -1400,6 +1411,7 @@
 				C2C07BE413777A4A00D622EF /* SHKSharers.plist in Resources */,
 				C2C07BEE13777A4A00D622EF /* Localizable.strings in Resources */,
 				C2C07BFC13777A4A00D622EF /* FBConnect.bundle in Resources */,
+				C229909D13858A1D00E214F2 /* WeightPredictionDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1606,6 +1618,7 @@
 				C2C07C2E13777A4B00D622EF /* SHKOAuthView.m in Sources */,
 				C2C07C3013777A4B00D622EF /* SHKShareMenu.m in Sources */,
 				C2C07C3213777A4B00D622EF /* SHKViewControllerWrapper.m in Sources */,
+				C229909B138586EF00E214F2 /* WeightPredictionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
