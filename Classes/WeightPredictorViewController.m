@@ -22,6 +22,8 @@
 #import "Macronutrients.h"
 #import "FitnessCalculations.h"
 
+#import "GANTracker.h"
+
 @implementation WeightPredictorViewController
 
 - (NSNumber *)calculatePredictedMass
