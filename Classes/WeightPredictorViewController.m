@@ -116,8 +116,7 @@
                                                                                   andAthleteType:type];
     
     double calories = macronutrients.calories;
-    NSLog(@"Eat %f calories a day instead of %f to get there", (calories + calorieDiff), calories
-          );
+    NSLog(@"Eat %f calories a day instead of %f to get there", (calories + calorieDiff), calories);
 }
 
 #pragma mark -
@@ -162,8 +161,10 @@
                             [NSDictionary dictionaryWithObjectsAndKeys:
                              @"predicted weight", @"title",
                              @"calculatePredictedWeight", @"selector",
+#if 0
 #ifdef PRO_VERSION
                              @"WeightPredictionDetailViewController", @"detailDisclosureView",
+#endif
 #endif
                              nil
                              ],
@@ -288,9 +289,8 @@
     
     WeightPredictionDetailViewController *vc = [[WeightPredictionDetailViewController alloc] initWithNibName:nibName 
                                                                                                       bundle:nil];
-    vc.userData = userData;
-    
     [self calculateWeightChangeGoodies];
+    vc.userData = userData;
     
     [self.navigationController pushViewController:vc animated:YES];
     [vc release];

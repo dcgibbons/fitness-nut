@@ -12,7 +12,6 @@
 @interface WeightPredictionDetailViewController : UIViewController 
 {
     NSMutableDictionary *userData;
-    
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;

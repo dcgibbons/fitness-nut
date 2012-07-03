@@ -23,6 +23,7 @@
 
 - (void)dealloc
 {
+    [userData release];
     [super dealloc];
 }
 
