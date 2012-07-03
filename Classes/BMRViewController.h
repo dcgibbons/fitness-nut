@@ -16,9 +16,10 @@
 #import "DetailViewController.h"
 #import "SecondaryDetailViewController.h"
 #import "InfoViewController.h"
-#import "CorePlot-CocoaTouch.h"
 
 #ifdef PRO_VERSION
+#import "CorePlot-CocoaTouch.h"
+
 @interface BMRViewController : DetailViewController <CPTPlotDataSource,
                                                      InfoViewControllerDelegate,
                                                      MFMailComposeViewControllerDelegate>

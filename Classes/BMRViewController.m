@@ -290,7 +290,7 @@
                 num = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:15];
             }
             break;
-        case CPTBarPlotFieldBarBase:
+        case CPTBarPlotFieldBarTip:
             //        case CPTBarPlotFieldBarLength:
             if ([plot.identifier isEqual:@"bmr"]) {
                 num = (NSDecimalNumber *)[NSDecimalNumber numberWithUnsignedInt:athleteBMR];
@@ -326,10 +326,11 @@
                                  raiseOnUnderflow:NO 
                                  raiseOnDivideByZero:NO];
     n = [n decimalNumberByRoundingAccordingToBehavior:h];
+    NSLog(@"n=%@", n);
     
     // Create barChart from theme
-    CPTGraph *barChart;
-    barChart = [[CPTGraph alloc] initWithFrame:CGRectZero];
+    CPTXYGraph *barChart;
+    barChart = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
 	CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
     [barChart applyTheme:theme];
     
@@ -357,9 +358,9 @@
     barChart.titleDisplacement = CGPointMake(0.0f, -20.0f);
     barChart.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
 	
-	// Add plot space for horizontal bar charts
+	// Add plot space for horizontal bar charts - 850 is minimum kcalories per day to graph
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)barChart.defaultPlotSpace;
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(850) 
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(850)
                                                    length:CPTDecimalFromInt([n unsignedIntValue] - 850)];
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) 
                                                    length:CPTDecimalFromFloat(16.0f)];
@@ -378,7 +379,10 @@
 	// Define some custom labels for the data elements
 	x.labelRotation = M_PI/4;
 	x.labelingPolicy = CPTAxisLabelingPolicyNone;
-	NSArray *customTickLocations = [NSArray arrayWithObjects:[NSDecimalNumber numberWithInt:1], [NSDecimalNumber numberWithInt:5], [NSDecimalNumber numberWithInt:10], [NSDecimalNumber numberWithInt:15], nil];
+	NSArray *customTickLocations = [NSArray arrayWithObjects:[NSDecimalNumber numberWithInt:1], 
+                                    [NSDecimalNumber numberWithInt:5], 
+                                    [NSDecimalNumber numberWithInt:10], 
+                                    [NSDecimalNumber numberWithInt:15], nil];
 	NSArray *xAxisLabels = [NSArray arrayWithObjects:@"BMR", @"TDEE", @"-1 lb./week", @"-2 lb./week", nil];
 	NSUInteger labelLocation = 0;
 	NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:[xAxisLabels count]];
@@ -409,16 +413,16 @@
     barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.dataSource = self;
     barPlot.identifier = @"bmr";
-    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
+    barPlot.barWidth = CPTDecimalFromFloat(0.30f);
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
     // Second bar plot
     barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor greenColor] horizontalBars:NO];
-    barPlot.dataSource = self;
+    barPlot.dataSource = self; 
     barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.cornerRadius = 2.0f;
     barPlot.identifier = @"tdee";
-    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
+    barPlot.barWidth = CPTDecimalFromFloat(0.30f);
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
     barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor blueColor] horizontalBars:NO];
@@ -426,7 +430,7 @@
     barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.cornerRadius = 2.0f;
     barPlot.identifier = @"minus1";
-    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
+    barPlot.barWidth = CPTDecimalFromFloat(0.30f);
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
     barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor redColor] horizontalBars:NO];
@@ -434,7 +438,7 @@
     barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.cornerRadius = 2.0f;
     barPlot.identifier = @"minus2";
-    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
+    barPlot.barWidth = CPTDecimalFromFloat(0.30f);
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
     return barChart;

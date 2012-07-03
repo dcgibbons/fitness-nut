@@ -59,7 +59,7 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     
-    [picker setToRecipients:[NSArray arrayWithObject:@"fitnessnut-support@nuclearbunny.org"]];
+    [picker setToRecipients:[NSArray arrayWithObject:@"support@nuclearbunny.com"]];
      
 #ifdef PRO_VERSION
 	[picker setSubject:@"Fitness Nut Pro: User Feedback"];
