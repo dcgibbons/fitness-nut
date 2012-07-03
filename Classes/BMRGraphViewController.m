@@ -3,7 +3,7 @@
 //  Fitness Nut
 //
 //  Created by Chad Gibbons on 03/13/2011.
-//  Copyright 2011 The Nuclear Bunny. All rights reserved.
+//  Copyright 2011-2012 Nuclear Bunny Studios, LLC. All rights reserved.
 //
 
 #import "BMRGraphViewController.h"

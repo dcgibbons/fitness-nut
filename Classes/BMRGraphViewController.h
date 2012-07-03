@@ -3,7 +3,7 @@
 //  Fitness Nut
 //
 //  Created by Chad Gibbons on 03/13/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011-2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
