@@ -41,7 +41,7 @@
 
 - (void)share:(id)sender;
 - (void)shareViaEmail;
-- (void)shareViaFacebook;
+//- (void)shareViaFacebook;
 - (void)shareViaTwitter;
 
 @end

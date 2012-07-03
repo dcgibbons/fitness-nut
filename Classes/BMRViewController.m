@@ -6,6 +6,9 @@
 //  Copyright 2011 The Nuclear Bunny. All rights reserved.
 //
 
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
+
 #import "BMRViewController.h"
 #import "AthleteActivityLevel.h"
 #import "AthleteAge.h"
@@ -16,10 +19,6 @@
 #import "AthleteDataProtocol.h"
 #import "SecondaryDetailViewController.h"
 #import "GANTracker.h"
-#import "SHK.h"
-#import "SHKMail.h"
-#import "SHKFacebook.h"
-#import "SHKTwitter.h"
 
 #ifdef PRO_VERSION
 #import "BMRGraphViewController.h"
@@ -262,11 +261,11 @@
 #pragma mark -
 #pragma mark Plot Data Source Methods
 
--(NSUInteger)numberOfRecordsForPlot:(CPPlot *)plot {
+-(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
     return 1;
 }
 
--(NSNumber *)numberForPlot:(CPPlot *)plot 
+-(NSNumber *)numberForPlot:(CPTPlot *)plot 
                      field:(NSUInteger)fieldEnum 
                recordIndex:(NSUInteger)index 
 {
@@ -280,7 +279,7 @@
     NSDecimalNumber *num = nil;
     
     switch (fieldEnum) {
-        case CPBarPlotFieldBarLocation:
+        case CPTBarPlotFieldBarLocation:
             if ([plot.identifier isEqual:@"bmr"]) {
                 num = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:1];
             } else if ([plot.identifier isEqual:@"tdee"]) {
@@ -291,7 +290,8 @@
                 num = (NSDecimalNumber *)[NSDecimalNumber numberWithInt:15];
             }
             break;
-        case CPBarPlotFieldBarLength:
+        case CPTBarPlotFieldBarBase:
+            //        case CPTBarPlotFieldBarLength:
             if ([plot.identifier isEqual:@"bmr"]) {
                 num = (NSDecimalNumber *)[NSDecimalNumber numberWithUnsignedInt:athleteBMR];
             } else if ([plot.identifier isEqual:@"tdee"]) {
@@ -307,12 +307,12 @@
     return num;
 }
 
--(CPFill *) barFillForBarPlot:(CPBarPlot *)barPlot recordIndex:(NSNumber *)index; 
+-(CPTFill *) barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSNumber *)index; 
 {
 	return nil;
 }
 
-- (CPXYGraph *)createGraph
+- (CPTGraph *)createGraph
 {
     NSUInteger athleteTDEE = [[userData objectForKey:@"athleteTDEE"] 
                               unsignedIntValue];
@@ -328,9 +328,9 @@
     n = [n decimalNumberByRoundingAccordingToBehavior:h];
     
     // Create barChart from theme
-    CPXYGraph *barChart;
-    barChart = [[CPXYGraph alloc] initWithFrame:CGRectZero];
-	CPTheme *theme = [CPTheme themeNamed:kCPDarkGradientTheme];
+    CPTGraph *barChart;
+    barChart = [[CPTGraph alloc] initWithFrame:CGRectZero];
+	CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
     [barChart applyTheme:theme];
     
     // Border
@@ -350,40 +350,40 @@
     
     // Graph title
     barChart.title = @"";
-    CPTextStyle *textStyle = [CPTextStyle textStyle];
-    textStyle.color = [CPColor grayColor];
+    CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
+    textStyle.color = [CPTColor grayColor];
     textStyle.fontSize = 16.0f;
     barChart.titleTextStyle = textStyle;
     barChart.titleDisplacement = CGPointMake(0.0f, -20.0f);
-    barChart.titlePlotAreaFrameAnchor = CPRectAnchorTop;
+    barChart.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
 	
 	// Add plot space for horizontal bar charts
-    CPXYPlotSpace *plotSpace = (CPXYPlotSpace *)barChart.defaultPlotSpace;
-    plotSpace.yRange = [CPPlotRange plotRangeWithLocation:CPDecimalFromInt(850) 
-                                                   length:CPDecimalFromInt([n unsignedIntValue] - 850)];
-    plotSpace.xRange = [CPPlotRange plotRangeWithLocation:CPDecimalFromFloat(0.0f) 
-                                                   length:CPDecimalFromFloat(16.0f)];
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)barChart.defaultPlotSpace;
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(850) 
+                                                   length:CPTDecimalFromInt([n unsignedIntValue] - 850)];
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) 
+                                                   length:CPTDecimalFromFloat(16.0f)];
     
-	CPXYAxisSet *axisSet = (CPXYAxisSet *)barChart.axisSet;
-    CPXYAxis *x = axisSet.xAxis;
+	CPTXYAxisSet *axisSet = (CPTXYAxisSet *)barChart.axisSet;
+    CPTXYAxis *x = axisSet.xAxis;
     x.axisLineStyle = nil;
     x.majorTickLineStyle = nil;
     x.minorTickLineStyle = nil;
-    x.majorIntervalLength = CPDecimalFromString(@"5");
-    x.orthogonalCoordinateDecimal = CPDecimalFromString(@"850"); // Y position of the label?
+    x.majorIntervalLength = CPTDecimalFromString(@"5");
+    x.orthogonalCoordinateDecimal = CPTDecimalFromString(@"850"); // Y position of the label?
 	x.title = @"";
-    x.titleLocation = CPDecimalFromFloat(7.5f);
+    x.titleLocation = CPTDecimalFromFloat(7.5f);
 	x.titleOffset = 55.0f;
 	
 	// Define some custom labels for the data elements
 	x.labelRotation = M_PI/4;
-	x.labelingPolicy = CPAxisLabelingPolicyNone;
+	x.labelingPolicy = CPTAxisLabelingPolicyNone;
 	NSArray *customTickLocations = [NSArray arrayWithObjects:[NSDecimalNumber numberWithInt:1], [NSDecimalNumber numberWithInt:5], [NSDecimalNumber numberWithInt:10], [NSDecimalNumber numberWithInt:15], nil];
 	NSArray *xAxisLabels = [NSArray arrayWithObjects:@"BMR", @"TDEE", @"-1 lb./week", @"-2 lb./week", nil];
 	NSUInteger labelLocation = 0;
 	NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:[xAxisLabels count]];
 	for (NSNumber *tickLocation in customTickLocations) {
-		CPAxisLabel *newLabel = [[CPAxisLabel alloc] initWithText:[xAxisLabels objectAtIndex:labelLocation++] 
+		CPTAxisLabel *newLabel = [[CPTAxisLabel alloc] initWithText:[xAxisLabels objectAtIndex:labelLocation++] 
                                                         textStyle:x.labelTextStyle];
 		newLabel.tickLocation = [tickLocation decimalValue];
 		newLabel.offset = x.labelOffset + x.majorTickLength;
@@ -393,48 +393,48 @@
 	}
 	x.axisLabels =  [NSSet setWithArray:customLabels];
 	
-	CPXYAxis *y = axisSet.yAxis;
+	CPTXYAxis *y = axisSet.yAxis;
     y.axisLineStyle = nil;
     
     y.majorTickLineStyle = nil;
     y.minorTickLineStyle = nil;
-    y.majorIntervalLength = CPDecimalFromString(@"250");
-    y.orthogonalCoordinateDecimal = CPDecimalFromString(@"0");
+    y.majorIntervalLength = CPTDecimalFromString(@"250");
+    y.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0");
 	y.title = @"average daily calories";
 	y.titleOffset = 50.0f;
-    y.titleLocation = CPDecimalFromInt(([n unsignedIntValue] - 850) / 2 + 850);
+    y.titleLocation = CPTDecimalFromInt(([n unsignedIntValue] - 850) / 2 + 850);
 	
     // First bar plot
-    CPBarPlot *barPlot = [CPBarPlot tubularBarPlotWithColor:[CPColor darkGrayColor] horizontalBars:NO];
-    barPlot.baseValue = CPDecimalFromString(@"0");
+    CPTBarPlot *barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor darkGrayColor] horizontalBars:NO];
+    barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.dataSource = self;
     barPlot.identifier = @"bmr";
-    barPlot.barWidth = 10.0f;
+    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
     // Second bar plot
-    barPlot = [CPBarPlot tubularBarPlotWithColor:[CPColor greenColor] horizontalBars:NO];
+    barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor greenColor] horizontalBars:NO];
     barPlot.dataSource = self;
-    barPlot.baseValue = CPDecimalFromString(@"0");
+    barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.cornerRadius = 2.0f;
     barPlot.identifier = @"tdee";
-    barPlot.barWidth = 10.0f;
+    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
-    barPlot = [CPBarPlot tubularBarPlotWithColor:[CPColor blueColor] horizontalBars:NO];
+    barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor blueColor] horizontalBars:NO];
     barPlot.dataSource = self;
-    barPlot.baseValue = CPDecimalFromString(@"0");
+    barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.cornerRadius = 2.0f;
     barPlot.identifier = @"minus1";
-    barPlot.barWidth = 10.0f;
+    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
-    barPlot = [CPBarPlot tubularBarPlotWithColor:[CPColor redColor] horizontalBars:NO];
+    barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor redColor] horizontalBars:NO];
     barPlot.dataSource = self;
-    barPlot.baseValue = CPDecimalFromString(@"0");
+    barPlot.baseValue = CPTDecimalFromString(@"0");
     barPlot.cornerRadius = 2.0f;
     barPlot.identifier = @"minus2";
-    barPlot.barWidth = 10.0f;
+    barPlot.barWidth = [[[[NSDecimalNumber alloc] initWithFloat:10.0f] autorelease] decimalValue];
     [barChart addPlot:barPlot toPlotSpace:plotSpace];
     
     return barChart;
@@ -496,6 +496,26 @@
 
 - (void)shareViaEmail
 {
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Device cannot send mail.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
+                                                        message:@"Your device has not yet been configured to send mail."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] 
+                                           init];
+    NSLog(@"MFMailComposeViewController=%@", picker);
+	picker.mailComposeDelegate = self;
+    
+	[picker setSubject:@"Fitness Nut: BMR & TDEE results"];
+    
+	// Fill out the email body text
     AthleteAge *age = [userData objectForKey:@"athleteAge"];
     AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
@@ -505,27 +525,25 @@
     AthleteActivityLevel *activityLevel = [userData objectForKey:@"athleteActivityLevel"];
     NSString *tdee = [self calculateTDEE];
     
-    // Fill out the email body text
-    NSString *emailBody = [NSString stringWithFormat:
-                           @"<html>"
-                           "<body>"
-                           "<table>"
-                           "<tbody>"
-                           "<tr>"
-                           "<th>Age</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Height</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Weight</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Gender</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>BMR</th><td>%@</td>"
-                           "</tr>",
-                           age, height, weight, gender, bmr
-                           ];
-    
-    SHKItem *item = [SHKItem text:nil];
+    NSString *emailBody = 
+    [NSString stringWithFormat:
+     @"<html>"
+     "<body>"
+     "<table>"
+     "<tbody>"
+     "<tr>"
+     "<th>Age</th><td>%@</td>"
+     "</tr><tr>"
+     "<th>Height</th><td>%@</td>"
+     "</tr><tr>"
+     "<th>Weight</th><td>%@</td>"
+     "</tr><tr>"
+     "<th>Gender</th><td>%@</td>"
+     "</tr><tr>"
+     "<th>BMR</th><td>%@</td>"
+     "</tr>",
+     age, height, weight, gender, bmr
+     ];
     
     if (tdee) {
         emailBody = [emailBody stringByAppendingFormat:
@@ -536,8 +554,9 @@
                      "</tr>",
                      activityLevel, tdee
                      ];
+        
 #ifdef PRO_VERSION
-        CPXYGraph *graph = [self createGraph];
+        CPTGraph *graph = [self createGraph];
         CGSize size = CGSizeMake(320, 480);
         UIGraphicsBeginImageContext(size);
         
@@ -547,7 +566,10 @@
         graph.frame = CGRectMake(0, 0, 320, 480);
         [graph layoutAndRenderInContext:context];
         
-        item.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        NSData *pngData = UIImagePNGRepresentation(image);
+        [picker addAttachmentData:pngData mimeType:@"image/png" 
+                         fileName:@"calories.png"];
         
         UIGraphicsEndImageContext();
         [graph release];
@@ -555,50 +577,93 @@
     }
     
     emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
-                 "Use <a href=\"%@\">Fitness Nut</a> "
+                 "Use <a href=\"%@\">Fitness Nut Pro</a> "
                  "for quick answers to your sports nutrition questions!"
                  "</p></body></html>",
                  kFITNESS_NUT_PRO_AFFILIATE_URL
                  ];
     
-    item.text = emailBody;
-    item.title = @"Fitness Nut: BMR & TDEE results";
+	[picker setMessageBody:emailBody isHTML:YES];
     
-    [SHKMail shareItem:item];
+	[self presentModalViewController:picker animated:YES];
+    [picker release];    
 }
 
 - (void)shareViaFacebook
 {
-    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
-    
-    NSString *bmr = [self calculateBMR];
-    NSString *tdee = [self calculateTDEE];
-    
-    NSString *text = [NSString stringWithFormat:@"I just calculated my BMR as %@", bmr];
-    if (tdee) {
-        text = [text stringByAppendingFormat:@" & my TDEE as %@", tdee];
-    }
-    text = [text stringByAppendingString:@" with Fitness Nut!"];
-    SHKItem *item = [SHKItem URL:url title:text];
-    [SHKFacebook shareItem:item];
-    
+//    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+//    
+//    NSString *bmr = [self calculateBMR];
+//    NSString *tdee = [self calculateTDEE];
+//    
+//    NSString *text = [NSString stringWithFormat:@"I just calculated my BMR as %@", bmr];
+//    if (tdee) {
+//        text = [text stringByAppendingFormat:@" & my TDEE as %@", tdee];
+//    }
+//    text = [text stringByAppendingString:@" with Fitness Nut!"];
+//    SHKItem *item = [SHKItem URL:url title:text];
+//    [SHKFacebook shareItem:item];
+//    
 }
 
 - (void)shareViaTwitter
 {
-    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    // Set up the built-in twitter composition view controller.
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
     
+    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+       
     NSString *bmr = [self calculateBMR];
     NSString *tdee = [self calculateTDEE];
-    
+       
     NSString *text = [NSString stringWithFormat:@"I just calculated my BMR as %@", bmr];
     if (tdee) {
         text = [text stringByAppendingFormat:@" & my TDEE as %@", tdee];
     }
     text = [text stringByAppendingString:@" with #FitnessNut"];
-    SHKItem *item = [SHKItem URL:url title:text];
-    [SHKTwitter shareItem:item];
+    
+    // Set the initial tweet text. See the framework for additional properties that can be set.
+    [tweetViewController setInitialText:text];
+    [tweetViewController addURL:url];
+    
+    // Create the completion handler block.
+    [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+        NSString *output;
+        
+        switch (result) {
+            case TWTweetComposeViewControllerResultCancelled:
+                // The cancel button was tapped.
+                output = @"Tweet cancelled.";
+                break;
+            case TWTweetComposeViewControllerResultDone:
+                // The tweet was sent.
+                output = @"Tweet done.";
+                break;
+            default:
+                break;
+        }
+        
+        NSLog(@"%@", output);
+        
+        // Dismiss the tweet composition view controller.
+        [self dismissModalViewControllerAnimated:YES];
+    }];
+    
+    // Present the tweet composition view controller modally.
+    [self presentModalViewController:tweetViewController animated:YES];
 }
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 @end
 

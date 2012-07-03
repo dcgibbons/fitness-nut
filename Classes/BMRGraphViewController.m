@@ -44,8 +44,8 @@
     [super viewDidLoad];
     
     self.title = @"Calorie Comparison";
-    
-	CPGraphHostingView *hostingView = (CPGraphHostingView *)self.view;
+
+    CPTGraphHostingView *hostingView = (CPTGraphHostingView *)self.view;
     hostingView.hostedGraph = self.graph;
 }
 

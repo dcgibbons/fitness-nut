@@ -8,18 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 #import "AgePickerViewController.h"
 #import "AthleteDataDelegate.h"
 #import "DetailViewController.h"
 #import "SecondaryDetailViewController.h"
 #import "InfoViewController.h"
+#import "CorePlot-CocoaTouch.h"
 
 #ifdef PRO_VERSION
-@interface BMRViewController : DetailViewController <CPPlotDataSource,
-                                                     InfoViewControllerDelegate>
+@interface BMRViewController : DetailViewController <CPTPlotDataSource,
+                                                     InfoViewControllerDelegate,
+                                                     MFMailComposeViewControllerDelegate>
 #else
-@interface BMRViewController : DetailViewController <InfoViewControllerDelegate>
+@interface BMRViewController : DetailViewController <InfoViewControllerDelegate,
+                                                     MFMailComposeViewControllerDelegate>
 #endif
 {
 }
@@ -27,7 +32,7 @@
 - (NSString *)calculateBMR;
 
 #ifdef PRO_VERSION
-- (CPXYGraph *)createGraph;
+- (CPTGraph *)createGraph;
 #endif
 
 @end

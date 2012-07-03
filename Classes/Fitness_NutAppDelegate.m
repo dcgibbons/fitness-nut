@@ -18,7 +18,6 @@
 
 #import "GANTracker.h"
 #import "ReviewRequest.h"
-#import "SHK.h"
 
 @implementation Fitness_NutAppDelegate
 
@@ -255,8 +254,6 @@ static const NSInteger kGANDispatchPeriodSec = 10;
         AskForReview();
     }
 
-    [SHK flushOfflineQueue];
-    
     return YES;
 }
 
@@ -312,9 +309,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
     
     if (ShouldAskForReviewAtLaunch()) {
         AskForReview();
-    }
-    
-    [SHK flushOfflineQueue];
+    }    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application 

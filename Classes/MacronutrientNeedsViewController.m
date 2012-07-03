@@ -6,15 +6,14 @@
 //  Copyright 2011 The Nuclear Bunny. All rights reserved.
 //
 
+#import <Accounts/Accounts.h>
+#import <Twitter/Twitter.h>
+
 #import "MacronutrientNeedsViewController.h"
 #import "AthleteType.h"
 #import "AthleteWeight.h"
 #import "FitnessCalculations.h"
 #import "AthleteDataProtocol.h"
-#import "SHK.h"
-#import "SHKFacebook.h"
-#import "SHKTwitter.h"
-#import "SHKMail.h"
 
 @implementation MacronutrientNeedsViewController
 
@@ -258,6 +257,23 @@
 
 - (void)shareViaEmail
 {
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Device cannot send mail.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
+                                                        message:@"Your device has not yet been configured to send mail."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+    
+	[picker setSubject:@"Fitness Nut: Daily Macronutrient Needs"];
+    
 	// Fill out the email body text
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
     NSNumber *hours = [userData objectForKey:@"athleteHours"];
@@ -266,84 +282,132 @@
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
                                                                                       usingHours:[hours unsignedIntValue]
                                                                                   andAthleteType:type];
+    if (macronutrients) {
+        NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                               "<body>"
+                               "<table>"
+                               "<tbody>"
+                               "<tr>"
+                               "<th>Weight</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Weekly Training Hours</th><td>%u</td>"
+                               "</tr><tr>"
+                               "<th>Athlete Type</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Cabrohydrates</th><td>%u gm</td>"
+                               "</tr><tr>"
+                               "<th>Protein</th><td>%u gm</td>"
+                               "</tr><tr>"
+                               "<th>Fat</th><td>%u gm</td>"
+                               "</tr><tr>"
+                               "<th>Calories</th><td>%u</td>"
+                               "</tr>",
+                               weight, [hours unsignedIntValue], type, 
+                               macronutrients.carbohydrates, 
+                               macronutrients.protein,
+                               macronutrients.fat,
+                               macronutrients.calories
+                               ];
+        
+        emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
+                     "Use <a href=\"%@\">Fitness Nut Pro</a> "
+                     "for quick answers to your sports nutrition questions!"
+                     "</p></body></html>",
+                     kFITNESS_NUT_PRO_AFFILIATE_URL
+                     ];
+        
+        [picker setMessageBody:emailBody isHTML:YES];
+        
+        [self presentModalViewController:picker animated:YES];
+    }
     
-    NSString *emailBody = [NSString stringWithFormat:@"<html>"
-                           "<body>"
-                           "<table>"
-                           "<tbody>"
-                           "<tr>"
-                           "<th>Weight</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Weekly Training Hours</th><td>%u</td>"
-                           "</tr><tr>"
-                           "<th>Athlete Type</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Cabrohydrates</th><td>%u g</td>"
-                           "</tr><tr>"
-                           "<th>Protein</th><td>%u g</td>"
-                           "</tr><tr>"
-                           "<th>Fat</th><td>%u g</td>"
-                           "</tr><tr>"
-                           "<th>Calories</th><td>%u</td>"
-                           "</tr>",
-                           weight, [hours unsignedIntValue], type, 
-                           macronutrients.carbohydrates, 
-                           macronutrients.protein,
-                           macronutrients.fat,
-                           macronutrients.calories
-                           ];
-    
-    emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
-                 "Use <a href=\"%@\">Fitness Nut</a> "
-                 "for quick answers to your sports nutrition questions!"
-                 "</p></body></html>",
-                 kFITNESS_NUT_PRO_AFFILIATE_URL
-                 ];
-    
-    SHKItem *item = [SHKItem text:emailBody];
-    item.title = @"Fitness Nut: Daily Macronutrient Needs";
-    
-    [SHKMail shareItem:item];
+    [picker release];
+
 }
 
 - (void)shareViaFacebook
 {
-    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
-    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
-    NSNumber *hours = [userData objectForKey:@"athleteHours"];
-    AthleteType *type = [userData objectForKey:@"athleteType"];
-    
-    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
-                                                                                      usingHours:[hours unsignedIntValue]
-                                                                                  andAthleteType:type];
-    
-    NSString *text = [NSString stringWithFormat:@"I just calculated my daily macronutrient needs as %u g carbohydrate, %u g protein, %u g fat for %u weekly training hours", 
-                      macronutrients.carbohydrates, 
-                      macronutrients.protein,
-                      macronutrients.fat, 
-                      [hours unsignedIntValue]];
-    text = [text stringByAppendingString:@" with Fitness Nut!"];
-    SHKItem *item = [SHKItem URL:url title:text];
-    [SHKFacebook shareItem:item];
+//    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+//    AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
+//    NSNumber *hours = [userData objectForKey:@"athleteHours"];
+//    AthleteType *type = [userData objectForKey:@"athleteType"];
+//    
+//    Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
+//                                                                                      usingHours:[hours unsignedIntValue]
+//                                                                                  andAthleteType:type];
+//    
+//    NSString *text = [NSString stringWithFormat:@"I just calculated my daily macronutrient needs as %u g carbohydrate, %u g protein, %u g fat for %u weekly training hours", 
+//                      macronutrients.carbohydrates, 
+//                      macronutrients.protein,
+//                      macronutrients.fat, 
+//                      [hours unsignedIntValue]];
+//    text = [text stringByAppendingString:@" with Fitness Nut!"];
+//    SHKItem *item = [SHKItem URL:url title:text];
+//    [SHKFacebook shareItem:item];
 }
 
 - (void)shareViaTwitter
 {
+    // Set up the built-in twitter composition view controller.
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+    
     NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+    
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
     NSNumber *hours = [userData objectForKey:@"athleteHours"];
     AthleteType *type = [userData objectForKey:@"athleteType"];
-    
+        
     Macronutrients *macronutrients = [FitnessCalculations macronutrientNeedsUsingMassInKilograms:[[weight weightAsKilograms] doubleValue] 
-                                                                                      usingHours:[hours unsignedIntValue]
-                                                                                  andAthleteType:type];
-    
-    
-    NSString *text = [NSString stringWithFormat:@"I just calculated my daily macronutrient needs as %u g carbohydrate, %u g protein, %u g fat", macronutrients.carbohydrates, macronutrients.protein,
+                                                                                          usingHours:[hours unsignedIntValue]
+                                                                                      andAthleteType:type];
+        
+        
+    NSString *text = [NSString stringWithFormat:@"I just calculated my daily macronutrient needs as %ug carbohydrate, %ug protein, %ug fat", 
+                      macronutrients.carbohydrates, macronutrients.protein,
                       macronutrients.fat];
-    text = [text stringByAppendingString:@" with #FitnessNut"];
-    SHKItem *item = [SHKItem URL:url title:text];
-    [SHKTwitter shareItem:item];
+    text = [text stringByAppendingString:@" with #FitnessNut"];    
+    
+    // Set the initial tweet text. See the framework for additional properties that can be set.
+    [tweetViewController setInitialText:text];
+    [tweetViewController addURL:url];
+    
+    // Create the completion handler block.
+    [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+        NSString *output;
+        
+        switch (result) {
+            case TWTweetComposeViewControllerResultCancelled:
+                // The cancel button was tapped.
+                output = @"Tweet cancelled.";
+                break;
+            case TWTweetComposeViewControllerResultDone:
+                // The tweet was sent.
+                output = @"Tweet done.";
+                break;
+            default:
+                break;
+        }
+
+        NSLog(@"%@", output);
+        
+        // Dismiss the tweet composition view controller.
+        [self dismissModalViewControllerAnimated:YES];
+    }];
+    
+    // Present the tweet composition view controller modally.
+    [self presentModalViewController:tweetViewController animated:YES];
+
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

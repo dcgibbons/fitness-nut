@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CorePlot-CocoaTouch.h"
 
 @interface BMRGraphViewController : UIViewController
 {
     NSMutableDictionary *userData;
-    CPXYGraph *graph;    
+    CPTGraph *graph;    
 }
 
 @property (nonatomic, retain) NSMutableDictionary *userData;
-@property (nonatomic, retain) CPXYGraph *graph;
+@property (nonatomic, retain) CPTGraph *graph;
 
 @end

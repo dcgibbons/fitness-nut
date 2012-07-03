@@ -17,11 +17,10 @@
 - (void)fixupAdView:(UIInterfaceOrientation)toInterfaceOrientation 
 {
     if (adBannerView) {
-        // TODO: use new identifiers when we stop supporting old releases
         if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifier480x32];
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierLandscape];
         } else {
-            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifier320x50];
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierPortrait];
         }          
         
         CGFloat fullViewHeight = self.view.frame.size.height;
@@ -74,10 +73,10 @@
                                                                       self.view.frame.size.height,
                                                                       0, 0)];
         // TODO: use new identifier once we stop supporting old releases
-        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
         adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObjects:
-                                                       ADBannerContentSizeIdentifier320x50,
-                                                       ADBannerContentSizeIdentifier480x32,
+                                                       ADBannerContentSizeIdentifierLandscape,
+                                                       ADBannerContentSizeIdentifierPortrait,
                                                        nil];
         adBannerView.delegate=self;
         [self.view addSubview:adBannerView];
@@ -404,7 +403,7 @@
                                                     cancelButtonTitle:@"Cancel"
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:@"Email", 
-                                  @"Facebook", 
+                                  //                                  @"Facebook", 
                                   @"Twitter", 
                                   nil];
     
@@ -433,22 +432,22 @@
             [self shareViaEmail];
             break;
         }
-        case 1: { // facebook
-#ifndef DEBUG
-            NSError *error;
-            if (![[GANTracker sharedTracker] trackEvent:@"calculate"
-                                                 action:@"share_via_facebook"
-                                                  label:NSStringFromClass([self class])
-                                                  value:-1
-                                              withError:&error]) {
-                NSLog(@"Unable to track calculate event for share, %@",
-                      error);
-            }
-#endif
-            [self shareViaFacebook];
-            break;
-        }
-        case 2: { // twitter
+//        case 1: { // facebook
+//#ifndef DEBUG
+//            NSError *error;
+//            if (![[GANTracker sharedTracker] trackEvent:@"calculate"
+//                                                 action:@"share_via_facebook"
+//                                                  label:NSStringFromClass([self class])
+//                                                  value:-1
+//                                              withError:&error]) {
+//                NSLog(@"Unable to track calculate event for share, %@",
+//                      error);
+//            }
+//#endif
+//            [self shareViaFacebook];
+//            break;
+//        }
+        case 1: { // twitter
 #ifndef DEBUG
             NSError *error;
             if (![[GANTracker sharedTracker] trackEvent:@"calculate"
@@ -476,10 +475,10 @@
     // NO-OP
 }
 
-- (void)shareViaFacebook
-{
-    // NO-OP
-}
+//- (void)shareViaFacebook
+//{
+//    // NO-OP
+//}
 
 - (void)shareViaTwitter
 {    

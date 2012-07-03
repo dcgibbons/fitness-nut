@@ -6,6 +6,9 @@
 //  Copyright 2011 The Nuclear Bunny. All rights reserved.
 //
 
+#import <Accounts/Accounts.h>
+#import <Twitter/Twitter.h>
+
 #import "BodyFatEstimatorViewController.h"
 #import "AthleteBodyFat.h"
 #import "AthleteHeight.h"
@@ -13,10 +16,6 @@
 #import "AthleteGender.h"
 #import "AthleteMeasurement.h"
 #import "AthleteDataProtocol.h"
-#import "SHK.h"
-#import "SHKFacebook.h"
-#import "SHKTwitter.h"
-#import "SHKMail.h"
 
 @implementation BodyFatEstimatorViewController
 
@@ -213,6 +212,23 @@
 
 - (void)shareViaEmail
 {
+    if (![MFMailComposeViewController canSendMail]) {
+        NSLog(@"Device cannot send mail.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Unable to Send Mail"
+                                                        message:@"Your device has not yet been configured to send mail."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+    
+	[picker setSubject:@"Fitness Nut Pro: Body Fat Estimation"];
+    
 	// Fill out the email body text
     AthleteHeight *height = [userData objectForKey:@"athleteHeight"];
     AthleteWeight *weight = [userData objectForKey:@"athleteWeight"];
@@ -223,76 +239,121 @@
     
     NSString *bodyFat = [self calculatePredictedBodyFat];
     
-    NSString *emailBody = [NSString stringWithFormat:@"<html>"
-                           "<body>"
-                           "<table>"
-                           "<tbody>"
-                           "<tr>"
-                           "<th>Height</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Weight</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Gender</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Neck Girth</th><td>%@</td>"
-                           "</tr><tr>"
-                           "<th>Waist Girth</th><td>%@</td>"
-                           "</tr>",
-                           weight, 
-                           height,
-                           gender,
-                           neckGirth,
-                           waistGirth
-                           ];
-    
-    if (gender.gender == Female) {
+    if (bodyFat) {
+        NSString *emailBody = [NSString stringWithFormat:@"<html>"
+                               "<body>"
+                               "<table>"
+                               "<tbody>"
+                               "<tr>"
+                               "<th>Height</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Weight</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Gender</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Neck Girth</th><td>%@</td>"
+                               "</tr><tr>"
+                               "<th>Waist Girth</th><td>%@</td>"
+                               "</tr>",
+                               weight, 
+                               height,
+                               gender,
+                               neckGirth,
+                               waistGirth
+                               ];
+        
+        if (gender.gender == Female) {
+            emailBody = [emailBody stringByAppendingFormat:@"<tr>"
+                         "<th>Hips Girth</th><td>%@</td>"
+                         "</tr>",
+                         hipsGirth
+                         ];
+        }
+        
         emailBody = [emailBody stringByAppendingFormat:@"<tr>"
-                     "<th>Hips Girth</th><td>%@</td>"
-                     "</tr>",
-                     hipsGirth
+                     "<th>Estimated Body Fat</th><td>%@</td>",
+                     bodyFat
                      ];
+        
+        emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
+                     "Use <a href=\"%@\">Fitness Nut Pro</a> "
+                     "for quick answers to your sports nutrition questions!"
+                     "</p></body></html>",
+                     kFITNESS_NUT_PRO_AFFILIATE_URL
+                     ];
+        
+        [picker setMessageBody:emailBody isHTML:YES];
+        
+        [self presentModalViewController:picker animated:YES];
     }
     
-    emailBody = [emailBody stringByAppendingFormat:@"<tr>"
-                 "<th>Estimated Body Fat</th><td>%@</td>",
-                 bodyFat
-                 ];
-    
-    emailBody = [emailBody stringByAppendingFormat:@"</tbody></table><p>"
-                 "Use <a href=\"%@\">Fitness Nut</a> "
-                 "for quick answers to your sports nutrition questions!"
-                 "</p></body></html>",
-                 kFITNESS_NUT_PRO_AFFILIATE_URL
-                 ];
-    
-    SHKItem *item = [SHKItem text:emailBody];
-    item.title = @"Fitness Nut: Daily Macronutrient Needs";
-    
-    [SHKMail shareItem:item];
+    [picker release];  
 }
 
 - (void)shareViaFacebook
 {
+//    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
+//    NSString *bodyFat = [self calculatePredictedBodyFat];
+//    
+//    NSString *text = [NSString stringWithFormat:@"I just estimated my body fat as %@", 
+//                      bodyFat];
+//    text = [text stringByAppendingString:@" with Fitness Nut!"];
+//    SHKItem *item = [SHKItem URL:url title:text];
+//    [SHKFacebook shareItem:item];
+}
+
+- (void)shareViaTwitter
+{
+    // Set up the built-in twitter composition view controller.
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+    
     NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
     NSString *bodyFat = [self calculatePredictedBodyFat];
     
     NSString *text = [NSString stringWithFormat:@"I just estimated my body fat as %@", 
                       bodyFat];
-    text = [text stringByAppendingString:@" with Fitness Nut!"];
-    SHKItem *item = [SHKItem URL:url title:text];
-    [SHKFacebook shareItem:item];
+    text = [text stringByAppendingString:@" with #FitnessNut"];
+    
+    // Set the initial tweet text. See the framework for additional properties that can be set.
+    [tweetViewController setInitialText:text];
+    [tweetViewController addURL:url];
+    
+    // Create the completion handler block.
+    [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+        NSString *output;
+        
+        switch (result) {
+            case TWTweetComposeViewControllerResultCancelled:
+                // The cancel button was tapped.
+                output = @"Tweet cancelled.";
+                break;
+            case TWTweetComposeViewControllerResultDone:
+                // The tweet was sent.
+                output = @"Tweet done.";
+                break;
+            default:
+                break;
+        }
+        
+        NSLog(@"%@", output);
+        
+        // Dismiss the tweet composition view controller.
+        [self dismissModalViewControllerAnimated:YES];
+    }];
+    
+    // Present the tweet composition view controller modally.
+    [self presentModalViewController:tweetViewController animated:YES];
 }
 
-- (void)shareViaTwitter
-{
-    NSURL *url = [NSURL URLWithString:kFITNESS_NUT_PRO_AFFILIATE_URL];
-    NSString *bodyFat = [self calculatePredictedBodyFat];
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
 
-    NSString *text = [NSString stringWithFormat:@"I just estimated my body fat as %@", 
-                      bodyFat];
-    text = [text stringByAppendingString:@" with #FitnessNut"];
-    SHKItem *item = [SHKItem URL:url title:text];
-    [SHKTwitter shareItem:item];
+// Dismisses the email composition interface when users tap Cancel or Send.
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error 
+{	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

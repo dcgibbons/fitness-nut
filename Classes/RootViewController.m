@@ -108,9 +108,9 @@
     if (adBannerView) {
         // TODO: use newer identifiers once older versions of iOS aren't supported
         if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifier480x32];
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierLandscape];
         } else {
-            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifier320x50];
+            [adBannerView setCurrentContentSizeIdentifier:ADBannerContentSizeIdentifierPortrait];
         }          
 
         CGFloat fullViewHeight = self.view.frame.size.height;
@@ -175,13 +175,11 @@
         adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,
                                                                       self.view.frame.size.height,
                                                                       0, 0)];
-        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
         adBannerView.requiredContentSizeIdentifiers = [NSSet setWithObjects:
-                                                       ADBannerContentSizeIdentifier320x50,
-                                                       ADBannerContentSizeIdentifier480x32,
+                                                       ADBannerContentSizeIdentifierPortrait,
+                                                       ADBannerContentSizeIdentifierLandscape,
                                                        nil];
-        // TODO: use ADBannerContentSizeIdentifierPortrait once you stop supporting
-        // anything older than iOS 4.2
         adBannerView.delegate=self;
         [self.view addSubview:adBannerView];
     }
