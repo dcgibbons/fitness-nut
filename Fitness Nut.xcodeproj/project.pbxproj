@@ -1008,7 +1008,10 @@
 					DEBUG,
 					PRO_VERSION,
 				);
-				HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../thirdparty/CorePlot_1.0/Source/framework\"/**";
+				HEADER_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/../thirdparty/CorePlot_1.0/Source/framework\"/**",
+					"${PROJECT_DIR}/**",
+				);
 				INFOPLIST_FILE = "Fitness Nut Pro/Fitness Nut Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1036,7 +1039,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
-				HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../thirdparty/CorePlot_1.0/Source/framework\"/**";
+				HEADER_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/../thirdparty/CorePlot_1.0/Source/framework\"/**",
+					"${PROJECT_DIR}/**",
+				);
 				INFOPLIST_FILE = "Fitness Nut Pro/Fitness Nut Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
