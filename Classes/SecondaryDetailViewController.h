@@ -37,7 +37,7 @@
 // Sent when the view controller should layout the view for the specified orientation.
 - (void)layoutView:(UIInterfaceOrientation)orientation;
 
-- (void)cancel:(id)sender;
-- (void)done:(id)sender;
+- (IBAction)cancel:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end

@@ -45,6 +45,9 @@
 		C219B02D133E2F58007C7F39 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B02C133E2F58007C7F39 /* MessageUI.framework */; };
 		C229909B138586EF00E214F2 /* WeightPredictionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C229909A138586EF00E214F2 /* WeightPredictionDetailViewController.m */; };
 		C229909D13858A1D00E214F2 /* WeightPredictionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C229909C13858A1D00E214F2 /* WeightPredictionDetailViewController.xib */; };
+		C256D3DB17CAC0490061C907 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C256D3DA17CAC0490061C907 /* Default-568h@2x.png */; };
+		C256D3E317CAC69F0061C907 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */; };
+		C256D3E417CAC7070061C907 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C256D3E217CAC0D60061C907 /* libCorePlot-CocoaTouch.a */; };
 		C266C017133E2DCB00F79EA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C016133E2DCB00F79EA2 /* UIKit.framework */; };
 		C266C019133E2DCB00F79EA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C018133E2DCB00F79EA2 /* Foundation.framework */; };
 		C266C01B133E2DCB00F79EA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C01A133E2DCB00F79EA2 /* CoreGraphics.framework */; };
@@ -100,8 +103,6 @@
 		C2C8CAC8134A3AD20022A651 /* BMRInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAC6134A3AD10022A651 /* BMRInfoViewController.xib */; };
 		C2C8CACA134A3DEB0022A651 /* MacronutrientNeedsInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAC9134A3DEA0022A651 /* MacronutrientNeedsInfoViewController.xib */; };
 		C2C8CACB134A3DEB0022A651 /* MacronutrientNeedsInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C8CAC9134A3DEA0022A651 /* MacronutrientNeedsInfoViewController.xib */; };
-		C2E684A415A3A63900A65E5F /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E684A115A3A62000A65E5F /* libCorePlot-CocoaTouch.a */; };
-		C2E684A515A3A66200A65E5F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */; };
 		C2E6CC05133EB61B00ADAF89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C016133E2DCB00F79EA2 /* UIKit.framework */; };
 		C2E6CC06133EB61B00ADAF89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C018133E2DCB00F79EA2 /* Foundation.framework */; };
 		C2E6CC07133EB61B00ADAF89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C266C01A133E2DCB00F79EA2 /* CoreGraphics.framework */; };
@@ -179,18 +180,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C2E684A015A3A62000A65E5F /* PBXContainerItemProxy */ = {
+		C256D3E117CAC0D60061C907 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C2E6849715A3A61F00A65E5F /* CorePlot-CocoaTouch.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
-			remoteInfo = "CorePlot-CocoaTouch";
-		};
-		C2E684A215A3A63500A65E5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2E6849715A3A61F00A65E5F /* CorePlot-CocoaTouch.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
 			remoteInfo = "CorePlot-CocoaTouch";
 		};
 /* End PBXContainerItemProxy section */
@@ -232,7 +226,7 @@
 		C219B024133E2F22007C7F39 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		C219B026133E2F28007C7F39 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		C219B028133E2F3E007C7F39 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
-		C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		C219B029133E2F3E007C7F39 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "../thirdparty/Google Analytics SDK/Library/libGoogleAnalytics.a"; sourceTree = "<group>"; };
 		C219B02C133E2F58007C7F39 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C2299099138586EF00E214F2 /* WeightPredictionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPredictionDetailViewController.h; sourceTree = "<group>"; };
 		C229909A138586EF00E214F2 /* WeightPredictionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPredictionDetailViewController.m; sourceTree = "<group>"; };
@@ -246,6 +240,7 @@
 		C24DB5D8133E32C40021DFA0 /* GirthPickerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GirthPickerViewController~ipad.xib"; sourceTree = SOURCE_ROOT; };
 		C24DB5D9133E32C40021DFA0 /* MainContent~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainContent~ipad.xib"; sourceTree = SOURCE_ROOT; };
 		C24DB5DA133E32C40021DFA0 /* RootViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RootViewController~ipad.xib"; sourceTree = SOURCE_ROOT; };
+		C256D3DA17CAC0490061C907 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C266C012133E2DCB00F79EA2 /* Fitness Nut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Nut.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C266C016133E2DCB00F79EA2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C266C018133E2DCB00F79EA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -335,7 +330,7 @@
 		C2C8CAC3134A2F4E0022A651 /* WeightPredictorInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightPredictorInfoViewController.xib; sourceTree = "<group>"; };
 		C2C8CAC6134A3AD10022A651 /* BMRInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMRInfoViewController.xib; sourceTree = "<group>"; };
 		C2C8CAC9134A3DEA0022A651 /* MacronutrientNeedsInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MacronutrientNeedsInfoViewController.xib; sourceTree = "<group>"; };
-		C2E6849715A3A61F00A65E5F /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../thirdparty/CorePlot_1.0/Source/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		C2E6849715A3A61F00A65E5F /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../thirdparty/core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		C2E6CC03133EB61B00ADAF89 /* Fitness Nut Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Nut Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6CC69133EB7A000ADAF89 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C2E6CC6A133EB7A000ADAF89 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -372,8 +367,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E684A515A3A66200A65E5F /* libGoogleAnalytics.a in Frameworks */,
-				C2E684A415A3A63900A65E5F /* libCorePlot-CocoaTouch.a in Frameworks */,
+				C256D3E417CAC7070061C907 /* libCorePlot-CocoaTouch.a in Frameworks */,
+				C256D3E317CAC69F0061C907 /* libGoogleAnalytics.a in Frameworks */,
 				C2B4441015A2AE590048EA5C /* Accounts.framework in Frameworks */,
 				C2B4441115A2AE590048EA5C /* Twitter.framework in Frameworks */,
 				C2E6CC71133EB7A000ADAF89 /* MessageUI.framework in Frameworks */,
@@ -438,9 +433,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C256D3DC17CAC0D60061C907 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C256D3E217CAC0D60061C907 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C266C007133E2DCA00F79EA2 = {
 			isa = PBXGroup;
 			children = (
+				C256D3DA17CAC0490061C907 /* Default-568h@2x.png */,
 				C2E6849715A3A61F00A65E5F /* CorePlot-CocoaTouch.xcodeproj */,
 				C2B4440E15A2AE590048EA5C /* Accounts.framework */,
 				C2B4440F15A2AE590048EA5C /* Twitter.framework */,
@@ -588,14 +592,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		C2E6849815A3A61F00A65E5F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C2E684A115A3A62000A65E5F /* libCorePlot-CocoaTouch.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C2ED6279133E2FB500FE9C55 /* Fitness Nut Pro */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,7 +663,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C2E684A315A3A63500A65E5F /* PBXTargetDependency */,
 			);
 			name = "Fitness Nut Pro";
 			productName = "Fitness Nut Pro";
@@ -680,7 +675,7 @@
 		C266C009133E2DCA00F79EA2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C266C00C133E2DCA00F79EA2 /* Build configuration list for PBXProject "Fitness Nut" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -695,7 +690,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C2E6849815A3A61F00A65E5F /* Products */;
+					ProductGroup = C256D3DC17CAC0D60061C907 /* Products */;
 					ProjectRef = C2E6849715A3A61F00A65E5F /* CorePlot-CocoaTouch.xcodeproj */;
 				},
 			);
@@ -708,11 +703,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C2E684A115A3A62000A65E5F /* libCorePlot-CocoaTouch.a */ = {
+		C256D3E217CAC0D60061C907 /* libCorePlot-CocoaTouch.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libCorePlot-CocoaTouch.a";
-			remoteRef = C2E684A015A3A62000A65E5F /* PBXContainerItemProxy */;
+			remoteRef = C256D3E117CAC0D60061C907 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -802,6 +797,7 @@
 				C2C8CAC8134A3AD20022A651 /* BMRInfoViewController.xib in Resources */,
 				C2C8CACB134A3DEB0022A651 /* MacronutrientNeedsInfoViewController.xib in Resources */,
 				C229909D13858A1D00E214F2 /* WeightPredictionDetailViewController.xib in Resources */,
+				C256D3DB17CAC0490061C907 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,14 +890,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		C2E684A315A3A63500A65E5F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CorePlot-CocoaTouch";
-			targetProxy = C2E684A215A3A63500A65E5F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		C266C01F133E2DCB00F79EA2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -964,6 +952,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Fitness Nut/Fitness Nut-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -982,6 +971,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Fitness Nut/Fitness Nut-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -998,7 +988,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1008,15 +997,13 @@
 					DEBUG,
 					PRO_VERSION,
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"${PROJECT_DIR}/../thirdparty/CorePlot_1.0/Source/framework\"/**",
-					"${PROJECT_DIR}/**",
-				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include";
 				INFOPLIST_FILE = "Fitness Nut Pro/Fitness Nut Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../thirdparty/Google Analytics SDK/Library\"",
 				);
 				OTHER_LDFLAGS = (
 					"-Objc",
@@ -1033,21 +1020,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Fitness_Nut_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PRO_VERSION;
-				HEADER_SEARCH_PATHS = (
-					"\"${PROJECT_DIR}/../thirdparty/CorePlot_1.0/Source/framework\"/**",
-					"${PROJECT_DIR}/**",
-				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include";
 				INFOPLIST_FILE = "Fitness Nut Pro/Fitness Nut Pro-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../thirdparty/Google Analytics SDK/Library\"",
 				);
 				OTHER_LDFLAGS = (
 					"-Objc",
