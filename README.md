@@ -9,6 +9,8 @@ Fitness Nut was a commerical iOS application for several years, but I
 removed it from the AppStore in 2016 as I was no longer maintaining it.
 
 As of April 1st, 2018 (no April Fool's), I am releasing Fitness Nut as an
-open-source application as reference material.
+open-source application as reference material. This software is released
+under the MIT open-source license - see [LICENSE](LICENSE)
 
 Chad Gibbons
+April 1, 2018
